@@ -377,9 +377,10 @@
 -r:"Library/Bee/artifacts/1300b0aE.dag/VRM.ref.dll"
 -analyzer:"C:/Users/tokiy/OneDrive/デスクトップ/2022.2.5f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Users/tokiy/OneDrive/デスクトップ/2022.2.5f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
-"Assets/Camera/CameraController.cs"
-"Assets/Debug/PlaneGeneratorDebug.cs"
-"Assets/Player Charactor/PlayerController.cs"
+"Assets/Project/GameScene/Camera/CameraController.cs"
+"Assets/Project/GameScene/Ground/GroundController.cs"
+"Assets/Project/GameScene/Ground/GroundGenerator.cs"
+"Assets/Project/GameScene/Player Charactor/PlayerController.cs"
 -langversion:9.0
 
 /deterministic
