@@ -12,14 +12,17 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     //リジッドボディを入れる変数
     Rigidbody rd;
+
     //ジャンプ力
     float jumpForce = 500.0f;
     //移動スピード
     float walkSpeed = 0.1f;
     float runSpeed = 0.2f;
+
     //タイマー
     float delta = 0;
     float startTime = 3.0f;
+
     //走っているかのフラグ
     bool runFlg = false;
     //スワイプ座標

@@ -8,15 +8,17 @@ using UnityEngine;
 
 public class GroundController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        GameObject camera;
+        //カメラオブジェクト保持
+        camera = GameObject.Find("Main Camera");
+
+        //地面がプレイヤーより後ろに出た時点で破棄
+        if(camera.transform.position.z > transform.position.z + 5.0f)
+        {
+            //オブジェクト破棄
+            Destroy(gameObject);
+        }
     }
 }
