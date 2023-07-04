@@ -57,10 +57,6 @@ public class PlayerController : MonoBehaviour
             //runアニメーションのトリガーに切り替える
             this.animator.SetTrigger("RunTrigger");
         }
-        else
-        {
-            
-        }
 
         //InputDetectorから入力状態を受け取る
         GameObject inputDetector = GameObject.Find("InputDetector");
