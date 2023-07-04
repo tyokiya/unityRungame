@@ -381,6 +381,7 @@
 "Assets/Project/GameScene/Ground/GroundController.cs"
 "Assets/Project/GameScene/Ground/GroundGenerator.cs"
 "Assets/Project/GameScene/Player Charactor/PlayerController.cs"
+"Assets/Project/GameScene/ScreenInput/ScreenInput.cs"
 -langversion:9.0
 
 /deterministic

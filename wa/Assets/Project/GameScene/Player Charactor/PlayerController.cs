@@ -12,23 +12,28 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     //リジッドボディを入れる変数
     Rigidbody rd;
+    //入力状態を入れる変数
+    GameObject inputDetector;
 
     //ジャンプ力
-    float jumpForce = 500.0f;
+    [SerializeField]
+    private float jumpForce = 500.0f;
     //移動スピード
-    float walkSpeed = 0.1f;
-    float runSpeed = 0.2f;
+    [SerializeField] 
+    private float walkSpeed = 0.1f;
+    private float runSpeed = 0.2f;
+    //横移動距離
+    private float lateralDistance = 0.8f;
 
     //タイマー
     float delta = 0;
     float startTime = 3.0f;
+    //移動可能タイミングのスパン
+    float lateralMoveSpan = 0.1f;
 
     //走っているかのフラグ
     bool runFlg = false;
-    //スワイプ座標
-    Vector3 swipStartPos;
-    //スワイプの距離を入れる変数
-    float swipLengthX, swipLengthY;
+   
 
     void Start()
     {
@@ -37,6 +42,8 @@ public class PlayerController : MonoBehaviour
         //コンポーネント取得
         this.animator = GetComponent<Animator>();
         this.rd = GetComponent<Rigidbody>();
+        //オブジェクトを入れる
+
     }
 
   
@@ -52,49 +59,97 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            //カウントの増加
-            this.delta += Time.deltaTime;
+            
         }
 
-        //スワイプの長さを求める
-        if(Input.GetMouseButtonDown(0))
+        //InputDetectorから入力状態を受け取る
+        GameObject inputDetector = GameObject.Find("InputDetector");
+        //入力状態に応じて移動
+        switch (inputDetector.GetComponent<ScreenInput>().GetNowFlick())
         {
-            //クリック座標取得
-            this.swipStartPos = Input.mousePosition;
-        }
-        else if(Input.GetMouseButtonUp(0))
-        {
-            //クリックを離した座標
-            Vector3 endPos = Input.mousePosition;
-            //スワイプ距離を計算
-            this.swipLengthX = endPos.x - this.swipStartPos.x;
-            this.swipLengthY = endPos.y - this.swipStartPos.y;
+            case ScreenInput.FlickDirection.UP:         //ジャンプ処理
+                PlayerJump();
+                break;
+            case ScreenInput.FlickDirection.RIGHT:      //右移動処理
+                //連続で処理しないようスパンを設ける
+                if(this.delta > this.lateralMoveSpan && this.runFlg == true)
+                {
+                    PlayerLateralMoveMent(true);
+                }
+                else //左右移動ができない場合は前へ進む
+                {
+                    PlayerMove(this.runFlg);
+                }
+                
+                break;
+            case ScreenInput.FlickDirection.LEFT:       //左移動処理
+                //連続で処理しないようスパンを設ける
+                if (this.delta > this.lateralMoveSpan && this.runFlg == true)
+                {
+                    PlayerLateralMoveMent(false);
+                }
+                else //左右移動ができない場合は前へ進む
+                {
+                    PlayerMove(this.runFlg);
+                }
+                break;
+                default:
+                PlayerMove(this.runFlg);                //プレイヤーの前移動(フラグの状態で速度を変える)
+                break;
         }
 
-        //ジャンプ処理
-        if(this.swipLengthY > 100 && this.rd.velocity.y == 0 && this.runFlg == true)
+        //カウントの増加
+        this.delta += Time.deltaTime;
+    }
+
+    /// <summary>
+    /// プレイヤーのジャンプ処理
+    /// </summary>
+    void PlayerJump()
+    {
+        if (this.rd.velocity.y == 0 && this.runFlg == true)
         {
             //ジャンプアニメーションのトリガーに切り替える
             this.animator.SetTrigger("JumpTrigger");
             //y軸に力を加える
             this.rd.AddForce(transform.up * this.jumpForce);
-            //レングス初期化
-            this.swipLengthY = 0;
         }
-
-        //左右移動処理
-        
-
-        //フラグで移動速度を変える
-        if(this.runFlg == false)
+    }
+    
+    /// <summary>
+    /// プレイヤーの移動
+    /// </summary>
+    /// <param name="flg">プレイヤーが走っいるかのフラグ</param>
+    void PlayerMove(bool flg)
+    {
+        if (flg == false)
         {
             //歩き速度
-            transform.Translate(0,0,this.walkSpeed);
+            transform.Translate(0, 0, this.walkSpeed);
         }
         else
         {
             //走り速度
-            transform.Translate(0,0,this.runSpeed);
+            transform.Translate(0, 0, this.runSpeed);
         }
+    }
+
+    /// <summary>
+    /// プレイヤーの横移動
+    /// </summary>
+    /// <param name="rightFlg">右移動のフラグ(falseのときは左に動く)</param>
+    void PlayerLateralMoveMent(bool rightFlg)
+    {
+        if (rightFlg == true && transform.position.x < 0.8)    //右移動
+        {
+            transform.Translate(this.lateralDistance, 0, this.runSpeed);
+        }
+        else if (rightFlg == false && transform.position.x > -0.8)//左移動 
+        {
+            transform.Translate(this.lateralDistance * -1, 0, this.runSpeed);
+        }
+
+        //delta初期化
+        this.delta = 0;
     }
 }
