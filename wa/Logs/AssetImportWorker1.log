@@ -1,0 +1,769 @@
+Using pre-set license
+Built from '2022.2/staging' branch; Version is '2022.2.6f1 (10bfa6201ced) revision 1097638'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22621) 64bit Core' Language: 'ja' Physical Memory: 16300 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Users\tokiy\OneDrive\デスクトップ\2022.2.6f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker1
+-projectPath
+C:/Users/tokiy/OneDrive/デスクトップ/unityRungame/wa
+-logFile
+Logs/AssetImportWorker1.log
+-srvPort
+55842
+Successfully changed project path to: C:/Users/tokiy/OneDrive/デスクトップ/unityRungame/wa
+C:/Users/tokiy/OneDrive/デスクトップ/unityRungame/wa
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [18176] Host "[IP] 192.168.10.106 [Port] 0 [Flags] 2 [Guid] 2668415319 [EditorId] 2668415319 [Version] 1048832 [Id] WindowsEditor(7,refa) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [18176] Host "[IP] 192.168.10.106 [Port] 0 [Flags] 2 [Guid] 2668415319 [EditorId] 2668415319 [Version] 1048832 [Id] WindowsEditor(7,refa) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+Refreshing native plugins compatible for Editor in 44.47 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.2.6f1 (10bfa6201ced)
+[Subsystems] Discovering subsystems at path C:/Users/tokiy/OneDrive/デスクトップ/2022.2.6f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/tokiy/OneDrive/デスクトップ/unityRungame/wa/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 2070 (ID=0x1f02)
+    Vendor:   NVIDIA
+    VRAM:     8019 MB
+    Driver:   31.0.15.2849
+Initialize mono
+Mono path[0] = 'C:/Users/tokiy/OneDrive/デスクトップ/2022.2.6f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Users/tokiy/OneDrive/デスクトップ/2022.2.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Users/tokiy/OneDrive/デスクトップ/2022.2.6f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56404
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Users/tokiy/OneDrive/デスクトップ/2022.2.6f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Users/tokiy/OneDrive/デスクトップ/2022.2.6f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Register platform support module: C:/Users/tokiy/OneDrive/デスクトップ/2022.2.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.012577 seconds.
+- Loaded All Assemblies, in  0.384 seconds
+Native extension for WindowsStandalone target not found
+[usbmuxd] Start listen thread
+[usbmuxd] Listen thread started
+Native extension for iOS target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.368 seconds
+Domain Reload Profiling:
+	ReloadAssembly (218ms)
+		BeginReloadAssembly (92ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		LoadAllAssembliesAndSetupDomain (0ms)
+			LoadAssemblies (90ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (154ms)
+				TypeCache.Initialize (153ms)
+					TypeCache.ScanAssembly (152ms)
+				ResolveRequiredComponents (1ms)
+		FinalizeReload (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (0ms)
+			SetupLoadedEditorAssemblies (284ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (81ms)
+				SetLoadedEditorAssemblies (5ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (139ms)
+				ProcessInitializeOnLoadMethodAttributes (58ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\tokiy\OneDrive\デスクトップ\unityRungame\wa\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\tokiy\OneDrive\デスクトップ\unityRungame\wa\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  1.125 seconds
+Refreshing native plugins compatible for Editor in 3.90 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.641 seconds
+Domain Reload Profiling:
+	ReloadAssembly (250ms)
+		BeginReloadAssembly (146ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (30ms)
+		LoadAllAssembliesAndSetupDomain (871ms)
+			LoadAssemblies (345ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (584ms)
+				TypeCache.Initialize (337ms)
+					TypeCache.ScanAssembly (332ms)
+				ResolveRequiredComponents (5ms)
+		FinalizeReload (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (0ms)
+			SetupLoadedEditorAssemblies (469ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (36ms)
+				SetLoadedEditorAssemblies (6ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (111ms)
+				ProcessInitializeOnLoadAttributes (270ms)
+				ProcessInitializeOnLoadMethodAttributes (37ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 3.74 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3564 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 64 unused Assets / (8.4 MB). Loaded Objects now: 3995.
+Memory consumption went from 0.57 GB to 0.56 GB.
+Total: 5.884400 ms (FindLiveObjects: 0.323900 ms CreateObjectMapping: 0.326500 ms MarkObjects: 2.101000 ms  DeleteObjects: 3.131900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 85526.680445 seconds.
+  path: Assets/sryurikennset/Materials/makibisi1-128.mat
+  artifactKey: Guid(c59d360d0a686da4c860271091d7dd82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/Materials/makibisi1-128.mat using Guid(c59d360d0a686da4c860271091d7dd82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1f273e7fa35530726df8f8892715573') in 0.175577 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/sryurikennset/Materials/takeyari1-1-128.mat
+  artifactKey: Guid(96d67f97dee4be74290d4968f5a9b904) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/Materials/takeyari1-1-128.mat using Guid(96d67f97dee4be74290d4968f5a9b904) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3465955dd78a339d75fc4319c7feb91') in 0.014735 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/sryurikennset/Materials
+  artifactKey: Guid(b3e5879f105ebbd4895b1454328fb58a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/Materials using Guid(b3e5879f105ebbd4895b1454328fb58a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '884b6657fac2b7cc43d70a1209601649') in 0.000475 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/sryurikennset/Materials/Bamboo-cup1-4-128.mat
+  artifactKey: Guid(879f8ebb05e37ef4a8aa34bc2f212d47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/Materials/Bamboo-cup1-4-128.mat using Guid(879f8ebb05e37ef4a8aa34bc2f212d47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb942dcb54d51c773eb9e9e7fd9567fe') in 0.039101 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/sryurikennset/Materials/makimono1-1-128.mat
+  artifactKey: Guid(22f11a740d5b70940934981b2c917ff6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/Materials/makimono1-1-128.mat using Guid(22f11a740d5b70940934981b2c917ff6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73855958517b5fddcbc4f3f7d0345bbb') in 0.012981 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/sryurikennset/Materials/syurikenn2-128.mat
+  artifactKey: Guid(e388b1f2f330c454a838e3b2bffbc241) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/Materials/syurikenn2-128.mat using Guid(e388b1f2f330c454a838e3b2bffbc241) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd87ce5cb62a8a1a60774b7d2e730368e') in 0.014565 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/sryurikennset/Materials/makimono1-2-128.mat
+  artifactKey: Guid(dfaca56ed5875a54b94a7002475d7d69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/Materials/makimono1-2-128.mat using Guid(dfaca56ed5875a54b94a7002475d7d69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bdcebb04ccef6a14db94737b62b3ee4c') in 0.014778 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/sryurikennset/Materials/kunai1-128m.mat
+  artifactKey: Guid(961ee9ba0ca18744cbb10684f2d61191) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/Materials/kunai1-128m.mat using Guid(961ee9ba0ca18744cbb10684f2d61191) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c111d000ae6217c18d5795797b2af27') in 0.014316 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/sryurikennset/Materials/syurikenn1-128m.mat
+  artifactKey: Guid(22dc54f0e48429245854d1b167db63f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/Materials/syurikenn1-128m.mat using Guid(22dc54f0e48429245854d1b167db63f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '678532b11548da26c2c07ea7528a2df7') in 0.013951 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/sryurikennset/Materials/makimono1-3-128.mat
+  artifactKey: Guid(660ed04038ac0d04badd7ec733a59a3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/Materials/makimono1-3-128.mat using Guid(660ed04038ac0d04badd7ec733a59a3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d0a80e84556c235497b9bf3ea391caf') in 0.013849 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/sryurikennset/Materials/syurikenn3-128m.mat
+  artifactKey: Guid(9da14db8f2e04f648a7a5a8acc7d1cad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/Materials/syurikenn3-128m.mat using Guid(9da14db8f2e04f648a7a5a8acc7d1cad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9738562aa83a7db21af93eed99429400') in 0.014855 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/sryurikennset/Materials/syurikenn2-128m.mat
+  artifactKey: Guid(1222e87a4ff2d354eb9408c01d369c37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/Materials/syurikenn2-128m.mat using Guid(1222e87a4ff2d354eb9408c01d369c37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2106af0b4bffc8587eab404601e8287') in 0.042242 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/sryurikennset/Materials/Bamboo-cup1-2-128.mat
+  artifactKey: Guid(e22dfd40cf1329a44b0bc8db47f76e3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/Materials/Bamboo-cup1-2-128.mat using Guid(e22dfd40cf1329a44b0bc8db47f76e3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb1348647423b0fec445b828d4a22b22') in 0.075750 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/sryurikennset/Materials/Bamboo-cup1-1-128.mat
+  artifactKey: Guid(9ef1571901416314a98d5806c1e87696) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/Materials/Bamboo-cup1-1-128.mat using Guid(9ef1571901416314a98d5806c1e87696) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e89db0c4d7ea75f3c36aa375ec8e406c') in 0.014242 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 15.379543 seconds.
+  path: Assets/sryurikennset/Textures/Bamboo-cup1-2-128.png
+  artifactKey: Guid(3cdfac3f2412150458c18500d2bf6434) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/Textures/Bamboo-cup1-2-128.png using Guid(3cdfac3f2412150458c18500d2bf6434) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '706a7304edf907fd9ff1e4b663433aa1') in 0.023094 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/sryurikennset/Textures/Bamboo-cup1-3-128.png
+  artifactKey: Guid(01e0ef9a06c9e454dbf76dac4ad894cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/Textures/Bamboo-cup1-3-128.png using Guid(01e0ef9a06c9e454dbf76dac4ad894cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b449010081c5acb2778fe15b2186653') in 0.015694 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/sryurikennset/Textures/makimono1-2-128.png
+  artifactKey: Guid(bf62544c4d9d44b4594d6fd39133cc0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/Textures/makimono1-2-128.png using Guid(bf62544c4d9d44b4594d6fd39133cc0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9cf7b9aaf22e7ce351856bf82093dc9') in 0.016077 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/sryurikennset/Textures/Bamboo-water-bottle1-1-128.png
+  artifactKey: Guid(d398c0df11b90a4419b09ab69acc0ecb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/Textures/Bamboo-water-bottle1-1-128.png using Guid(d398c0df11b90a4419b09ab69acc0ecb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c39d37b0b617519065f574b0abcac806') in 0.016694 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/sryurikennset/Textures/makimono1-1-128.png
+  artifactKey: Guid(580c5decc57a2fe4abce210f77ea0f30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/Textures/makimono1-1-128.png using Guid(580c5decc57a2fe4abce210f77ea0f30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f80d41be884c858807d78c9691e3ac7e') in 0.015336 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/sryurikennset/Textures/syurikenn4-128.png
+  artifactKey: Guid(5700d4a90aad89c48b172d60c9141b95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/Textures/syurikenn4-128.png using Guid(5700d4a90aad89c48b172d60c9141b95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '752aabf61f9435048710b2038e36fd33') in 0.016938 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/sryurikennset/Textures/kunai1-128.png
+  artifactKey: Guid(025d862a192208c47a1430e4e9e9fd46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/Textures/kunai1-128.png using Guid(025d862a192208c47a1430e4e9e9fd46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3eebc74e92e73560f25ab26fc8ed1c1') in 0.014267 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/sryurikennset/Textures/takeyari1-1-128.png
+  artifactKey: Guid(511a11af7ef9c5d4da6d9b377af2bb2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/Textures/takeyari1-1-128.png using Guid(511a11af7ef9c5d4da6d9b377af2bb2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97b354aeb3c2a344ca891d293e17b3cc') in 0.014171 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/sryurikennset/Textures/syurikenn2-128.png
+  artifactKey: Guid(65bc201787c2ea046a12187bf34869bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/Textures/syurikenn2-128.png using Guid(65bc201787c2ea046a12187bf34869bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5134e3947504ee181e96c6734fb44e43') in 0.014467 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/sryurikennset/Textures/Bamboo-cup1-4-128.png
+  artifactKey: Guid(f6cbc2f7ff238c24b8dcfb30d4f73c56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/Textures/Bamboo-cup1-4-128.png using Guid(f6cbc2f7ff238c24b8dcfb30d4f73c56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f6aab8e8f0e4f0486570b88c700c6b5') in 0.013757 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 102.562463 seconds.
+  path: Assets/sryurikennset/models/Bamboo water bottle1-2.fbx
+  artifactKey: Guid(874c08d60badc924d9b7962a3809e738) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/models/Bamboo water bottle1-2.fbx using Guid(874c08d60badc924d9b7962a3809e738) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd73f2dace07696556e01e8e570b1dc0d') in 0.116194 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/sryurikennset/models/makimono1-1.fbx
+  artifactKey: Guid(53d64f05adb9847458fc7da4eedfbf74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/models/makimono1-1.fbx using Guid(53d64f05adb9847458fc7da4eedfbf74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f4d8e7cdd65b3f11d46a799c5f6c763') in 0.027004 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/sryurikennset/models/syurikenn3-1.fbx
+  artifactKey: Guid(8a23b4514430d4a46a3cd6dee0851aa4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/models/syurikenn3-1.fbx using Guid(8a23b4514430d4a46a3cd6dee0851aa4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff2ef9c859d143567958949efdee1120') in 0.031053 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000088 seconds.
+  path: Assets/sryurikennset/models/syurikenn2-2.fbx
+  artifactKey: Guid(176ffd32c56366c4c95aa229123735cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/models/syurikenn2-2.fbx using Guid(176ffd32c56366c4c95aa229123735cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '213da5610c9808e18cae9808fcd3ba95') in 0.026642 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/sryurikennset/models/kunai1-1-128.fbx
+  artifactKey: Guid(fa26d6832ac72de4eab11ab4bfb466fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/models/kunai1-1-128.fbx using Guid(fa26d6832ac72de4eab11ab4bfb466fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e378505d1c1e93881eb86637befa3338') in 0.405380 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 36.280470 seconds.
+  path: Assets/sryurikennset/prefabs/Bamboo water bottle1-2.prefab
+  artifactKey: Guid(ee97600a192ef64498e26a89cfd15e40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/prefabs/Bamboo water bottle1-2.prefab using Guid(ee97600a192ef64498e26a89cfd15e40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '299b9e46aeb5cbcc6b7b776c7ba3a9e7') in 0.020040 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/sryurikennset/prefabs/kunai1-2-128.prefab
+  artifactKey: Guid(db63e525ccc0d9448a5effe191669979) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/prefabs/kunai1-2-128.prefab using Guid(db63e525ccc0d9448a5effe191669979) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb2d6c1fe4e9a4cd4b0c22dca6fe4767') in 0.017347 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/sryurikennset/prefabs/makimono1-2.prefab
+  artifactKey: Guid(8e0583674379a5043b138d9294bb15f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/prefabs/makimono1-2.prefab using Guid(8e0583674379a5043b138d9294bb15f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55f7a741a85fb6f6bb0218004d9e0a41') in 0.014894 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/sryurikennset/prefabs/syurikenn1-2.prefab
+  artifactKey: Guid(fb6c796d1729a994ba02d6d2fcf7ede3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/prefabs/syurikenn1-2.prefab using Guid(fb6c796d1729a994ba02d6d2fcf7ede3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4efefda5af568410843b5ed23206473') in 0.013661 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 16
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/sryurikennset/prefabs/syurikenn2-2.prefab
+  artifactKey: Guid(4ecd92c6a47aeb040b6fbbaab61af57d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/prefabs/syurikenn2-2.prefab using Guid(4ecd92c6a47aeb040b6fbbaab61af57d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c44d17b75b72ff619eed5950a1a7f02') in 0.015517 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 16
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/sryurikennset/prefabs/makimono1-1.prefab
+  artifactKey: Guid(ef64e91558c342a47a898fba2e6b86e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/prefabs/makimono1-1.prefab using Guid(ef64e91558c342a47a898fba2e6b86e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27f774cc02973c501abdca827076deb7') in 0.017122 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/sryurikennset/prefabs/takeyari1.prefab
+  artifactKey: Guid(7958cd2cc8701f1478774a479b0bc914) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/prefabs/takeyari1.prefab using Guid(7958cd2cc8701f1478774a479b0bc914) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c89b994771b1f22e32d0535e829082b') in 0.018192 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/sryurikennset/prefabs/syurikenn2-1.prefab
+  artifactKey: Guid(638c8a3c86d829544a9920917955744e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/prefabs/syurikenn2-1.prefab using Guid(638c8a3c86d829544a9920917955744e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0535d0d5c96450bada02e9ab833f39f5') in 0.018212 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 16
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/sryurikennset/prefabs/syurikenn4.prefab
+  artifactKey: Guid(cb996f2169ae1404b841fb3d3453879b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sryurikennset/prefabs/syurikenn4.prefab using Guid(cb996f2169ae1404b841fb3d3453879b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e05eb0120954a216bb688e968ffed04') in 0.017279 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\tokiy\OneDrive\デスクトップ\unityRungame\wa\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\tokiy\OneDrive\デスクトップ\unityRungame\wa\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  1.138 seconds
+Refreshing native plugins compatible for Editor in 4.33 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.IO.IOException: Sharing violation on path C:\Users\tokiy\OneDrive\デスクトップ\unityRungame\wa\Assets\lilToon\Editor\CurrentRP.txt
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <697c5b3fd45741b99b7cab46a4b7b6ac>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options) [0x00000] in <697c5b3fd45741b99b7cab46a4b7b6ac>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions)
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, System.Boolean detectEncodingFromByteOrderMarks, System.Int32 bufferSize) [0x00055] in <697c5b3fd45741b99b7cab46a4b7b6ac>:0 
+  at System.IO.StreamReader..ctor (System.String path, System.Boolean detectEncodingFromByteOrderMarks) [0x00007] in <697c5b3fd45741b99b7cab46a4b7b6ac>:0 
+  at System.IO.StreamReader..ctor (System.String path) [0x00000] in <697c5b3fd45741b99b7cab46a4b7b6ac>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader..ctor(string)
+  at lilToon.lilStartup.lilStartupMethod () [0x00063] in C:\Users\tokiy\OneDrive\デスクトップ\unityRungame\wa\Assets\lilToon\Editor\lilStartup.cs:76 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <697c5b3fd45741b99b7cab46a4b7b6ac>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <697c5b3fd45741b99b7cab46a4b7b6ac>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <697c5b3fd45741b99b7cab46a4b7b6ac>:0 
+  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <dcccd05c4df34a519c0d00d5aed085b6>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.205 seconds
+Domain Reload Profiling:
+	ReloadAssembly (237ms)
+		BeginReloadAssembly (151ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (49ms)
+		LoadAllAssembliesAndSetupDomain (894ms)
+			LoadAssemblies (358ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (590ms)
+				TypeCache.Initialize (320ms)
+					TypeCache.ScanAssembly (314ms)
+				ResolveRequiredComponents (24ms)
+		FinalizeReload (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (0ms)
+			SetupLoadedEditorAssemblies (474ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (38ms)
+				SetLoadedEditorAssemblies (7ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (128ms)
+				ProcessInitializeOnLoadAttributes (250ms)
+				ProcessInitializeOnLoadMethodAttributes (39ms)
+				AfterProcessingInitializeOnLoad (11ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Refreshing native plugins compatible for Editor in 4.64 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3524 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 59 unused Assets / (8.4 MB). Loaded Objects now: 4047.
+Memory consumption went from 0.57 GB to 0.56 GB.
+Total: 5.909000 ms (FindLiveObjects: 0.274400 ms CreateObjectMapping: 0.239100 ms MarkObjects: 2.274700 ms  DeleteObjects: 3.119600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\tokiy\OneDrive\デスクトップ\unityRungame\wa\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\tokiy\OneDrive\デスクトップ\unityRungame\wa\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  1.116 seconds
+Refreshing native plugins compatible for Editor in 6.26 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.IO.IOException: Sharing violation on path C:\Users\tokiy\OneDrive\デスクトップ\unityRungame\wa\Assets\lilToon\Editor\CurrentRP.txt
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <697c5b3fd45741b99b7cab46a4b7b6ac>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options) [0x00000] in <697c5b3fd45741b99b7cab46a4b7b6ac>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions)
+  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append, System.Text.Encoding encoding, System.Int32 bufferSize) [0x00055] in <697c5b3fd45741b99b7cab46a4b7b6ac>:0 
+  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append) [0x00008] in <697c5b3fd45741b99b7cab46a4b7b6ac>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamWriter..ctor(string,bool)
+  at lilToon.lilStartup.lilStartupMethod () [0x000b0] in C:\Users\tokiy\OneDrive\デスクトップ\unityRungame\wa\Assets\lilToon\Editor\lilStartup.cs:84 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <697c5b3fd45741b99b7cab46a4b7b6ac>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <697c5b3fd45741b99b7cab46a4b7b6ac>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <697c5b3fd45741b99b7cab46a4b7b6ac>:0 
+  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <dcccd05c4df34a519c0d00d5aed085b6>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.054 seconds
+Domain Reload Profiling:
+	ReloadAssembly (258ms)
+		BeginReloadAssembly (156ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (47ms)
+		LoadAllAssembliesAndSetupDomain (852ms)
+			LoadAssemblies (364ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (546ms)
+				TypeCache.Initialize (312ms)
+					TypeCache.ScanAssembly (306ms)
+				ResolveRequiredComponents (5ms)
+		FinalizeReload (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (0ms)
+			SetupLoadedEditorAssemblies (480ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (55ms)
+				SetLoadedEditorAssemblies (8ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (123ms)
+				ProcessInitializeOnLoadAttributes (242ms)
+				ProcessInitializeOnLoadMethodAttributes (43ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Refreshing native plugins compatible for Editor in 4.58 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3525 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 59 unused Assets / (8.5 MB). Loaded Objects now: 4050.
+Memory consumption went from 0.57 GB to 0.56 GB.
+Total: 7.001700 ms (FindLiveObjects: 0.418800 ms CreateObjectMapping: 0.312200 ms MarkObjects: 2.407800 ms  DeleteObjects: 3.861600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\tokiy\OneDrive\デスクトップ\unityRungame\wa\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\tokiy\OneDrive\デスクトップ\unityRungame\wa\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  1.127 seconds
+Refreshing native plugins compatible for Editor in 4.70 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.050 seconds
+Domain Reload Profiling:
+	ReloadAssembly (250ms)
+		BeginReloadAssembly (162ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (46ms)
+		LoadAllAssembliesAndSetupDomain (872ms)
+			LoadAssemblies (376ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (558ms)
+				TypeCache.Initialize (318ms)
+					TypeCache.ScanAssembly (312ms)
+				ResolveRequiredComponents (6ms)
+		FinalizeReload (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (0ms)
+			SetupLoadedEditorAssemblies (467ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (45ms)
+				SetLoadedEditorAssemblies (6ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (121ms)
+				ProcessInitializeOnLoadAttributes (249ms)
+				ProcessInitializeOnLoadMethodAttributes (37ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Refreshing native plugins compatible for Editor in 10.26 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3525 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 59 unused Assets / (8.4 MB). Loaded Objects now: 4053.
+Memory consumption went from 0.57 GB to 0.56 GB.
+Total: 10.096000 ms (FindLiveObjects: 0.310100 ms CreateObjectMapping: 0.273100 ms MarkObjects: 4.964000 ms  DeleteObjects: 4.547500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\tokiy\OneDrive\デスクトップ\unityRungame\wa\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\tokiy\OneDrive\デスクトップ\unityRungame\wa\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  1.182 seconds
+Refreshing native plugins compatible for Editor in 4.49 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.057 seconds
+Domain Reload Profiling:
+	ReloadAssembly (248ms)
+		BeginReloadAssembly (160ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (50ms)
+		LoadAllAssembliesAndSetupDomain (929ms)
+			LoadAssemblies (378ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (607ms)
+				TypeCache.Initialize (357ms)
+					TypeCache.ScanAssembly (351ms)
+				ResolveRequiredComponents (4ms)
+		FinalizeReload (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (0ms)
+			SetupLoadedEditorAssemblies (466ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (48ms)
+				SetLoadedEditorAssemblies (8ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (120ms)
+				ProcessInitializeOnLoadAttributes (239ms)
+				ProcessInitializeOnLoadMethodAttributes (41ms)
+				AfterProcessingInitializeOnLoad (8ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Refreshing native plugins compatible for Editor in 5.86 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3525 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 59 unused Assets / (8.4 MB). Loaded Objects now: 4056.
+Memory consumption went from 0.57 GB to 0.56 GB.
+Total: 6.941100 ms (FindLiveObjects: 0.306400 ms CreateObjectMapping: 0.566600 ms MarkObjects: 2.405100 ms  DeleteObjects: 3.661800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
