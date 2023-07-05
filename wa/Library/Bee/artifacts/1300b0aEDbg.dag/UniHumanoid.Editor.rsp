@@ -358,10 +358,10 @@
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/VRM.ref.dll"
 -analyzer:"C:/Users/tokiy/OneDrive/デスクトップ/2022.2.6f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Users/tokiy/OneDrive/デスクトップ/2022.2.6f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
-"Assets/VRM Folder/VRM/UniHumanoid/Editor/BoneMappingEditor.cs"
-"Assets/VRM Folder/VRM/UniHumanoid/Editor/bvhAssetPostprocessor.cs"
-"Assets/VRM Folder/VRM/UniHumanoid/Editor/HumanPoseTransferEditor.cs"
-"Assets/VRM Folder/VRM/UniHumanoid/Editor/MuscleInspectorEditor.cs"
+"Assets/DownloadAsset/VRM Folder/VRM/UniHumanoid/Editor/BoneMappingEditor.cs"
+"Assets/DownloadAsset/VRM Folder/VRM/UniHumanoid/Editor/bvhAssetPostprocessor.cs"
+"Assets/DownloadAsset/VRM Folder/VRM/UniHumanoid/Editor/HumanPoseTransferEditor.cs"
+"Assets/DownloadAsset/VRM Folder/VRM/UniHumanoid/Editor/MuscleInspectorEditor.cs"
 -langversion:9.0
 
 /deterministic

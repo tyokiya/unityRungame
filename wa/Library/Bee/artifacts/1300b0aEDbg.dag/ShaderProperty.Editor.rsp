@@ -357,7 +357,7 @@
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/UnityEngine.UI.ref.dll"
 -analyzer:"C:/Users/tokiy/OneDrive/デスクトップ/2022.2.6f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Users/tokiy/OneDrive/デスクトップ/2022.2.6f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
-"Assets/VRM Folder/VRMShaders/ShaderProperty/Editor/ShaderPropMenu.cs"
+"Assets/DownloadAsset/VRM Folder/VRMShaders/ShaderProperty/Editor/ShaderPropMenu.cs"
 -langversion:9.0
 
 /deterministic

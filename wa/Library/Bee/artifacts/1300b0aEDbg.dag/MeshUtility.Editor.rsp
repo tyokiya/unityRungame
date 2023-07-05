@@ -357,9 +357,9 @@
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/UnityEngine.UI.ref.dll"
 -analyzer:"C:/Users/tokiy/OneDrive/デスクトップ/2022.2.6f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Users/tokiy/OneDrive/デスクトップ/2022.2.6f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
-"Assets/VRM Folder/MeshUtility/Editor/BoneMeshEraserWizard.cs"
-"Assets/VRM Folder/MeshUtility/Editor/HumanoidEditor.cs"
-"Assets/VRM Folder/MeshUtility/Editor/MeshUtility.cs"
+"Assets/DownloadAsset/VRM Folder/MeshUtility/Editor/BoneMeshEraserWizard.cs"
+"Assets/DownloadAsset/VRM Folder/MeshUtility/Editor/HumanoidEditor.cs"
+"Assets/DownloadAsset/VRM Folder/MeshUtility/Editor/MeshUtility.cs"
 -langversion:9.0
 
 /deterministic
