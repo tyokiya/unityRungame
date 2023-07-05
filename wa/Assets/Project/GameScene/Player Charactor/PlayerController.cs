@@ -45,8 +45,6 @@ public class PlayerController : MonoBehaviour
         //オブジェクトを入れる
 
     }
-
-  
     void Update()
     {
         //開始から3秒後プレイヤーが走り始める
@@ -64,7 +62,14 @@ public class PlayerController : MonoBehaviour
         switch (inputDetector.GetComponent<ScreenInput>().GetNowFlick())
         {
             case ScreenInput.FlickDirection.UP:         //ジャンプ処理
-                PlayerJump();
+                if(this.runFlg == true)
+                {
+                    PlayerJump();
+                }
+                else //左右移動ができない場合は前へ進む
+                {
+                    PlayerMove(this.runFlg);
+                }
                 break;
             case ScreenInput.FlickDirection.RIGHT:      //右移動処理
                 //連続で処理しないようスパンを設ける
@@ -109,6 +114,8 @@ public class PlayerController : MonoBehaviour
             this.animator.SetTrigger("JumpTrigger");
             //y軸に力を加える
             this.rd.AddForce(transform.up * this.jumpForce);
+            //z軸の移動を加える
+            transform.Translate(0, 0, this.runSpeed);
         }
     }
     

@@ -11,7 +11,7 @@ public class GroundGenerator : MonoBehaviour
     //地面のprefabを入れる変数
     public GameObject groundPrefab;
     //生成間隔を測るタイマー
-    float span = 3.0f;
+    [SerializeField] private float span = 1.5f;
     float delta = 0;
     //生成した地面の枚数カウンター
     int GroundCnt = 0;
