@@ -10,7 +10,7 @@ public class CameraController : MonoBehaviour
 {
     //プレイヤーオブジェクトを入れる変数
     GameObject player;
-    void Start()
+    void Awake()
     {
         //代入
         this.player = GameObject.Find("Player");

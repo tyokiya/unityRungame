@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
     bool runFlg = false;
    
 
-    void Start()
+    void Awake()
     {
         //フレームレート固定
         Application.targetFrameRate = 30;

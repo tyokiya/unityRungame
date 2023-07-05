@@ -382,6 +382,7 @@
 "Assets/Scripts/Ground/GroundController.cs"
 "Assets/Scripts/Ground/GroundGenerator.cs"
 "Assets/Scripts/Player/PlayerController.cs"
+"Assets/Scripts/Player/PlayerDirector.cs"
 "Assets/Scripts/ScreenInput/ScreenInput.cs"
 -langversion:9.0
 

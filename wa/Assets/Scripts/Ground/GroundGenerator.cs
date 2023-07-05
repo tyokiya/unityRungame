@@ -16,7 +16,7 @@ public class GroundGenerator : MonoBehaviour
     //生成した地面の枚数カウンター
     int GroundCnt = 0;
 
-    void Start()
+    void Awake()
     {
         //地面10枚分生成
         for(int i = 0; i < 10; i++)
