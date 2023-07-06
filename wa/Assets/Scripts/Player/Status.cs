@@ -27,7 +27,7 @@ public class Status : MonoBehaviour
     {
         //3秒待機
         yield return new WaitForSeconds(3f);
-        Debug.Log("ステータスコルーチン実行");
+        //Debug.Log("ステータスコルーチン実行");
         //状態を切り替え
         this.nowSituation = situation.run;
     }

@@ -9,7 +9,9 @@ public class GroudCheck : MonoBehaviour
     //地面に立っているか
     bool StandGroundFlg = true;
 
-
+    /// <summary>
+    /// 衝突を受け取りフラグを立てる
+    /// </summary>
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == groundTag)
@@ -18,6 +20,9 @@ public class GroudCheck : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 判定がなくなったらフラグを下ろす
+    /// </summary>
     private void OnTriggerExit(Collider other)
     {
         this.StandGroundFlg = false;

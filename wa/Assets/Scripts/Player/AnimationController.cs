@@ -18,12 +18,6 @@ public class AnimationController : MonoBehaviour
         this.animator = ParentObject.GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     /// <summary>
     /// 3秒後トリガーを切り替えるコルーチン
     /// </summary>
@@ -32,7 +26,7 @@ public class AnimationController : MonoBehaviour
     {
         //3秒待機
         yield return new WaitForSeconds(3f);
-        Debug.Log("トリガーコルーチン実行");
+        //Debug.Log("トリガーコルーチン実行");
         //runアニメーションのトリガーに切り替える
         this.animator.SetTrigger("RunTrigger");
     }

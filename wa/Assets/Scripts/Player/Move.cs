@@ -54,54 +54,56 @@ public class Move : MonoBehaviour
     /// <param name="nowFlick">現在の入力状態</param>
     public void MovePlayerUpdate(ScreenInput.FlickDirection flick, Status.situation situation)
     {
-
-
-        //フリックに応じて処理
-        switch (flick)
+        //歩き状態のときはあるき処理のみ
+        if(situation == Status.situation.walk)
         {
-            case ScreenInput.FlickDirection.UP:             //ジャンプ処理
-                if (situation == Status.situation.run)
-                {
-                    //ジャンプ
-                    PlayerJump();
-                }
-                else//ジャンプできな場合前へ進む
-                {
-                    PlayerRun();
-                }
-                break;
-            case ScreenInput.FlickDirection.RIGHT:          //右移動処理
-                //連続で処理しないようスパンを設ける
-                if (this.delta > this.lateralMoveSpan && situation == Status.situation.run)
-                {
-                    PlayerLateralMoveMent(true);
-                }
-                else         //横移動できないときは走り処理の実行
-                {
-                    PlayerRun();
-                }
-                    break;
-            case ScreenInput.FlickDirection.LEFT:           //左移動処理
-                //連続で処理しないようスパンを設ける
-                if (this.delta > this.lateralMoveSpan && situation == Status.situation.run)
-                {
-                    PlayerLateralMoveMent(false);
-                }
-                else         //横移動できないときは走り処理の実行
-                {
-                    PlayerRun();
-                }
-                    break;
-            default:
-                //走り処理
-                PlayerRun();
-                break;
+            PlayerWalk();
         }
-
-        //状態が歩きのときのみ歩き処理
-        if(situation == Status.situation.walk) PlayerWalk();
-
-
+        else     //走り状態のときはフリックを受け取りそれに合わせた処理を行う
+        {
+            //フリックに応じて処理
+            switch (flick)
+            {
+                case ScreenInput.FlickDirection.UP:             //ジャンプ処理
+                    if (situation == Status.situation.run)
+                    {
+                        //ジャンプ
+                        PlayerJump();
+                    }
+                    else//ジャンプできな場合前へ進む
+                    {
+                        PlayerRun();
+                    }
+                    break;
+                case ScreenInput.FlickDirection.RIGHT:          //右移動処理
+                                                                //連続で処理しないようスパンを設ける
+                    if (this.delta > this.lateralMoveSpan && situation == Status.situation.run)
+                    {
+                        PlayerLateralMoveMent(true);
+                    }
+                    else         //横移動できないときは走り処理の実行
+                    {
+                        PlayerRun();
+                    }
+                    break;
+                case ScreenInput.FlickDirection.LEFT:           //左移動処理
+                                                                //連続で処理しないようスパンを設ける
+                    if (this.delta > this.lateralMoveSpan && situation == Status.situation.run)
+                    {
+                        PlayerLateralMoveMent(false);
+                    }
+                    else         //横移動できないときは走り処理の実行
+                    {
+                        PlayerRun();
+                    }
+                    break;
+                default:
+                    //走り処理
+                    PlayerRun();
+                    break;
+            }
+        }
+        
     }
 
     /// <summary>
