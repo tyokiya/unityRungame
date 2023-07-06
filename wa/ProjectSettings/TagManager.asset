@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Goal
   - Attack
+  - Ground
   layers:
   - Default
   - TransparentFX
