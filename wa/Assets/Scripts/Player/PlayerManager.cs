@@ -22,13 +22,14 @@ public class PlayerManager : MonoBehaviour
     //接地フラグ入れる変数
     bool isGroudFlg = false;
     //プレイヤーの被弾フラグ
-    bool PlayerDamageFlg = false;
+    bool playerDamageFlg = false;
+    //プレイヤーのアイテム獲得フラグ
+    bool playerItemGetFlg = false;
 
     //現在の入力状態を入れる変数
     ScreenInput.FlickDirection nowFlick;
     //現在のプレイヤー状態を入れる変数
     Status.situation nowSituation;
-
 
     void Start()
     {
@@ -53,21 +54,39 @@ public class PlayerManager : MonoBehaviour
         anim.AnimationUpdate(this.nowFlick, this.nowSituation);
 
         //被弾フラグ立っている場合それぞれに被弾処理を命令する
-        if(this.PlayerDamageFlg == true)
+        if(this.playerDamageFlg == true)
         {
-            Debug.Log("被弾処理開始");
+            //Debug.Log("被弾処理開始");
 
             //フラグを下ろす
-            this.PlayerDamageFlg = false;
+            this.playerDamageFlg = false;
+        }
+
+        //アイテム獲得フラグが立ってる場合それぞれに処理を命令
+        if(this.playerItemGetFlg == true)
+        {
+            Debug.Log("アイテム獲得処理開始");
+
+            //フラグを下ろす
+            this.playerItemGetFlg = false;
         }
     }
 
     /// <summary>
     /// プレイヤーがダメージを受けた報告を受け取る
     /// </summary>
-    public void DamageReportAcceptance()
+    public void DamageReport()
     {
         //プレイヤーの被弾フラグを立てる
-        this.PlayerDamageFlg = true;
+        this.playerDamageFlg = true;
+    }
+
+    /// <summary>
+    /// プレイヤーがアイテムをゲットした方向を受け取る
+    /// </summary>
+    public void ItemGetReport()
+    {
+        //アイテム獲得フラグを立てる
+        this.playerItemGetFlg = true;
     }
 }
