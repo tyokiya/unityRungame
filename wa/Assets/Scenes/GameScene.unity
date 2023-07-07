@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.015084517, g: 0.009028479, b: 0.014055261, a: 1}
+  m_IndirectSpecularColor: {r: 0.015083565, g: 0.009027443, b: 0.014054845, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -426,9 +426,6 @@ PrefabInstance:
       addedObject: {fileID: 1657095317}
     - targetCorrespondingSourceObject: {fileID: 4764421709180378862, guid: 4e2d0ed7781ee794ab3f0c0f6769487a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1657095316}
-    - targetCorrespondingSourceObject: {fileID: 4764421709180378862, guid: 4e2d0ed7781ee794ab3f0c0f6769487a, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1657095318}
   m_SourcePrefab: {fileID: 100100000, guid: 4e2d0ed7781ee794ab3f0c0f6769487a, type: 3}
 --- !u!1 &806446433
@@ -729,20 +726,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4764421709180378862, guid: 4e2d0ed7781ee794ab3f0c0f6769487a, type: 3}
   m_PrefabInstance: {fileID: 798443487}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1657095316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1657095306}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d8f4840234967445bfdc1e65a9ddf65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpForce: 500
-  walkSpeed: 0.1
 --- !u!54 &1657095317
 Rigidbody:
   m_ObjectHideFlags: 0
