@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+////////////////////////////////////
+// 地面の衝突を管理するスクリプト
+////////////////////////////////////
+
 public class GroudCheck : MonoBehaviour
 {
     //地面のタグ名
@@ -14,9 +18,11 @@ public class GroudCheck : MonoBehaviour
     /// </summary>
     private void OnTriggerEnter(Collider other)
     {
+        //衝突したものが地面なのかを調べる
         if (other.tag == groundTag)
         {
             this.StandGroundFlg = true;
+
         }
     }
 
