@@ -33,6 +33,7 @@ public class PlayerManager : MonoBehaviour
 
     void Start()
     {
+        //コルーチン呼び出し
         StartCoroutine(status.ChangeSituation());
         StartCoroutine(anim.ChangeAnimaiton());
     }
