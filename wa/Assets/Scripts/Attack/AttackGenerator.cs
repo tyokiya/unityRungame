@@ -20,11 +20,6 @@ public class AttackGenerator : MonoBehaviour
     //まきびし生成時のプレイヤーとの距離
     [SerializeField] float makibishiDistance = 10.0f;
 
-    void Update()
-    {
-        
-    }
-
     /// <summary>
     /// ナイフ攻撃を生成
     /// </summary>
@@ -66,5 +61,14 @@ public class AttackGenerator : MonoBehaviour
         GameObject makibishi = Instantiate(this.makibishiPrefab);
         //座標設定
         makibishi.transform.position = new Vector3(plyPos.x, plyPos.y, plyPos.z + this.makibishiDistance);
+    }
+
+    /// <summary>
+    /// ナイフの生成数増加
+    /// </summary>
+    /// <param name="changeNum">変える生成数</param>
+    public void SetKnifeNum(int changeNum)
+    {
+        this.knifeNum = changeNum;
     }
 }

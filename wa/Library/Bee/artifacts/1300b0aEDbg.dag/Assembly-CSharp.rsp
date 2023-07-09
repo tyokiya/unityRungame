@@ -380,6 +380,7 @@
 -analyzer:"C:/Users/tokiy/OneDrive/デスクトップ/2022.2.6f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/Attack/AttackGenerator.cs"
 "Assets/Scripts/Attack/AttackManager.cs"
+"Assets/Scripts/Attack/AttackSurvivalControler.cs"
 "Assets/Scripts/Attack/MoveAttack.cs"
 "Assets/Scripts/Camera/CameraController.cs"
 "Assets/Scripts/Frame/FrameCntroller.cs"

@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 ////////////////////////////////////
-// プレイヤーの被弾を管理するスクリプト
+// クナイの動きを管理するスクリプト
 ////////////////////////////////////
 
 public class MoveAttack : MonoBehaviour
 {
     //移動速度
-    //[SerializeField] float MoveSpeed = 0.3f;
-    [SerializeField] Vector3 velocity = new Vector3(0f, 0f, -5f);
+  
+    Vector3 velocity = new Vector3(0f, 0f, -80f);
 
     //コンポーネントを入れる変数
     Rigidbody rd;
