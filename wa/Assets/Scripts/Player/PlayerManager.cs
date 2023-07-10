@@ -18,6 +18,7 @@ public class PlayerManager : MonoBehaviour
     public Move move;
     //アニメーションを管理するスクリプト
     public AnimationController anim;
+   
 
     //接地フラグ入れる変数
     bool isGroudFlg = false;
@@ -50,9 +51,9 @@ public class PlayerManager : MonoBehaviour
         //ステータスの更新
         this.status.SituationUpdate(this.isGroudFlg, this.nowFlick);
         //移動の更新
-        move.MovePlayerUpdate(this.nowFlick, this.nowSituation);
+        this.move.MovePlayerUpdate(this.nowFlick, this.nowSituation);
         //アニメーション更新
-        anim.AnimationUpdate(this.nowFlick, this.nowSituation);
+        this.anim.AnimationUpdate(this.nowFlick, this.nowSituation);
 
         //被弾フラグ立っている場合それぞれに被弾処理を命令する
         if(this.playerDamageFlg == true)
@@ -67,6 +68,8 @@ public class PlayerManager : MonoBehaviour
         if(this.playerItemGetFlg == true)
         {
             Debug.Log("アイテム獲得処理開始");
+            //アイテム獲得数上昇処理
+            this.status.RiseItemSucore();
 
             //フラグを下ろす
             this.playerItemGetFlg = false;

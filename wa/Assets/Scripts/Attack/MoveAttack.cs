@@ -10,7 +10,7 @@ public class MoveAttack : MonoBehaviour
 {
     //移動速度
   
-    Vector3 velocity = new Vector3(0f, 0f, -80f);
+    Vector3 velocity = new Vector3(0f, 0f, -50f);
 
     //コンポーネントを入れる変数
     Rigidbody rd;
@@ -20,6 +20,7 @@ public class MoveAttack : MonoBehaviour
         //コンポーネント取得
         rd = GetComponent<Rigidbody>();
     }
+
     void Update()
     {
         //プレイヤーに向かって移動

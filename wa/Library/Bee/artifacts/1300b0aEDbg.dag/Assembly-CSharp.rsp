@@ -386,6 +386,8 @@
 "Assets/Scripts/Frame/FrameCntroller.cs"
 "Assets/Scripts/Ground/GroundController.cs"
 "Assets/Scripts/Ground/GroundGenerator.cs"
+"Assets/Scripts/Item/ItemGenerator.cs"
+"Assets/Scripts/Item/ItemManagr.cs"
 "Assets/Scripts/Player/AnimationController.cs"
 "Assets/Scripts/Player/CollisionCheck.cs"
 "Assets/Scripts/Player/GroudCheck.cs"

@@ -32,7 +32,7 @@ public class AttackGenerator : MonoBehaviour
             GameObject knife = Instantiate(this.KnifePrefab);
             //ç¿ïWê›íË
             int dice = Random.Range(-1, 2);
-            knife.transform.position = new Vector3(0.8f * dice, plyPos.y, plyPos.z + this.knifeDistance);
+            knife.transform.position = new Vector3(0.8f * dice, 0, plyPos.z + this.knifeDistance);
         }
         else if (this.knifeNum == 2)
         {
@@ -46,7 +46,7 @@ public class AttackGenerator : MonoBehaviour
             {
                 dice2 = Random.Range(-1, 2);
             }
-            knife2.transform.position = new Vector3(0.8f * dice, plyPos.y, plyPos.z + this.knifeDistance);
+            knife2.transform.position = new Vector3(0.8f * dice, 0, plyPos.z + this.knifeDistance);
 
         }
     }
@@ -60,7 +60,7 @@ public class AttackGenerator : MonoBehaviour
         //çUåÇÇÃê∂ê¨
         GameObject makibishi = Instantiate(this.makibishiPrefab);
         //ç¿ïWê›íË
-        makibishi.transform.position = new Vector3(plyPos.x, plyPos.y, plyPos.z + this.makibishiDistance);
+        makibishi.transform.position = new Vector3(plyPos.x, 0, plyPos.z + this.makibishiDistance);
     }
 
     /// <summary>

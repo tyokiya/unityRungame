@@ -10,6 +10,8 @@ public class Status : MonoBehaviour
 {
     //プレイヤーの体力
     //int HP = 10;
+    //獲得アイテム数
+    int getItemCnt = 0;
     //プレイヤーの状態
     public enum situation
     { 
@@ -56,5 +58,12 @@ public class Status : MonoBehaviour
   
     }
 
-   
+    /// <summary>
+    /// 獲得アイテム数の上昇
+    /// </summary>
+    public void RiseItemSucore()
+    {
+        Debug.Log("アイテム数上昇");
+        this.getItemCnt++;
+    }
 }

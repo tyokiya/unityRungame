@@ -30,7 +30,7 @@ public class AttackSurvivalControler : MonoBehaviour
         if(plyPos.z - 2.0f > transform.position.z)
         {
             Destroy(gameObject);
-            Debug.Log("攻撃オブジェクト破壊");
+            //Debug.Log("攻撃オブジェクト破壊");
         }
     }
 }
