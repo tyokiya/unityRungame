@@ -18,7 +18,7 @@ public class AttackGenerator : MonoBehaviour
     //ナイフ生成時のプレイヤーとの距離
     [SerializeField] float knifeDistance = 30.0f;
     //まきびし生成時のプレイヤーとの距離
-    [SerializeField] float makibishiDistance = 10.0f;
+    [SerializeField] float makibishiDistance = 20.0f;
 
     /// <summary>
     /// ナイフ攻撃を生成

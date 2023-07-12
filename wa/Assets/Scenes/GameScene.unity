@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.015083565, g: 0.009027443, b: 0.014054845, a: 1}
+  m_IndirectSpecularColor: {r: 0.015084517, g: 0.009028479, b: 0.014055261, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -204,7 +204,7 @@ MonoBehaviour:
   makibishiPrefab: {fileID: 2655963632520950598, guid: 7149731ed2b0d044ebbcf3714f26ccf2, type: 3}
   knifeNum: 1
   knifeDistance: 30
-  makibishiDistance: 10
+  makibishiDistance: 40
 --- !u!4 &270418888
 Transform:
   m_ObjectHideFlags: 0
