@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Schema;
 using UnityEngine;
+using static Status;
 
 ////////////////////////////////////
 // プレイヤーの動きを管理するスクリプト
@@ -33,6 +34,10 @@ public class Move : MonoBehaviour
     //移動可能タイミングのスパン
     float lateralMoveSpan = 0.1f;
 
+    //インスペクターから設定
+    //プレイヤーマネージャーのスクリプト
+    public PlayerManager manager;
+
     void Awake()
     {
         //親オブジェクトを取得
@@ -51,11 +56,13 @@ public class Move : MonoBehaviour
     /// <summary>
     /// プレイヤーを入力状態に応じて動かす
     /// </summary>
-    /// <param name="nowFlick">現在の入力状態</param>
-    public void MovePlayerUpdate(ScreenInput.FlickDirection flick, Status.situation situation)
+    /// <param name="flick">現在の入力状態</param>
+    /// <param name="situation">現在のプレイヤーの状態</param>
+    /// <param name="direction">現在のプレイヤーの向いてる方向</param>
+    public void MovePlayerUpdate(ScreenInput.FlickDirection flick, Status.PlayerSituation situation, Status.PlayerDirection direction)
     {
         //歩き状態のときはあるき処理のみ
-        if(situation == Status.situation.walk)
+        if(situation == Status.PlayerSituation.walk)
         {
             PlayerWalk();
         }
@@ -65,41 +72,47 @@ public class Move : MonoBehaviour
             switch (flick)
             {
                 case ScreenInput.FlickDirection.UP:             //ジャンプ処理
-                    if (situation == Status.situation.run)
+                    if (situation == Status.PlayerSituation.run)
                     {
                         //ジャンプ
                         PlayerJump();
                     }
                     else//ジャンプできな場合前へ進む
                     {
-                        PlayerRun();
+                        PlayerRun(direction);
                     }
                     break;
                 case ScreenInput.FlickDirection.RIGHT:          //右移動処理
                                                                 //連続で処理しないようスパンを設ける
-                    if (this.delta > this.lateralMoveSpan && situation == Status.situation.run)
+                    if (this.delta > this.lateralMoveSpan && situation == Status.PlayerSituation.run)
                     {
+                        //右に向く処理
                         PlayerLateralMoveMent(true);
+                        //方向が変わったことをマネージャーに知らせる
+                        manager.PlayerChangeDirection(true);
                     }
                     else         //横移動できないときは走り処理の実行
                     {
-                        PlayerRun();
+                        PlayerRun(direction);
                     }
                     break;
                 case ScreenInput.FlickDirection.LEFT:           //左移動処理
                                                                 //連続で処理しないようスパンを設ける
-                    if (this.delta > this.lateralMoveSpan && situation == Status.situation.run)
+                    if (this.delta > this.lateralMoveSpan && situation == Status.PlayerSituation.run)
                     {
+                        //左に向く処理
                         PlayerLateralMoveMent(false);
+                        //方向が変わったことをマネージャーに知らせる
+                        manager.PlayerChangeDirection(false);
                     }
                     else         //横移動できないときは走り処理の実行
                     {
-                        PlayerRun();
+                        PlayerRun(direction);
                     }
                     break;
                 default:
                     //走り処理
-                    PlayerRun();
+                    PlayerRun(direction);
                     break;
             }
         }
@@ -122,12 +135,27 @@ public class Move : MonoBehaviour
     /// <summary>
     /// プレイヤーの走り移動
     /// </summary>
-    void PlayerRun()
+    /// <param name="direction">プレイヤーの方向</param>
+    void PlayerRun(Status.PlayerDirection direction)
     {
-        //z軸の移動を加える
         //rd.velocity = this.runVelocity;
+        //プレイヤーの方向に合わせた移動処理
+        switch (direction)
+        {
+            case PlayerDirection.front:
+                pos.transform.Translate(0, 0, 0.2f);
+                break;
+            case PlayerDirection.right:
+                pos.transform.Translate(0.2f, 0, 0);
+                break;
+            case PlayerDirection.back:
+                pos.transform.Translate(0, 0, -0.2f);
+                break;
+            case PlayerDirection.left:
+                pos.transform.Translate(-0.2f, 0, 0);
+                break;
+        }
 
-        pos.transform.Translate(0, 0, 0.2f);
     }
 
     /// <summary>
@@ -152,12 +180,18 @@ public class Move : MonoBehaviour
             //rd.velocity = rightVelocity;
             //仮実装
             this.pos.Translate(0.8f, 0, 0.2f);
+            //右を向かせる　
+            this.pos.eulerAngles = new Vector3(0, 90.0f, 0);
+            
+            
         }
         else if (rightFlg == false && this.pos.position.x > -0.8)//左移動 
         {
             //rd.velocity = leftVelocity;
             //仮実装
             this.pos.Translate(0.8f * -1, 0, 0.2f);
+            //左を向かせる　
+            this.pos.eulerAngles = new Vector3(0, -90.0f, 0);
         }
 
         //delta初期化

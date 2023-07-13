@@ -30,7 +30,9 @@ public class PlayerManager : MonoBehaviour
     //現在の入力状態を入れる変数
     ScreenInput.FlickDirection nowFlick;
     //現在のプレイヤー状態を入れる変数
-    Status.situation nowSituation;
+    Status.PlayerSituation nowSituation;
+    //現在のプレイヤーの向いてる方向を入れる変数
+    Status.PlayerDirection nowDirection;
 
     void Start()
     {
@@ -47,11 +49,13 @@ public class PlayerManager : MonoBehaviour
         this.nowFlick = this.screenInput.GetNowFlick();
         //現在の状態を受け取る
         this.nowSituation = this.status.GetNowPlayerSituation();
+        //現在のプレイヤーの向いてる方向を受け取る
+        this.nowDirection = this.status.GetNowPlayerDirection();
 
         //ステータスの更新
         this.status.SituationUpdate(this.isGroudFlg, this.nowFlick);
         //移動の更新
-        this.move.MovePlayerUpdate(this.nowFlick, this.nowSituation);
+        this.move.MovePlayerUpdate(this.nowFlick, this.nowSituation, this.nowDirection);
         //アニメーション更新
         this.anim.AnimationUpdate(this.nowFlick, this.nowSituation);
 
@@ -86,11 +90,21 @@ public class PlayerManager : MonoBehaviour
     }
 
     /// <summary>
-    /// プレイヤーがアイテムをゲットした方向を受け取る
+    /// プレイヤーがアイテムをゲットした報告を受け取る
     /// </summary>
     public void ItemGetReport()
     {
         //アイテム獲得フラグを立てる
         this.playerItemGetFlg = true;
+    }
+
+    /// <summary>
+    /// プレイヤーの方向が変わった方向を受け取る
+    /// </summary>
+    /// <param name="rightFlg">右向きの回転かのフラグ</param>
+    public void PlayerChangeDirection(bool rightFlg)
+    {
+        //プレイヤーの方向の変更を指示
+        status.ChangeDirection(rightFlg);
     }
 }

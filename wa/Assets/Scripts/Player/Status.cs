@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Schema;
+using Unity.VisualScripting;
 using UnityEngine;
 
 ////////////////////////////////////
@@ -13,13 +15,23 @@ public class Status : MonoBehaviour
     //獲得アイテム数
     int getItemCnt = 0;
     //プレイヤーの状態
-    public enum situation
+    public enum PlayerSituation
     { 
         walk,
         run,
         jump
     }
-    situation nowSituation = situation.walk;
+    PlayerSituation nowSituation = PlayerSituation.walk;
+
+    //初期の向いてる方角を前のした時の現在のプレイヤー向いている方向
+    public enum PlayerDirection
+    {
+        front,
+        right,
+        back,
+        left
+    }
+    PlayerDirection nowDirection = PlayerDirection.front;
 
     /// <summary>
     /// 3秒後状態を切りかえるコルーチン
@@ -31,15 +43,23 @@ public class Status : MonoBehaviour
         yield return new WaitForSeconds(3f);
         //Debug.Log("ステータスコルーチン実行");
         //状態を切り替え
-        this.nowSituation = situation.run;
+        this.nowSituation = PlayerSituation.run;
     }
 
     /// <summary>
     /// 現在のプレイヤーの状態を返す
     /// </summary>
-    public situation GetNowPlayerSituation()
+    public PlayerSituation GetNowPlayerSituation()
     {
         return this.nowSituation;
+    }
+
+    /// <summary>
+    /// 現在のプレイヤーの方向を返す
+    /// </summary>
+    public PlayerDirection GetNowPlayerDirection()
+    {
+        return this.nowDirection;
     }
 
     /// <summary>
@@ -50,11 +70,11 @@ public class Status : MonoBehaviour
     public void SituationUpdate(bool GroundFlg, ScreenInput.FlickDirection flick)
     {
         //ジャンプ状態から地面についた場合ステータスを変更
-        if (GroundFlg == true && this.nowSituation == situation.jump) this.nowSituation = situation.run;
+        if (GroundFlg == true && this.nowSituation == PlayerSituation.jump) this.nowSituation = PlayerSituation.run;
 
         //フリックの状態に応じてステータスを変更
         //プレイヤーが走っている状態のときはジャンプに切り替える
-        if (flick == ScreenInput.FlickDirection.UP && this.nowSituation == situation.run) this.nowSituation = situation.jump;
+        if (flick == ScreenInput.FlickDirection.UP && this.nowSituation == PlayerSituation.run) this.nowSituation = PlayerSituation.jump;
   
     }
 
@@ -65,5 +85,66 @@ public class Status : MonoBehaviour
     {
         Debug.Log("アイテム数上昇");
         this.getItemCnt++;
+    }
+
+    /// <summary>
+    /// プレイヤーの方向を変える
+    /// </summary>
+    /// <param name="rightFlg">右向きの回転かのフラグ</param>
+    public void ChangeDirection(bool rightFlg)
+    {
+        //現在の方向と回転方向に応じた処理
+        switch(this.nowDirection)
+        {
+            case PlayerDirection.front:
+                if(rightFlg == true)
+                {
+                    this.nowDirection = PlayerDirection.right;
+                    Debug.Log("プレイヤーの方向変更(右)");
+                }
+                else
+                {
+                    this.nowDirection = PlayerDirection.left;
+                    Debug.Log("プレイヤーの方向変更(左)");
+                }
+                break;
+            case PlayerDirection.right:
+                if (rightFlg == true)
+                {
+                    this.nowDirection = PlayerDirection.back;
+                    Debug.Log("プレイヤーの方向変更(後)");
+                }
+                else
+                {
+                    this.nowDirection = PlayerDirection.front;
+                    Debug.Log("プレイヤーの方向変更(前)");
+                }
+                break;
+            case PlayerDirection.back:
+                if (rightFlg == true)
+                {
+                    this.nowDirection = PlayerDirection.left;
+                    Debug.Log("プレイヤーの方向変更(左)");
+                }
+                else
+                {
+                    this.nowDirection = PlayerDirection.right;
+                    Debug.Log("プレイヤーの方向変更(右)");
+                }
+                break;
+            case PlayerDirection.left:
+                if (rightFlg == true)
+                {
+                    this.nowDirection = PlayerDirection.front;
+                    Debug.Log("プレイヤーの方向変更(前)");
+                }
+                else
+                {
+                    this.nowDirection = PlayerDirection.back;
+                    Debug.Log("プレイヤーの方向変更(後)");
+                }
+                break;
+        }
+        
     }
 }

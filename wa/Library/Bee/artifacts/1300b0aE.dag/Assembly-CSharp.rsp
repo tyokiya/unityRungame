@@ -383,6 +383,7 @@
 "Assets/Scripts/Attack/AttackSurvivalControler.cs"
 "Assets/Scripts/Attack/MoveAttack.cs"
 "Assets/Scripts/Camera/CameraController.cs"
+"Assets/Scripts/Camera/CameraManager.cs"
 "Assets/Scripts/Frame/FrameCntroller.cs"
 "Assets/Scripts/Ground/GroundController.cs"
 "Assets/Scripts/Ground/GroundGenerator.cs"

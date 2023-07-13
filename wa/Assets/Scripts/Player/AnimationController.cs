@@ -36,9 +36,9 @@ public class AnimationController : MonoBehaviour
     /// </summary>
     /// <param name="flick">入力状態</param>
     /// <param name="situation">プレイヤーの状態</param>
-    public void AnimationUpdate(ScreenInput.FlickDirection flick, Status.situation situation)
+    public void AnimationUpdate(ScreenInput.FlickDirection flick, Status.PlayerSituation situation)
     {
         //入力を受けつけトリガーを切り替える
-        if(flick == ScreenInput.FlickDirection.UP && situation == Status.situation.run) this.animator.SetTrigger("JumpTrigger");
+        if(flick == ScreenInput.FlickDirection.UP && situation == Status.PlayerSituation.run) this.animator.SetTrigger("JumpTrigger");
     }
 }
