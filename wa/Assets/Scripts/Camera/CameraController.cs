@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static Status;
+using static UnityEditor.PlayerSettings;
 
 ////////////////////////////////////
 // カメラのコントローラースクリプト
@@ -12,62 +13,71 @@ public class CameraController : MonoBehaviour
     //カメラとプレイヤーの一定距離
     float playerDistance = 3.5f;
 
-    //タイマー
-    float delta = 0;
-    //回転可能タイミングのスパン
-    float rotationSpan = 0.1f;
-
-    void Update()
-    {
-        //delta増加
-        this.delta += Time.deltaTime;
-
-    }
-
     /// <summary>
     /// カメラの情報更新
     /// </summary>
     /// <param name="playerPos">現在のプレイヤーの座標</param>
-    /// <param name="flick">現在の入力状態</param>
-    public void UpdateCamera(Vector3 playerPos, ScreenInput.FlickDirection flick)
+    /// <param name="direction">現在のプレイヤーの向いてる方向</param>
+    public void UpdateCamera(Vector3 playerPos, Status.PlayerDirection direction)
     {
-        //フリックに応じて処理
-        switch (flick)
-        {
-            case ScreenInput.FlickDirection.RIGHT:          //右に向く処理
-                RotationCamera(true);
-                break;
-            case ScreenInput.FlickDirection.LEFT:           //左に向く処理
-                RotationCamera(false);
-                break;
-        }
+        //プレイヤーの向いてる方向をもとに
+        //カメラの向きを変える
+        RotationCamera(direction);
 
+        //プレイヤーの向いてる方向をもとに
         //常に一定の距離を保ちながらプレイヤーを追従
-        transform.position = new Vector3(transform.position.x, transform.position.y, playerPos.z - playerDistance);
+        MoveCamera(playerPos,direction);
 
     }
 
     /// <summary>
     /// カメラの向き回転処理
     /// </summary>
-    /// <param name="rightFlg">右に回転する場合のフラグ</param>
-    void RotationCamera(bool rightFlg)
+    /// <param name="direction">現在のプレイヤーの向いてる方向</param>
+    void RotationCamera(Status.PlayerDirection direction)
     {
-        //フラグで回転の向き指定
-        //連続で処理されないようにスパンを設ける
-        if(rightFlg == true && this.delta > this.rotationSpan )
+        switch (direction)
         {
-            //右を向かせる　
-            transform.eulerAngles = new Vector3(0, 90.0f, 0);
-            //delta初期化
-            this.delta = 0;
+            case PlayerDirection.front:
+                //前を向かせる　
+                transform.eulerAngles = new Vector3(20.0f,0, 0);
+                break;
+            case PlayerDirection.right:
+                //右を向かせる　
+                transform.eulerAngles = new Vector3(20.0f, 90.0f, 0);
+                break;
+            case PlayerDirection.back:
+                //後を向かせる　
+                transform.eulerAngles = new Vector3(20.0f, 180.0f, 0);
+                break;
+            case PlayerDirection.left:
+                //左を向かせる　
+                transform.eulerAngles = new Vector3(20.0f, 270.0f, 0);
+                break;
         }
-        else if(rightFlg == false && this.delta > this.rotationSpan)
+    }
+
+    /// <summary>
+    /// カメラの追従処理
+    /// </summary>
+    /// <param name="playerPos">現在のプレイヤーの座標</param>
+    /// <param name="direction">現在のプレイヤーの向いてる方向</param>
+    void MoveCamera(Vector3 playerPos, Status.PlayerDirection direction)
+    {
+        switch (direction)
         {
-            //左を向かせる　
-            transform.eulerAngles = new Vector3(0, -90.0f, 0);
-            //delta初期化
-            this.delta = 0;
+            case PlayerDirection.front:
+                transform.position = new Vector3(playerPos.x, transform.position.y, playerPos.z - playerDistance);
+                break;
+            case PlayerDirection.right:
+                transform.position = new Vector3(playerPos.x - playerDistance, transform.position.y, playerPos.z);
+                break;
+            case PlayerDirection.back:
+                transform.position = new Vector3(playerPos.x, transform.position.y, playerPos.z + playerDistance);
+                break;
+            case PlayerDirection.left:
+                transform.position = new Vector3(playerPos.x + playerDistance, transform.position.y, playerPos.z);
+                break;
         }
     }
 }

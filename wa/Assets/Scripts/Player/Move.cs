@@ -25,14 +25,10 @@ public class Move : MonoBehaviour
     [SerializeField] Vector3 walkVelocity = new Vector3 (0f, 0f, 1f);
     //走るスピード
     [SerializeField] Vector3 runVelocity = new Vector3(0f, 0f, 2f);
-    //横移動スピード
-    [SerializeField] Vector3 rightVelocity = new Vector3(0.1f, 0f, 1.5f);
-    [SerializeField]Vector3 leftVelocity = new Vector3(-0.1f, 0f, 1.5f);
+    //float runSpeed = 0.2f;
+    //テスト用
+    float runSpeed = 0.001f;
 
-    //タイマー
-    float delta = 0;
-    //移動可能タイミングのスパン
-    float lateralMoveSpan = 0.1f;
 
     //インスペクターから設定
     //プレイヤーマネージャーのスクリプト
@@ -47,12 +43,6 @@ public class Move : MonoBehaviour
         this.pos = ParentObject.GetComponent<Transform>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //delta増加
-        this.delta += Time.deltaTime;
-    }
     /// <summary>
     /// プレイヤーを入力状態に応じて動かす
     /// </summary>
@@ -68,53 +58,16 @@ public class Move : MonoBehaviour
         }
         else     //走り状態のときはフリックを受け取りそれに合わせた処理を行う
         {
-            //フリックに応じて処理
-            switch (flick)
+            //ジャンプ処理
+            if (flick == ScreenInput.FlickDirection.UP && situation == Status.PlayerSituation.run)
             {
-                case ScreenInput.FlickDirection.UP:             //ジャンプ処理
-                    if (situation == Status.PlayerSituation.run)
-                    {
-                        //ジャンプ
-                        PlayerJump();
-                    }
-                    else//ジャンプできな場合前へ進む
-                    {
-                        PlayerRun(direction);
-                    }
-                    break;
-                case ScreenInput.FlickDirection.RIGHT:          //右移動処理
-                                                                //連続で処理しないようスパンを設ける
-                    if (this.delta > this.lateralMoveSpan && situation == Status.PlayerSituation.run)
-                    {
-                        //右に向く処理
-                        PlayerLateralMoveMent(true);
-                        //方向が変わったことをマネージャーに知らせる
-                        manager.PlayerChangeDirection(true);
-                    }
-                    else         //横移動できないときは走り処理の実行
-                    {
-                        PlayerRun(direction);
-                    }
-                    break;
-                case ScreenInput.FlickDirection.LEFT:           //左移動処理
-                                                                //連続で処理しないようスパンを設ける
-                    if (this.delta > this.lateralMoveSpan && situation == Status.PlayerSituation.run)
-                    {
-                        //左に向く処理
-                        PlayerLateralMoveMent(false);
-                        //方向が変わったことをマネージャーに知らせる
-                        manager.PlayerChangeDirection(false);
-                    }
-                    else         //横移動できないときは走り処理の実行
-                    {
-                        PlayerRun(direction);
-                    }
-                    break;
-                default:
-                    //走り処理
-                    PlayerRun(direction);
-                    break;
+                //ジャンプ
+                PlayerJump();
             }
+            //走り処理
+            PlayerRun(direction);
+            //現在の向きに合わせてプレイヤーを回転
+            RotationPlayer(direction);
         }
         
     }
@@ -143,16 +96,16 @@ public class Move : MonoBehaviour
         switch (direction)
         {
             case PlayerDirection.front:
-                pos.transform.Translate(0, 0, 0.2f);
+                pos.transform.Translate(0, 0, runSpeed);
                 break;
             case PlayerDirection.right:
-                pos.transform.Translate(0.2f, 0, 0);
+                pos.transform.Translate(runSpeed, 0, 0);
                 break;
             case PlayerDirection.back:
-                pos.transform.Translate(0, 0, -0.2f);
+                pos.transform.Translate(0, 0, -runSpeed);
                 break;
             case PlayerDirection.left:
-                pos.transform.Translate(-0.2f, 0, 0);
+                pos.transform.Translate(-runSpeed, 0, 0);
                 break;
         }
 
@@ -166,35 +119,36 @@ public class Move : MonoBehaviour
         //z軸の移動を加える
         //rd.velocity = this.walkVelocity;
 
-        pos.transform.Translate(0, 0, 0.1f);
+        //pos.transform.Translate(0, 0, 0.1f);
+        //調整用
+        pos.transform.Translate(0, 0, 0.001f);
     }
 
     /// <summary>
-    /// プレイヤーの横移動
+    /// プレイヤーの向きを回転ん
     /// </summary>
-    /// <param name="rightFlg">右移動のフラグ(falseのときは左に動く)</param>
-    void PlayerLateralMoveMent(bool rightFlg)
+    /// <param name="direction">プレイヤーの向いてる方向</param>
+    void RotationPlayer(Status.PlayerDirection direction)
     {
-        if (rightFlg == true && this.pos.position.x < 0.8)    //右移動
+        //ステータスの向いてる方向に応じて回転
+        switch(direction)
         {
-            //rd.velocity = rightVelocity;
-            //仮実装
-            this.pos.Translate(0.8f, 0, 0.2f);
-            //右を向かせる　
-            this.pos.eulerAngles = new Vector3(0, 90.0f, 0);
-            
-            
+            case PlayerDirection.front:
+                //前を向かせる　
+                this.pos.eulerAngles = new Vector3(0, 0, 0);
+                break;
+            case PlayerDirection.right:
+                //右を向かせる　
+                this.pos.eulerAngles = new Vector3(0, 90.0f, 0);
+                break;
+            case PlayerDirection.back:
+                //後を向かせる　
+                this.pos.eulerAngles = new Vector3(0, 180.0f, 0);
+                break;
+            case PlayerDirection.left:
+                //左を向かせる　
+                this.pos.eulerAngles = new Vector3(0, 270.0f, 0);
+                break;
         }
-        else if (rightFlg == false && this.pos.position.x > -0.8)//左移動 
-        {
-            //rd.velocity = leftVelocity;
-            //仮実装
-            this.pos.Translate(0.8f * -1, 0, 0.2f);
-            //左を向かせる　
-            this.pos.eulerAngles = new Vector3(0, -90.0f, 0);
-        }
-
-        //delta初期化
-        this.delta = 0;
     }
 }

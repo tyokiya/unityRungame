@@ -98,13 +98,5 @@ public class PlayerManager : MonoBehaviour
         this.playerItemGetFlg = true;
     }
 
-    /// <summary>
-    /// プレイヤーの方向が変わった方向を受け取る
-    /// </summary>
-    /// <param name="rightFlg">右向きの回転かのフラグ</param>
-    public void PlayerChangeDirection(bool rightFlg)
-    {
-        //プレイヤーの方向の変更を指示
-        status.ChangeDirection(rightFlg);
-    }
+    
 }

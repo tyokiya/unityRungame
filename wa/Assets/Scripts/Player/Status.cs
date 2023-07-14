@@ -14,6 +14,12 @@ public class Status : MonoBehaviour
     //int HP = 10;
     //獲得アイテム数
     int getItemCnt = 0;
+
+    //タイマー
+    float delta = 0;
+    //連続で回転処理させないためのスパン
+    float rotationSpan = 0.2f;
+
     //プレイヤーの状態
     public enum PlayerSituation
     { 
@@ -32,6 +38,14 @@ public class Status : MonoBehaviour
         left
     }
     PlayerDirection nowDirection = PlayerDirection.front;
+
+
+    void Update()
+    {
+        //デルタ増加
+        this.delta += Time.deltaTime;
+    }
+
 
     /// <summary>
     /// 3秒後状態を切りかえるコルーチン
@@ -75,6 +89,20 @@ public class Status : MonoBehaviour
         //フリックの状態に応じてステータスを変更
         //プレイヤーが走っている状態のときはジャンプに切り替える
         if (flick == ScreenInput.FlickDirection.UP && this.nowSituation == PlayerSituation.run) this.nowSituation = PlayerSituation.jump;
+
+        //向きを変える処理
+        if(flick == ScreenInput.FlickDirection.RIGHT && this.delta > this.rotationSpan)
+        {
+            ChangeDirection(true);
+            //デルタ初期化
+            this.delta = 0;
+        }
+        if(flick == ScreenInput.FlickDirection.LEFT && this.delta > this.rotationSpan)
+        {
+            ChangeDirection(false);
+            //デルタ初期化
+            this.delta = 0;
+        }
   
     }
 
@@ -91,7 +119,7 @@ public class Status : MonoBehaviour
     /// プレイヤーの方向を変える
     /// </summary>
     /// <param name="rightFlg">右向きの回転かのフラグ</param>
-    public void ChangeDirection(bool rightFlg)
+    void ChangeDirection(bool rightFlg)
     {
         //現在の方向と回転方向に応じた処理
         switch(this.nowDirection)
