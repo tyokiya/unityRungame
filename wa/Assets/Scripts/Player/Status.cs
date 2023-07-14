@@ -89,15 +89,15 @@ public class Status : MonoBehaviour
         //フリックの状態に応じてステータスを変更
         //プレイヤーが走っている状態のときはジャンプに切り替える
         if (flick == ScreenInput.FlickDirection.UP && this.nowSituation == PlayerSituation.run) this.nowSituation = PlayerSituation.jump;
-
+         
         //向きを変える処理
-        if(flick == ScreenInput.FlickDirection.RIGHT && this.delta > this.rotationSpan)
+        if(flick == ScreenInput.FlickDirection.RIGHT && this.delta > this.rotationSpan && nowSituation == PlayerSituation.run)
         {
             ChangeDirection(true);
             //デルタ初期化
             this.delta = 0;
         }
-        if(flick == ScreenInput.FlickDirection.LEFT && this.delta > this.rotationSpan)
+        if(flick == ScreenInput.FlickDirection.LEFT && this.delta > this.rotationSpan && nowSituation == PlayerSituation.run)
         {
             ChangeDirection(false);
             //デルタ初期化

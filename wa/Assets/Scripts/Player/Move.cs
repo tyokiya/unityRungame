@@ -26,8 +26,9 @@ public class Move : MonoBehaviour
     //走るスピード
     [SerializeField] Vector3 runVelocity = new Vector3(0f, 0f, 2f);
     //float runSpeed = 0.2f;
+    //float walkSpeed =0.1f;
     //テスト用
-    float runSpeed = 0.001f;
+    float runSpeed = 0.01f;
 
 
     //インスペクターから設定
@@ -69,7 +70,6 @@ public class Move : MonoBehaviour
             //現在の向きに合わせてプレイヤーを回転
             RotationPlayer(direction);
         }
-        
     }
 
     /// <summary>
@@ -92,22 +92,8 @@ public class Move : MonoBehaviour
     void PlayerRun(Status.PlayerDirection direction)
     {
         //rd.velocity = this.runVelocity;
-        //プレイヤーの方向に合わせた移動処理
-        switch (direction)
-        {
-            case PlayerDirection.front:
-                pos.transform.Translate(0, 0, runSpeed);
-                break;
-            case PlayerDirection.right:
-                pos.transform.Translate(runSpeed, 0, 0);
-                break;
-            case PlayerDirection.back:
-                pos.transform.Translate(0, 0, -runSpeed);
-                break;
-            case PlayerDirection.left:
-                pos.transform.Translate(-runSpeed, 0, 0);
-                break;
-        }
+        //移動処理
+        pos.transform.Translate(0, 0, runSpeed);
 
     }
 
@@ -119,7 +105,7 @@ public class Move : MonoBehaviour
         //z軸の移動を加える
         //rd.velocity = this.walkVelocity;
 
-        //pos.transform.Translate(0, 0, 0.1f);
+        //pos.transform.Translate(0, 0, walkSpeed);
         //調整用
         pos.transform.Translate(0, 0, 0.001f);
     }

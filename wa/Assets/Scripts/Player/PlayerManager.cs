@@ -97,6 +97,4 @@ public class PlayerManager : MonoBehaviour
         //アイテム獲得フラグを立てる
         this.playerItemGetFlg = true;
     }
-
-    
 }

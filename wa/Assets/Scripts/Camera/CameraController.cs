@@ -18,11 +18,16 @@ public class CameraController : MonoBehaviour
     /// </summary>
     /// <param name="playerPos">現在のプレイヤーの座標</param>
     /// <param name="direction">現在のプレイヤーの向いてる方向</param>
-    public void UpdateCamera(Vector3 playerPos, Status.PlayerDirection direction)
+    /// <param name="situation">現在のプレイヤーの状態</param>
+    public void UpdateCamera(Vector3 playerPos, Status.PlayerDirection direction, Status.PlayerSituation situation)
     {
         //プレイヤーの向いてる方向をもとに
-        //カメラの向きを変える
-        RotationCamera(direction);
+        //カメラの向きを変える(走り出して以降)
+        if(situation == PlayerSituation.run)
+        {
+            RotationCamera(direction);
+        }
+        
 
         //プレイヤーの向いてる方向をもとに
         //常に一定の距離を保ちながらプレイヤーを追従

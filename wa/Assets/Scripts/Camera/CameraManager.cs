@@ -22,6 +22,8 @@ public class CameraManager : MonoBehaviour
     ScreenInput.FlickDirection nowFlick;
     //現在のプレイヤーの向いてる方向を入れる変数
     Status.PlayerDirection nowDirection;
+    //現在のプレイヤーの状態
+    Status.PlayerSituation nowSituation;
 
     void Awake()
     {
@@ -35,11 +37,13 @@ public class CameraManager : MonoBehaviour
         Vector3 playerPos = this.player.transform.position;
         //現在のプレイヤーの向いてる方向を受け取る
         this.nowDirection = this.status.GetNowPlayerDirection();
+        //現在のプレイヤーの状態を受け取る
+        this.nowSituation = this.status.GetNowPlayerSituation();
         //フリック方向を受け取る
         this.nowFlick = this.screenInput.GetNowFlick();
 
         //カメラの更新処理命令
-        this.controller.UpdateCamera(playerPos, nowDirection);
+        this.controller.UpdateCamera(playerPos, nowDirection, nowSituation);
 
     }
 
