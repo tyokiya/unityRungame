@@ -6,15 +6,15 @@
 },
 
 "traceEvents":[
-{ "pid": 25116, "tid": -1, "ph": "M", "name": "process_name", "args": { "name": "Unity" } },
-{ "pid": 25116, "tid": -1, "ph": "M", "name": "process_sort_index", "args": { "sort_index": "-100" } },
-{ "pid": 25116, "tid": 1, "ph": "M", "name": "thread_name", "args": { "name": "" } },
-{ "pid": 25116, "tid": 1, "ts": 1689152292979587, "dur": 41876618, "ph": "X", "name": "Build player", "args": {} },
-{ "pid": 25116, "tid": 1, "ts": 1689152292980921, "dur": 3852225, "ph": "X", "name": "Preprocess Player", "args": {} },
-{ "pid": 25116, "tid": 1, "ts": 1689152296842950, "dur": 37852625, "ph": "X", "name": "Prepare For Build", "args": {} },
-{ "pid": 25116, "tid": 1, "ts": 1689152334858342, "dur": 454, "ph": "X", "name": "ChromeTraceHeader", "args": {} },
-{ "pid": 25116, "tid": 1, "ts": 1689152334861456, "dur": 668, "ph": "X", "name": "", "args": {} },
-{ "pid": 25116, "tid": 1, "ts": 1689152334860436, "dur": 2506, "ph": "X", "name": "Write chrome-trace events", "args": {} },
+{ "pid": 16820, "tid": -1, "ph": "M", "name": "process_name", "args": { "name": "Unity" } },
+{ "pid": 16820, "tid": -1, "ph": "M", "name": "process_sort_index", "args": { "sort_index": "-100" } },
+{ "pid": 16820, "tid": 1, "ph": "M", "name": "thread_name", "args": { "name": "" } },
+{ "pid": 16820, "tid": 1, "ts": 1689348476621567, "dur": 157238454, "ph": "X", "name": "Build player", "args": {} },
+{ "pid": 16820, "tid": 1, "ts": 1689348476623497, "dur": 3820634, "ph": "X", "name": "Preprocess Player", "args": {} },
+{ "pid": 16820, "tid": 1, "ts": 1689348480449132, "dur": 153294589, "ph": "X", "name": "Prepare For Build", "args": {} },
+{ "pid": 16820, "tid": 1, "ts": 1689348633860822, "dur": 3, "ph": "X", "name": "ChromeTraceHeader", "args": {} },
+{ "pid": 16820, "tid": 1, "ts": 1689348633860832, "dur": 4, "ph": "X", "name": "", "args": {} },
+{ "pid": 16820, "tid": 1, "ts": 1689348633860826, "dur": 31, "ph": "X", "name": "Write chrome-trace events", "args": {} },
 {}
 
 ]

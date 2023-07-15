@@ -28,6 +28,7 @@ public class Move : MonoBehaviour
     //float runSpeed = 0.2f;
     //float walkSpeed =0.1f;
     //テスト用
+    float walkSpeed = 0.001f;
     float runSpeed = 0.01f;
 
 
@@ -94,7 +95,6 @@ public class Move : MonoBehaviour
         //rd.velocity = this.runVelocity;
         //移動処理
         pos.transform.Translate(0, 0, runSpeed);
-
     }
 
     /// <summary>
@@ -105,9 +105,7 @@ public class Move : MonoBehaviour
         //z軸の移動を加える
         //rd.velocity = this.walkVelocity;
 
-        //pos.transform.Translate(0, 0, walkSpeed);
-        //調整用
-        pos.transform.Translate(0, 0, 0.001f);
+        pos.transform.Translate(0, 0, walkSpeed);
     }
 
     /// <summary>
