@@ -18,7 +18,7 @@ public class Status : MonoBehaviour
     //タイマー
     float delta = 0;
     //連続で回転処理させないためのスパン
-    float rotationSpan = 0.2f;
+    float rotationSpan = 1.0f;
 
     //プレイヤーの状態
     public enum PlayerSituation

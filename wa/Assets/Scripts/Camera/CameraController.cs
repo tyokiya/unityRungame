@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static Status;
-using static UnityEditor.PlayerSettings;
 
 ////////////////////////////////////
 // カメラのコントローラースクリプト
@@ -17,11 +16,17 @@ public class CameraController : MonoBehaviour
     float walkSpeed = 0.001f;
     float runSpeed = 0.01f;
 
+    //カメラの振り向き速度
+    float turnAngleSpeed = 6.0f;
+    float turnMoveSpeed = 0.2f;
+
     //変更前のプレイヤーの向き
     PlayerDirection beforeDirection = PlayerDirection.front;
 
     //角度に加算した回数をカウントする変数
-    int angleCnt = 0;
+    int turnCnt = 0;
+    //振り向きのマックス回数
+    int maxTurnCnt = 15;
 
     /// <summary>
     /// カメラの情報更新
@@ -52,7 +57,7 @@ public class CameraController : MonoBehaviour
     void RotationCamera(PlayerDirection direction)
     {
         //カウント増加
-        this.angleCnt++;
+        this.turnCnt++;
 
         switch (direction)
         {
@@ -60,84 +65,84 @@ public class CameraController : MonoBehaviour
                 //前を向かせる　
                 if (this.beforeDirection == PlayerDirection.left)
                 {
-                    transform.eulerAngles += new Vector3(0, 3.0f, 0);
-                    transform.position += new Vector3(-0.1f, 0, -0.1f);
+                    transform.eulerAngles += new Vector3(0, this.turnAngleSpeed, 0);
+                    transform.position += new Vector3(-turnMoveSpeed, 0, -turnMoveSpeed);
                 }
                 else if (this.beforeDirection == PlayerDirection.right)
                 {
-                    transform.eulerAngles -= new Vector3(0, 3.0f, 0);
-                    transform.position += new Vector3(0.1f, 0, -0.1f);
+                    transform.eulerAngles -= new Vector3(0, this.turnAngleSpeed, 0);
+                    transform.position += new Vector3(turnMoveSpeed, 0, -turnMoveSpeed);
                 }
                 //カウントが30回になったら回転処理完了
                 //プレイヤーの変更前の向きを更新
-                if (this.angleCnt == 30)
+                if (this.turnCnt == this.maxTurnCnt)
                 {
                     this.beforeDirection = PlayerDirection.front;
                     //カウント初期化
-                    this.angleCnt = 0;
+                    this.turnCnt = 0;
                 }
                 break;
             case PlayerDirection.right:
                 //右を向かせる　
                 if(this.beforeDirection == PlayerDirection.front)
                 {
-                    transform.eulerAngles += new Vector3(0, 3.0f, 0);
-                    transform.position += new Vector3(-0.1f, 0, 0.1f);
+                    transform.eulerAngles += new Vector3(0, this.turnAngleSpeed, 0);
+                    transform.position += new Vector3(-turnMoveSpeed, 0, turnMoveSpeed);
                 }
                 else if(this.beforeDirection == PlayerDirection.back)
                 {
-                    transform.eulerAngles -= new Vector3(0, 3.0f, 0);
-                    transform.position += new Vector3(-0.1f, 0, -0.1f);
+                    transform.eulerAngles -= new Vector3(0, this.turnAngleSpeed, 0);
+                    transform.position += new Vector3(-turnMoveSpeed, 0, -turnMoveSpeed);
                 }
                 //カウントが30回になったら回転処理完了
                 //プレイヤーの変更前の向きを更新
-                if (this.angleCnt == 30)
+                if (this.turnCnt == this.maxTurnCnt)
                 {
                     this.beforeDirection = PlayerDirection.right;
                     //カウント初期化
-                    this.angleCnt = 0;
+                    this.turnCnt = 0;
                 }
                 break;
             case PlayerDirection.back:
                 //後を向かせる　
                 if (this.beforeDirection == PlayerDirection.right)
                 {
-                    transform.eulerAngles += new Vector3(0, 3.0f, 0);
-                    transform.position += new Vector3(0.1f, 0, 0.1f);
+                    transform.eulerAngles += new Vector3(0, this.turnAngleSpeed, 0);
+                    transform.position += new Vector3(turnMoveSpeed, 0, turnMoveSpeed);
                 }
                 else if (this.beforeDirection == PlayerDirection.left)
                 {
-                    transform.eulerAngles -= new Vector3(0, 3.0f, 0);
-                    transform.position += new Vector3(-0.1f, 0, 0.1f);
+                    transform.eulerAngles -= new Vector3(0, this.turnAngleSpeed, 0);
+                    transform.position += new Vector3(-turnMoveSpeed, 0, turnMoveSpeed);
                 }
                 //カウントが30回になったら回転処理完了
                 //プレイヤーの変更前の向きを更新
-                if (this.angleCnt == 30)
+                if (this.turnCnt == this.maxTurnCnt)
                 {
                     this.beforeDirection = PlayerDirection.back;
                     //カウント初期化
-                    this.angleCnt = 0;
+                    this.turnCnt = 0;
                 }
                 break;
             case PlayerDirection.left:
                 //左を向かせる　
                 if (this.beforeDirection == PlayerDirection.back)
                 {
-                    transform.eulerAngles += new Vector3(0, 3.0f, 0);
-                    transform.position += new Vector3(0.1f, 0, -0.1f);
+                    transform.eulerAngles += new Vector3(0, this.turnAngleSpeed, 0);
+                    transform.position += new Vector3(turnMoveSpeed, 0, -turnMoveSpeed);
                 }
                 else if (this.beforeDirection == PlayerDirection.front)
                 {
-                    transform.eulerAngles -= new Vector3(0, 3.0f, 0);
-                    transform.position += new Vector3(0.1f, 0, 0.1f);
+                    transform.eulerAngles -= new Vector3(0, this.turnAngleSpeed, 0);
+                    transform.position += new Vector3(turnMoveSpeed, 0, turnMoveSpeed);
                 }
                 //カウントが30回になったら回転処理完了
                 //プレイヤーの変更前の向きを更新
-                if (this.angleCnt == 30)
+                if (this.turnCnt == this.maxTurnCnt)
                 {
                     this.beforeDirection = PlayerDirection.left;
                     //カウント初期化
-                    this.angleCnt = 0;
+                    this.turnCnt = 0;
                 }
                 break;
         }
