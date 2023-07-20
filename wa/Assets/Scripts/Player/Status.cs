@@ -20,6 +20,9 @@ public class Status : MonoBehaviour
     //連続で回転処理させないためのスパン
     float rotationSpan = 1.0f;
 
+    //ターン可能フラグ
+    bool turnPossibleFlg = false;
+
     //プレイヤーの状態
     public enum PlayerSituation
     { 
@@ -81,23 +84,29 @@ public class Status : MonoBehaviour
     /// </summary>
     /// <param name="GroundFlg">接地フラグ</param>
     /// <param name="flick">現在の入力状態</param>
-    public void SituationUpdate(bool GroundFlg, ScreenInput.FlickDirection flick)
+    /// <param name="turnGroundFlg">ターン可能な地面との接地フラグ</param>
+    public void SituationUpdate(bool GroundFlg, ScreenInput.FlickDirection flick, bool turnGroundFlg)
     {
         //ジャンプ状態から地面についた場合ステータスを変更
-        if (GroundFlg == true && this.nowSituation == PlayerSituation.jump) this.nowSituation = PlayerSituation.run;
+        if (GroundFlg == true && this.nowSituation == PlayerSituation.jump)
+        {
+            this.nowSituation = PlayerSituation.run;
+        }
 
         //フリックの状態に応じてステータスを変更
         //プレイヤーが走っている状態のときはジャンプに切り替える
         if (flick == ScreenInput.FlickDirection.UP && this.nowSituation == PlayerSituation.run) this.nowSituation = PlayerSituation.jump;
          
         //向きを変える処理
-        if(flick == ScreenInput.FlickDirection.RIGHT && this.delta > this.rotationSpan && nowSituation == PlayerSituation.run)
+        //ターン可能な地面にいるかの確認
+        //走り状態化の確認
+        if(flick == ScreenInput.FlickDirection.RIGHT && this.delta > this.rotationSpan && nowSituation == PlayerSituation.run && turnGroundFlg == true)
         {
             ChangeDirection(true);
             //デルタ初期化
             this.delta = 0;
         }
-        if(flick == ScreenInput.FlickDirection.LEFT && this.delta > this.rotationSpan && nowSituation == PlayerSituation.run)
+        if(flick == ScreenInput.FlickDirection.LEFT && this.delta > this.rotationSpan && nowSituation == PlayerSituation.run && turnGroundFlg == true)
         {
             ChangeDirection(false);
             //デルタ初期化

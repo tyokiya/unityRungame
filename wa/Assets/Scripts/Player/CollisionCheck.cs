@@ -59,7 +59,7 @@ public class CollisionCheck : MonoBehaviour
             //タイマー初期化
             this.damageDelta = 0;
         }
-        //衝突したものが攻撃なのかを調べる
+        //衝突したものがアイテムなのかを調べる
         //連続で衝突を呼び出さないようスパンを設ける
         if(other.tag == this.ItemTag && this.itemDelta > this.itemGetSpan)
         {

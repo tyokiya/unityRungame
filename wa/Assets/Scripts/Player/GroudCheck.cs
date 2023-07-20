@@ -10,8 +10,10 @@ public class GroudCheck : MonoBehaviour
 {
     //地面のタグ名
     string groundTag = "Ground";
+    string turnGroundTag = "TurnGround";
     //地面に立っているか
-    bool StandGroundFlg = true;
+    bool standGroundFlg = true;
+    bool standTurnGroundFlg = false;
 
     /// <summary>
     /// 衝突を受け取りフラグを立てる
@@ -19,10 +21,15 @@ public class GroudCheck : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //衝突したものが地面なのかを調べる
-        if (other.tag == groundTag)
+        if (other.tag == this.groundTag)
         {
-            this.StandGroundFlg = true;
+            this.standGroundFlg = true;
 
+        }
+        else if(other.tag == this.turnGroundTag)
+        {
+            this.standGroundFlg = true;
+            this.standTurnGroundFlg = true;
         }
     }
 
@@ -31,7 +38,8 @@ public class GroudCheck : MonoBehaviour
     /// </summary>
     private void OnTriggerExit(Collider other)
     {
-        this.StandGroundFlg = false;
+        this.standGroundFlg = false;
+        this.standTurnGroundFlg = false;
     }
     /// <summary>
     /// プレイヤーが地面に立っているかのフラグを返す
@@ -39,7 +47,12 @@ public class GroudCheck : MonoBehaviour
     /// <returns></returns>
     public bool GetGroundStandFlg()
     {
-        return StandGroundFlg;
+        return standGroundFlg;
+    }
+
+    public bool GetTurnGroundStandFlg()
+    {
+        return standTurnGroundFlg;
     }
 
 }

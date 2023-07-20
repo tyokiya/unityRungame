@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Schema;
@@ -22,14 +23,15 @@ public class Move : MonoBehaviour
     private float jumpForce = 500.0f;
 
     //歩くスピード
-    [SerializeField] Vector3 walkVelocity = new Vector3 (0f, 0f, 1f);
+    [SerializeField] float walkSpeed = 1f;
     //走るスピード
-    [SerializeField] Vector3 runVelocity = new Vector3(0f, 0f, 2f);
-    //float runSpeed = 0.2f;
-    //float walkSpeed =0.1f;
-    //テスト用
-    float walkSpeed = 0.001f;
-    float runSpeed = 0.01f;
+    [SerializeField] float runSpeed = 5f;
+    //走ってる時のベロシティ
+    Vector3 Velocity = new Vector3(0f, 0f, 0f);
+
+    //テスト用スピード
+    //float walkSpeed = 0.001f;
+    //float runSpeed = 0.01f;
 
 
     //インスペクターから設定
@@ -53,24 +55,48 @@ public class Move : MonoBehaviour
     /// <param name="direction">現在のプレイヤーの向いてる方向</param>
     public void MovePlayerUpdate(ScreenInput.FlickDirection flick, Status.PlayerSituation situation, Status.PlayerDirection direction)
     {
-        //歩き状態のときはあるき処理のみ
-        if(situation == Status.PlayerSituation.walk)
+
+        //向いてる方向と状態に合わせてvelosityの更新
+        if (situation == PlayerSituation.walk)
         {
-            PlayerWalk();
+            this.Velocity = new Vector3(0f, 0f, this.walkSpeed);
         }
-        else     //走り状態のときはフリックを受け取りそれに合わせた処理を行う
+        else
         {
-            //ジャンプ処理
-            if (flick == ScreenInput.FlickDirection.UP && situation == Status.PlayerSituation.run)
+            switch (direction)
             {
-                //ジャンプ
-                PlayerJump();
+                case PlayerDirection.front:
+                    this.Velocity = new Vector3(0f, 0f, this.runSpeed);
+                    break;
+                case PlayerDirection.right:
+                    this.Velocity = new Vector3(this.runSpeed, 0f, 0f);
+                    break;
+                case PlayerDirection.back:
+                    this.Velocity = new Vector3(0f, 0f, this.runSpeed * -1);
+                    break;
+                case PlayerDirection.left:
+                    this.Velocity = new Vector3(this.runSpeed * -1, 0f, 0f);
+                    break;
             }
-            //走り処理
-            PlayerRun(direction);
-            //現在の向きに合わせてプレイヤーを回転
-            RotationPlayer(direction);
         }
+
+        //移動処理
+        if(situation == Status.PlayerSituation.run || situation == Status.PlayerSituation.walk)
+        {
+            rd.velocity = this.Velocity;
+        }
+
+        //ジャンプ処理
+        if (flick == ScreenInput.FlickDirection.UP && situation == Status.PlayerSituation.run)
+        {
+            //ジャンプ
+            PlayerJump();
+        }
+
+        //現在の向きに合わせてプレイヤーを回転
+        RotationPlayer(direction);
+
+  
     }
 
     /// <summary>
@@ -80,36 +106,11 @@ public class Move : MonoBehaviour
     {
         //y軸に力を加える
         this.rd.AddForce(transform.up * this.jumpForce);
-        //仮実装
-        transform.Translate(0, 0, 0.2f);
-        //z軸の移動を加える
-        //rd.velocity = this.runVelocity;
     }
 
-    /// <summary>
-    /// プレイヤーの走り移動
-    /// </summary>
-    /// <param name="direction">プレイヤーの方向</param>
-    void PlayerRun(Status.PlayerDirection direction)
-    {
-        //rd.velocity = this.runVelocity;
-        //移動処理
-        pos.transform.Translate(0, 0, runSpeed);
-    }
 
     /// <summary>
-    /// プレイヤーの歩き移動
-    /// </summary>
-    void PlayerWalk()
-    {
-        //z軸の移動を加える
-        //rd.velocity = this.walkVelocity;
-
-        pos.transform.Translate(0, 0, walkSpeed);
-    }
-
-    /// <summary>
-    /// プレイヤーの向きを回転ん
+    /// プレイヤーの向きを回転
     /// </summary>
     /// <param name="direction">プレイヤーの向いてる方向</param>
     void RotationPlayer(Status.PlayerDirection direction)

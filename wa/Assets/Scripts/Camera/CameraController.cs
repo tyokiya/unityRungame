@@ -9,12 +9,18 @@ using static Status;
 
 public class CameraController : MonoBehaviour
 {
+    //リジッドボディを入れる変数
+    Rigidbody rd;
+
+    //走り時スピード
+    //[SerializeField] Vector3 runVelocity = new Vector3(0f, 0f, 2f);
+
     //カメラの移動速度
-    //float walkSpeed = 0.1f;
-    //float runSpeed = 0.2f;
-    //テスト用
-    float walkSpeed = 0.001f;
-    float runSpeed = 0.01f;
+    float walkSpeed = 0.1f;
+    float runSpeed = 0.2f;
+    //テスト用スピード
+    //float walkSpeed = 0.001f;
+    //float runSpeed = 0.01f;
 
     //カメラの振り向き速度
     float turnAngleSpeed = 6.0f;
@@ -27,6 +33,12 @@ public class CameraController : MonoBehaviour
     int turnCnt = 0;
     //振り向きのマックス回数
     int maxTurnCnt = 15;
+    private void Awake()
+    {
+        //コンポーネント取得
+        this.rd = GetComponent<Rigidbody>();
+    }
+
 
     /// <summary>
     /// カメラの情報更新
@@ -155,28 +167,22 @@ public class CameraController : MonoBehaviour
     /// <param name="direction">現在のプレイヤーの向いてる方向</param>
     void MoveCamera(Vector3 playerPos, PlayerDirection direction, PlayerSituation situation)
     {
-        //現在のプレイヤーの状態に応じて速度を指定
-        if(situation == PlayerSituation.walk)
+        switch (direction)
         {
-            transform.position += new Vector3(0, 0, this.walkSpeed);
+            case PlayerDirection.front:
+
+                transform.position = new Vector3(playerPos.x, transform.position.y, playerPos.z - 3.0f);
+                break;
+            case PlayerDirection.right:
+                transform.position = new Vector3(playerPos.x - 3.0f, transform.position.y, playerPos.z);
+                break;
+            case PlayerDirection.back:
+                transform.position = new Vector3(playerPos.x, transform.position.y, playerPos.z + 3.0f);
+                break;
+            case PlayerDirection.left:
+                transform.position = new Vector3(playerPos.x + 3.0f, transform.position.y, playerPos.z);
+                break;
         }
-        else if(situation == PlayerSituation.run)
-        {
-            switch (direction)
-            {
-                case PlayerDirection.front:
-                    transform.position += new Vector3(0, 0, this.runSpeed);
-                    break;
-                case PlayerDirection.right:
-                    transform.position += new Vector3(this.runSpeed, 0, 0);
-                    break;
-                case PlayerDirection.back:
-                    transform.position += new Vector3(0, 0, this.runSpeed * -1);
-                    break;
-                case PlayerDirection.left:
-                    transform.position += new Vector3(this.runSpeed * -1, 0, 0);
-                    break;
-            }
-        }
+
     }
 }

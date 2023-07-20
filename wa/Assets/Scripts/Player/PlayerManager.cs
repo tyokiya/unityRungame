@@ -22,6 +22,9 @@ public class PlayerManager : MonoBehaviour
 
     //接地フラグ入れる変数
     bool isGroudFlg = false;
+    //ターン可能な地面との設置フラグを入れる
+    bool isTurnGroundFlg = false;
+
     //プレイヤーの被弾フラグ
     bool playerDamageFlg = false;
     //プレイヤーのアイテム獲得フラグ
@@ -45,6 +48,9 @@ public class PlayerManager : MonoBehaviour
     {
         //接地判定を受け取る
         this.isGroudFlg = this.ground.GetGroundStandFlg();
+        this.isTurnGroundFlg = this.ground.GetTurnGroundStandFlg();
+
+
         //フリック方向を受け取る
         this.nowFlick = this.screenInput.GetNowFlick();
         //現在の状態を受け取る
@@ -53,7 +59,7 @@ public class PlayerManager : MonoBehaviour
         this.nowDirection = this.status.GetNowPlayerDirection();
 
         //ステータスの更新
-        this.status.SituationUpdate(this.isGroudFlg, this.nowFlick);
+        this.status.SituationUpdate(this.isGroudFlg, this.nowFlick, this.isTurnGroundFlg);
         //移動の更新
         this.move.MovePlayerUpdate(this.nowFlick, this.nowSituation, this.nowDirection);
         //アニメーション更新
