@@ -8,17 +8,38 @@ using UnityEngine;
 
 public class GroundController : MonoBehaviour
 {
-    void Update()
-    {
-        GameObject camera;
-        //カメラオブジェクト保持
-        camera = GameObject.Find("Main Camera");
+    //プレイヤーのタグ名
+    string playerTag = "Player";
+    //親オブジェクト
+    GameObject ParentObject;
 
-        //地面がプレイヤーより後ろに出た時点で破棄
-        if(camera.transform.position.z > transform.position.z + 5.0f)
+    void Awake()
+    {
+        //親オブジェクトを取得
+        ParentObject = transform.root.gameObject;
+    }
+
+        /// <summary>
+        /// プレイヤーとのを受け取りオブジェクト破壊のコルーチン呼び出し
+        /// </summary>
+        private void OnTriggerEnter(Collider other)
+    {
+        //衝突したものがプレイヤーなのかを調べる
+        if (other.tag == this.playerTag)
         {
-            //オブジェクト破棄
-            Destroy(gameObject);
+            //StartCoroutine(GroundDestroyCoroutine());
         }
+    }
+
+    /// <summary>
+    /// プレイヤーが触れた地面を時間経過で破壊する
+    /// </summary>
+
+    public IEnumerator GroundDestroyCoroutine()
+    {
+        //3秒待機
+        yield return new WaitForSeconds(3f);
+        Debug.Log("グラウンドコルーチン実行");
+        Destroy(ParentObject);
     }
 }

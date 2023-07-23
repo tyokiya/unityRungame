@@ -12,7 +12,7 @@ public class PlayerManager : MonoBehaviour
     public GroudCheck ground;
     //入力状態を返すスクリプト
     public ScreenInput screenInput;
-    //現在のプレイヤー状態を返すスクリプト
+    //現在のプレイヤー状態を管理スクリプト
     public Status status;
     //プレイヤーを動かすスクリプト
     public Move move;
@@ -30,12 +30,19 @@ public class PlayerManager : MonoBehaviour
     //プレイヤーのアイテム獲得フラグ
     bool playerItemGetFlg = false;
 
+    //プレイヤーの落下判定のy座標ボーダー
+    float playerFallBorder_y = -2.0f;
+
     //現在の入力状態を入れる変数
     ScreenInput.FlickDirection nowFlick;
     //現在のプレイヤー状態を入れる変数
     Status.PlayerSituation nowSituation;
+    //現在のプレイヤーの生死状態を入れる変数
+    Status.PlayerSurvival nowSurvival;
     //現在のプレイヤーの向いてる方向を入れる変数
     Status.PlayerDirection nowDirection;
+    //現在のプレイヤーの座標を入れる変数
+    Vector3 nowPosition;
 
     void Start()
     {
@@ -55,13 +62,15 @@ public class PlayerManager : MonoBehaviour
         this.nowFlick = this.screenInput.GetNowFlick();
         //現在の状態を受け取る
         this.nowSituation = this.status.GetNowPlayerSituation();
+        //現在の生死状態を受け取る
+        this.nowSurvival = this.status.GetNowPlayerSurvival();
         //現在のプレイヤーの向いてる方向を受け取る
         this.nowDirection = this.status.GetNowPlayerDirection();
 
         //ステータスの更新
         this.status.SituationUpdate(this.isGroudFlg, this.nowFlick, this.isTurnGroundFlg);
         //移動の更新
-        this.move.MovePlayerUpdate(this.nowFlick, this.nowSituation, this.nowDirection);
+        this.move.MovePlayerUpdate(this.nowFlick, this.nowSituation, this.nowDirection , this.isGroudFlg);
         //アニメーション更新
         this.anim.AnimationUpdate(this.nowFlick, this.nowSituation);
 

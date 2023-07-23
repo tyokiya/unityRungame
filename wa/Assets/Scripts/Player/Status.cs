@@ -10,8 +10,6 @@ using UnityEngine;
 
 public class Status : MonoBehaviour
 {
-    //プレイヤーの体力
-    //int HP = 10;
     //獲得アイテム数
     int getItemCnt = 0;
 
@@ -31,6 +29,15 @@ public class Status : MonoBehaviour
         jump
     }
     PlayerSituation nowSituation = PlayerSituation.walk;
+
+    //プレイヤーの生死状態
+    public enum PlayerSurvival
+    { 
+        life,                   //生存状態
+        collisionDeath,         //衝突による死亡状態
+        fallDeath               //落下による死亡状態
+    }
+    PlayerSurvival nowSurvival = PlayerSurvival.life;
 
     //初期の向いてる方角を前のした時の現在のプレイヤー向いている方向
     public enum PlayerDirection
@@ -77,6 +84,14 @@ public class Status : MonoBehaviour
     public PlayerDirection GetNowPlayerDirection()
     {
         return this.nowDirection;
+    }
+
+    /// <summary>
+    /// 現在のプレイヤーの生死状態を返す
+    /// </summary>
+    public PlayerSurvival GetNowPlayerSurvival()
+    {
+        return this.nowSurvival;
     }
 
     /// <summary>

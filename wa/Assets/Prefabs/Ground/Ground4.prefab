@@ -25,8 +25,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194799437502503365}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.87, y: 1.14, z: -0.42}
-  m_LocalScale: {x: 0.45, y: 1, z: 1}
+  m_LocalPosition: {x: 0.89, y: 1.14, z: -0.25}
+  m_LocalScale: {x: 0.45, y: 1, z: 1.05}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5485728470443513799}
@@ -106,8 +106,9 @@ GameObject:
   - component: {fileID: 2901195673688487145}
   - component: {fileID: 2721800060482507969}
   - component: {fileID: 5346096362155933314}
+  - component: {fileID: 6923316996667147192}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Base
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -221,6 +222,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 9.999999, y: 2.220446e-16, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6923316996667147192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3641542892901514171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 788bbd205976026469af7fac8c099f4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4312248916342369686
 GameObject:
   m_ObjectHideFlags: 0

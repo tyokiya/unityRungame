@@ -21,6 +21,10 @@ public class Move : MonoBehaviour
     [SerializeField]
     //ジャンプ力
     private float jumpForce = 500.0f;
+    //移動中にかかる重力
+    float grabity = 0;
+    //重力の最大値
+    float maxGrabity = -3.0f;
 
     //歩くスピード
     [SerializeField] float walkSpeed = 1f;
@@ -47,16 +51,57 @@ public class Move : MonoBehaviour
         this.pos = ParentObject.GetComponent<Transform>();
     }
 
+
+
     /// <summary>
     /// プレイヤーを入力状態に応じて動かす
     /// </summary>
     /// <param name="flick">現在の入力状態</param>
     /// <param name="situation">現在のプレイヤーの状態</param>
     /// <param name="direction">現在のプレイヤーの向いてる方向</param>
-    public void MovePlayerUpdate(ScreenInput.FlickDirection flick, Status.PlayerSituation situation, Status.PlayerDirection direction)
+    /// <param name="groudFlg">接地フラグ</param>
+    public void MovePlayerUpdate(ScreenInput.FlickDirection flick, Status.PlayerSituation situation, Status.PlayerDirection direction ,bool groudFlg)
+    {
+        //空中にいる場合のみ重力をかける
+        if(groudFlg == false)
+        {
+            this.grabity = maxGrabity;
+        }
+        else
+        {
+            this.grabity = 0;
+        }
+
+        //velosityの更新
+        VelocityUpdate(situation, direction);
+
+        //ジャンプ処理
+        if (flick == ScreenInput.FlickDirection.UP && situation == Status.PlayerSituation.run && groudFlg == true)
+        {
+            //ジャンプ
+            PlayerJump();
+        }
+
+        //移動処理
+        if (situation == Status.PlayerSituation.run || situation == Status.PlayerSituation.walk)
+        {
+            rd.velocity = this.Velocity;
+        }
+
+        //現在の向きに合わせてプレイヤーを回転
+        RotationPlayer(direction);
+
+       
+    }
+
+    /// <summary>
+    /// プレイヤーの向いてる方向と状態に合わせてvelosityの更新
+    /// </summary>
+    /// <param name="situation">現在のプレイヤーの状態</param>
+    /// <param name="direction">現在のプレイヤーの向いてる方向</param>
+    void VelocityUpdate(Status.PlayerSituation situation, Status.PlayerDirection direction)
     {
 
-        //向いてる方向と状態に合わせてvelosityの更新
         if (situation == PlayerSituation.walk)
         {
             this.Velocity = new Vector3(0f, 0f, this.walkSpeed);
@@ -66,37 +111,19 @@ public class Move : MonoBehaviour
             switch (direction)
             {
                 case PlayerDirection.front:
-                    this.Velocity = new Vector3(0f, 0f, this.runSpeed);
+                    this.Velocity = new Vector3(0f, grabity, this.runSpeed);
                     break;
                 case PlayerDirection.right:
-                    this.Velocity = new Vector3(this.runSpeed, 0f, 0f);
+                    this.Velocity = new Vector3(this.runSpeed, grabity, 0f);
                     break;
                 case PlayerDirection.back:
-                    this.Velocity = new Vector3(0f, 0f, this.runSpeed * -1);
+                    this.Velocity = new Vector3(0f, grabity, this.runSpeed * -1);
                     break;
                 case PlayerDirection.left:
-                    this.Velocity = new Vector3(this.runSpeed * -1, 0f, 0f);
+                    this.Velocity = new Vector3(this.runSpeed * -1, grabity, 0f);
                     break;
             }
         }
-
-        //移動処理
-        if(situation == Status.PlayerSituation.run || situation == Status.PlayerSituation.walk)
-        {
-            rd.velocity = this.Velocity;
-        }
-
-        //ジャンプ処理
-        if (flick == ScreenInput.FlickDirection.UP && situation == Status.PlayerSituation.run)
-        {
-            //ジャンプ
-            PlayerJump();
-        }
-
-        //現在の向きに合わせてプレイヤーを回転
-        RotationPlayer(direction);
-
-  
     }
 
     /// <summary>
