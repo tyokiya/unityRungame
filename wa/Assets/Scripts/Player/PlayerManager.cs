@@ -25,9 +25,6 @@ public class PlayerManager : MonoBehaviour
     //ターン可能な地面との設置フラグを入れる
     bool isTurnGroundFlg = false;
 
-    //プレイヤーのアイテム獲得フラグ
-    bool playerItemGetFlg = false;
-
     //プレイヤーの落下判定のy座標ボーダー
     float playerFallBorder_y = -2.0f;
 
@@ -72,24 +69,8 @@ public class PlayerManager : MonoBehaviour
         //アニメーション更新
         this.anim.AnimationUpdate(this.nowFlick, this.nowSituation);
 
-        //アイテム獲得フラグが立ってる場合それぞれに処理を命令
-        if(this.playerItemGetFlg == true)
-        {
-            Debug.Log("アイテム獲得処理開始");
-            //アイテム獲得数上昇処理
-            this.status.RiseItemSucore();
-
-            //フラグを下ろす
-            this.playerItemGetFlg = false;
-        }
+        
     }
 
-    /// <summary>
-    /// プレイヤーがアイテムをゲットした報告を受け取る
-    /// </summary>
-    public void ItemGetReport()
-    {
-        //アイテム獲得フラグを立てる
-        this.playerItemGetFlg = true;
-    }
+    
 }

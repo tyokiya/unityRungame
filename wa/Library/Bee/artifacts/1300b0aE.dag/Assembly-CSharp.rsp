@@ -389,6 +389,8 @@
 "Assets/Scripts/Player/Move.cs"
 "Assets/Scripts/Player/PlayerManager.cs"
 "Assets/Scripts/Player/Status.cs"
+"Assets/Scripts/Score/SucoreController.cs"
+"Assets/Scripts/Score/SucoreManager.cs"
 "Assets/Scripts/ScreenInput/ScreenInput.cs"
 -langversion:9.0
 

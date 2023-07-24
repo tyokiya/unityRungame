@@ -10,8 +10,7 @@ using UnityEngine;
 
 public class Status : MonoBehaviour
 {
-    //獲得アイテム数
-    int getItemCnt = 0;
+    
 
     //タイマー
     float delta = 0;
@@ -128,15 +127,6 @@ public class Status : MonoBehaviour
             this.delta = 0;
         }
   
-    }
-
-    /// <summary>
-    /// 獲得アイテム数の上昇
-    /// </summary>
-    public void RiseItemSucore()
-    {
-        Debug.Log("アイテム数上昇");
-        this.getItemCnt++;
     }
 
     /// <summary>

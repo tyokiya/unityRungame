@@ -19,6 +19,9 @@ public class CollisionCheck : MonoBehaviour
     //インスペクターから設定
     //プレイヤーマネージャーのスクリプト
     public PlayerManager manager;
+    //スコアマネージャー
+    public SucoreManager sucoreManager;
+
 
     private void Update()
     {
@@ -44,7 +47,7 @@ public class CollisionCheck : MonoBehaviour
         {
             Debug.Log("アイテムと衝突");
             //プレイヤーマネージャーに報告
-            manager.ItemGetReport();
+            sucoreManager.ItemGetReport();
             //タイマー初期化
             this.itemDelta = 0;
             //獲得したアイテムオブジェクトを破壊
