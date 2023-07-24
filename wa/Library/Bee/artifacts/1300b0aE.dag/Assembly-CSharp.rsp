@@ -382,6 +382,7 @@
 "Assets/Scripts/Camera/CameraManager.cs"
 "Assets/Scripts/Frame/FrameCntroller.cs"
 "Assets/Scripts/Ground/GroundController.cs"
+"Assets/Scripts/Item/ItemController.cs"
 "Assets/Scripts/Player/AnimationController.cs"
 "Assets/Scripts/Player/CollisionCheck.cs"
 "Assets/Scripts/Player/GroudCheck.cs"

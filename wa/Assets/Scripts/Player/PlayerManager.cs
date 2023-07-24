@@ -25,8 +25,6 @@ public class PlayerManager : MonoBehaviour
     //ターン可能な地面との設置フラグを入れる
     bool isTurnGroundFlg = false;
 
-    //プレイヤーの被弾フラグ
-    bool playerDamageFlg = false;
     //プレイヤーのアイテム獲得フラグ
     bool playerItemGetFlg = false;
 
@@ -74,15 +72,6 @@ public class PlayerManager : MonoBehaviour
         //アニメーション更新
         this.anim.AnimationUpdate(this.nowFlick, this.nowSituation);
 
-        //被弾フラグ立っている場合それぞれに被弾処理を命令する
-        if(this.playerDamageFlg == true)
-        {
-            //Debug.Log("被弾処理開始");
-
-            //フラグを下ろす
-            this.playerDamageFlg = false;
-        }
-
         //アイテム獲得フラグが立ってる場合それぞれに処理を命令
         if(this.playerItemGetFlg == true)
         {
@@ -93,15 +82,6 @@ public class PlayerManager : MonoBehaviour
             //フラグを下ろす
             this.playerItemGetFlg = false;
         }
-    }
-
-    /// <summary>
-    /// プレイヤーがダメージを受けた報告を受け取る
-    /// </summary>
-    public void DamageReport()
-    {
-        //プレイヤーの被弾フラグを立てる
-        this.playerDamageFlg = true;
     }
 
     /// <summary>

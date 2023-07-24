@@ -47,6 +47,8 @@ public class CollisionCheck : MonoBehaviour
             manager.ItemGetReport();
             //タイマー初期化
             this.itemDelta = 0;
+            //獲得したアイテムオブジェクトを破壊
+            Destroy(other.gameObject);
         }
     }
 
