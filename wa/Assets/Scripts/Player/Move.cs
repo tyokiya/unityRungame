@@ -15,7 +15,7 @@ public class Move : MonoBehaviour
     GameObject ParentObject;
 
     //リジッドボディを入れる変数
-    Rigidbody rd;
+    Rigidbody rb;
     Transform pos;
 
     [SerializeField]
@@ -31,12 +31,7 @@ public class Move : MonoBehaviour
     //走るスピード
     [SerializeField] float runSpeed = 5f;
     //走ってる時のベロシティ
-    Vector3 Velocity = new Vector3(0f, 0f, 0f);
-
-    //テスト用スピード
-    //float walkSpeed = 0.001f;
-    //float runSpeed = 0.01f;
-
+    Vector3 moveVelocity = new Vector3(0f, 0f, 0f);
 
     //インスペクターから設定
     //プレイヤーマネージャーのスクリプト
@@ -47,7 +42,7 @@ public class Move : MonoBehaviour
         //親オブジェクトを取得
         ParentObject = GameObject.Find("Player");
         //コンポーネント取得
-        this.rd = ParentObject.GetComponent<Rigidbody>();
+        this.rb = ParentObject.GetComponent<Rigidbody>();
         this.pos = ParentObject.GetComponent<Transform>();
     }
 
@@ -85,13 +80,11 @@ public class Move : MonoBehaviour
         //移動処理
         if (situation == Status.PlayerSituation.run || situation == Status.PlayerSituation.walk)
         {
-            rd.velocity = this.Velocity;
+            rb.velocity = this.moveVelocity;
         }
 
         //現在の向きに合わせてプレイヤーを回転
         RotationPlayer(direction);
-
-       
     }
 
     /// <summary>
@@ -104,23 +97,23 @@ public class Move : MonoBehaviour
 
         if (situation == PlayerSituation.walk)
         {
-            this.Velocity = new Vector3(0f, 0f, this.walkSpeed);
+            this.moveVelocity = new Vector3(0f, 0f, this.walkSpeed);
         }
         else
         {
             switch (direction)
             {
                 case PlayerDirection.front:
-                    this.Velocity = new Vector3(0f, grabity, this.runSpeed);
+                    this.moveVelocity = new Vector3(0f, grabity, this.runSpeed);
                     break;
                 case PlayerDirection.right:
-                    this.Velocity = new Vector3(this.runSpeed, grabity, 0f);
+                    this.moveVelocity = new Vector3(this.runSpeed, grabity, 0f);
                     break;
                 case PlayerDirection.back:
-                    this.Velocity = new Vector3(0f, grabity, this.runSpeed * -1);
+                    this.moveVelocity = new Vector3(0f, grabity, this.runSpeed * -1);
                     break;
                 case PlayerDirection.left:
-                    this.Velocity = new Vector3(this.runSpeed * -1, grabity, 0f);
+                    this.moveVelocity = new Vector3(this.runSpeed * -1, grabity, 0f);
                     break;
             }
         }
@@ -132,7 +125,7 @@ public class Move : MonoBehaviour
     void PlayerJump()
     {
         //y軸に力を加える
-        this.rd.AddForce(transform.up * this.jumpForce);
+        this.rb.AddForce(transform.up * this.jumpForce);
     }
 
 
@@ -162,5 +155,13 @@ public class Move : MonoBehaviour
                 this.pos.eulerAngles = new Vector3(0, 270.0f, 0);
                 break;
         }
+    }
+
+    /// <summary>
+    /// プレイヤーの移動ベロシティのゲッター
+    /// </summary>
+    public Vector3 PlayerVelocityGetter()
+    {
+        return this.moveVelocity;
     }
 }

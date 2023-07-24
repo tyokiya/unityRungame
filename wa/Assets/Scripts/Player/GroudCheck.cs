@@ -38,8 +38,17 @@ public class GroudCheck : MonoBehaviour
     /// </summary>
     private void OnTriggerExit(Collider other)
     {
-        this.standGroundFlg = false;
-        this.standTurnGroundFlg = false;
+        //衝突したものが地面なのかを調べる
+        if (other.tag == this.groundTag)
+        {
+            this.standGroundFlg = false;
+
+        }
+        else if (other.tag == this.turnGroundTag)
+        {
+            this.standGroundFlg = false;
+            this.standTurnGroundFlg = false;
+        }
     }
     /// <summary>
     /// プレイヤーが地面に立っているかのフラグを返す

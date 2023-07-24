@@ -17,9 +17,6 @@ public class Status : MonoBehaviour
     //連続で回転処理させないためのスパン
     float rotationSpan = 1.0f;
 
-    //ターン可能フラグ
-    bool turnPossibleFlg = false;
-
     //プレイヤーの状態
     public enum PlayerSituation
     { 

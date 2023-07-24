@@ -14,7 +14,7 @@ public class CollisionCheck : MonoBehaviour
     //アイテムタイマー
     float itemDelta = 0;
     //次のアイテムを獲得するまでのスパン
-    float itemGetSpan = 0.1f;
+    float itemGetSpan = 0.05f;
 
     //インスペクターから設定
     //プレイヤーマネージャーのスクリプト
