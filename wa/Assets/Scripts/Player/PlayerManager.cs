@@ -8,16 +8,16 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     //インスペクターから設定
-    //接地判定のスクリプト
-    public GroudCheck ground;
-    //入力状態を返すスクリプト
-    public ScreenInput screenInput;
-    //現在のプレイヤー状態を管理スクリプト
-    public Status status;
-    //プレイヤーを動かすスクリプト
-    public Move move;
-    //アニメーションを管理するスクリプト
-    public AnimationController anim;
+    //接地判定のオブジェクト
+    public GroudCheck groundCheck_object;
+    //入力状態を返すオブジェクト
+    public ScreenInput screenInput_object;
+    //現在のプレイヤー状態を管理オブジェクト
+    public Status playerStatus_object;
+    //プレイヤーを動かすオブジェクト
+    public Move playerMove_object;
+    //アニメーションを管理するオブジェクト
+    public AnimationController playerAnimation_object;
    
 
     //接地フラグ入れる変数
@@ -42,32 +42,32 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         //コルーチン呼び出し
-        StartCoroutine(status.ChangeSituation());
-        StartCoroutine(anim.ChangeAnimaiton());
+        StartCoroutine(playerStatus_object.ChangeSituation());
+        StartCoroutine(playerAnimation_object.ChangeAnimaiton());
     }
 
     void Update()
     {
         //接地判定を受け取る
-        this.isGroudFlg = this.ground.GetGroundStandFlg();
-        this.isTurnGroundFlg = this.ground.GetTurnGroundStandFlg();
+        this.isGroudFlg = this.groundCheck_object.GetGroundStandFlg();
+        this.isTurnGroundFlg = this.groundCheck_object.GetTurnGroundStandFlg();
 
 
         //フリック方向を受け取る
-        this.nowFlick = this.screenInput.GetNowFlick();
+        this.nowFlick = this.screenInput_object.GetNowFlick();
         //現在の状態を受け取る
-        this.nowSituation = this.status.GetNowPlayerSituation();
+        this.nowSituation = this.playerStatus_object.GetNowPlayerSituation();
         //現在の生死状態を受け取る
-        this.nowSurvival = this.status.GetNowPlayerSurvival();
+        this.nowSurvival = this.playerStatus_object.GetNowPlayerSurvival();
         //現在のプレイヤーの向いてる方向を受け取る
-        this.nowDirection = this.status.GetNowPlayerDirection();
+        this.nowDirection = this.playerStatus_object.GetNowPlayerDirection();
 
         //ステータスの更新
-        this.status.SituationUpdate(this.isGroudFlg, this.nowFlick, this.isTurnGroundFlg);
+        this.playerStatus_object.SituationUpdate(this.isGroudFlg, this.nowFlick, this.isTurnGroundFlg);
         //移動の更新
-        this.move.MovePlayerUpdate(this.nowFlick, this.nowSituation, this.nowDirection , this.isGroudFlg);
+        this.playerMove_object.MovePlayerUpdate(this.nowFlick, this.nowSituation, this.nowDirection , this.isGroudFlg);
         //アニメーション更新
-        this.anim.AnimationUpdate(this.nowFlick, this.nowSituation);
+        this.playerAnimation_object.AnimationUpdate(this.nowFlick, this.nowSituation);
 
         
     }

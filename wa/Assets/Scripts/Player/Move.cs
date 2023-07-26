@@ -11,6 +11,9 @@ using static Status;
 
 public class Move : MonoBehaviour
 {
+    //インスペクターから設定
+    //プレイヤーマネージャーのオブジェクト
+    public PlayerManager playerManager_object;
     //親オブジェクト
     GameObject ParentObject;
 
@@ -33,9 +36,7 @@ public class Move : MonoBehaviour
     //走ってる時のベロシティ
     Vector3 moveVelocity = new Vector3(0f, 0f, 0f);
 
-    //インスペクターから設定
-    //プレイヤーマネージャーのスクリプト
-    public PlayerManager manager;
+    
 
     void Awake()
     {

@@ -10,9 +10,11 @@ public class ScoreManager : MonoBehaviour
 {
     //インスペクターから設定
     //スコア管理のスクリプト
-    public ScoreController scoreController;
+    public ScoreController scoreController_object;
     //スコアUI管理スクリプト
-    public ScoreUIController scoreUIController;
+    public ScoreUIController scoreUIController_object;
+    //アイテムUI管理スクリプト
+    public ItemUIController itemUIController_object;
 
 
     //プレイヤーのアイテム獲得フラグ
@@ -27,14 +29,16 @@ public class ScoreManager : MonoBehaviour
         {
             Debug.Log("アイテム獲得処理開始");
             //アイテム獲得数上昇処理
-            this.scoreController.RiseItemSucore();
+            this.scoreController_object.RiseItemSucore();
 
             //フラグを下ろす
             this.playerItemGetFlg = false;
         }
 
         //スコアUIの更新命令
-        this.scoreUIController.ScoreTextUpdate(this.scoreController.SucoreGetter());
+        this.scoreUIController_object.ScoreTextUpdate(this.scoreController_object.SucoreGetter());
+        //アイテムUIの更新命令
+        this.itemUIController_object.ScoreTextUpdate(this.scoreController_object.ItemNumGetter());
     }
 
     /// <summary>
