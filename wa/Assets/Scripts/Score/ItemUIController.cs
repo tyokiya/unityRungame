@@ -21,7 +21,7 @@ public class ItemUIController : MonoBehaviour
     /// 描画するスコアを更新する
     /// </summary>
     /// <param name="score">現在のプレイヤーのスコア</param>
-    public void ScoreTextUpdate(int score)
+    public void ItemTextUpdate(int score)
     {
         //int型をstring型に変換
         string s = score.ToString();

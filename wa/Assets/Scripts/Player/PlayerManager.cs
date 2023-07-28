@@ -52,7 +52,6 @@ public class PlayerManager : MonoBehaviour
         this.isGroudFlg = this.groundCheck_object.GetGroundStandFlg();
         this.isTurnGroundFlg = this.groundCheck_object.GetTurnGroundStandFlg();
 
-
         //フリック方向を受け取る
         this.nowFlick = this.screenInput_object.GetNowFlick();
         //現在の状態を受け取る
@@ -68,9 +67,5 @@ public class PlayerManager : MonoBehaviour
         this.playerMove_object.MovePlayerUpdate(this.nowFlick, this.nowSituation, this.nowDirection , this.isGroudFlg);
         //アニメーション更新
         this.playerAnimation_object.AnimationUpdate(this.nowFlick, this.nowSituation);
-
-        
     }
-
-    
 }

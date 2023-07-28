@@ -163,7 +163,7 @@ public class CameraController : MonoBehaviour
     {
         if(situation == PlayerSituation.walk)
         {
-            rb.velocity = new Vector3(0f, 0f, 1.0f);
+            transform.position = new Vector3(playerPos.x, transform.position.y, playerPos.z - this.playerDirection);
         }
         else
         {

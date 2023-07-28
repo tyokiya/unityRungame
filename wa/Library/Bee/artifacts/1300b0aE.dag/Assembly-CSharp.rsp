@@ -394,6 +394,7 @@
 "Assets/Scripts/Score/ScoreManager.cs"
 "Assets/Scripts/Score/ScoreUIController.cs"
 "Assets/Scripts/ScreenInput/ScreenInput.cs"
+"Assets/Scripts/UI/UIManager.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark02.cs"

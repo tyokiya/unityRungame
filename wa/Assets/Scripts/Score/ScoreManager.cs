@@ -9,13 +9,9 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour
 {
     //インスペクターから設定
-    //スコア管理のスクリプト
+    //スコア管理のオブジェクト
     public ScoreController scoreController_object;
-    //スコアUI管理スクリプト
-    public ScoreUIController scoreUIController_object;
-    //アイテムUI管理スクリプト
-    public ItemUIController itemUIController_object;
-
+    
 
     //プレイヤーのアイテム獲得フラグ
     bool playerItemGetFlg = false;
@@ -27,7 +23,7 @@ public class ScoreManager : MonoBehaviour
         //アイテム獲得フラグが立ってる場合それぞれに処理を命令
         if (this.playerItemGetFlg == true)
         {
-            Debug.Log("アイテム獲得処理開始");
+            //Debug.Log("アイテム獲得処理開始");
             //アイテム獲得数上昇処理
             this.scoreController_object.RiseItemSucore();
 
@@ -35,10 +31,6 @@ public class ScoreManager : MonoBehaviour
             this.playerItemGetFlg = false;
         }
 
-        //スコアUIの更新命令
-        this.scoreUIController_object.ScoreTextUpdate(this.scoreController_object.SucoreGetter());
-        //アイテムUIの更新命令
-        this.itemUIController_object.ScoreTextUpdate(this.scoreController_object.ItemNumGetter());
     }
 
     /// <summary>

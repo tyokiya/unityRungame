@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExporterVersion: VRoid Studio-1.22.1
   Title: "\u548C\u88C5\u5C11\u5973"
-  Version: 
-  Author: "\u3068\u304D"
+  Version: 1
+  Author: t
   ContactInformation: 
   Reference: 
   Thumbnail: {fileID: 2800000, guid: 4f3a1f627ee5bdc4c900ba79d9f55d65, type: 3}

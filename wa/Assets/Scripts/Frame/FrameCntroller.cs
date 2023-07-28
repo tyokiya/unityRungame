@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class FrameCntroller : MonoBehaviour
 {
-
-    void Start()
+    void Awake()
     {
         //フレームレート固定
-        Application.targetFrameRate = 30;
+        Application.targetFrameRate = 60;
     }
 
 }

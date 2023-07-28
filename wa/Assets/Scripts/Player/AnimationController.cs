@@ -5,17 +5,16 @@ using UnityEngine;
 public class AnimationController : MonoBehaviour
 {
     //親オブジェクト
-    GameObject ParentObject;
+    [SerializeField] GameObject parentObject;
+
 
     //アニメーターを入れる変数
     Animator animator;
 
     void Start()
     {
-        //親オブジェクトを取得
-        ParentObject = GameObject.Find("Player");
         //コンポーネント取得
-        this.animator = ParentObject.GetComponent<Animator>();
+        this.animator = parentObject.GetComponent<Animator>();
     }
 
     /// <summary>

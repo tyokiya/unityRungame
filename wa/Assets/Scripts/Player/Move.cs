@@ -24,8 +24,7 @@ public class Move : MonoBehaviour
     [SerializeField]
     //ジャンプ力
     private float jumpForce = 500.0f;
-    //移動中にかかる重力
-    float grabity = 0;
+
     //重力の最大値
     float maxGrabity = -3.0f;
 
@@ -58,15 +57,6 @@ public class Move : MonoBehaviour
     /// <param name="groudFlg">接地フラグ</param>
     public void MovePlayerUpdate(ScreenInput.FlickDirection flick, Status.PlayerSituation situation, Status.PlayerDirection direction ,bool groudFlg)
     {
-        //空中にいる場合のみ重力をかける
-        if(groudFlg == false)
-        {
-            this.grabity = maxGrabity;
-        }
-        else
-        {
-            this.grabity = 0;
-        }
 
         //velosityの更新
         VelocityUpdate(situation, direction);
@@ -74,6 +64,7 @@ public class Move : MonoBehaviour
         //ジャンプ処理
         if (flick == ScreenInput.FlickDirection.UP && situation == Status.PlayerSituation.run && groudFlg == true)
         {
+            Debug.Log("ジャンプ処理");
             //ジャンプ
             PlayerJump();
         }
@@ -105,16 +96,16 @@ public class Move : MonoBehaviour
             switch (direction)
             {
                 case PlayerDirection.front:
-                    this.moveVelocity = new Vector3(0f, grabity, this.runSpeed);
+                    this.moveVelocity = new Vector3(0f, 0, this.runSpeed);
                     break;
                 case PlayerDirection.right:
-                    this.moveVelocity = new Vector3(this.runSpeed, grabity, 0f);
+                    this.moveVelocity = new Vector3(this.runSpeed, 0, 0f);
                     break;
                 case PlayerDirection.back:
-                    this.moveVelocity = new Vector3(0f, grabity, this.runSpeed * -1);
+                    this.moveVelocity = new Vector3(0f, 0, this.runSpeed * -1);
                     break;
                 case PlayerDirection.left:
-                    this.moveVelocity = new Vector3(this.runSpeed * -1, grabity, 0f);
+                    this.moveVelocity = new Vector3(this.runSpeed * -1, 0, 0f);
                     break;
             }
         }
@@ -126,7 +117,7 @@ public class Move : MonoBehaviour
     void PlayerJump()
     {
         //y軸に力を加える
-        this.rb.AddForce(transform.up * this.jumpForce);
+        this.rb.AddForce(transform.up * this.jumpForce, ForceMode.Impulse);
     }
 
 

@@ -11,23 +11,17 @@ public class GroundController : MonoBehaviour
     //プレイヤーのタグ名
     string playerTag = "Player";
     //親オブジェクト
-    GameObject ParentObject;
+    [SerializeField] GameObject ParentObject;
 
-    void Awake()
-    {
-        //親オブジェクトを取得
-        ParentObject = transform.root.gameObject;
-    }
-
-        /// <summary>
-        /// プレイヤーとのを受け取りオブジェクト破壊のコルーチン呼び出し
-        /// </summary>
-        private void OnTriggerEnter(Collider other)
+    /// <summary>
+    /// プレイヤーとのを受け取りオブジェクト破壊のコルーチン呼び出し
+    /// </summary>
+    void OnTriggerEnter(Collider other)
     {
         //衝突したものがプレイヤーなのかを調べる
         if (other.tag == this.playerTag)
         {
-            //StartCoroutine(GroundDestroyCoroutine());
+            StartCoroutine(GroundDestroyCoroutine());
         }
     }
 
@@ -37,9 +31,9 @@ public class GroundController : MonoBehaviour
 
     public IEnumerator GroundDestroyCoroutine()
     {
-        //3秒待機
-        yield return new WaitForSeconds(3f);
-        Debug.Log("グラウンドコルーチン実行");
+        //4秒待機
+        yield return new WaitForSeconds(4f);
+        //Debug.Log("グラウンドコルーチン実行");
         Destroy(ParentObject);
     }
 }

@@ -20,7 +20,7 @@ public class ScoreController : MonoBehaviour
     /// </summary>
     public void RiseItemSucore()
     {
-        Debug.Log("アイテム数上昇");
+        //Debug.Log("アイテム数上昇");
         this.getItemCnt++;
     }
 

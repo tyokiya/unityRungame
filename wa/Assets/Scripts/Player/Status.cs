@@ -10,8 +10,6 @@ using UnityEngine;
 
 public class Status : MonoBehaviour
 {
-    
-
     //タイマー
     float delta = 0;
     //連続で回転処理させないためのスパン
@@ -106,8 +104,10 @@ public class Status : MonoBehaviour
 
         //フリックの状態に応じてステータスを変更
         //プレイヤーが走っている状態のときはジャンプに切り替える
-        if (flick == ScreenInput.FlickDirection.UP && this.nowSituation == PlayerSituation.run) this.nowSituation = PlayerSituation.jump;
-         
+        if (flick == ScreenInput.FlickDirection.UP && this.nowSituation == PlayerSituation.run)
+        {
+            this.nowSituation = PlayerSituation.jump;
+        }
         //向きを変える処理
         //ターン可能な地面にいるかの確認
         //走り状態化の確認
