@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1524044297542277041}
   - component: {fileID: 5689941745829950282}
   - component: {fileID: 4835456838469046640}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Base
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -104,8 +104,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10, y: 2.220446e-16, z: 10}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 10, y: 0.3, z: 10}
+  m_Center: {x: 0, y: -0.13, z: 0}
 --- !u!114 &4835456838469046640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,7 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1298009708045572843}
   - component: {fileID: 3852024292094681775}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SideCollider(right)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1633641264272210867}
   - component: {fileID: 8460345584618182003}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SideCollider(left)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -235,7 +235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4240484392343998530}
   - component: {fileID: 1443389256855570158}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AnderCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -287,7 +287,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 691890635166893273}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -335,6 +335,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 94ac0f7807b256d4b866c2b3ec1a6de7, type: 3}
       propertyPath: m_Name
       value: Rocks 03 prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 94ac0f7807b256d4b866c2b3ec1a6de7, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 94ac0f7807b256d4b866c2b3ec1a6de7, type: 3}
       propertyPath: m_RootOrder
@@ -418,6 +422,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocks 03 prefab (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 94ac0f7807b256d4b866c2b3ec1a6de7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 94ac0f7807b256d4b866c2b3ec1a6de7, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -499,6 +507,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 79bce83937e43d042843a359e671ca99, type: 3}
       propertyPath: m_Name
       value: Rock 01 prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 79bce83937e43d042843a359e671ca99, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 79bce83937e43d042843a359e671ca99, type: 3}
       propertyPath: m_RootOrder
@@ -582,6 +594,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocks 03 prefab (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 94ac0f7807b256d4b866c2b3ec1a6de7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 94ac0f7807b256d4b866c2b3ec1a6de7, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -663,6 +679,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 94ac0f7807b256d4b866c2b3ec1a6de7, type: 3}
       propertyPath: m_Name
       value: Rocks 03 prefab (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 94ac0f7807b256d4b866c2b3ec1a6de7, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 94ac0f7807b256d4b866c2b3ec1a6de7, type: 3}
       propertyPath: m_RootOrder
@@ -746,6 +766,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocks 03 prefab (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 94ac0f7807b256d4b866c2b3ec1a6de7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 94ac0f7807b256d4b866c2b3ec1a6de7, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -827,6 +851,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 94ac0f7807b256d4b866c2b3ec1a6de7, type: 3}
       propertyPath: m_Name
       value: Rocks 03 prefab (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 94ac0f7807b256d4b866c2b3ec1a6de7, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 94ac0f7807b256d4b866c2b3ec1a6de7, type: 3}
       propertyPath: m_RootOrder
@@ -910,6 +938,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocks 03 prefab (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 94ac0f7807b256d4b866c2b3ec1a6de7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 94ac0f7807b256d4b866c2b3ec1a6de7, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -991,6 +1023,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 79bce83937e43d042843a359e671ca99, type: 3}
       propertyPath: m_Name
       value: Rock 01 prefab (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 79bce83937e43d042843a359e671ca99, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 79bce83937e43d042843a359e671ca99, type: 3}
       propertyPath: m_RootOrder
@@ -1074,6 +1110,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocks 03 prefab (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 94ac0f7807b256d4b866c2b3ec1a6de7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 94ac0f7807b256d4b866c2b3ec1a6de7, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1155,6 +1195,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 94ac0f7807b256d4b866c2b3ec1a6de7, type: 3}
       propertyPath: m_Name
       value: Rocks 03 prefab (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 94ac0f7807b256d4b866c2b3ec1a6de7, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 94ac0f7807b256d4b866c2b3ec1a6de7, type: 3}
       propertyPath: m_RootOrder

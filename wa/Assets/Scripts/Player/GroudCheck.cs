@@ -24,6 +24,7 @@ public class GroudCheck : MonoBehaviour
         if (other.tag == this.groundTag)
         {
             this.standGroundFlg = true;
+            //Debug.Log("1");
 
         }
         else if(other.tag == this.turnGroundTag)
@@ -42,7 +43,7 @@ public class GroudCheck : MonoBehaviour
         if (other.tag == this.groundTag)
         {
             this.standGroundFlg = false;
-
+            //Debug.Log("2");
         }
         else if (other.tag == this.turnGroundTag)
         {

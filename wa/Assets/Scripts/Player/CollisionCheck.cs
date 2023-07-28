@@ -22,7 +22,6 @@ public class CollisionCheck : MonoBehaviour
     //スコアマネージャー
     public ScoreManager scoreManager;
 
-
     private void Update()
     {
         //タイマーの増加

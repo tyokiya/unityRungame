@@ -108,6 +108,7 @@ public class Status : MonoBehaviour
         {
             this.nowSituation = PlayerSituation.jump;
         }
+
         //向きを変える処理
         //ターン可能な地面にいるかの確認
         //走り状態化の確認

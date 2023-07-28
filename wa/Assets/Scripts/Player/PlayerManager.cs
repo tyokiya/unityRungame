@@ -9,16 +9,15 @@ public class PlayerManager : MonoBehaviour
 {
     //インスペクターから設定
     //接地判定のオブジェクト
-    public GroudCheck groundCheck_object;
+    [SerializeField] GroudCheck groundCheck_object;
     //入力状態を返すオブジェクト
-    public ScreenInput screenInput_object;
+    [SerializeField] ScreenInput screenInput_object;
     //現在のプレイヤー状態を管理オブジェクト
-    public Status playerStatus_object;
+    [SerializeField] Status playerStatus_object;
     //プレイヤーを動かすオブジェクト
-    public Move playerMove_object;
+    [SerializeField] Move playerMove_object;
     //アニメーションを管理するオブジェクト
-    public AnimationController playerAnimation_object;
-   
+    [SerializeField] AnimationController playerAnimation_object;
 
     //接地フラグ入れる変数
     bool isGroudFlg = false;
@@ -64,7 +63,7 @@ public class PlayerManager : MonoBehaviour
         //ステータスの更新
         this.playerStatus_object.SituationUpdate(this.isGroudFlg, this.nowFlick, this.isTurnGroundFlg);
         //移動の更新
-        this.playerMove_object.MovePlayerUpdate(this.nowFlick, this.nowSituation, this.nowDirection , this.isGroudFlg);
+        this.playerMove_object.MovePlayerUpdate(this.nowFlick, this.nowSituation, this.nowDirection);
         //アニメーション更新
         this.playerAnimation_object.AnimationUpdate(this.nowFlick, this.nowSituation);
     }
