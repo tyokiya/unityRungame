@@ -9,9 +9,6 @@ using static Status;
 
 public class CameraController : MonoBehaviour
 {
-    //リジッドボディを入れる変数
-    Rigidbody rb;
-
     //カメラの振り向き速度
     float turnAngleSpeed = 6.0f;
     float turnMoveSpeed = 0.2f;
@@ -27,13 +24,6 @@ public class CameraController : MonoBehaviour
     //振り向きのマックス回数
     int maxTurnCnt = 15;
 
-    private void Awake()
-    {
-        //コンポーネント取得
-        this.rb = GetComponent<Rigidbody>();
-    }
-
-
     /// <summary>
     /// カメラの情報更新
     /// </summary>
@@ -48,12 +38,9 @@ public class CameraController : MonoBehaviour
         {
             RotationCamera(nowDirection);
         }
-        
-
         //プレイヤーの向いてる方向をもとに
         //常に一定の距離を保ちながらプレイヤーを追従
         MoveCamera(playerPos, nowDirection, situation);
-
     }
 
     /// <summary>
@@ -184,7 +171,5 @@ public class CameraController : MonoBehaviour
                     break;
             }
         }
-        
-        
     }
 }

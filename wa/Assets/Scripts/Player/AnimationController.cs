@@ -7,15 +7,8 @@ public class AnimationController : MonoBehaviour
     //親オブジェクト
     [SerializeField] GameObject parentObject;
 
-
     //アニメーターを入れる変数
-    Animator animator;
-
-    void Start()
-    {
-        //コンポーネント取得
-        this.animator = parentObject.GetComponent<Animator>();
-    }
+    [SerializeField] Animator animator;
 
     /// <summary>
     /// 3秒後トリガーを切り替えるコルーチン

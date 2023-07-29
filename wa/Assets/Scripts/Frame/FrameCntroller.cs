@@ -9,5 +9,4 @@ public class FrameCntroller : MonoBehaviour
         //フレームレート固定
         Application.targetFrameRate = 60;
     }
-
 }

@@ -10,7 +10,7 @@ public class ScoreManager : MonoBehaviour
 {
     //インスペクターから設定
     //スコア管理のオブジェクト
-    public ScoreController scoreController_object;
+    [SerializeField] ScoreController scoreController_object;
     
 
     //プレイヤーのアイテム獲得フラグ

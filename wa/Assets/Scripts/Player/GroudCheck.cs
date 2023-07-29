@@ -18,7 +18,7 @@ public class GroudCheck : MonoBehaviour
     /// <summary>
     /// 衝突を受け取りフラグを立てる
     /// </summary>
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         //衝突したものが地面なのかを調べる
         if (other.tag == this.groundTag)
@@ -37,7 +37,7 @@ public class GroudCheck : MonoBehaviour
     /// <summary>
     /// 判定がなくなったらフラグを下ろす
     /// </summary>
-    private void OnTriggerExit(Collider other)
+    void OnTriggerExit(Collider other)
     {
         //衝突したものが地面なのかを調べる
         if (other.tag == this.groundTag)

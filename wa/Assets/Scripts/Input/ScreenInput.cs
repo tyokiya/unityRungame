@@ -10,20 +10,20 @@ public class ScreenInput : MonoBehaviour
 {
     // フリック最小移動距離
     [SerializeField] 
-    private Vector2 FlickMinRange = new Vector2(30.0f, 30.0f);
+    Vector2 FlickMinRange = new Vector2(30.0f, 30.0f);
     // スワイプ最小移動距離
     [SerializeField]
-    private Vector2 SwipeMinRange = new Vector2(50.0f, 50.0f);
+    Vector2 SwipeMinRange = new Vector2(50.0f, 50.0f);
     // TAPをNONEに戻すまでのカウント
     [SerializeField]
-    private int NoneCountMax = 2;
-    private int NoneCountNow = 0;
+    int NoneCountMax = 2;
+    int NoneCountNow = 0;
     // スワイプ入力距離
-    private Vector2 SwipeRange;
+    Vector2 SwipeRange;
     // 入力方向記録用
-    private Vector2 InputSTART;
-    private Vector2 InputMOVE;
-    private Vector2 InputEND;
+    Vector2 InputSTART;
+    Vector2 InputMOVE;
+    Vector2 InputEND;
 
     // フリックの方向
     public enum FlickDirection
@@ -35,7 +35,7 @@ public class ScreenInput : MonoBehaviour
         DOWN,
         LEFT,
     }
-    private FlickDirection NowFlick = FlickDirection.NONE;
+    FlickDirection NowFlick = FlickDirection.NONE;
 
     // スワイプの方向
     public enum SwipeDirection
@@ -47,7 +47,7 @@ public class ScreenInput : MonoBehaviour
         DOWN,
         LEFT,
     }
-    private SwipeDirection NowSwipe = SwipeDirection.NONE;
+    SwipeDirection NowSwipe = SwipeDirection.NONE;
 
 
     // Update is called once per frame
@@ -57,7 +57,7 @@ public class ScreenInput : MonoBehaviour
     }
 
     // 入力の取得
-    private void GetInputVector()
+    void GetInputVector()
     {
         // Unity上での操作取得
         if (Application.isEditor)
@@ -110,7 +110,7 @@ public class ScreenInput : MonoBehaviour
     }
 
     // 入力内容からフリック方向を計算
-    private void FlickCLC()
+    void FlickCLC()
     {
         Vector2 _work = new Vector2((new Vector3(InputEND.x, 0, 0) - new Vector3(InputSTART.x, 0, 0)).magnitude, (new Vector3(0, InputEND.y, 0) - new Vector3(0, InputSTART.y, 0)).magnitude);
 
@@ -133,7 +133,7 @@ public class ScreenInput : MonoBehaviour
     }
 
     // 入力内容からスワイプ方向を計算
-    private void SwipeCLC()
+    void SwipeCLC()
     {
         SwipeRange = new Vector2((new Vector3(InputMOVE.x, 0, 0) - new Vector3(InputSTART.x, 0, 0)).magnitude, (new Vector3(0, InputMOVE.y, 0) - new Vector3(0, InputSTART.y, 0)).magnitude);
 
@@ -156,7 +156,7 @@ public class ScreenInput : MonoBehaviour
     }
 
     // NONEにリセット
-    private void ResetParameter()
+    void ResetParameter()
     {
         NoneCountNow++;
         if (NoneCountNow >= NoneCountMax)

@@ -10,26 +10,20 @@ public class CameraManager : MonoBehaviour
 {
     //インスペクターから設定
     //入力状態を返すオブジェクト
-    public ScreenInput screenInput_object;
+    [SerializeField] ScreenInput screenInput_object;
     //カメラの動きを管理するオブジェクト
-    public CameraController controller_object;
+    [SerializeField] CameraController controller_object;
     //現在のプレイヤー状態を返すオブジェクト
-    public Status playerStatus_object;
-
+    [SerializeField] Status playerStatus_object;
     //プレイヤーオブジェクトを入れる変数
-    GameObject player;
+    [SerializeField] GameObject player;
+
     //現在の入力状態を入れる変数
     ScreenInput.FlickDirection nowFlick;
     //現在のプレイヤーの向いてる方向を入れる変数
     Status.PlayerDirection nowDirection;
     //現在のプレイヤーの状態
     Status.PlayerSituation nowSituation;
-
-    void Awake()
-    {
-        //代入
-        this.player = GameObject.Find("Player");
-    }
 
     void Update()
     {
@@ -44,7 +38,6 @@ public class CameraManager : MonoBehaviour
 
         //カメラの更新処理命令
         this.controller_object.UpdateCamera(playerPos, nowDirection, nowSituation);
-
     }
 
 }

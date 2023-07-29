@@ -18,11 +18,11 @@ public class CollisionCheck : MonoBehaviour
 
     //インスペクターから設定
     //プレイヤーマネージャーのスクリプト
-    public PlayerManager manager;
+    [SerializeField] PlayerManager manager;
     //スコアマネージャー
-    public ScoreManager scoreManager;
+    [SerializeField] ScoreManager scoreManager;
 
-    private void Update()
+    void Update()
     {
         //タイマーの増加
         this.itemDelta += Time.deltaTime;
@@ -38,7 +38,7 @@ public class CollisionCheck : MonoBehaviour
     /// 衝突を感知しマネージャーに知らせる
     /// </summary>
     /// <param name="other"></param>
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         //衝突したものがアイテムなのかを調べる
         //連続で衝突を呼び出さないようスパンを設ける

@@ -13,7 +13,7 @@ public class Move : MonoBehaviour
 {
     //インスペクターから設定
     //プレイヤーマネージャーのオブジェクト
-    public PlayerManager playerManager_object;
+    [SerializeField] PlayerManager playerManager_object;
     
     //リジッドボディを入れる変数
     [SerializeField] Rigidbody rd;
@@ -21,7 +21,7 @@ public class Move : MonoBehaviour
     [SerializeField] Transform parent_transform;
 
     //ジャンプ力
-    [SerializeField] private float jumpForce = 500.0f;
+    [SerializeField] float jumpForce = 500.0f;
     [SerializeField] float down_jumpForce = 0.08f;
     float now_jumpForce = 0;
 
@@ -32,7 +32,7 @@ public class Move : MonoBehaviour
     //走ってる時のベロシティ
     Vector3 moveVelocity = new Vector3(0f, 0f, 0f);
 
-    private void Update()
+    void Update()
     {
         //毎フレームジャンプ力の減少(0以下になることはない)
         if(now_jumpForce > 0)

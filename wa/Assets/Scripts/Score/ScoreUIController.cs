@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ScoreUIController : MonoBehaviour
 {
     //スコアオブジェクトを入れる変数
-    public GameObject score_object;
+    [SerializeField] GameObject score_object;
 
     //スコアテキストを入れる変数
     Text score_text;
