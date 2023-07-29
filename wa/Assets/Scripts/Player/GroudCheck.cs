@@ -1,26 +1,26 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 ////////////////////////////////////
-// ’n–Ê‚ÌÕ“Ë‚ğŠÇ—‚·‚éƒXƒNƒŠƒvƒg
+// åœ°é¢ã®è¡çªã‚’ç®¡ç†ã™ã‚‹ã‚¹ã‚¯ãƒªãƒ—ãƒˆ
 ////////////////////////////////////
 
 public class GroudCheck : MonoBehaviour
 {
-    //’n–Ê‚Ìƒ^ƒO–¼
+    //åœ°é¢ã®ã‚¿ã‚°å
     string groundTag = "Ground";
     string turnGroundTag = "TurnGround";
-    //’n–Ê‚É—§‚Á‚Ä‚¢‚é‚©
+    //åœ°é¢ã«ç«‹ã£ã¦ã„ã‚‹ã‹
     bool standGroundFlg = true;
     bool standTurnGroundFlg = false;
 
     /// <summary>
-    /// Õ“Ë‚ğó‚¯æ‚èƒtƒ‰ƒO‚ğ—§‚Ä‚é
+    /// è¡çªã‚’å—ã‘å–ã‚Šãƒ•ãƒ©ã‚°ã‚’ç«‹ã¦ã‚‹
     /// </summary>
     void OnTriggerEnter(Collider other)
     {
-        //Õ“Ë‚µ‚½‚à‚Ì‚ª’n–Ê‚È‚Ì‚©‚ğ’²‚×‚é
+        //è¡çªã—ãŸã‚‚ã®ãŒåœ°é¢ãªã®ã‹ã‚’èª¿ã¹ã‚‹
         if (other.tag == this.groundTag)
         {
             this.standGroundFlg = true;
@@ -35,11 +35,11 @@ public class GroudCheck : MonoBehaviour
     }
 
     /// <summary>
-    /// ”»’è‚ª‚È‚­‚È‚Á‚½‚çƒtƒ‰ƒO‚ğ‰º‚ë‚·
+    /// åˆ¤å®šãŒãªããªã£ãŸã‚‰ãƒ•ãƒ©ã‚°ã‚’ä¸‹ã‚ã™
     /// </summary>
     void OnTriggerExit(Collider other)
     {
-        //Õ“Ë‚µ‚½‚à‚Ì‚ª’n–Ê‚È‚Ì‚©‚ğ’²‚×‚é
+        //è¡çªã—ãŸã‚‚ã®ãŒåœ°é¢ãªã®ã‹ã‚’èª¿ã¹ã‚‹
         if (other.tag == this.groundTag)
         {
             this.standGroundFlg = false;
@@ -52,7 +52,7 @@ public class GroudCheck : MonoBehaviour
         }
     }
     /// <summary>
-    /// ƒvƒŒƒCƒ„[‚ª’n–Ê‚É—§‚Á‚Ä‚¢‚é‚©‚Ìƒtƒ‰ƒO‚ğ•Ô‚·
+    /// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒåœ°é¢ã«ç«‹ã£ã¦ã„ã‚‹ã‹ã®ãƒ•ãƒ©ã‚°ã‚’è¿”ã™
     /// </summary>
     /// <returns></returns>
     public bool GetGroundStandFlg()

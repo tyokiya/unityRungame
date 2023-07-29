@@ -1,36 +1,36 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AnimationController : MonoBehaviour
 {
-    //eƒIƒuƒWƒFƒNƒg
+    //è¦ªã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
     [SerializeField] GameObject parentObject;
 
-    //ƒAƒjƒ[ƒ^[‚ğ“ü‚ê‚é•Ï”
+    //ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚¿ãƒ¼ã‚’å…¥ã‚Œã‚‹å¤‰æ•°
     [SerializeField] Animator animator;
 
     /// <summary>
-    /// 3•bŒãƒgƒŠƒK[‚ğØ‚è‘Ö‚¦‚éƒRƒ‹[ƒ`ƒ“
+    /// 3ç§’å¾Œãƒˆãƒªã‚¬ãƒ¼ã‚’åˆ‡ã‚Šæ›¿ãˆã‚‹ã‚³ãƒ«ãƒ¼ãƒãƒ³
     /// </summary>
     /// <returns></returns>
     public IEnumerator ChangeAnimaiton()
     {
-        //3•b‘Ò‹@
+        //3ç§’å¾…æ©Ÿ
         yield return new WaitForSeconds(3f);
-        //Debug.Log("ƒgƒŠƒK[ƒRƒ‹[ƒ`ƒ“Às");
-        //runƒAƒjƒ[ƒVƒ‡ƒ“‚ÌƒgƒŠƒK[‚ÉØ‚è‘Ö‚¦‚é
+        //Debug.Log("ãƒˆãƒªã‚¬ãƒ¼ã‚³ãƒ«ãƒ¼ãƒãƒ³å®Ÿè¡Œ");
+        //runã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã®ãƒˆãƒªã‚¬ãƒ¼ã«åˆ‡ã‚Šæ›¿ãˆã‚‹
         this.animator.SetTrigger("RunTrigger");
     }
 
     /// <summary>
-    /// ƒAƒjƒ[ƒVƒ‡ƒ“XV
+    /// ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³æ›´æ–°
     /// </summary>
-    /// <param name="flick">“ü—Íó‘Ô</param>
-    /// <param name="situation">ƒvƒŒƒCƒ„[‚Ìó‘Ô</param>
+    /// <param name="flick">å…¥åŠ›çŠ¶æ…‹</param>
+    /// <param name="situation">ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®çŠ¶æ…‹</param>
     public void AnimationUpdate(ScreenInput.FlickDirection flick, Status.PlayerSituation situation)
     {
-        //“ü—Í‚ğó‚¯‚Â‚¯ƒgƒŠƒK[‚ğØ‚è‘Ö‚¦‚é
+        //å…¥åŠ›ã‚’å—ã‘ã¤ã‘ãƒˆãƒªã‚¬ãƒ¼ã‚’åˆ‡ã‚Šæ›¿ãˆã‚‹
         if(flick == ScreenInput.FlickDirection.UP && situation == Status.PlayerSituation.run) this.animator.SetTrigger("JumpTrigger");
     }
 }

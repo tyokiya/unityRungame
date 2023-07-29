@@ -1,22 +1,22 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    //ƒCƒ“ƒXƒyƒNƒ^[‚©‚çİ’è
-    //ƒXƒRƒAŠÇ—‚ÌƒIƒuƒWƒFƒNƒg
+    //ã‚¤ãƒ³ã‚¹ãƒšã‚¯ã‚¿ãƒ¼ã‹ã‚‰è¨­å®š
+    //ã‚¹ã‚³ã‚¢ç®¡ç†ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
     [SerializeField] ScoreController scoreController_object;
-    //ƒXƒRƒAUIŠÇ—ƒIƒuƒWƒFƒNƒg
+    //ã‚¹ã‚³ã‚¢UIç®¡ç†ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
     [SerializeField] ScoreUIController scoreUIController_object;
-    //ƒAƒCƒeƒ€UIŠÇ—ƒIƒuƒWƒFƒNƒg
+    //ã‚¢ã‚¤ãƒ†ãƒ UIç®¡ç†ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
     [SerializeField] ItemUIController itemUIController_object;
 
     void Update()
     {
-        //ƒXƒRƒAUI‚ÌXV–½—ß
+        //ã‚¹ã‚³ã‚¢UIã®æ›´æ–°å‘½ä»¤
         this.scoreUIController_object.ScoreTextUpdate(this.scoreController_object.SucoreGetter());
-        //ƒAƒCƒeƒ€UI‚ÌXV–½—ß
+        //ã‚¢ã‚¤ãƒ†ãƒ UIã®æ›´æ–°å‘½ä»¤
         this.itemUIController_object.ItemTextUpdate(this.scoreController_object.ItemNumGetter());
     }
 }

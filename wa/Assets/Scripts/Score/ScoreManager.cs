@@ -1,44 +1,44 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 ////////////////////////////////////
-// Šl“¾ƒXƒRƒA‚Ìƒ}ƒl[ƒWƒƒ[ƒXƒNƒŠƒvƒg
+// ç²å¾—ã‚¹ã‚³ã‚¢ã®ãƒãƒãƒ¼ã‚¸ãƒ£ãƒ¼ã‚¹ã‚¯ãƒªãƒ—ãƒˆ
 ////////////////////////////////////
 
 public class ScoreManager : MonoBehaviour
 {
-    //ƒCƒ“ƒXƒyƒNƒ^[‚©‚çİ’è
-    //ƒXƒRƒAŠÇ—‚ÌƒIƒuƒWƒFƒNƒg
+    //ã‚¤ãƒ³ã‚¹ãƒšã‚¯ã‚¿ãƒ¼ã‹ã‚‰è¨­å®š
+    //ã‚¹ã‚³ã‚¢ç®¡ç†ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
     [SerializeField] ScoreController scoreController_object;
     
 
-    //ƒvƒŒƒCƒ„[‚ÌƒAƒCƒeƒ€Šl“¾ƒtƒ‰ƒO
+    //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚¢ã‚¤ãƒ†ãƒ ç²å¾—ãƒ•ãƒ©ã‚°
     bool playerItemGetFlg = false;
 
 
     // Update is called once per frame
     void Update()
     {
-        //ƒAƒCƒeƒ€Šl“¾ƒtƒ‰ƒO‚ª—§‚Á‚Ä‚éê‡‚»‚ê‚¼‚ê‚Éˆ—‚ğ–½—ß
+        //ã‚¢ã‚¤ãƒ†ãƒ ç²å¾—ãƒ•ãƒ©ã‚°ãŒç«‹ã£ã¦ã‚‹å ´åˆãã‚Œãã‚Œã«å‡¦ç†ã‚’å‘½ä»¤
         if (this.playerItemGetFlg == true)
         {
-            //Debug.Log("ƒAƒCƒeƒ€Šl“¾ˆ—ŠJn");
-            //ƒAƒCƒeƒ€Šl“¾”ã¸ˆ—
+            //Debug.Log("ã‚¢ã‚¤ãƒ†ãƒ ç²å¾—å‡¦ç†é–‹å§‹");
+            //ã‚¢ã‚¤ãƒ†ãƒ ç²å¾—æ•°ä¸Šæ˜‡å‡¦ç†
             this.scoreController_object.RiseItemSucore();
 
-            //ƒtƒ‰ƒO‚ğ‰º‚ë‚·
+            //ãƒ•ãƒ©ã‚°ã‚’ä¸‹ã‚ã™
             this.playerItemGetFlg = false;
         }
 
     }
 
     /// <summary>
-    /// ƒvƒŒƒCƒ„[‚ªƒAƒCƒeƒ€‚ğƒQƒbƒg‚µ‚½•ñ‚ğó‚¯æ‚é
+    /// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒã‚¢ã‚¤ãƒ†ãƒ ã‚’ã‚²ãƒƒãƒˆã—ãŸå ±å‘Šã‚’å—ã‘å–ã‚‹
     /// </summary>
     public void ItemGetReport()
     {
-        //ƒAƒCƒeƒ€Šl“¾ƒtƒ‰ƒO‚ğ—§‚Ä‚é
+        //ã‚¢ã‚¤ãƒ†ãƒ ç²å¾—ãƒ•ãƒ©ã‚°ã‚’ç«‹ã¦ã‚‹
         this.playerItemGetFlg = true;
     }
 }

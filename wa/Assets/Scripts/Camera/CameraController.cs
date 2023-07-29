@@ -1,61 +1,61 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static Status;
 
 ////////////////////////////////////
-// ƒJƒƒ‰‚ÌƒRƒ“ƒgƒ[ƒ‰[ƒXƒNƒŠƒvƒg
+// ã‚«ãƒ¡ãƒ©ã®ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©ãƒ¼ã‚¹ã‚¯ãƒªãƒ—ãƒˆ
 ////////////////////////////////////
 
 public class CameraController : MonoBehaviour
 {
-    //ƒJƒƒ‰‚ÌU‚èŒü‚«‘¬“x
+    //ã‚«ãƒ¡ãƒ©ã®æŒ¯ã‚Šå‘ãé€Ÿåº¦
     float turnAngleSpeed = 6.0f;
     float turnMoveSpeed = 0.2f;
 
-    //ƒvƒŒƒCƒ„[‚ÆƒJƒƒ‰‚Ì‹——£
+    //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã¨ã‚«ãƒ¡ãƒ©ã®è·é›¢
     float playerDirection = 5.0f;
 
-    //•ÏX‘O‚ÌƒvƒŒƒCƒ„[‚ÌŒü‚«
+    //å¤‰æ›´å‰ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å‘ã
     PlayerDirection beforeDirection = PlayerDirection.front;
 
-    //Šp“x‚É‰ÁZ‚µ‚½‰ñ”‚ğƒJƒEƒ“ƒg‚·‚é•Ï”
+    //è§’åº¦ã«åŠ ç®—ã—ãŸå›æ•°ã‚’ã‚«ã‚¦ãƒ³ãƒˆã™ã‚‹å¤‰æ•°
     int turnCnt = 0;
-    //U‚èŒü‚«‚Ìƒ}ƒbƒNƒX‰ñ”
+    //æŒ¯ã‚Šå‘ãã®ãƒãƒƒã‚¯ã‚¹å›æ•°
     int maxTurnCnt = 15;
 
     /// <summary>
-    /// ƒJƒƒ‰‚Ìî•ñXV
+    /// ã‚«ãƒ¡ãƒ©ã®æƒ…å ±æ›´æ–°
     /// </summary>
-    /// <param name="playerPos">Œ»İ‚ÌƒvƒŒƒCƒ„[‚ÌÀ•W</param>
-    /// <param name="direction">Œ»İ‚ÌƒvƒŒƒCƒ„[‚ÌŒü‚¢‚Ä‚é•ûŒü</param>
-    /// <param name="situation">Œ»İ‚ÌƒvƒŒƒCƒ„[‚Ìó‘Ô</param>
+    /// <param name="playerPos">ç¾åœ¨ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®åº§æ¨™</param>
+    /// <param name="direction">ç¾åœ¨ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å‘ã„ã¦ã‚‹æ–¹å‘</param>
+    /// <param name="situation">ç¾åœ¨ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®çŠ¶æ…‹</param>
     public void UpdateCamera(Vector3 playerPos, PlayerDirection nowDirection, PlayerSituation situation)
     {
-        //ƒvƒŒƒCƒ„[‚ÌŒü‚¢‚Ä‚é•ûŒü‚É•ÏX‚ª‚ ‚Á‚½‚ç
-        //ƒJƒƒ‰‚ÌŒü‚«‚ğ•Ï‚¦‚é(‘–‚èo‚µ‚ÄˆÈ~)
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å‘ã„ã¦ã‚‹æ–¹å‘ã«å¤‰æ›´ãŒã‚ã£ãŸã‚‰
+        //ã‚«ãƒ¡ãƒ©ã®å‘ãã‚’å¤‰ãˆã‚‹(èµ°ã‚Šå‡ºã—ã¦ä»¥é™)
         if(situation == PlayerSituation.run && nowDirection != this.beforeDirection)
         {
             RotationCamera(nowDirection);
         }
-        //ƒvƒŒƒCƒ„[‚ÌŒü‚¢‚Ä‚é•ûŒü‚ğ‚à‚Æ‚É
-        //í‚Éˆê’è‚Ì‹——£‚ğ•Û‚¿‚È‚ª‚çƒvƒŒƒCƒ„[‚ğ’Ç]
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å‘ã„ã¦ã‚‹æ–¹å‘ã‚’ã‚‚ã¨ã«
+        //å¸¸ã«ä¸€å®šã®è·é›¢ã‚’ä¿ã¡ãªãŒã‚‰ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚’è¿½å¾“
         MoveCamera(playerPos, nowDirection, situation);
     }
 
     /// <summary>
-    /// ƒJƒƒ‰‚ÌŒü‚«‰ñ“]ˆ—
+    /// ã‚«ãƒ¡ãƒ©ã®å‘ãå›è»¢å‡¦ç†
     /// </summary>
-    /// <param name="direction">Œ»İ‚ÌƒvƒŒƒCƒ„[‚ÌŒü‚¢‚Ä‚é•ûŒü</param>
+    /// <param name="direction">ç¾åœ¨ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å‘ã„ã¦ã‚‹æ–¹å‘</param>
     void RotationCamera(PlayerDirection direction)
     {
-        //ƒJƒEƒ“ƒg‘‰Á
+        //ã‚«ã‚¦ãƒ³ãƒˆå¢—åŠ 
         this.turnCnt++;
 
         switch (direction)
         {
             case PlayerDirection.front:
-                //‘O‚ğŒü‚©‚¹‚é@
+                //å‰ã‚’å‘ã‹ã›ã‚‹ã€€
                 if (this.beforeDirection == PlayerDirection.left)
                 {
                     transform.eulerAngles += new Vector3(0, this.turnAngleSpeed, 0);
@@ -66,17 +66,17 @@ public class CameraController : MonoBehaviour
                     transform.eulerAngles -= new Vector3(0, this.turnAngleSpeed, 0);
                     transform.position += new Vector3(turnMoveSpeed, 0, -turnMoveSpeed);
                 }
-                //ƒJƒEƒ“ƒg‚ª30‰ñ‚É‚È‚Á‚½‚ç‰ñ“]ˆ—Š®—¹
-                //ƒvƒŒƒCƒ„[‚Ì•ÏX‘O‚ÌŒü‚«‚ğXV
+                //ã‚«ã‚¦ãƒ³ãƒˆãŒ30å›ã«ãªã£ãŸã‚‰å›è»¢å‡¦ç†å®Œäº†
+                //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å¤‰æ›´å‰ã®å‘ãã‚’æ›´æ–°
                 if (this.turnCnt == this.maxTurnCnt)
                 {
                     this.beforeDirection = PlayerDirection.front;
-                    //ƒJƒEƒ“ƒg‰Šú‰»
+                    //ã‚«ã‚¦ãƒ³ãƒˆåˆæœŸåŒ–
                     this.turnCnt = 0;
                 }
                 break;
             case PlayerDirection.right:
-                //‰E‚ğŒü‚©‚¹‚é@
+                //å³ã‚’å‘ã‹ã›ã‚‹ã€€
                 if(this.beforeDirection == PlayerDirection.front)
                 {
                     transform.eulerAngles += new Vector3(0, this.turnAngleSpeed, 0);
@@ -87,17 +87,17 @@ public class CameraController : MonoBehaviour
                     transform.eulerAngles -= new Vector3(0, this.turnAngleSpeed, 0);
                     transform.position += new Vector3(-turnMoveSpeed, 0, -turnMoveSpeed);
                 }
-                //ƒJƒEƒ“ƒg‚ª30‰ñ‚É‚È‚Á‚½‚ç‰ñ“]ˆ—Š®—¹
-                //ƒvƒŒƒCƒ„[‚Ì•ÏX‘O‚ÌŒü‚«‚ğXV
+                //ã‚«ã‚¦ãƒ³ãƒˆãŒ30å›ã«ãªã£ãŸã‚‰å›è»¢å‡¦ç†å®Œäº†
+                //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å¤‰æ›´å‰ã®å‘ãã‚’æ›´æ–°
                 if (this.turnCnt == this.maxTurnCnt)
                 {
                     this.beforeDirection = PlayerDirection.right;
-                    //ƒJƒEƒ“ƒg‰Šú‰»
+                    //ã‚«ã‚¦ãƒ³ãƒˆåˆæœŸåŒ–
                     this.turnCnt = 0;
                 }
                 break;
             case PlayerDirection.back:
-                //Œã‚ğŒü‚©‚¹‚é@
+                //å¾Œã‚’å‘ã‹ã›ã‚‹ã€€
                 if (this.beforeDirection == PlayerDirection.right)
                 {
                     transform.eulerAngles += new Vector3(0, this.turnAngleSpeed, 0);
@@ -108,17 +108,17 @@ public class CameraController : MonoBehaviour
                     transform.eulerAngles -= new Vector3(0, this.turnAngleSpeed, 0);
                     transform.position += new Vector3(-turnMoveSpeed, 0, turnMoveSpeed);
                 }
-                //ƒJƒEƒ“ƒg‚ª30‰ñ‚É‚È‚Á‚½‚ç‰ñ“]ˆ—Š®—¹
-                //ƒvƒŒƒCƒ„[‚Ì•ÏX‘O‚ÌŒü‚«‚ğXV
+                //ã‚«ã‚¦ãƒ³ãƒˆãŒ30å›ã«ãªã£ãŸã‚‰å›è»¢å‡¦ç†å®Œäº†
+                //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å¤‰æ›´å‰ã®å‘ãã‚’æ›´æ–°
                 if (this.turnCnt == this.maxTurnCnt)
                 {
                     this.beforeDirection = PlayerDirection.back;
-                    //ƒJƒEƒ“ƒg‰Šú‰»
+                    //ã‚«ã‚¦ãƒ³ãƒˆåˆæœŸåŒ–
                     this.turnCnt = 0;
                 }
                 break;
             case PlayerDirection.left:
-                //¶‚ğŒü‚©‚¹‚é@
+                //å·¦ã‚’å‘ã‹ã›ã‚‹ã€€
                 if (this.beforeDirection == PlayerDirection.back)
                 {
                     transform.eulerAngles += new Vector3(0, this.turnAngleSpeed, 0);
@@ -129,12 +129,12 @@ public class CameraController : MonoBehaviour
                     transform.eulerAngles -= new Vector3(0, this.turnAngleSpeed, 0);
                     transform.position += new Vector3(turnMoveSpeed, 0, turnMoveSpeed);
                 }
-                //ƒJƒEƒ“ƒg‚ª30‰ñ‚É‚È‚Á‚½‚ç‰ñ“]ˆ—Š®—¹
-                //ƒvƒŒƒCƒ„[‚Ì•ÏX‘O‚ÌŒü‚«‚ğXV
+                //ã‚«ã‚¦ãƒ³ãƒˆãŒ30å›ã«ãªã£ãŸã‚‰å›è»¢å‡¦ç†å®Œäº†
+                //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å¤‰æ›´å‰ã®å‘ãã‚’æ›´æ–°
                 if (this.turnCnt == this.maxTurnCnt)
                 {
                     this.beforeDirection = PlayerDirection.left;
-                    //ƒJƒEƒ“ƒg‰Šú‰»
+                    //ã‚«ã‚¦ãƒ³ãƒˆåˆæœŸåŒ–
                     this.turnCnt = 0;
                 }
                 break;
@@ -142,10 +142,10 @@ public class CameraController : MonoBehaviour
     }
 
     /// <summary>
-    /// ƒJƒƒ‰‚Ì’Ç]ˆ—
+    /// ã‚«ãƒ¡ãƒ©ã®è¿½å¾“å‡¦ç†
     /// </summary>
-    /// <param name="playerPos">Œ»İ‚ÌƒvƒŒƒCƒ„[‚ÌÀ•W</param>
-    /// <param name="direction">Œ»İ‚ÌƒvƒŒƒCƒ„[‚ÌŒü‚¢‚Ä‚é•ûŒü</param>
+    /// <param name="playerPos">ç¾åœ¨ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®åº§æ¨™</param>
+    /// <param name="direction">ç¾åœ¨ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å‘ã„ã¦ã‚‹æ–¹å‘</param>
     void MoveCamera(Vector3 playerPos, PlayerDirection direction, PlayerSituation situation)
     {
         if(situation == PlayerSituation.walk)

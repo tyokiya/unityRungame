@@ -1,21 +1,21 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Schema;
 using Unity.VisualScripting;
 using UnityEngine;
 
 ////////////////////////////////////
-// ƒvƒŒƒCƒ„[‚ÌƒXƒe[ƒ^ƒX‚ğŠÇ—‚·‚éƒXƒNƒŠƒvƒg
+// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã‚’ç®¡ç†ã™ã‚‹ã‚¹ã‚¯ãƒªãƒ—ãƒˆ
 ////////////////////////////////////
 
 public class Status : MonoBehaviour
 {
-    //ƒ^ƒCƒ}[
+    //ã‚¿ã‚¤ãƒãƒ¼
     float delta = 0;
-    //˜A‘±‚Å‰ñ“]ˆ—‚³‚¹‚È‚¢‚½‚ß‚ÌƒXƒpƒ“
+    //é€£ç¶šã§å›è»¢å‡¦ç†ã•ã›ãªã„ãŸã‚ã®ã‚¹ãƒ‘ãƒ³
     float rotationSpan = 1.0f;
 
-    //ƒvƒŒƒCƒ„[‚Ìó‘Ô
+    //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®çŠ¶æ…‹
     public enum PlayerSituation
     { 
         walk,
@@ -24,16 +24,16 @@ public class Status : MonoBehaviour
     }
     PlayerSituation nowSituation = PlayerSituation.walk;
 
-    //ƒvƒŒƒCƒ„[‚Ì¶€ó‘Ô
+    //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ç”Ÿæ­»çŠ¶æ…‹
     public enum PlayerSurvival
     { 
-        life,                   //¶‘¶ó‘Ô
-        collisionDeath,         //Õ“Ë‚É‚æ‚é€–Só‘Ô
-        fallDeath               //—‰º‚É‚æ‚é€–Só‘Ô
+        life,                   //ç”Ÿå­˜çŠ¶æ…‹
+        collisionDeath,         //è¡çªã«ã‚ˆã‚‹æ­»äº¡çŠ¶æ…‹
+        fallDeath               //è½ä¸‹ã«ã‚ˆã‚‹æ­»äº¡çŠ¶æ…‹
     }
     PlayerSurvival nowSurvival = PlayerSurvival.life;
 
-    //‰Šú‚ÌŒü‚¢‚Ä‚é•ûŠp‚ğ‘O‚Ì‚µ‚½‚ÌŒ»İ‚ÌƒvƒŒƒCƒ„[Œü‚¢‚Ä‚¢‚é•ûŒü
+    //åˆæœŸã®å‘ã„ã¦ã‚‹æ–¹è§’ã‚’å‰ã®ã—ãŸæ™‚ã®ç¾åœ¨ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼å‘ã„ã¦ã„ã‚‹æ–¹å‘
     public enum PlayerDirection
     {
         front,
@@ -46,26 +46,26 @@ public class Status : MonoBehaviour
 
     void Update()
     {
-        //ƒfƒ‹ƒ^‘‰Á
+        //ãƒ‡ãƒ«ã‚¿å¢—åŠ 
         this.delta += Time.deltaTime;
     }
 
 
     /// <summary>
-    /// 3•bŒãó‘Ô‚ğØ‚è‚©‚¦‚éƒRƒ‹[ƒ`ƒ“
+    /// 3ç§’å¾ŒçŠ¶æ…‹ã‚’åˆ‡ã‚Šã‹ãˆã‚‹ã‚³ãƒ«ãƒ¼ãƒãƒ³
     /// </summary>
     /// <returns></returns>
     public IEnumerator ChangeSituation()
     {
-        //3•b‘Ò‹@
+        //3ç§’å¾…æ©Ÿ
         yield return new WaitForSeconds(3f);
-        //Debug.Log("ƒXƒe[ƒ^ƒXƒRƒ‹[ƒ`ƒ“Às");
-        //ó‘Ô‚ğØ‚è‘Ö‚¦
+        //Debug.Log("ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã‚³ãƒ«ãƒ¼ãƒãƒ³å®Ÿè¡Œ");
+        //çŠ¶æ…‹ã‚’åˆ‡ã‚Šæ›¿ãˆ
         this.nowSituation = PlayerSituation.run;
     }
 
     /// <summary>
-    /// Œ»İ‚ÌƒvƒŒƒCƒ„[‚Ìó‘Ô‚ğ•Ô‚·
+    /// ç¾åœ¨ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®çŠ¶æ…‹ã‚’è¿”ã™
     /// </summary>
     public PlayerSituation GetNowPlayerSituation()
     {
@@ -73,7 +73,7 @@ public class Status : MonoBehaviour
     }
 
     /// <summary>
-    /// Œ»İ‚ÌƒvƒŒƒCƒ„[‚Ì•ûŒü‚ğ•Ô‚·
+    /// ç¾åœ¨ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æ–¹å‘ã‚’è¿”ã™
     /// </summary>
     public PlayerDirection GetNowPlayerDirection()
     {
@@ -81,7 +81,7 @@ public class Status : MonoBehaviour
     }
 
     /// <summary>
-    /// Œ»İ‚ÌƒvƒŒƒCƒ„[‚Ì¶€ó‘Ô‚ğ•Ô‚·
+    /// ç¾åœ¨ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ç”Ÿæ­»çŠ¶æ…‹ã‚’è¿”ã™
     /// </summary>
     public PlayerSurvival GetNowPlayerSurvival()
     {
@@ -89,99 +89,99 @@ public class Status : MonoBehaviour
     }
 
     /// <summary>
-    /// ó‘Ô‚ğÚ’nó‘Ô‚É‰‚¶‚ÄXV‚·‚é
+    /// çŠ¶æ…‹ã‚’æ¥åœ°çŠ¶æ…‹ã«å¿œã˜ã¦æ›´æ–°ã™ã‚‹
     /// </summary>
-    /// <param name="GroundFlg">Ú’nƒtƒ‰ƒO</param>
-    /// <param name="flick">Œ»İ‚Ì“ü—Íó‘Ô</param>
-    /// <param name="turnGroundFlg">ƒ^[ƒ“‰Â”\‚È’n–Ê‚Æ‚ÌÚ’nƒtƒ‰ƒO</param>
+    /// <param name="GroundFlg">æ¥åœ°ãƒ•ãƒ©ã‚°</param>
+    /// <param name="flick">ç¾åœ¨ã®å…¥åŠ›çŠ¶æ…‹</param>
+    /// <param name="turnGroundFlg">ã‚¿ãƒ¼ãƒ³å¯èƒ½ãªåœ°é¢ã¨ã®æ¥åœ°ãƒ•ãƒ©ã‚°</param>
     public void SituationUpdate(bool GroundFlg, ScreenInput.FlickDirection flick, bool turnGroundFlg)
     {
-        //ƒWƒƒƒ“ƒvó‘Ô‚©‚ç’n–Ê‚É‚Â‚¢‚½ê‡ƒXƒe[ƒ^ƒX‚ğ•ÏX
+        //ã‚¸ãƒ£ãƒ³ãƒ—çŠ¶æ…‹ã‹ã‚‰åœ°é¢ã«ã¤ã„ãŸå ´åˆã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã‚’å¤‰æ›´
         if (GroundFlg == true && this.nowSituation == PlayerSituation.jump)
         {
             this.nowSituation = PlayerSituation.run;
         }
 
-        //ƒtƒŠƒbƒN‚Ìó‘Ô‚É‰‚¶‚ÄƒXƒe[ƒ^ƒX‚ğ•ÏX
-        //ƒvƒŒƒCƒ„[‚ª‘–‚Á‚Ä‚¢‚éó‘Ô‚Ì‚Æ‚«‚ÍƒWƒƒƒ“ƒv‚ÉØ‚è‘Ö‚¦‚é
+        //ãƒ•ãƒªãƒƒã‚¯ã®çŠ¶æ…‹ã«å¿œã˜ã¦ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã‚’å¤‰æ›´
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒèµ°ã£ã¦ã„ã‚‹çŠ¶æ…‹ã®ã¨ãã¯ã‚¸ãƒ£ãƒ³ãƒ—ã«åˆ‡ã‚Šæ›¿ãˆã‚‹
         if (flick == ScreenInput.FlickDirection.UP && this.nowSituation == PlayerSituation.run)
         {
             this.nowSituation = PlayerSituation.jump;
         }
 
-        //Œü‚«‚ğ•Ï‚¦‚éˆ—
-        //ƒ^[ƒ“‰Â”\‚È’n–Ê‚É‚¢‚é‚©‚ÌŠm”F
-        //‘–‚èó‘Ô‰»‚ÌŠm”F
+        //å‘ãã‚’å¤‰ãˆã‚‹å‡¦ç†
+        //ã‚¿ãƒ¼ãƒ³å¯èƒ½ãªåœ°é¢ã«ã„ã‚‹ã‹ã®ç¢ºèª
+        //èµ°ã‚ŠçŠ¶æ…‹åŒ–ã®ç¢ºèª
         if(flick == ScreenInput.FlickDirection.RIGHT && this.delta > this.rotationSpan && nowSituation == PlayerSituation.run && turnGroundFlg == true)
         {
             ChangeDirection(true);
-            //ƒfƒ‹ƒ^‰Šú‰»
+            //ãƒ‡ãƒ«ã‚¿åˆæœŸåŒ–
             this.delta = 0;
         }
         if(flick == ScreenInput.FlickDirection.LEFT && this.delta > this.rotationSpan && nowSituation == PlayerSituation.run && turnGroundFlg == true)
         {
             ChangeDirection(false);
-            //ƒfƒ‹ƒ^‰Šú‰»
+            //ãƒ‡ãƒ«ã‚¿åˆæœŸåŒ–
             this.delta = 0;
         }
   
     }
 
     /// <summary>
-    /// ƒvƒŒƒCƒ„[‚Ì•ûŒü‚ğ•Ï‚¦‚é
+    /// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æ–¹å‘ã‚’å¤‰ãˆã‚‹
     /// </summary>
-    /// <param name="rightFlg">‰EŒü‚«‚Ì‰ñ“]‚©‚Ìƒtƒ‰ƒO</param>
+    /// <param name="rightFlg">å³å‘ãã®å›è»¢ã‹ã®ãƒ•ãƒ©ã‚°</param>
     void ChangeDirection(bool rightFlg)
     {
-        //Œ»İ‚Ì•ûŒü‚Æ‰ñ“]•ûŒü‚É‰‚¶‚½ˆ—
+        //ç¾åœ¨ã®æ–¹å‘ã¨å›è»¢æ–¹å‘ã«å¿œã˜ãŸå‡¦ç†
         switch(this.nowDirection)
         {
             case PlayerDirection.front:
                 if(rightFlg == true)
                 {
                     this.nowDirection = PlayerDirection.right;
-                    Debug.Log("ƒvƒŒƒCƒ„[‚Ì•ûŒü•ÏX(‰E)");
+                    Debug.Log("ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æ–¹å‘å¤‰æ›´(å³)");
                 }
                 else
                 {
                     this.nowDirection = PlayerDirection.left;
-                    Debug.Log("ƒvƒŒƒCƒ„[‚Ì•ûŒü•ÏX(¶)");
+                    Debug.Log("ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æ–¹å‘å¤‰æ›´(å·¦)");
                 }
                 break;
             case PlayerDirection.right:
                 if (rightFlg == true)
                 {
                     this.nowDirection = PlayerDirection.back;
-                    Debug.Log("ƒvƒŒƒCƒ„[‚Ì•ûŒü•ÏX(Œã)");
+                    Debug.Log("ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æ–¹å‘å¤‰æ›´(å¾Œ)");
                 }
                 else
                 {
                     this.nowDirection = PlayerDirection.front;
-                    Debug.Log("ƒvƒŒƒCƒ„[‚Ì•ûŒü•ÏX(‘O)");
+                    Debug.Log("ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æ–¹å‘å¤‰æ›´(å‰)");
                 }
                 break;
             case PlayerDirection.back:
                 if (rightFlg == true)
                 {
                     this.nowDirection = PlayerDirection.left;
-                    Debug.Log("ƒvƒŒƒCƒ„[‚Ì•ûŒü•ÏX(¶)");
+                    Debug.Log("ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æ–¹å‘å¤‰æ›´(å·¦)");
                 }
                 else
                 {
                     this.nowDirection = PlayerDirection.right;
-                    Debug.Log("ƒvƒŒƒCƒ„[‚Ì•ûŒü•ÏX(‰E)");
+                    Debug.Log("ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æ–¹å‘å¤‰æ›´(å³)");
                 }
                 break;
             case PlayerDirection.left:
                 if (rightFlg == true)
                 {
                     this.nowDirection = PlayerDirection.front;
-                    Debug.Log("ƒvƒŒƒCƒ„[‚Ì•ûŒü•ÏX(‘O)");
+                    Debug.Log("ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æ–¹å‘å¤‰æ›´(å‰)");
                 }
                 else
                 {
                     this.nowDirection = PlayerDirection.back;
-                    Debug.Log("ƒvƒŒƒCƒ„[‚Ì•ûŒü•ÏX(Œã)");
+                    Debug.Log("ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æ–¹å‘å¤‰æ›´(å¾Œ)");
                 }
                 break;
         }

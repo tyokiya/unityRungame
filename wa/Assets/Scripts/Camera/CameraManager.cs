@@ -1,42 +1,42 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 ////////////////////////////////////
-// ƒJƒƒ‰‚ğŠÇ—‚·‚éƒ}ƒl[ƒWƒƒ[ƒXƒNƒŠƒvƒg
+// ã‚«ãƒ¡ãƒ©ã‚’ç®¡ç†ã™ã‚‹ãƒãƒãƒ¼ã‚¸ãƒ£ãƒ¼ã‚¹ã‚¯ãƒªãƒ—ãƒˆ
 ////////////////////////////////////
 
 public class CameraManager : MonoBehaviour
 {
-    //ƒCƒ“ƒXƒyƒNƒ^[‚©‚çİ’è
-    //“ü—Íó‘Ô‚ğ•Ô‚·ƒIƒuƒWƒFƒNƒg
+    //ã‚¤ãƒ³ã‚¹ãƒšã‚¯ã‚¿ãƒ¼ã‹ã‚‰è¨­å®š
+    //å…¥åŠ›çŠ¶æ…‹ã‚’è¿”ã™ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
     [SerializeField] ScreenInput screenInput_object;
-    //ƒJƒƒ‰‚Ì“®‚«‚ğŠÇ—‚·‚éƒIƒuƒWƒFƒNƒg
+    //ã‚«ãƒ¡ãƒ©ã®å‹•ãã‚’ç®¡ç†ã™ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
     [SerializeField] CameraController controller_object;
-    //Œ»İ‚ÌƒvƒŒƒCƒ„[ó‘Ô‚ğ•Ô‚·ƒIƒuƒWƒFƒNƒg
+    //ç¾åœ¨ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼çŠ¶æ…‹ã‚’è¿”ã™ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
     [SerializeField] Status playerStatus_object;
-    //ƒvƒŒƒCƒ„[ƒIƒuƒWƒFƒNƒg‚ğ“ü‚ê‚é•Ï”
+    //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å…¥ã‚Œã‚‹å¤‰æ•°
     [SerializeField] GameObject player;
 
-    //Œ»İ‚Ì“ü—Íó‘Ô‚ğ“ü‚ê‚é•Ï”
+    //ç¾åœ¨ã®å…¥åŠ›çŠ¶æ…‹ã‚’å…¥ã‚Œã‚‹å¤‰æ•°
     ScreenInput.FlickDirection nowFlick;
-    //Œ»İ‚ÌƒvƒŒƒCƒ„[‚ÌŒü‚¢‚Ä‚é•ûŒü‚ğ“ü‚ê‚é•Ï”
+    //ç¾åœ¨ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å‘ã„ã¦ã‚‹æ–¹å‘ã‚’å…¥ã‚Œã‚‹å¤‰æ•°
     Status.PlayerDirection nowDirection;
-    //Œ»İ‚ÌƒvƒŒƒCƒ„[‚Ìó‘Ô
+    //ç¾åœ¨ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®çŠ¶æ…‹
     Status.PlayerSituation nowSituation;
 
     void Update()
     {
-        //ƒvƒŒƒCƒ„[‚ÌÀ•W‚ğæ“¾
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®åº§æ¨™ã‚’å–å¾—
         Vector3 playerPos = this.player.transform.position;
-        //Œ»İ‚ÌƒvƒŒƒCƒ„[‚ÌŒü‚¢‚Ä‚é•ûŒü‚ğó‚¯æ‚é
+        //ç¾åœ¨ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å‘ã„ã¦ã‚‹æ–¹å‘ã‚’å—ã‘å–ã‚‹
         this.nowDirection = this.playerStatus_object.GetNowPlayerDirection();
-        //Œ»İ‚ÌƒvƒŒƒCƒ„[‚Ìó‘Ô‚ğó‚¯æ‚é
+        //ç¾åœ¨ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®çŠ¶æ…‹ã‚’å—ã‘å–ã‚‹
         this.nowSituation = this.playerStatus_object.GetNowPlayerSituation();
-        //ƒtƒŠƒbƒN•ûŒü‚ğó‚¯æ‚é
+        //ãƒ•ãƒªãƒƒã‚¯æ–¹å‘ã‚’å—ã‘å–ã‚‹
         this.nowFlick = this.screenInput_object.GetNowFlick();
 
-        //ƒJƒƒ‰‚ÌXVˆ—–½—ß
+        //ã‚«ãƒ¡ãƒ©ã®æ›´æ–°å‡¦ç†å‘½ä»¤
         this.controller_object.UpdateCamera(playerPos, nowDirection, nowSituation);
     }
 

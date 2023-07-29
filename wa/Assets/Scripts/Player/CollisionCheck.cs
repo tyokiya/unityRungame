@@ -1,33 +1,33 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 ////////////////////////////////////
-// ƒvƒŒƒCƒ„[‚Ì”í’e‚ğŠÇ—‚·‚éƒXƒNƒŠƒvƒg
+// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®è¢«å¼¾ã‚’ç®¡ç†ã™ã‚‹ã‚¹ã‚¯ãƒªãƒ—ãƒˆ
 ////////////////////////////////////
 
 public class CollisionCheck : MonoBehaviour
 {
-    //ƒAƒCƒeƒ€‚Ìƒ^ƒO–¼
+    //ã‚¢ã‚¤ãƒ†ãƒ ã®ã‚¿ã‚°å
     string ItemTag = "Item";
 
-    //ƒAƒCƒeƒ€ƒ^ƒCƒ}[
+    //ã‚¢ã‚¤ãƒ†ãƒ ã‚¿ã‚¤ãƒãƒ¼
     float itemDelta = 0;
-    //Ÿ‚ÌƒAƒCƒeƒ€‚ğŠl“¾‚·‚é‚Ü‚Å‚ÌƒXƒpƒ“
+    //æ¬¡ã®ã‚¢ã‚¤ãƒ†ãƒ ã‚’ç²å¾—ã™ã‚‹ã¾ã§ã®ã‚¹ãƒ‘ãƒ³
     float itemGetSpan = 0.05f;
 
-    //ƒCƒ“ƒXƒyƒNƒ^[‚©‚çİ’è
-    //ƒvƒŒƒCƒ„[ƒ}ƒl[ƒWƒƒ[‚ÌƒXƒNƒŠƒvƒg
+    //ã‚¤ãƒ³ã‚¹ãƒšã‚¯ã‚¿ãƒ¼ã‹ã‚‰è¨­å®š
+    //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãƒãƒãƒ¼ã‚¸ãƒ£ãƒ¼ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆ
     [SerializeField] PlayerManager manager;
-    //ƒXƒRƒAƒ}ƒl[ƒWƒƒ[
+    //ã‚¹ã‚³ã‚¢ãƒãƒãƒ¼ã‚¸ãƒ£ãƒ¼
     [SerializeField] ScoreManager scoreManager;
 
     void Update()
     {
-        //ƒ^ƒCƒ}[‚Ì‘‰Á
+        //ã‚¿ã‚¤ãƒãƒ¼ã®å¢—åŠ 
         this.itemDelta += Time.deltaTime;
 
-        //ƒI[ƒo[ƒtƒ[‚³‚¹‚È‚¢ˆ—
+        //ã‚ªãƒ¼ãƒãƒ¼ãƒ•ãƒ­ãƒ¼ã•ã›ãªã„å‡¦ç†
         if(this.itemDelta > float.MaxValue)
         {
             this.itemDelta = 0;
@@ -35,21 +35,21 @@ public class CollisionCheck : MonoBehaviour
     }
 
     /// <summary>
-    /// Õ“Ë‚ğŠ´’m‚µƒ}ƒl[ƒWƒƒ[‚É’m‚ç‚¹‚é
+    /// è¡çªã‚’æ„ŸçŸ¥ã—ãƒãƒãƒ¼ã‚¸ãƒ£ãƒ¼ã«çŸ¥ã‚‰ã›ã‚‹
     /// </summary>
     /// <param name="other"></param>
     void OnTriggerEnter(Collider other)
     {
-        //Õ“Ë‚µ‚½‚à‚Ì‚ªƒAƒCƒeƒ€‚È‚Ì‚©‚ğ’²‚×‚é
-        //˜A‘±‚ÅÕ“Ë‚ğŒÄ‚Ño‚³‚È‚¢‚æ‚¤ƒXƒpƒ“‚ğİ‚¯‚é
+        //è¡çªã—ãŸã‚‚ã®ãŒã‚¢ã‚¤ãƒ†ãƒ ãªã®ã‹ã‚’èª¿ã¹ã‚‹
+        //é€£ç¶šã§è¡çªã‚’å‘¼ã³å‡ºã•ãªã„ã‚ˆã†ã‚¹ãƒ‘ãƒ³ã‚’è¨­ã‘ã‚‹
         if(other.tag == this.ItemTag && this.itemDelta > this.itemGetSpan)
         {
-            //Debug.Log("ƒAƒCƒeƒ€‚ÆÕ“Ë");
-            //ƒvƒŒƒCƒ„[ƒ}ƒl[ƒWƒƒ[‚É•ñ
+            //Debug.Log("ã‚¢ã‚¤ãƒ†ãƒ ã¨è¡çª");
+            //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãƒãƒãƒ¼ã‚¸ãƒ£ãƒ¼ã«å ±å‘Š
             scoreManager.ItemGetReport();
-            //ƒ^ƒCƒ}[‰Šú‰»
+            //ã‚¿ã‚¤ãƒãƒ¼åˆæœŸåŒ–
             this.itemDelta = 0;
-            //Šl“¾‚µ‚½ƒAƒCƒeƒ€ƒIƒuƒWƒFƒNƒg‚ğ”j‰ó
+            //ç²å¾—ã—ãŸã‚¢ã‚¤ãƒ†ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç ´å£Š
             Destroy(other.gameObject);
         }
     }

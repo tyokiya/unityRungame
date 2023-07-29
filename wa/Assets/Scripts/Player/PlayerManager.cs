@@ -1,70 +1,76 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 ////////////////////////////////////
-// ƒvƒŒƒCƒ„[‚ğŠÇ—‚·‚éƒ}ƒl[ƒWƒƒ[ƒXƒNƒŠƒvƒg
+// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚’ç®¡ç†ã™ã‚‹ãƒãƒãƒ¼ã‚¸ãƒ£ãƒ¼ã‚¹ã‚¯ãƒªãƒ—ãƒˆ
 ////////////////////////////////////
 public class PlayerManager : MonoBehaviour
 {
-    //ƒCƒ“ƒXƒyƒNƒ^[‚©‚çİ’è
-    //Ú’n”»’è‚ÌƒIƒuƒWƒFƒNƒg
+    //ã‚¤ãƒ³ã‚¹ãƒšã‚¯ã‚¿ãƒ¼ã‹ã‚‰è¨­å®š
+    //æ¥åœ°åˆ¤å®šã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
     [SerializeField] GroudCheck groundCheck_object;
-    //“ü—Íó‘Ô‚ğ•Ô‚·ƒIƒuƒWƒFƒNƒg
+    //å…¥åŠ›çŠ¶æ…‹ã‚’è¿”ã™ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
     [SerializeField] ScreenInput screenInput_object;
-    //Œ»İ‚ÌƒvƒŒƒCƒ„[ó‘Ô‚ğŠÇ—ƒIƒuƒWƒFƒNƒg
+    //ã‚¸ãƒ£ã‚¤ãƒ­å…¥åŠ›ã‚’è¿”ã™ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+    [SerializeField] GyroInput gyroInput_object;
+    //ç¾åœ¨ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼çŠ¶æ…‹ã‚’ç®¡ç†ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
     [SerializeField] Status playerStatus_object;
-    //ƒvƒŒƒCƒ„[‚ğ“®‚©‚·ƒIƒuƒWƒFƒNƒg
+    //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚’å‹•ã‹ã™ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
     [SerializeField] Move playerMove_object;
-    //ƒAƒjƒ[ƒVƒ‡ƒ“‚ğŠÇ—‚·‚éƒIƒuƒWƒFƒNƒg
+    //ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚’ç®¡ç†ã™ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
     [SerializeField] AnimationController playerAnimation_object;
 
-    //Ú’nƒtƒ‰ƒO“ü‚ê‚é•Ï”
+    //æ¥åœ°ãƒ•ãƒ©ã‚°å…¥ã‚Œã‚‹å¤‰æ•°
     bool isGroudFlg = false;
-    //ƒ^[ƒ“‰Â”\‚È’n–Ê‚Æ‚Ìİ’uƒtƒ‰ƒO‚ğ“ü‚ê‚é
+    //ã‚¿ãƒ¼ãƒ³å¯èƒ½ãªåœ°é¢ã¨ã®è¨­ç½®ãƒ•ãƒ©ã‚°ã‚’å…¥ã‚Œã‚‹
     bool isTurnGroundFlg = false;
 
-    //ƒvƒŒƒCƒ„[‚Ì—‰º”»’è‚ÌyÀ•Wƒ{[ƒ_[
+    //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®è½ä¸‹åˆ¤å®šã®yåº§æ¨™ãƒœãƒ¼ãƒ€ãƒ¼
     float playerFallBorder_y = -2.0f;
 
-    //Œ»İ‚Ì“ü—Íó‘Ô‚ğ“ü‚ê‚é•Ï”
+    //ç¾åœ¨ã®å…¥åŠ›çŠ¶æ…‹ã‚’å…¥ã‚Œã‚‹å¤‰æ•°
     ScreenInput.FlickDirection nowFlick;
-    //Œ»İ‚ÌƒvƒŒƒCƒ„[ó‘Ô‚ğ“ü‚ê‚é•Ï”
+    //ã‚¹ãƒãƒ›ã®å‚¾ãã‚’å…¥ã‚Œã‚‹å¤‰æ•°
+    float difference_tilt;
+    //ç¾åœ¨ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼çŠ¶æ…‹ã‚’å…¥ã‚Œã‚‹å¤‰æ•°
     Status.PlayerSituation nowSituation;
-    //Œ»İ‚ÌƒvƒŒƒCƒ„[‚Ì¶€ó‘Ô‚ğ“ü‚ê‚é•Ï”
+    //ç¾åœ¨ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ç”Ÿæ­»çŠ¶æ…‹ã‚’å…¥ã‚Œã‚‹å¤‰æ•°
     Status.PlayerSurvival nowSurvival;
-    //Œ»İ‚ÌƒvƒŒƒCƒ„[‚ÌŒü‚¢‚Ä‚é•ûŒü‚ğ“ü‚ê‚é•Ï”
+    //ç¾åœ¨ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å‘ã„ã¦ã‚‹æ–¹å‘ã‚’å…¥ã‚Œã‚‹å¤‰æ•°
     Status.PlayerDirection nowDirection;
-    //Œ»İ‚ÌƒvƒŒƒCƒ„[‚ÌÀ•W‚ğ“ü‚ê‚é•Ï”
+    //ç¾åœ¨ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®åº§æ¨™ã‚’å…¥ã‚Œã‚‹å¤‰æ•°
     Vector3 nowPosition;
 
     void Start()
     {
-        //ƒRƒ‹[ƒ`ƒ“ŒÄ‚Ño‚µ
+        //ã‚³ãƒ«ãƒ¼ãƒãƒ³å‘¼ã³å‡ºã—
         StartCoroutine(playerStatus_object.ChangeSituation());
         StartCoroutine(playerAnimation_object.ChangeAnimaiton());
     }
 
     void Update()
     {
-        //Ú’n”»’è‚ğó‚¯æ‚é
+        //æ¥åœ°åˆ¤å®šã‚’å—ã‘å–ã‚‹
         this.isGroudFlg = this.groundCheck_object.GetGroundStandFlg();
         this.isTurnGroundFlg = this.groundCheck_object.GetTurnGroundStandFlg();
 
-        //ƒtƒŠƒbƒN•ûŒü‚ğó‚¯æ‚é
+        //ãƒ•ãƒªãƒƒã‚¯æ–¹å‘ã‚’å—ã‘å–ã‚‹
         this.nowFlick = this.screenInput_object.GetNowFlick();
-        //Œ»İ‚Ìó‘Ô‚ğó‚¯æ‚é
+        //ã‚¹ãƒãƒ›ã®å‚¾ãã‚’å—ã‘å–ã‚‹
+        this.difference_tilt = this.gyroInput_object.GetDifferenceTilt();
+        //ç¾åœ¨ã®çŠ¶æ…‹ã‚’å—ã‘å–ã‚‹
         this.nowSituation = this.playerStatus_object.GetNowPlayerSituation();
-        //Œ»İ‚Ì¶€ó‘Ô‚ğó‚¯æ‚é
+        //ç¾åœ¨ã®ç”Ÿæ­»çŠ¶æ…‹ã‚’å—ã‘å–ã‚‹
         this.nowSurvival = this.playerStatus_object.GetNowPlayerSurvival();
-        //Œ»İ‚ÌƒvƒŒƒCƒ„[‚ÌŒü‚¢‚Ä‚é•ûŒü‚ğó‚¯æ‚é
+        //ç¾åœ¨ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å‘ã„ã¦ã‚‹æ–¹å‘ã‚’å—ã‘å–ã‚‹
         this.nowDirection = this.playerStatus_object.GetNowPlayerDirection();
 
-        //ƒXƒe[ƒ^ƒX‚ÌXV
+        //ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã®æ›´æ–°
         this.playerStatus_object.SituationUpdate(this.isGroudFlg, this.nowFlick, this.isTurnGroundFlg);
-        //ˆÚ“®‚ÌXV
-        this.playerMove_object.MovePlayerUpdate(this.nowFlick, this.nowSituation, this.nowDirection);
-        //ƒAƒjƒ[ƒVƒ‡ƒ“XV
+        //ç§»å‹•ã®æ›´æ–°
+        this.playerMove_object.MovePlayerUpdate(this.nowFlick, this.nowSituation, this.nowDirection,this.difference_tilt, this.isTurnGroundFlg);
+        //ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³æ›´æ–°
         this.playerAnimation_object.AnimationUpdate(this.nowFlick, this.nowSituation);
     }
 }

@@ -1,31 +1,31 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ScoreController : MonoBehaviour
 {
-    //Šl“¾ƒAƒCƒeƒ€”
+    //ç²å¾—ã‚¢ã‚¤ãƒ†ãƒ æ•°
     int getItemCnt = 0;
-    //Šl“¾ƒXƒRƒA
+    //ç²å¾—ã‚¹ã‚³ã‚¢
     int getSucore = 0;
 
     void Update()
     {
-        //1ƒtƒŒ[ƒ€‚²‚Æ‚ÉƒXƒRƒA‚ğ1‚Ã‚Â‘‰Á
+        //1ãƒ•ãƒ¬ãƒ¼ãƒ ã”ã¨ã«ã‚¹ã‚³ã‚¢ã‚’1ã¥ã¤å¢—åŠ 
         this.getSucore++;
     }
 
     /// <summary>
-    /// Šl“¾ƒAƒCƒeƒ€”‚Ìã¸
+    /// ç²å¾—ã‚¢ã‚¤ãƒ†ãƒ æ•°ã®ä¸Šæ˜‡
     /// </summary>
     public void RiseItemSucore()
     {
-        //Debug.Log("ƒAƒCƒeƒ€”ã¸");
+        //Debug.Log("ã‚¢ã‚¤ãƒ†ãƒ æ•°ä¸Šæ˜‡");
         this.getItemCnt++;
     }
 
     /// <summary>
-    /// Šl“¾ƒAƒCƒeƒ€”‚ÌƒQƒbƒ^[
+    /// ç²å¾—ã‚¢ã‚¤ãƒ†ãƒ æ•°ã®ã‚²ãƒƒã‚¿ãƒ¼
     /// </summary>
     public int ItemNumGetter()
     {
@@ -33,7 +33,7 @@ public class ScoreController : MonoBehaviour
     }
 
     /// <summary>
-    /// Šl“¾ƒXƒRƒA‚ÌƒQƒbƒ^[
+    /// ç²å¾—ã‚¹ã‚³ã‚¢ã®ã‚²ãƒƒã‚¿ãƒ¼
     /// </summary>
     public int SucoreGetter()
     {

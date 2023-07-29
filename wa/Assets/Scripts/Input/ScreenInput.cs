@@ -1,31 +1,31 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 ////////////////////////////////////
-// “ü—Í‚ğó‚¯æ‚éƒXƒNƒŠƒvƒg
+// ã‚¿ãƒƒãƒ—ã‚¹ãƒ¯ã‚¤ãƒ—ã®å…¥åŠ›ã‚’å—ã‘å–ã‚‹ã‚¹ã‚¯ãƒªãƒ—ãƒˆ
 ////////////////////////////////////
 
 public class ScreenInput : MonoBehaviour
 {
-    // ƒtƒŠƒbƒNÅ¬ˆÚ“®‹——£
+    // ãƒ•ãƒªãƒƒã‚¯æœ€å°ç§»å‹•è·é›¢
     [SerializeField] 
     Vector2 FlickMinRange = new Vector2(30.0f, 30.0f);
-    // ƒXƒƒCƒvÅ¬ˆÚ“®‹——£
+    // ã‚¹ãƒ¯ã‚¤ãƒ—æœ€å°ç§»å‹•è·é›¢
     [SerializeField]
     Vector2 SwipeMinRange = new Vector2(50.0f, 50.0f);
-    // TAP‚ğNONE‚É–ß‚·‚Ü‚Å‚ÌƒJƒEƒ“ƒg
+    // TAPã‚’NONEã«æˆ»ã™ã¾ã§ã®ã‚«ã‚¦ãƒ³ãƒˆ
     [SerializeField]
     int NoneCountMax = 2;
     int NoneCountNow = 0;
-    // ƒXƒƒCƒv“ü—Í‹——£
+    // ã‚¹ãƒ¯ã‚¤ãƒ—å…¥åŠ›è·é›¢
     Vector2 SwipeRange;
-    // “ü—Í•ûŒü‹L˜^—p
+    // å…¥åŠ›æ–¹å‘è¨˜éŒ²ç”¨
     Vector2 InputSTART;
     Vector2 InputMOVE;
     Vector2 InputEND;
 
-    // ƒtƒŠƒbƒN‚Ì•ûŒü
+    // ãƒ•ãƒªãƒƒã‚¯ã®æ–¹å‘
     public enum FlickDirection
     {
         NONE,
@@ -37,7 +37,7 @@ public class ScreenInput : MonoBehaviour
     }
     FlickDirection NowFlick = FlickDirection.NONE;
 
-    // ƒXƒƒCƒv‚Ì•ûŒü
+    // ã‚¹ãƒ¯ã‚¤ãƒ—ã®æ–¹å‘
     public enum SwipeDirection
     {
         NONE,
@@ -56,10 +56,10 @@ public class ScreenInput : MonoBehaviour
         GetInputVector();
     }
 
-    // “ü—Í‚Ìæ“¾
+    // å…¥åŠ›ã®å–å¾—
     void GetInputVector()
     {
-        // Unityã‚Å‚Ì‘€ìæ“¾
+        // Unityä¸Šã§ã®æ“ä½œå–å¾—
         if (Application.isEditor)
         {
             if (Input.GetMouseButtonDown(0))
@@ -81,7 +81,7 @@ public class ScreenInput : MonoBehaviour
                 ResetParameter();
             }
         }
-        // ’[––ã‚Å‚Ì‘€ìæ“¾
+        // ç«¯æœ«ä¸Šã§ã®æ“ä½œå–å¾—
         else
         {
             if (Input.touchCount > 0)
@@ -109,7 +109,7 @@ public class ScreenInput : MonoBehaviour
         }
     }
 
-    // “ü—Í“à—e‚©‚çƒtƒŠƒbƒN•ûŒü‚ğŒvZ
+    // å…¥åŠ›å†…å®¹ã‹ã‚‰ãƒ•ãƒªãƒƒã‚¯æ–¹å‘ã‚’è¨ˆç®—
     void FlickCLC()
     {
         Vector2 _work = new Vector2((new Vector3(InputEND.x, 0, 0) - new Vector3(InputSTART.x, 0, 0)).magnitude, (new Vector3(0, InputEND.y, 0) - new Vector3(0, InputSTART.y, 0)).magnitude);
@@ -132,7 +132,7 @@ public class ScreenInput : MonoBehaviour
         }
     }
 
-    // “ü—Í“à—e‚©‚çƒXƒƒCƒv•ûŒü‚ğŒvZ
+    // å…¥åŠ›å†…å®¹ã‹ã‚‰ã‚¹ãƒ¯ã‚¤ãƒ—æ–¹å‘ã‚’è¨ˆç®—
     void SwipeCLC()
     {
         SwipeRange = new Vector2((new Vector3(InputMOVE.x, 0, 0) - new Vector3(InputSTART.x, 0, 0)).magnitude, (new Vector3(0, InputMOVE.y, 0) - new Vector3(0, InputSTART.y, 0)).magnitude);
@@ -155,7 +155,7 @@ public class ScreenInput : MonoBehaviour
         }
     }
 
-    // NONE‚ÉƒŠƒZƒbƒg
+    // NONEã«ãƒªã‚»ãƒƒãƒˆ
     void ResetParameter()
     {
         NoneCountNow++;
@@ -168,19 +168,19 @@ public class ScreenInput : MonoBehaviour
         }
     }
 
-    // ƒtƒŠƒbƒN•ûŒü‚Ìæ“¾
+    // ãƒ•ãƒªãƒƒã‚¯æ–¹å‘ã®å–å¾—
     public FlickDirection GetNowFlick()
     {
         return NowFlick;
     }
 
-    // ƒXƒƒCƒv•ûŒü‚Ìæ“¾
+    // ã‚¹ãƒ¯ã‚¤ãƒ—æ–¹å‘ã®å–å¾—
     public SwipeDirection GetNowSwipe()
     {
         return NowSwipe;
     }
 
-    // ƒXƒƒCƒv—Ê‚Ìæ“¾
+    // ã‚¹ãƒ¯ã‚¤ãƒ—é‡ã®å–å¾—
     public float GetSwipeRange()
     {
         if (SwipeRange.x > SwipeRange.y)
@@ -193,7 +193,7 @@ public class ScreenInput : MonoBehaviour
         }
     }
 
-    // ƒXƒƒCƒv—Ê‚Ìæ“¾
+    // ã‚¹ãƒ¯ã‚¤ãƒ—é‡ã®å–å¾—
     public Vector2 GetSwipeRangeVec()
     {
         if (NowSwipe != SwipeDirection.NONE)

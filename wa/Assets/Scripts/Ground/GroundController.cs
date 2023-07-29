@@ -1,24 +1,24 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 ////////////////////////////////////
-// ’n–Ê‚ÌƒRƒ“ƒgƒ[ƒ‰[ƒXƒNƒŠƒvƒg
+// åœ°é¢ã®ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©ãƒ¼ã‚¹ã‚¯ãƒªãƒ—ãƒˆ
 ////////////////////////////////////
 
 public class GroundController : MonoBehaviour
 {
-    //ƒvƒŒƒCƒ„[‚Ìƒ^ƒO–¼
+    //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚¿ã‚°å
     string playerTag = "Player";
-    //eƒIƒuƒWƒFƒNƒg
+    //è¦ªã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
     [SerializeField] GameObject ParentObject;
 
     /// <summary>
-    /// ƒvƒŒƒCƒ„[‚Æ‚Ì‚ğó‚¯æ‚èƒIƒuƒWƒFƒNƒg”j‰ó‚ÌƒRƒ‹[ƒ`ƒ“ŒÄ‚Ño‚µ
+    /// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã¨ã®ã‚’å—ã‘å–ã‚Šã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç ´å£Šã®ã‚³ãƒ«ãƒ¼ãƒãƒ³å‘¼ã³å‡ºã—
     /// </summary>
     void OnTriggerEnter(Collider other)
     {
-        //Õ“Ë‚µ‚½‚à‚Ì‚ªƒvƒŒƒCƒ„[‚È‚Ì‚©‚ğ’²‚×‚é
+        //è¡çªã—ãŸã‚‚ã®ãŒãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãªã®ã‹ã‚’èª¿ã¹ã‚‹
         if (other.tag == this.playerTag)
         {
             StartCoroutine(GroundDestroyCoroutine());
@@ -26,14 +26,14 @@ public class GroundController : MonoBehaviour
     }
 
     /// <summary>
-    /// ƒvƒŒƒCƒ„[‚ªG‚ê‚½’n–Ê‚ğŠÔŒo‰ß‚Å”j‰ó‚·‚é
+    /// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒè§¦ã‚ŒãŸåœ°é¢ã‚’æ™‚é–“çµŒéã§ç ´å£Šã™ã‚‹
     /// </summary>
 
     public IEnumerator GroundDestroyCoroutine()
     {
-        //4•b‘Ò‹@
+        //4ç§’å¾…æ©Ÿ
         yield return new WaitForSeconds(4f);
-        //Debug.Log("ƒOƒ‰ƒEƒ“ƒhƒRƒ‹[ƒ`ƒ“Às");
+        //Debug.Log("ã‚°ãƒ©ã‚¦ãƒ³ãƒ‰ã‚³ãƒ«ãƒ¼ãƒãƒ³å®Ÿè¡Œ");
         Destroy(ParentObject);
     }
 }

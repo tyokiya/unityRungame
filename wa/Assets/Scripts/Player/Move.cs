@@ -1,40 +1,43 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Schema;
 using UnityEngine;
+using UnityEngine.UIElements;
 using static Status;
 
 ////////////////////////////////////
-// ƒvƒŒƒCƒ„[‚Ì“®‚«‚ğŠÇ—‚·‚éƒXƒNƒŠƒvƒg
+// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å‹•ãã‚’ç®¡ç†ã™ã‚‹ã‚¹ã‚¯ãƒªãƒ—ãƒˆ
 ////////////////////////////////////
 
 public class Move : MonoBehaviour
 {
-    //ƒCƒ“ƒXƒyƒNƒ^[‚©‚çİ’è
-    //ƒvƒŒƒCƒ„[ƒ}ƒl[ƒWƒƒ[‚ÌƒIƒuƒWƒFƒNƒg
+    //ã‚¤ãƒ³ã‚¹ãƒšã‚¯ã‚¿ãƒ¼ã‹ã‚‰è¨­å®š
+    //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãƒãƒãƒ¼ã‚¸ãƒ£ãƒ¼ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
     [SerializeField] PlayerManager playerManager_object;
     
-    //ƒŠƒWƒbƒhƒ{ƒfƒB‚ğ“ü‚ê‚é•Ï”
+    //ãƒªã‚¸ãƒƒãƒ‰ãƒœãƒ‡ã‚£ã‚’å…¥ã‚Œã‚‹å¤‰æ•°
     [SerializeField] Rigidbody rd;
-    //eƒIƒuƒWƒFƒNƒg‚Ìƒgƒ‰ƒ“ƒXƒtƒH[ƒ€‚ğ“ü‚ê‚é•Ï”
+    //è¦ªã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒˆãƒ©ãƒ³ã‚¹ãƒ•ã‚©ãƒ¼ãƒ ã‚’å…¥ã‚Œã‚‹å¤‰æ•°
     [SerializeField] Transform parent_transform;
 
-    //ƒWƒƒƒ“ƒv—Í
+    //ã‚¸ãƒ£ãƒ³ãƒ—åŠ›
     [SerializeField] float jumpForce = 500.0f;
     [SerializeField] float down_jumpForce = 0.08f;
     float now_jumpForce = 0;
 
-    //•à‚­ƒXƒs[ƒh
+    //æ­©ãã‚¹ãƒ”ãƒ¼ãƒ‰
     [SerializeField] float walkSpeed = 1f;
-    //‘–‚éƒXƒs[ƒh
+    //èµ°ã‚‹ã‚¹ãƒ”ãƒ¼ãƒ‰
     [SerializeField] float runSpeed = 5f;
-    //‘–‚Á‚Ä‚é‚ÌƒxƒƒVƒeƒB
-    Vector3 moveVelocity = new Vector3(0f, 0f, 0f);
+    //æ¨ªç§»å‹•ã®ã‚¹ãƒ”ãƒ¼ãƒ‰
+    [SerializeField] float sideMoveSpeed = 0.01f;
+
+    int delta;
 
     void Update()
     {
-        //–ˆƒtƒŒ[ƒ€ƒWƒƒƒ“ƒv—Í‚ÌŒ¸­(0ˆÈ‰º‚É‚È‚é‚±‚Æ‚Í‚È‚¢)
+        //æ¯ãƒ•ãƒ¬ãƒ¼ãƒ ã‚¸ãƒ£ãƒ³ãƒ—åŠ›ã®æ¸›å°‘(0ä»¥ä¸‹ã«ãªã‚‹ã“ã¨ã¯ãªã„)
         if(now_jumpForce > 0)
         {
             this.now_jumpForce -= this.down_jumpForce;
@@ -46,33 +49,45 @@ public class Move : MonoBehaviour
     }
 
     /// <summary>
-    /// ƒvƒŒƒCƒ„[‚ğ“ü—Íó‘Ô‚É‰‚¶‚Ä“®‚©‚·
+    /// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚’å…¥åŠ›çŠ¶æ…‹ã«å¿œã˜ã¦å‹•ã‹ã™
     /// </summary>
-    /// <param name="flick">Œ»İ‚Ì“ü—Íó‘Ô</param>
-    /// <param name="situation">Œ»İ‚ÌƒvƒŒƒCƒ„[‚Ìó‘Ô</param>
-    /// <param name="direction">Œ»İ‚ÌƒvƒŒƒCƒ„[‚ÌŒü‚¢‚Ä‚é•ûŒü</param>
-    public void MovePlayerUpdate(ScreenInput.FlickDirection flick, Status.PlayerSituation situation, Status.PlayerDirection direction)
+    /// <param name="flick">ç¾åœ¨ã®å…¥åŠ›çŠ¶æ…‹</param>
+    /// <param name="situation">ç¾åœ¨ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®çŠ¶æ…‹</param>
+    /// <param name="direction">ç¾åœ¨ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å‘ã„ã¦ã‚‹æ–¹å‘</param>
+    /// <param name="difference_tilt">å‰ãƒ•ãƒ¬ãƒ¼ãƒ ã¨ã®ã‚¹ãƒãƒ›ã®å‚¾ãã®å·®</param>
+    /// <param name="turnGroundFlg">å›è»¢å¯èƒ½ãªåœ°é¢ã®ä¸Šã«ç«‹ã£ã¦ã„ã‚‹ã‹ã®ãƒ•ãƒ©ã‚°</param>
+    public void MovePlayerUpdate(ScreenInput.FlickDirection flick, Status.PlayerSituation situation, Status.PlayerDirection direction,float difference_tilt,bool turnGroundFlg)
     {
-        //ƒWƒƒƒ“ƒv‚Ì“ü—Í‚ÅƒWƒƒƒ“ƒv—Í‚ğ“ü‚ê‚é
+        //ã‚¸ãƒ£ãƒ³ãƒ—ã®å…¥åŠ›ã§ã‚¸ãƒ£ãƒ³ãƒ—åŠ›ã‚’å…¥ã‚Œã‚‹
         if (flick == ScreenInput.FlickDirection.UP && situation == Status.PlayerSituation.run)
         {
-            //Œ»İ‚ÌƒWƒƒƒ“ƒv—Í‚É—Í‚ğ‘ã“ü
+            //ç¾åœ¨ã®ã‚¸ãƒ£ãƒ³ãƒ—åŠ›ã«åŠ›ã‚’ä»£å…¥
             this.now_jumpForce = this.jumpForce;
         }
 
-        //ˆÚ“®ˆ—
-        MovePlayer(situation, direction);
-
-        //Œ»İ‚ÌŒü‚«‚É‡‚í‚¹‚ÄƒvƒŒƒCƒ„[‚ğ‰ñ“]
+        if (turnGroundFlg == true || situation == PlayerSituation.walk)
+        {
+            //å›è»¢å¯èƒ½ãªåœ°é¢ã®ä¸Šã§ã®ç§»å‹•å‡¦ç†
+            //æ­©ããƒ¢ãƒ¼ã‚·ãƒ§ãƒ³ä¸­ã®ç§»å‹•å‡¦ç†
+            MovePlayer(situation, direction, difference_tilt);
+        }
+        else
+        {
+            //æ¨ªç§»å‹•ã‚’å«ã‚ãŸç§»å‹•å‡¦ç†
+            MoveSide(direction, difference_tilt);
+        }
+        
+        //ç¾åœ¨ã®å‘ãã«åˆã‚ã›ã¦ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚’å›è»¢
         RotationPlayer(direction);
     }
 
     /// <summary>
-    /// ƒvƒŒƒCƒ„[‚ÌˆÚ“®ˆ—
+    /// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ç§»å‹•å‡¦ç†
     /// </summary>
-    /// <param name="situation">Œ»İ‚ÌƒvƒŒƒCƒ„[‚Ìó‘Ô</param>
-    /// <param name="direction">Œ»İ‚ÌƒvƒŒƒCƒ„[‚ÌŒü‚¢‚Ä‚é•ûŒü</param>
-    void MovePlayer(Status.PlayerSituation situation, Status.PlayerDirection direction)
+    /// <param name="situation">ç¾åœ¨ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®çŠ¶æ…‹</param>
+    /// <param name="direction">ç¾åœ¨ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å‘ã„ã¦ã‚‹æ–¹å‘</param>
+    /// <param name="difference_tilt">ã‚¹ãƒãƒ›ã®å‚¾ã</param>
+    void MovePlayer(Status.PlayerSituation situation, Status.PlayerDirection direction, float difference_tilt)
     {
         if (situation == PlayerSituation.walk)
         {
@@ -99,28 +114,81 @@ public class Move : MonoBehaviour
     }
 
     /// <summary>
-    /// ƒvƒŒƒCƒ„[‚ÌŒü‚«‚ğ‰ñ“]
+    /// ã‚¹ãƒãƒ›ã®å‚¾ãã«ã‚ˆã‚‹æ¨ªç§»å‹•å‡¦ç†
     /// </summary>
-    /// <param name="direction">ƒvƒŒƒCƒ„[‚ÌŒü‚¢‚Ä‚é•ûŒü</param>
+    /// <param name="direction">ç¾åœ¨ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å‘ã„ã¦ã‚‹æ–¹å‘</param>
+    /// <param name="difference_tilt">ã‚¹ãƒãƒ›ã®å‚¾ã</param>
+    void MoveSide(PlayerDirection direction, float difference_tilt)
+    {
+        //å‚¾ãã¨å‘ã„ã¦ã‚‹å‘ãã‹ã‚‰ç§»å‹•å‡¦ç†ã‚’ã ã™
+        switch (direction)
+        {
+            case PlayerDirection.front:
+                if (difference_tilt > 0 && difference_tilt < 100)
+                {
+                    this.rd.MovePosition(new Vector3(parent_transform.position.x + this.sideMoveSpeed, parent_transform.position.y + this.now_jumpForce, parent_transform.position.z + runSpeed));
+                }
+                else
+                {
+                    this.rd.MovePosition(new Vector3(parent_transform.position.x - this.sideMoveSpeed, parent_transform.position.y + this.now_jumpForce, parent_transform.position.z + runSpeed));
+                }
+                break;
+            case PlayerDirection.right:
+                if (difference_tilt > 0 && difference_tilt < 100)
+                {
+                    this.rd.MovePosition(new Vector3(parent_transform.position.x + runSpeed, parent_transform.position.y + this.now_jumpForce, parent_transform.position.z - this.sideMoveSpeed));
+                }
+                else
+                {
+                    this.rd.MovePosition(new Vector3(parent_transform.position.x + runSpeed, parent_transform.position.y + this.now_jumpForce, parent_transform.position.z + this.sideMoveSpeed));
+                }
+                break;
+            case PlayerDirection.back:
+                if (difference_tilt > 0 && difference_tilt < 100)
+                {
+                    this.rd.MovePosition(new Vector3(parent_transform.position.x - this.sideMoveSpeed, parent_transform.position.y + this.now_jumpForce, parent_transform.position.z - runSpeed));
+                }
+                else
+                {
+                    this.rd.MovePosition(new Vector3(parent_transform.position.x + this.sideMoveSpeed, parent_transform.position.y + this.now_jumpForce, parent_transform.position.z - runSpeed));
+                }
+                break;
+            case PlayerDirection.left:
+                if (difference_tilt > 0 && difference_tilt < 100)
+                {
+                    this.rd.MovePosition(new Vector3(parent_transform.position.x - runSpeed, parent_transform.position.y + this.now_jumpForce, parent_transform.position.z + this.sideMoveSpeed));
+                }
+                else
+                {
+                    this.rd.MovePosition(new Vector3(parent_transform.position.x - runSpeed, parent_transform.position.y + this.now_jumpForce, parent_transform.position.z - this.sideMoveSpeed));
+                }
+                break;
+        }
+    }
+
+    /// <summary>
+    /// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å‘ãã‚’å›è»¢
+    /// </summary>
+    /// <param name="direction">ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å‘ã„ã¦ã‚‹æ–¹å‘</param>
     void RotationPlayer(Status.PlayerDirection direction)
     {
-        //ƒXƒe[ƒ^ƒX‚ÌŒü‚¢‚Ä‚é•ûŒü‚É‰‚¶‚Ä‰ñ“]
+        //ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã®å‘ã„ã¦ã‚‹æ–¹å‘ã«å¿œã˜ã¦å›è»¢
         switch(direction)
         {
             case PlayerDirection.front:
-                //‘O‚ğŒü‚©‚¹‚é@
+                //å‰ã‚’å‘ã‹ã›ã‚‹ã€€
                 this.parent_transform.eulerAngles = new Vector3(0, 0, 0);
                 break;
             case PlayerDirection.right:
-                //‰E‚ğŒü‚©‚¹‚é@
+                //å³ã‚’å‘ã‹ã›ã‚‹ã€€
                 this.parent_transform.eulerAngles = new Vector3(0, 90.0f, 0);
                 break;
             case PlayerDirection.back:
-                //Œã‚ğŒü‚©‚¹‚é@
+                //å¾Œã‚’å‘ã‹ã›ã‚‹ã€€
                 this.parent_transform.eulerAngles = new Vector3(0, 180.0f, 0);
                 break;
             case PlayerDirection.left:
-                //¶‚ğŒü‚©‚¹‚é@
+                //å·¦ã‚’å‘ã‹ã›ã‚‹ã€€
                 this.parent_transform.eulerAngles = new Vector3(0, 270.0f, 0);
                 break;
         }

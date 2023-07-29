@@ -1,18 +1,18 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 ////////////////////////////////////
-// ƒAƒCƒeƒ€‚Ì“®‚«‚ğ§Œä‚·‚éƒXƒNƒŠƒvƒg
+// ã‚¢ã‚¤ãƒ†ãƒ ã®å‹•ãã‚’åˆ¶å¾¡ã™ã‚‹ã‚¹ã‚¯ãƒªãƒ—ãƒˆ
 ////////////////////////////////////
 public class ItemController : MonoBehaviour
 {
-    //ƒAƒCƒeƒ€‚Ì‰ñ“]ƒXƒs[ƒh
+    //ã‚¢ã‚¤ãƒ†ãƒ ã®å›è»¢ã‚¹ãƒ”ãƒ¼ãƒ‰
     float rotateSpeed = 10.0f;
 
     void Update()
     {
-        //ˆê’è‚Ì‘¬“x‚Å‰ñ“]
+        //ä¸€å®šã®é€Ÿåº¦ã§å›è»¢
         transform.eulerAngles += new Vector3(0, this.rotateSpeed, 0);
     }
 }

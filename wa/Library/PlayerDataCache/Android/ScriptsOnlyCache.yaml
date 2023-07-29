@@ -8,6 +8,7 @@ ScriptsOnlyBuild:
     - FrameCntroller
     - GroudCheck
     - GroundController
+    - GyroInput
     - ItemController
     - ItemUIController
     - Move
@@ -32,8 +33,6 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
-    Unity.Timeline.Editor.dll:
-    - TimelineProjectSettings
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
@@ -161,67 +160,69 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3066}
     - Class: 114
-      Script: {instanceID: 3590}
+      Script: {instanceID: 3218}
     - Class: 114
-      Script: {instanceID: 3660}
+      Script: {instanceID: 3592}
     - Class: 114
-      Script: {instanceID: 3696}
+      Script: {instanceID: 3662}
     - Class: 114
-      Script: {instanceID: 4174}
+      Script: {instanceID: 3698}
     - Class: 114
-      Script: {instanceID: 4380}
+      Script: {instanceID: 4176}
     - Class: 114
-      Script: {instanceID: 4470}
+      Script: {instanceID: 4382}
     - Class: 114
-      Script: {instanceID: 4502}
+      Script: {instanceID: 4472}
     - Class: 114
-      Script: {instanceID: 4570}
+      Script: {instanceID: 4504}
     - Class: 114
-      Script: {instanceID: 4610}
+      Script: {instanceID: 4572}
     - Class: 114
-      Script: {instanceID: 4658}
+      Script: {instanceID: 4612}
     - Class: 114
-      Script: {instanceID: 4692}
+      Script: {instanceID: 4660}
     - Class: 114
-      Script: {instanceID: 4802}
+      Script: {instanceID: 4694}
     - Class: 114
-      Script: {instanceID: 5136}
+      Script: {instanceID: 4804}
     - Class: 114
-      Script: {instanceID: 5428}
+      Script: {instanceID: 5138}
     - Class: 114
-      Script: {instanceID: 5588}
+      Script: {instanceID: 5430}
     - Class: 114
-      Script: {instanceID: 5752}
+      Script: {instanceID: 5590}
     - Class: 114
-      Script: {instanceID: 5894}
+      Script: {instanceID: 5754}
     - Class: 114
-      Script: {instanceID: 6190}
+      Script: {instanceID: 5896}
     - Class: 114
-      Script: {instanceID: 6238}
+      Script: {instanceID: 6192}
     - Class: 114
-      Script: {instanceID: 6438}
+      Script: {instanceID: 6240}
     - Class: 114
-      Script: {instanceID: 6632}
+      Script: {instanceID: 6440}
     - Class: 114
-      Script: {instanceID: 6788}
+      Script: {instanceID: 6634}
     - Class: 114
-      Script: {instanceID: 7188}
+      Script: {instanceID: 6790}
     - Class: 114
-      Script: {instanceID: 7218}
+      Script: {instanceID: 7190}
     - Class: 114
-      Script: {instanceID: 7388}
+      Script: {instanceID: 7220}
     - Class: 114
-      Script: {instanceID: 7956}
+      Script: {instanceID: 7390}
     - Class: 114
-      Script: {instanceID: 8134}
+      Script: {instanceID: 7958}
     - Class: 114
-      Script: {instanceID: 8240}
+      Script: {instanceID: 8136}
     - Class: 114
-      Script: {instanceID: 8442}
+      Script: {instanceID: 8242}
     - Class: 114
-      Script: {instanceID: 8458}
+      Script: {instanceID: 8444}
     - Class: 114
-      Script: {instanceID: 8594}
+      Script: {instanceID: 8460}
+    - Class: 114
+      Script: {instanceID: 8596}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -371,7 +372,7 @@ ScriptsOnlyBuild:
     className: LookTarget
   - hash:
       serializedVersion: 2
-      Hash: 4f877ec15f8c32f6d8a1e42683541577
+      Hash: c68e6485db9a547ada2371f17c5b40ac
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: ScoreUIController
@@ -513,6 +514,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: TestResultRendererCallback
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: GyroInput
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
@@ -689,7 +696,7 @@ ScriptsOnlyBuild:
     className: UnityOnPointerExitMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 7e10c467e6df2cac96a01efbbedb12c5
+      Hash: bf2a501c649a04282d169be4ab14b894
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PlayerManager
@@ -761,7 +768,7 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: b9d90739d9d97c6e262a7fd6f1930303
+      Hash: 9b7276c7fd995f77804a54bc4cb53b9c
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: ItemUIController
@@ -1127,7 +1134,7 @@ ScriptsOnlyBuild:
     className: MainThreadDispatcher
   - hash:
       serializedVersion: 2
-      Hash: 9f35a5f3e1509c0f3bfb493938c2c68d
+      Hash: 219dffe402a1501ab3604480d6e0568b
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Move
@@ -1319,7 +1326,7 @@ ScriptsOnlyBuild:
     className: BasicPlayableBehaviour
   - hash:
       serializedVersion: 2
-      Hash: 858bccfbe09c2ac361f9a5910c7d77d9
+      Hash: 290e63275e1f138ecaafbf74cf765b26
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: CameraManager
@@ -1421,7 +1428,7 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
-      Hash: bfec43f0b28ef66b11a7c87e0cb94cf1
+      Hash: 22fc3d0f04c13b98e3b81c9b48bacb84
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: AnimationController
