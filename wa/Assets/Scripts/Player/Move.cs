@@ -32,8 +32,6 @@ public class Move : MonoBehaviour
     //横移動のスピード
     [SerializeField] float sideMoveSpeed = 0.01f;
 
-    int delta;
-
     void Update()
     {
         //毎フレームジャンプ力の減少(0以下になることはない)

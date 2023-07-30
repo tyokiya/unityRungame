@@ -392,6 +392,7 @@
 "Assets/Scripts/Player/PlayerManager.cs"
 "Assets/Scripts/Player/SoundController.cs"
 "Assets/Scripts/Player/Status.cs"
+"Assets/Scripts/scene/SceneController.cs"
 "Assets/Scripts/Score/ScoreController.cs"
 "Assets/Scripts/Score/ScoreManager.cs"
 "Assets/Scripts/UI/ItemUIController.cs"

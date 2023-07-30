@@ -14,7 +14,7 @@ public class Status : MonoBehaviour
     //親オブジェクトのトランスフォームを入れる変数
     [SerializeField] Transform parent_transform;
     //プレイヤーの落下判定のy座標ボーダー
-    [SerializeField] float playerFallBorder_y = -2.0f;
+    float playerFallBorder_y = -0.5f;
     //タイマー
     float delta = 0;
     //連続で回転処理させないためのスパン
@@ -193,15 +193,22 @@ public class Status : MonoBehaviour
         
     }
 
-    void FallChek()
+    /// <summary>
+    /// プレイヤーの落下死判定
+    /// </summary>
+    /// <param name="changeScene_delegate">リザルトシーンへの切り替えデリゲート</param>
+    /// <param name="ply_fallSound_delegate">落下音再生のデリゲート</param>
+    public void FallChek(SceneController.changeScene_delegate changeScene_delegate, SoundController.ply_playerSound_delegate ply_fallSound_delegate)
     {
         //プレヤーの座標が落下ボーダーより下にないかの確認
         if(parent_transform.position.y < this.playerFallBorder_y)
         {
             //落下サウンド再生
-
-            //シーンをリザルトに変更
-
+            ply_fallSound_delegate();
+            //デリゲートでシーンをリザルトに変更
+            StartCoroutine(changeScene_delegate());
+            //プレイヤーの生存状態を変更
+            this.nowSurvival = PlayerSurvival.fallDeath;
         }
     }
 }
