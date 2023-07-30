@@ -10,6 +10,11 @@ using UnityEngine;
 
 public class Status : MonoBehaviour
 {
+    //インスペクターから設定
+    //親オブジェクトのトランスフォームを入れる変数
+    [SerializeField] Transform parent_transform;
+    //プレイヤーの落下判定のy座標ボーダー
+    [SerializeField] float playerFallBorder_y = -2.0f;
     //タイマー
     float delta = 0;
     //連続で回転処理させないためのスパン
@@ -186,5 +191,17 @@ public class Status : MonoBehaviour
                 break;
         }
         
+    }
+
+    void FallChek()
+    {
+        //プレヤーの座標が落下ボーダーより下にないかの確認
+        if(parent_transform.position.y < this.playerFallBorder_y)
+        {
+            //落下サウンド再生
+
+            //シーンをリザルトに変更
+
+        }
     }
 }

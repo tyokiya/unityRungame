@@ -15,7 +15,6 @@ public class Move : MonoBehaviour
     //インスペクターから設定
     //プレイヤーマネージャーのオブジェクト
     [SerializeField] PlayerManager playerManager_object;
-    
     //リジッドボディを入れる変数
     [SerializeField] Rigidbody rd;
     //親オブジェクトのトランスフォームを入れる変数

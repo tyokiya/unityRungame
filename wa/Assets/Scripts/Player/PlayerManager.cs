@@ -20,14 +20,13 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] Move playerMove_object;
     //アニメーションを管理するオブジェクト
     [SerializeField] AnimationController playerAnimation_object;
+    //プレイヤーのサウンドを管理するオブジェクト
+    [SerializeField] SoundController playerSound_object;
 
     //接地フラグ入れる変数
     bool isGroudFlg = false;
     //ターン可能な地面との設置フラグを入れる
     bool isTurnGroundFlg = false;
-
-    //プレイヤーの落下判定のy座標ボーダー
-    float playerFallBorder_y = -2.0f;
 
     //現在の入力状態を入れる変数
     ScreenInput.FlickDirection nowFlick;
@@ -39,8 +38,6 @@ public class PlayerManager : MonoBehaviour
     Status.PlayerSurvival nowSurvival;
     //現在のプレイヤーの向いてる方向を入れる変数
     Status.PlayerDirection nowDirection;
-    //現在のプレイヤーの座標を入れる変数
-    Vector3 nowPosition;
 
     void Start()
     {
@@ -72,5 +69,9 @@ public class PlayerManager : MonoBehaviour
         this.playerMove_object.MovePlayerUpdate(this.nowFlick, this.nowSituation, this.nowDirection,this.difference_tilt, this.isTurnGroundFlg);
         //アニメーション更新
         this.playerAnimation_object.AnimationUpdate(this.nowFlick, this.nowSituation);
+        //プレイヤーの落下確認
+
+        //プレイヤーの移動サウンド再生
+        this.playerSound_object.PlayWalkSound(this.nowSituation);
     }
 }
