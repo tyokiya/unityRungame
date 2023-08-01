@@ -10,11 +10,16 @@ public class CollisionCheck : MonoBehaviour
 {
     //アイテムのタグ名
     string ItemTag = "Item";
+    //壁のタグ名
+    string wallTag = "wall";
 
     //アイテムタイマー
     float itemDelta = 0;
     //次のアイテムを獲得するまでのスパン
     float itemGetSpan = 0.05f;
+
+    //壁との衝突フラグ
+    bool collisionFlg = false;
 
     //インスペクターから設定
     //プレイヤーマネージャーのスクリプト
@@ -54,4 +59,27 @@ public class CollisionCheck : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 衝突を検知しフラグを立てる
+    /// </summary>
+    /// <param name="collision"></param>
+    void OnCollisionEnter(Collision other)
+    {
+        //衝突したものが壁なのかを調べる
+        if (other.gameObject.tag == this.wallTag)
+        {
+            //衝突フラグを立てる
+            this.collisionFlg = true;
+            Debug.Log("衝突");
+        }
+    }
+
+    /// <summary>
+    /// 衝突フラグを返す
+    /// </summary>
+    /// <returns>プレイヤーの壁との衝突フラグ</returns>
+    public bool GetCollisionFlg()
+    {
+        return this.collisionFlg;
+    }
 }

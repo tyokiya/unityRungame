@@ -10,6 +10,8 @@ public class PlayerManager : MonoBehaviour
     //インスペクターから設定
     //接地判定のオブジェクト
     [SerializeField] GroudCheck groundCheck_object;
+    //プレイヤーの衝突チェックオブジェクト
+    [SerializeField] CollisionCheck collisionCheck_object;
     //入力状態を返すオブジェクト
     [SerializeField] ScreenInput screenInput_object;
     //ジャイロ入力を返すオブジェクト
@@ -40,6 +42,8 @@ public class PlayerManager : MonoBehaviour
     Status.PlayerSurvival nowSurvival;
     //現在のプレイヤーの向いてる方向を入れる変数
     Status.PlayerDirection nowDirection;
+    //プレイヤーの衝突フラグを入れる変数
+    bool collisionFlg = false;
 
     
     //タイトルシーン切り替えのデリゲート
@@ -79,6 +83,8 @@ public class PlayerManager : MonoBehaviour
         this.nowSurvival = this.playerStatus_object.GetNowPlayerSurvival();
         //現在のプレイヤーの向いてる方向を受け取る
         this.nowDirection = this.playerStatus_object.GetNowPlayerDirection();
+        //プレイヤーの衝突フラグを受け取る
+        this.collisionFlg = this.collisionCheck_object.GetCollisionFlg();
 
         //プレイヤーが生存状態での処理
         if(this.nowSurvival == Status.PlayerSurvival.life)
@@ -88,9 +94,9 @@ public class PlayerManager : MonoBehaviour
             //移動の更新
             this.playerMove_object.MovePlayerUpdate(this.nowFlick, this.nowSituation, this.nowDirection, this.difference_tilt, this.isTurnGroundFlg,this.player_jumpound_delegate);
             //アニメーション更新
-            this.playerAnimation_object.AnimationUpdate(this.nowFlick, this.nowSituation);
+            this.playerAnimation_object.AnimationUpdate(this.nowFlick, this.nowSituation, this.collisionFlg);
             //プレイヤーの落下確認
-            this.playerStatus_object.FallChek(this.change_ResultScene_delegate, this.player_fallSound_delegate);
+            this.playerStatus_object.SurvivalChek(this.change_ResultScene_delegate, this.player_fallSound_delegate, this.collisionFlg);
             //プレイヤーの移動サウンド再生
             this.playerSound_object.PlyWalkSound(this.nowSituation);
         }

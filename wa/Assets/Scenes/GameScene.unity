@@ -1411,6 +1411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundCheck_object: {fileID: 1671543191}
+  collisionCheck_object: {fileID: 1657095334}
   screenInput_object: {fileID: 1783054617}
   gyroInput_object: {fileID: 2067138492}
   playerStatus_object: {fileID: 806446435}

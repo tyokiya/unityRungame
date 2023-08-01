@@ -194,11 +194,12 @@ public class Status : MonoBehaviour
     }
 
     /// <summary>
-    /// プレイヤーの落下死判定
+    /// プレイヤーの生死判定
     /// </summary>
     /// <param name="changeScene_delegate">リザルトシーンへの切り替えデリゲート</param>
     /// <param name="ply_fallSound_delegate">落下音再生のデリゲート</param>
-    public void FallChek(SceneController.changeScene_delegate changeScene_delegate, SoundController.ply_playerSound_delegate ply_fallSound_delegate)
+    /// <param name="collisionFlg">プレイヤーの衝突フラグ</param>
+    public void SurvivalChek(SceneController.changeScene_delegate changeScene_delegate, SoundController.ply_playerSound_delegate ply_fallSound_delegate, bool collisionFlg)
     {
         //プレヤーの座標が落下ボーダーより下にないかの確認
         if(parent_transform.position.y < this.playerFallBorder_y)
@@ -206,9 +207,19 @@ public class Status : MonoBehaviour
             //落下サウンド再生
             ply_fallSound_delegate();
             //デリゲートでシーンをリザルトに変更
-            StartCoroutine(changeScene_delegate());
+            StartCoroutine(changeScene_delegate(1f));
             //プレイヤーの生存状態を変更
             this.nowSurvival = PlayerSurvival.fallDeath;
+        }
+        //衝突フラグが立っているかを確認
+        if(collisionFlg == true)
+        {
+            //衝突音再生
+
+            //デリゲートでシーンをリザルトに変更
+            StartCoroutine(changeScene_delegate(2.1f));
+            //プレイヤーの生存状態を変更
+            this.nowSurvival = PlayerSurvival.collisionDeath;
         }
     }
 }
