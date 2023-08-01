@@ -13,18 +13,18 @@ ScriptsOnlyBuild:
     - ItemUIController
     - Move
     - PlayerManager
+    - SceneController
     - ScoreController
     - ScoreManager
     - ScoreUIController
     - ScreenInput
+    - SoundController
     - Status
     - UIManager
     UniHumanoid:
     - UniHumanoid.HumanPoseClip
     UniHumanoid.dll:
     - UniHumanoid.AvatarDescription
-    UniVRM.Editor.dll:
-    - VRM.VRMMetaObjectEditor
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro:
@@ -36,10 +36,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -128,6 +126,10 @@ ScriptsOnlyBuild:
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
@@ -218,11 +220,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 8242}
     - Class: 114
-      Script: {instanceID: 8444}
+      Script: {instanceID: 8280}
     - Class: 114
-      Script: {instanceID: 8460}
+      Script: {instanceID: 8446}
     - Class: 114
-      Script: {instanceID: 8596}
+      Script: {instanceID: 8462}
+    - Class: 114
+      Script: {instanceID: 8598}
+    - Class: 114
+      Script: {instanceID: 8778}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -242,6 +248,65 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/ResultScene.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1936}
+    - Class: 114
+      Script: {instanceID: 2936}
+    - Class: 114
+      Script: {instanceID: 2950}
+    - Class: 114
+      Script: {instanceID: 3698}
+    - Class: 114
+      Script: {instanceID: 4572}
+    - Class: 114
+      Script: {instanceID: 4612}
+    - Class: 114
+      Script: {instanceID: 4694}
+    - Class: 114
+      Script: {instanceID: 5430}
+    - Class: 114
+      Script: {instanceID: 5754}
+    - Class: 114
+      Script: {instanceID: 7220}
+    - Class: 114
+      Script: {instanceID: 8136}
+    - Class: 114
+      Script: {instanceID: 8462}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 137
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -696,7 +761,7 @@ ScriptsOnlyBuild:
     className: UnityOnPointerExitMessageListener
   - hash:
       serializedVersion: 2
-      Hash: bf2a501c649a04282d169be4ab14b894
+      Hash: ee876bfeb6f5a103535dbfe47ea45fa6
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PlayerManager
@@ -1176,7 +1241,7 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: 751e5bae2a317288c2ab58d66687092b
+      Hash: 6d7b1f11f4b0531f46ab02fb35164b13
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Status
@@ -1488,6 +1553,12 @@ ScriptsOnlyBuild:
     className: Variables
   - hash:
       serializedVersion: 2
+      Hash: c77481b78760324fcef751973b71a7d0
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SoundController
+  - hash:
+      serializedVersion: 2
       Hash: 783de51efb343429d5d4c515cb889d12
     assemblyName: Assembly-CSharp
     namespaceName: 
@@ -1585,6 +1656,12 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SceneController
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnTriggerExit2DMessageListener
@@ -1597,4 +1674,5 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/GameScene.unity
+  - Assets/Scenes/ResultScene.unity
   playerPath: C:/UnityProject/unityRungame/wa/test_build.apk

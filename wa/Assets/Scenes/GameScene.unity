@@ -553,6 +553,7 @@ MonoBehaviour:
   audioSource_object: {fileID: 745963750}
   foot_sound: {fileID: 8300000, guid: 410f2050bcb7bfa47af29f13c0de019b, type: 3}
   fall_sound: {fileID: 8300000, guid: 1a80c893e074f51478821497faa56481, type: 3}
+  jump_sound: {fileID: 8300000, guid: 4c5c68ac7710ffb46b0be455d5ff2201, type: 3}
   collision_sound: {fileID: 0}
 --- !u!82 &745963750
 AudioSource:

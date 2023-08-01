@@ -47,6 +47,8 @@ public class PlayerManager : MonoBehaviour
 
     //落下音再生のデリゲート
     SoundController.ply_playerSound_delegate player_fallSound_delegate;
+    //ジャンプ音再生のデリゲート
+    SoundController.ply_playerSound_delegate player_jumpound_delegate;
     void Awake()
     {
         //コルーチン呼び出し
@@ -54,9 +56,11 @@ public class PlayerManager : MonoBehaviour
         StartCoroutine(playerAnimation_object.ChangeAnimaiton());
 
         //タイトルシーンへの切り替えメソッドをchange_ResultScene_delegateへ代入
-        change_ResultScene_delegate = new SceneController.changeScene_delegate(sceneController_object.ChangeResultScene);
+        this.change_ResultScene_delegate = new SceneController.changeScene_delegate(this.sceneController_object.ChangeResultScene);
         //落下音の再生メソッドをplayer_fallSound_delegateへ代入
-        player_fallSound_delegate = new SoundController.ply_playerSound_delegate(playerSound_object.PlyFallSound);
+        this.player_fallSound_delegate = new SoundController.ply_playerSound_delegate(this.playerSound_object.PlyFallSound);
+        //ジャンプ音の再生メソッドをplayer_jumpound_delegateへ代入
+        this.player_jumpound_delegate = new SoundController.ply_playerSound_delegate(this.playerSound_object.PlyJumpSound);
     }
 
     void Update()
@@ -82,7 +86,7 @@ public class PlayerManager : MonoBehaviour
             //ステータスの更新
             this.playerStatus_object.SituationUpdate(this.isGroudFlg, this.nowFlick, this.isTurnGroundFlg);
             //移動の更新
-            this.playerMove_object.MovePlayerUpdate(this.nowFlick, this.nowSituation, this.nowDirection, this.difference_tilt, this.isTurnGroundFlg);
+            this.playerMove_object.MovePlayerUpdate(this.nowFlick, this.nowSituation, this.nowDirection, this.difference_tilt, this.isTurnGroundFlg,this.player_jumpound_delegate);
             //アニメーション更新
             this.playerAnimation_object.AnimationUpdate(this.nowFlick, this.nowSituation);
             //プレイヤーの落下確認

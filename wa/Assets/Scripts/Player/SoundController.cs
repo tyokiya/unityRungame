@@ -13,6 +13,8 @@ public class SoundController : MonoBehaviour
     [SerializeField] AudioClip foot_sound;
     //落下音
     [SerializeField] AudioClip fall_sound;
+    //ジャンプ音
+    [SerializeField] AudioClip jump_sound;
     //衝突音
     [SerializeField] AudioClip collision_sound;
 
@@ -57,5 +59,13 @@ public class SoundController : MonoBehaviour
     public void PlyFallSound()
     {
         this.audioSource_object.PlayOneShot(this.fall_sound);
+    }
+
+    /// <summary>
+    /// ジャンプ音再生
+    /// </summary>
+    public void PlyJumpSound()
+    {
+        this.audioSource_object.PlayOneShot(this.jump_sound);
     }
 }

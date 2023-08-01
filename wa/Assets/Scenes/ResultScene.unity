@@ -413,6 +413,18 @@ PrefabInstance:
       propertyPath: m_AABB.m_Extent.z
       value: 0.20978355
       objectReference: {fileID: 0}
+    - target: {fileID: 4617991680248816313, guid: 4e2d0ed7781ee794ab3f0c0f6769487a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4617991680248816313, guid: 4e2d0ed7781ee794ab3f0c0f6769487a, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2e581ddd6f587754b8e696b56a50962d, type: 2}
+    - target: {fileID: 4617991680248816313, guid: 4e2d0ed7781ee794ab3f0c0f6769487a, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4764421709180378862, guid: 4e2d0ed7781ee794ab3f0c0f6769487a, type: 3}
       propertyPath: m_Name
       value: "\u548C\u88C5\u5C11\u5973"

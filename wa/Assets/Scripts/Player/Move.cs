@@ -53,13 +53,17 @@ public class Move : MonoBehaviour
     /// <param name="direction">現在のプレイヤーの向いてる方向</param>
     /// <param name="difference_tilt">前フレームとのスマホの傾きの差</param>
     /// <param name="turnGroundFlg">回転可能な地面の上に立っているかのフラグ</param>
-    public void MovePlayerUpdate(ScreenInput.FlickDirection flick, Status.PlayerSituation situation, Status.PlayerDirection direction,float difference_tilt,bool turnGroundFlg)
+    /// <param name="ply_jumpSound_delegate">ジャンプ音再生のデリゲート</param>
+    public void MovePlayerUpdate(ScreenInput.FlickDirection flick, Status.PlayerSituation situation, Status.PlayerDirection direction,float difference_tilt,
+                                 bool turnGroundFlg, SoundController.ply_playerSound_delegate ply_jumpSound_delegate)
     {
         //ジャンプの入力でジャンプ力を入れる
         if (flick == ScreenInput.FlickDirection.UP && situation == Status.PlayerSituation.run)
         {
             //現在のジャンプ力に力を代入
             this.now_jumpForce = this.jumpForce;
+            //ジャンプ音再生
+            ply_jumpSound_delegate();
         }
 
         if (turnGroundFlg == true || situation == PlayerSituation.walk)
