@@ -125,7 +125,7 @@ public class Move : MonoBehaviour
         switch (direction)
         {
             case PlayerDirection.front:
-                if (difference_tilt > 0 && difference_tilt < 100)
+                if (difference_tilt > -50 && difference_tilt < 100)
                 {
                     this.rd.MovePosition(new Vector3(parent_transform.position.x + this.sideMoveSpeed, parent_transform.position.y + this.now_jumpForce, parent_transform.position.z + runSpeed));
                 }
@@ -135,7 +135,7 @@ public class Move : MonoBehaviour
                 }
                 break;
             case PlayerDirection.right:
-                if (difference_tilt > 0 && difference_tilt < 100)
+                if (difference_tilt > -50 && difference_tilt < 100)
                 {
                     this.rd.MovePosition(new Vector3(parent_transform.position.x + runSpeed, parent_transform.position.y + this.now_jumpForce, parent_transform.position.z - this.sideMoveSpeed));
                 }
@@ -145,7 +145,7 @@ public class Move : MonoBehaviour
                 }
                 break;
             case PlayerDirection.back:
-                if (difference_tilt > 0 && difference_tilt < 100)
+                if (difference_tilt > -50 && difference_tilt < 100)
                 {
                     this.rd.MovePosition(new Vector3(parent_transform.position.x - this.sideMoveSpeed, parent_transform.position.y + this.now_jumpForce, parent_transform.position.z - runSpeed));
                 }
@@ -155,7 +155,7 @@ public class Move : MonoBehaviour
                 }
                 break;
             case PlayerDirection.left:
-                if (difference_tilt > 0 && difference_tilt < 100)
+                if (difference_tilt > -50 && difference_tilt < 100)
                 {
                     this.rd.MovePosition(new Vector3(parent_transform.position.x - runSpeed, parent_transform.position.y + this.now_jumpForce, parent_transform.position.z + this.sideMoveSpeed));
                 }

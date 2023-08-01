@@ -51,6 +51,8 @@ public class PlayerManager : MonoBehaviour
 
     //落下音再生のデリゲート
     SoundController.ply_playerSound_delegate player_fallSound_delegate;
+    //衝突音再生のデリゲート
+    SoundController.ply_playerSound_delegate player_collisionSound_delegate;
     //ジャンプ音再生のデリゲート
     SoundController.ply_playerSound_delegate player_jumpound_delegate;
     void Awake()
@@ -63,6 +65,8 @@ public class PlayerManager : MonoBehaviour
         this.change_ResultScene_delegate = new SceneController.changeScene_delegate(this.sceneController_object.ChangeResultScene);
         //落下音の再生メソッドをplayer_fallSound_delegateへ代入
         this.player_fallSound_delegate = new SoundController.ply_playerSound_delegate(this.playerSound_object.PlyFallSound);
+        //衝突音再生メソッドを
+        this.player_collisionSound_delegate = new SoundController.ply_playerSound_delegate(this.playerSound_object.PlyCollisionSound);
         //ジャンプ音の再生メソッドをplayer_jumpound_delegateへ代入
         this.player_jumpound_delegate = new SoundController.ply_playerSound_delegate(this.playerSound_object.PlyJumpSound);
     }
@@ -95,8 +99,8 @@ public class PlayerManager : MonoBehaviour
             this.playerMove_object.MovePlayerUpdate(this.nowFlick, this.nowSituation, this.nowDirection, this.difference_tilt, this.isTurnGroundFlg,this.player_jumpound_delegate);
             //アニメーション更新
             this.playerAnimation_object.AnimationUpdate(this.nowFlick, this.nowSituation, this.collisionFlg);
-            //プレイヤーの落下確認
-            this.playerStatus_object.SurvivalChek(this.change_ResultScene_delegate, this.player_fallSound_delegate, this.collisionFlg);
+            //プレイヤーの生死確認
+            this.playerStatus_object.SurvivalChek(this.change_ResultScene_delegate, this.player_fallSound_delegate, this.collisionFlg, this.player_collisionSound_delegate);
             //プレイヤーの移動サウンド再生
             this.playerSound_object.PlyWalkSound(this.nowSituation);
         }

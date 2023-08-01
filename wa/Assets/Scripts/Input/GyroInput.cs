@@ -38,6 +38,6 @@ public class GyroInput : MonoBehaviour
     public float GetDifferenceTilt()
     {
         //中心から傾いた値を返す
-        return this.input_tilt.y - 35;
+        return this.input_tilt.y - 20;
     }
 }

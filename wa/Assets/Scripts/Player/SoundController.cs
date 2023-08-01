@@ -62,6 +62,14 @@ public class SoundController : MonoBehaviour
     }
 
     /// <summary>
+    /// 衝突音再生
+    /// </summary>
+    public void PlyCollisionSound()
+    {
+        this.audioSource_object.PlayOneShot(this.collision_sound);
+    }
+
+    /// <summary>
     /// ジャンプ音再生
     /// </summary>
     public void PlyJumpSound()
