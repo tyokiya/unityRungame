@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 ////////////////////////////////////
@@ -9,10 +10,20 @@ using UnityEngine.UI;
 
 public class GyroInput : MonoBehaviour
 {
-    //1フレーム前のスマホの傾きを入れる変数
-    Vector3 old_input_tilt;
     //現在のスマホの傾きを入れる変数
     Vector3 input_tilt;
+
+    //テストキストを入れる変数
+    [SerializeField] Text test_text;
+
+    //傾きの方向
+    public enum TiltDirection
+    {
+        RIGHT,
+        LEFT,
+        FRONT
+    }
+    TiltDirection nowTilt = TiltDirection.FRONT;
 
     void Awake()
     {
@@ -21,23 +32,53 @@ public class GyroInput : MonoBehaviour
 
     void Update()
     {
-        //1フレーム前の傾きを入れる
-        this.old_input_tilt = input_tilt;
-        //四元数を受け取る
-        Quaternion quaternion = Input.gyro.attitude;
-        //オイラー変換
-        input_tilt = quaternion.eulerAngles;
-        //this.input_tilt.y = Input.gyro.attitude.eulerAngles.y;
+        //x軸の加速度を取得
+        this.input_tilt.x = Mathf.Asin(Mathf.Clamp(Input.acceleration.x, -1, 1)) * Mathf.Rad2Deg;
 
+        //値に応じて傾き状況を変更
+        if(input_tilt.x > 8)
+        {
+            this.nowTilt = TiltDirection.RIGHT;
+        }
+        else if(input_tilt.x < 0)
+        {
+            this.nowTilt = TiltDirection.LEFT;
+        }
+        else
+        {
+            this.nowTilt = TiltDirection.FRONT;
+        }
+
+        ////////    下のコメントアウトの部分はテスト用で残している
+        //四元数を受け取る
+        //Quaternion quaternion = Input.gyro.attitude;
+        //オイラー変換
+        //input_tilt = quaternion.eulerAngles;
+
+
+        //Vector3 angle = Vector3.zero;
+        //input_tilt.x = Mathf.Asin(Mathf.Clamp(Input.acceleration.x, -1, 1)) * Mathf.Rad2Deg;
+        //input_tilt.y = Mathf.Asin(Mathf.Clamp(Input.acceleration.y, -1, 1)) * Mathf.Rad2Deg;
+        //input_tilt.z = Mathf.Asin(Mathf.Clamp(Input.acceleration.z, -1, 1)) * Mathf.Rad2Deg;
+
+        //オイラー変換した値を描画(テスト用)
+        //{
+            string s = input_tilt.x.ToString();
+        //    string s2 = input_tilt.y.ToString();
+        //    string s3 = input_tilt.z.ToString();
+
+            this.test_text.text = s;
+        //}
+        /////////////////////////////////////////////////////////////////////////////////
     }
 
     /// <summary>
-    /// スマホの傾きを返す
+    /// スマホの傾き方向を返す
     /// </summary>
-    /// <returns></returns>
-    public float GetDifferenceTilt()
+    /// <returns>傾き方向</returns>
+    public TiltDirection GetDifferenceTilt()
     {
         //中心から傾いた値を返す
-        return this.input_tilt.y - 20;
+        return this.nowTilt;
     }
 }

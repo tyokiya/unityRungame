@@ -307,6 +307,7 @@
 -r:"Library/Bee/artifacts/1300b0aP.dag/UniHumanoid.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aP.dag/UniJSON.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aP.dag/Unity.AI.Navigation.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aP.dag/Unity.Formats.Fbx.Runtime.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aP.dag/Unity.TextMeshPro.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aP.dag/Unity.Timeline.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aP.dag/Unity.VisualScripting.Core.ref.dll"

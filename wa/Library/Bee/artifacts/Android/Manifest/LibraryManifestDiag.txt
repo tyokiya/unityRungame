@@ -9,6 +9,9 @@ android.permission.INTERNET was added because:
 		VRM-FeaturesChecked.txt
 	UnityEngine.Networking.UnityWebRequest was present in:
 		VRM-FeaturesChecked.txt
+android.hardware.sensor.accelerometer was added because:
+	UnityEngine.Input::get_acceleration was present in:
+		Assembly-CSharp-FeaturesChecked.txt
 android.hardware.touchscreen.multitouch, android.hardware.touchscreen.multitouch.distinct were enabled because:
 	UnityEngine.Input::get_touches was present in:
 		Assembly-CSharp-FeaturesChecked.txt

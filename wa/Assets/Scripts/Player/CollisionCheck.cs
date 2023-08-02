@@ -16,7 +16,7 @@ public class CollisionCheck : MonoBehaviour
     //アイテムタイマー
     float itemDelta = 0;
     //次のアイテムを獲得するまでのスパン
-    float itemGetSpan = 0.05f;
+    float itemGetSpan = 0.01f;
 
     //壁との衝突フラグ
     bool collisionFlg = false;

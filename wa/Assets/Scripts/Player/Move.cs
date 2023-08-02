@@ -51,10 +51,10 @@ public class Move : MonoBehaviour
     /// <param name="flick">現在の入力状態</param>
     /// <param name="situation">現在のプレイヤーの状態</param>
     /// <param name="direction">現在のプレイヤーの向いてる方向</param>
-    /// <param name="difference_tilt">前フレームとのスマホの傾きの差</param>
+    /// <param name="tili_direction">前フレームとのスマホの傾きの差</param>
     /// <param name="turnGroundFlg">回転可能な地面の上に立っているかのフラグ</param>
     /// <param name="ply_jumpSound_delegate">ジャンプ音再生のデリゲート</param>
-    public void MovePlayerUpdate(ScreenInput.FlickDirection flick, Status.PlayerSituation situation, Status.PlayerDirection direction,float difference_tilt,
+    public void MovePlayerUpdate(ScreenInput.FlickDirection flick, Status.PlayerSituation situation, Status.PlayerDirection direction, GyroInput.TiltDirection tili_direction,
                                  bool turnGroundFlg, SoundController.ply_playerSound_delegate ply_jumpSound_delegate)
     {
         //ジャンプの入力でジャンプ力を入れる
@@ -67,16 +67,16 @@ public class Move : MonoBehaviour
         }
 
         //回転可能な地面の上か歩き常態である時場合ジャイロを考慮しない
-        if (turnGroundFlg == true || situation == PlayerSituation.walk)
+        if (turnGroundFlg == true || situation == PlayerSituation.walk || tili_direction == GyroInput.TiltDirection.FRONT)
         {
             //回転可能な地面の上での移動処理
             //歩きモーション中の移動処理
-            MovePlayer(situation, direction, difference_tilt);
+            MovePlayer(situation, direction);
         }
         else
         {
             //横移動を含めた移動処理
-            MoveSide(direction, difference_tilt);
+            MoveSide(direction, tili_direction);
         }
         
         //現在の向きに合わせてプレイヤーを回転
@@ -88,8 +88,7 @@ public class Move : MonoBehaviour
     /// </summary>
     /// <param name="situation">現在のプレイヤーの状態</param>
     /// <param name="direction">現在のプレイヤーの向いてる方向</param>
-    /// <param name="difference_tilt">スマホの傾き</param>
-    void MovePlayer(Status.PlayerSituation situation, Status.PlayerDirection direction, float difference_tilt)
+    void MovePlayer(Status.PlayerSituation situation, Status.PlayerDirection direction)
     {
         if (situation == PlayerSituation.walk)
         {
@@ -119,48 +118,49 @@ public class Move : MonoBehaviour
     /// スマホの傾きによる横移動処理
     /// </summary>
     /// <param name="direction">現在のプレイヤーの向いてる方向</param>
-    /// <param name="difference_tilt">スマホの傾き</param>
-    void MoveSide(PlayerDirection direction, float difference_tilt)
+    /// <param name="tili_direction">スマホの傾き方向</param>
+    void MoveSide(PlayerDirection direction, GyroInput.TiltDirection tili_direction)
     {
         //傾きと向いてる向きから移動処理をだす
         switch (direction)
         {
             case PlayerDirection.front:
-                if (difference_tilt > -50 && difference_tilt < 100)
+                //傾きに合わせた横移動
+                if (tili_direction == GyroInput.TiltDirection.RIGHT)
                 {
                     this.rd.MovePosition(new Vector3(parent_transform.position.x + this.sideMoveSpeed, parent_transform.position.y + this.now_jumpForce, parent_transform.position.z + runSpeed));
                 }
-                else
+                else if(tili_direction == GyroInput.TiltDirection.LEFT)
                 {
                     this.rd.MovePosition(new Vector3(parent_transform.position.x - this.sideMoveSpeed, parent_transform.position.y + this.now_jumpForce, parent_transform.position.z + runSpeed));
                 }
                 break;
             case PlayerDirection.right:
-                if (difference_tilt > -50 && difference_tilt < 100)
+                if (tili_direction == GyroInput.TiltDirection.RIGHT)
                 {
                     this.rd.MovePosition(new Vector3(parent_transform.position.x + runSpeed, parent_transform.position.y + this.now_jumpForce, parent_transform.position.z - this.sideMoveSpeed));
                 }
-                else
+                else if(tili_direction == GyroInput.TiltDirection.LEFT)
                 {
                     this.rd.MovePosition(new Vector3(parent_transform.position.x + runSpeed, parent_transform.position.y + this.now_jumpForce, parent_transform.position.z + this.sideMoveSpeed));
                 }
                 break;
             case PlayerDirection.back:
-                if (difference_tilt > -50 && difference_tilt < 100)
+                if (tili_direction == GyroInput.TiltDirection.RIGHT)
                 {
                     this.rd.MovePosition(new Vector3(parent_transform.position.x - this.sideMoveSpeed, parent_transform.position.y + this.now_jumpForce, parent_transform.position.z - runSpeed));
                 }
-                else
+                else if (tili_direction == GyroInput.TiltDirection.LEFT)
                 {
                     this.rd.MovePosition(new Vector3(parent_transform.position.x + this.sideMoveSpeed, parent_transform.position.y + this.now_jumpForce, parent_transform.position.z - runSpeed));
                 }
                 break;
             case PlayerDirection.left:
-                if (difference_tilt > -50 && difference_tilt < 100)
+                if (tili_direction == GyroInput.TiltDirection.RIGHT)
                 {
                     this.rd.MovePosition(new Vector3(parent_transform.position.x - runSpeed, parent_transform.position.y + this.now_jumpForce, parent_transform.position.z + this.sideMoveSpeed));
                 }
-                else
+                else if (tili_direction == GyroInput.TiltDirection.LEFT)
                 {
                     this.rd.MovePosition(new Vector3(parent_transform.position.x - runSpeed, parent_transform.position.y + this.now_jumpForce, parent_transform.position.z - this.sideMoveSpeed));
                 }

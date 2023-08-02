@@ -8,24 +8,24 @@ using UnityEngine;
 
 public class ScreenInput : MonoBehaviour
 {
-    // フリック最小移動距離
+    //フリック最小移動距離
     [SerializeField] 
     Vector2 FlickMinRange = new Vector2(30.0f, 30.0f);
-    // スワイプ最小移動距離
+    //スワイプ最小移動距離
     [SerializeField]
     Vector2 SwipeMinRange = new Vector2(50.0f, 50.0f);
-    // TAPをNONEに戻すまでのカウント
+    //TAPをNONEに戻すまでのカウント
     [SerializeField]
     int NoneCountMax = 2;
     int NoneCountNow = 0;
-    // スワイプ入力距離
+    //スワイプ入力距離
     Vector2 SwipeRange;
-    // 入力方向記録用
+    //入力方向記録用
     Vector2 InputSTART;
     Vector2 InputMOVE;
     Vector2 InputEND;
 
-    // フリックの方向
+    //フリックの方向
     public enum FlickDirection
     {
         NONE,
@@ -37,7 +37,7 @@ public class ScreenInput : MonoBehaviour
     }
     FlickDirection NowFlick = FlickDirection.NONE;
 
-    // スワイプの方向
+    //スワイプの方向
     public enum SwipeDirection
     {
         NONE,
@@ -50,16 +50,15 @@ public class ScreenInput : MonoBehaviour
     SwipeDirection NowSwipe = SwipeDirection.NONE;
 
 
-    // Update is called once per frame
     void Update()
     {
         GetInputVector();
     }
 
-    // 入力の取得
+    //入力の取得
     void GetInputVector()
     {
-        // Unity上での操作取得
+        //Unity上での操作取得
         if (Application.isEditor)
         {
             if (Input.GetMouseButtonDown(0))
@@ -81,7 +80,7 @@ public class ScreenInput : MonoBehaviour
                 ResetParameter();
             }
         }
-        // 端末上での操作取得
+        //端末上での操作取得
         else
         {
             if (Input.touchCount > 0)
@@ -109,7 +108,9 @@ public class ScreenInput : MonoBehaviour
         }
     }
 
-    // 入力内容からフリック方向を計算
+    /// <summary>
+    /// 入力内容からフリック方向を計算
+    /// </summary>
     void FlickCLC()
     {
         Vector2 _work = new Vector2((new Vector3(InputEND.x, 0, 0) - new Vector3(InputSTART.x, 0, 0)).magnitude, (new Vector3(0, InputEND.y, 0) - new Vector3(0, InputSTART.y, 0)).magnitude);
@@ -132,7 +133,9 @@ public class ScreenInput : MonoBehaviour
         }
     }
 
-    // 入力内容からスワイプ方向を計算
+    /// <summary>
+    /// 入力内容からスワイプ方向を計算
+    /// </summary>
     void SwipeCLC()
     {
         SwipeRange = new Vector2((new Vector3(InputMOVE.x, 0, 0) - new Vector3(InputSTART.x, 0, 0)).magnitude, (new Vector3(0, InputMOVE.y, 0) - new Vector3(0, InputSTART.y, 0)).magnitude);
@@ -155,7 +158,9 @@ public class ScreenInput : MonoBehaviour
         }
     }
 
-    // NONEにリセット
+    /// <summary>
+    /// NONEにリセット
+    /// </summary>
     void ResetParameter()
     {
         NoneCountNow++;
@@ -168,19 +173,25 @@ public class ScreenInput : MonoBehaviour
         }
     }
 
-    // フリック方向の取得
+    /// <summary>
+    /// フリック方向の取得
+    /// </summary>
     public FlickDirection GetNowFlick()
     {
         return NowFlick;
     }
 
-    // スワイプ方向の取得
+    /// <summary>
+    /// スワイプ方向の取得
+    /// </summary>
     public SwipeDirection GetNowSwipe()
     {
         return NowSwipe;
     }
 
-    // スワイプ量の取得
+    /// <summary>
+    /// スワイプ量の取得
+    /// </summary>
     public float GetSwipeRange()
     {
         if (SwipeRange.x > SwipeRange.y)
@@ -193,7 +204,9 @@ public class ScreenInput : MonoBehaviour
         }
     }
 
-    // スワイプ量の取得
+    /// <summary>
+    /// スワイプ量の取得
+    /// </summary>
     public Vector2 GetSwipeRangeVec()
     {
         if (NowSwipe != SwipeDirection.NONE)

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 ////////////////////////////////////
@@ -35,7 +36,7 @@ public class PlayerManager : MonoBehaviour
     //現在の入力状態を入れる変数
     ScreenInput.FlickDirection nowFlick;
     //スマホの傾きを入れる変数
-    float difference_tilt;
+    GyroInput.TiltDirection nowTili_direction;
     //現在のプレイヤー状態を入れる変数
     Status.PlayerSituation nowSituation;
     //現在のプレイヤーの生死状態を入れる変数
@@ -80,7 +81,7 @@ public class PlayerManager : MonoBehaviour
         //フリック方向を受け取る
         this.nowFlick = this.screenInput_object.GetNowFlick();
         //スマホの傾きを受け取る
-        this.difference_tilt = this.gyroInput_object.GetDifferenceTilt();
+        this.nowTili_direction = this.gyroInput_object.GetDifferenceTilt();
         //現在の状態を受け取る
         this.nowSituation = this.playerStatus_object.GetNowPlayerSituation();
         //現在の生死状態を受け取る
@@ -96,7 +97,7 @@ public class PlayerManager : MonoBehaviour
             //ステータスの更新
             this.playerStatus_object.SituationUpdate(this.isGroudFlg, this.nowFlick, this.isTurnGroundFlg);
             //移動の更新
-            this.playerMove_object.MovePlayerUpdate(this.nowFlick, this.nowSituation, this.nowDirection, this.difference_tilt, this.isTurnGroundFlg,this.player_jumpound_delegate);
+            this.playerMove_object.MovePlayerUpdate(this.nowFlick, this.nowSituation, this.nowDirection, this.nowTili_direction, this.isTurnGroundFlg,this.player_jumpound_delegate);
             //アニメーション更新
             this.playerAnimation_object.AnimationUpdate(this.nowFlick, this.nowSituation, this.collisionFlg);
             //プレイヤーの生死確認
