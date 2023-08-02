@@ -23,7 +23,7 @@ public class CollisionCheck : MonoBehaviour
 
     //インスペクターから設定
     //プレイヤーマネージャーのスクリプト
-    [SerializeField] PlayerManager manager;
+    [SerializeField] PlayerManager playerManager;
     //スコアマネージャー
     [SerializeField] ScoreManager scoreManager;
 
@@ -49,8 +49,10 @@ public class CollisionCheck : MonoBehaviour
         //連続で衝突を呼び出さないようスパンを設ける
         if(other.tag == this.ItemTag && this.itemDelta > this.itemGetSpan)
         {
-            //Debug.Log("アイテムと衝突");
+            Debug.Log("アイテムと衝突");
             //プレイヤーマネージャーに報告
+            playerManager.ItemGetReport();
+            //スコアマネージャーに報告
             scoreManager.ItemGetReport();
             //タイマー初期化
             this.itemDelta = 0;

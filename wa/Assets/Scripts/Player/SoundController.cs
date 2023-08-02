@@ -17,7 +17,9 @@ public class SoundController : MonoBehaviour
     [SerializeField] AudioClip jump_sound;
     //衝突音
     [SerializeField] AudioClip collision_sound;
-
+    //アイテム取得音
+    [SerializeField] AudioClip getItem_sound;
+    
     //歩きの足音スパン
     float walk_span = 0.5f;
     //走りの足音スパン
@@ -75,5 +77,13 @@ public class SoundController : MonoBehaviour
     public void PlyJumpSound()
     {
         this.audioSource_object.PlayOneShot(this.jump_sound);
+    }
+
+    /// <summary>
+    /// アイテム取得音再生
+    /// </summary>
+    public void PlyGetItemSound()
+    {
+        this.audioSource_object.PlayOneShot(this.getItem_sound);
     }
 }

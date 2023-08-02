@@ -66,6 +66,7 @@ public class Move : MonoBehaviour
             ply_jumpSound_delegate();
         }
 
+        //回転可能な地面の上か歩き常態である時場合ジャイロを考慮しない
         if (turnGroundFlg == true || situation == PlayerSituation.walk)
         {
             //回転可能な地面の上での移動処理

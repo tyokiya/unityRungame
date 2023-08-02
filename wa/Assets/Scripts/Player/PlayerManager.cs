@@ -104,7 +104,14 @@ public class PlayerManager : MonoBehaviour
             //プレイヤーの移動サウンド再生
             this.playerSound_object.PlyWalkSound(this.nowSituation);
         }
-        
-       
+    }
+
+    /// <summary>
+    /// アイテムが獲得した報告を受け取りサウンド再生命令
+    /// </summary>
+    public void ItemGetReport()
+    {
+        //獲得音再生の命令
+        this.playerSound_object.PlyGetItemSound();
     }
 }
