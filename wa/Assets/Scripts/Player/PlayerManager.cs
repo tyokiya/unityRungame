@@ -27,6 +27,8 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] SoundController playerSound_object;
     //シーンのコントローラーオブジェクト
     [SerializeField] SceneController sceneController_object;
+    //プレイヤーのパーティクルオブジェクト
+    [SerializeField] ParticleController particleSystem_object;
 
     //接地フラグ入れる変数
     bool isGroudFlg = false;
@@ -46,6 +48,8 @@ public class PlayerManager : MonoBehaviour
     //プレイヤーの衝突フラグを入れる変数
     bool collisionFlg = false;
 
+    //死亡フラグ
+    bool deathFlg = false;
     
     //タイトルシーン切り替えのデリゲート
     SceneController.changeScene_delegate change_ResultScene_delegate;
@@ -101,9 +105,35 @@ public class PlayerManager : MonoBehaviour
             //アニメーション更新
             this.playerAnimation_object.AnimationUpdate(this.nowFlick, this.nowSituation, this.collisionFlg);
             //プレイヤーの生死確認
-            this.playerStatus_object.SurvivalChek(this.change_ResultScene_delegate, this.player_fallSound_delegate, this.collisionFlg, this.player_collisionSound_delegate);
+            this.playerStatus_object.SurvivalChek(this.collisionFlg);
             //プレイヤーの移動サウンド再生
             this.playerSound_object.PlyWalkSound(this.nowSituation);
+        }
+
+        //衝突死の処理
+        if(this.nowSurvival == Status.PlayerSurvival.collisionDeath && this.deathFlg == false)
+        {            
+            //衝突パーティクル再生
+            this.particleSystem_object.PlyCollisionParticle();
+            //衝突音再生
+            this.player_collisionSound_delegate();
+            //デリゲートでシーンをリザルトに変更
+            StartCoroutine(this.change_ResultScene_delegate(2.1f));
+
+            //死亡フラグを立てる
+            this.deathFlg = true;
+        }
+
+        //落下死処理
+        if(this.nowSurvival == Status.PlayerSurvival.fallDeath && this.deathFlg == false)
+        {
+            //落下サウンド再生
+            this.player_fallSound_delegate();
+            //デリゲートでシーンをリザルトに変更
+            StartCoroutine(this.change_ResultScene_delegate(1f));
+
+            //死亡フラグを立てる
+            this.deathFlg = true;
         }
     }
 

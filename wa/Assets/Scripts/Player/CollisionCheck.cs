@@ -72,7 +72,7 @@ public class CollisionCheck : MonoBehaviour
         {
             //衝突フラグを立てる
             this.collisionFlg = true;
-            Debug.Log("衝突");
+            //Debug.Log("衝突");
         }
     }
 

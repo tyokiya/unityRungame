@@ -393,6 +393,7 @@
 "Assets/Scripts/Player/CollisionCheck.cs"
 "Assets/Scripts/Player/GroudCheck.cs"
 "Assets/Scripts/Player/Move.cs"
+"Assets/Scripts/Player/ParticleController.cs"
 "Assets/Scripts/Player/PlayerManager.cs"
 "Assets/Scripts/Player/SoundController.cs"
 "Assets/Scripts/Player/Status.cs"
