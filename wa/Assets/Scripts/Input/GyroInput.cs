@@ -14,7 +14,7 @@ public class GyroInput : MonoBehaviour
     Vector3 input_tilt;
 
     //テストキストを入れる変数
-    [SerializeField] Text test_text;
+    //[SerializeField] Text test_text;
 
     //傾きの方向
     public enum TiltDirection
@@ -63,11 +63,11 @@ public class GyroInput : MonoBehaviour
 
         //オイラー変換した値を描画(テスト用)
         //{
-            string s = input_tilt.x.ToString();
+        //    string s = input_tilt.x.ToString();
         //    string s2 = input_tilt.y.ToString();
         //    string s3 = input_tilt.z.ToString();
 
-            this.test_text.text = s;
+        //    this.test_text.text = s;
         //}
         /////////////////////////////////////////////////////////////////////////////////
     }
