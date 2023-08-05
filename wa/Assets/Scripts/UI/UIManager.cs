@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+////////////////////////////////////
+// UIマネージャースクリプト
+////////////////////////////////////
 public class UIManager : MonoBehaviour
 {
     //インスペクターから設定
