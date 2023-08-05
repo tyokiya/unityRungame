@@ -1,6 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+
+////////////////////////////////////
+// 獲得スコアのコントローラースクリプト
+////////////////////////////////////
 
 public class ScoreController : MonoBehaviour
 {
@@ -9,9 +14,17 @@ public class ScoreController : MonoBehaviour
     //獲得スコア
     int getSucore = 0;
 
-    void Update()
+    void Awake()
     {
-        //1フレームごとにスコアを1づつ増加
+        //リザルトシーンにスコアを残すためオブジェクトの破壊を行わない処理
+        DontDestroyOnLoad(this);
+    }
+
+    /// <summary>
+    /// スコア上昇処理
+    /// </summary>
+    public void ScoreUp()
+    {
         this.getSucore++;
     }
 
@@ -35,8 +48,17 @@ public class ScoreController : MonoBehaviour
     /// <summary>
     /// 獲得スコアのゲッター
     /// </summary>
-    public int SucoreGetter()
+    public int ScoreGetter()
     {
         return this.getSucore;
+    }
+
+    /// <summary>
+    /// スコアのリセット処理
+    /// </summary>
+    public void ScoreReset()
+    {
+        this.getItemCnt = 0;
+        this.getSucore = 0;
     }
 }

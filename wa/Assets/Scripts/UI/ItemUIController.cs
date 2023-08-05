@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+////////////////////////////////////
+// アイテムUIのコントローラースクリプト
+////////////////////////////////////
+
 public class ItemUIController : MonoBehaviour
 {
     //スコアオブジェクトを入れる変数

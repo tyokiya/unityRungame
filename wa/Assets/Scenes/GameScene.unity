@@ -2797,6 +2797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreController_object: {fileID: 564433199}
+  playerStatus_object: {fileID: 806446435}
 --- !u!4 &959826262
 Transform:
   m_ObjectHideFlags: 0

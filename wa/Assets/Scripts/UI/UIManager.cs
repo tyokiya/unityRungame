@@ -20,7 +20,7 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         //スコアUIの更新命令
-        this.scoreUIController_object.ScoreTextUpdate(this.scoreController_object.SucoreGetter());
+        this.scoreUIController_object.ScoreTextUpdate(this.scoreController_object.ScoreGetter());
         //アイテムUIの更新命令
         this.itemUIController_object.ItemTextUpdate(this.scoreController_object.ItemNumGetter());
 

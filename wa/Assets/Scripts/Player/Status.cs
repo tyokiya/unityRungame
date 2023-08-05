@@ -34,7 +34,8 @@ public class Status : MonoBehaviour
     { 
         life,                   //生存状態
         collisionDeath,         //衝突による死亡状態
-        fallDeath               //落下による死亡状態
+        fallDeath,              //落下による死亡状態
+        clearLife               //生存状態でのクリア
     }
     PlayerSurvival nowSurvival = PlayerSurvival.life;
 
