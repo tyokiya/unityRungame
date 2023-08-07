@@ -67,7 +67,8 @@ public class Move : MonoBehaviour
         }
 
         //回転可能な地面の上か歩き常態である時場合ジャイロを考慮しない
-        if (turnGroundFlg == true || situation == PlayerSituation.walk || tili_direction == GyroInput.TiltDirection.FRONT)
+        if (turnGroundFlg == true || situation == PlayerSituation.walk 
+            || tili_direction == GyroInput.TiltDirection.FRONT)
         {
             //回転可能な地面の上での移動処理
             //歩きモーション中の移動処理

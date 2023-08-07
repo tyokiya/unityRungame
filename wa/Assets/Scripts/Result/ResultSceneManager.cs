@@ -19,4 +19,9 @@ public class ResultSceneManager : MonoBehaviour
         //ゲームシーンへ切り替え
         this.sceneController_object.ChangeScene_Game();
     }
+    public void TittleButtonDown()
+    {
+        //タイトルシーンへの切り替え
+        this.sceneController_object.ChangeScene_Tittle();
+    }
 }

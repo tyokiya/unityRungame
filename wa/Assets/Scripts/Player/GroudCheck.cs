@@ -20,15 +20,15 @@ public class GroudCheck : MonoBehaviour
     /// </summary>
     void OnTriggerEnter(Collider other)
     {
-        //衝突したものが地面なのかを調べる
+        //衝突した地面の種類を調べる
         if (other.tag == this.groundTag)
         {
+            //通常の地面の処理
             this.standGroundFlg = true;
-            //Debug.Log("1");
-
         }
         else if(other.tag == this.turnGroundTag)
         {
+            //回転可能な地面の処理
             this.standGroundFlg = true;
             this.standTurnGroundFlg = true;
         }

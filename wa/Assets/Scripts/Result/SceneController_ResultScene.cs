@@ -17,4 +17,12 @@ public class SceneController_ResultScene : MonoBehaviour
     {
         SceneManager.LoadScene("GameScene");
     }
+
+    /// <summary>
+    /// タイトルシーンへの切り替え
+    /// </summary>
+    public void ChangeScene_Tittle()
+    {
+        SceneManager.LoadScene("TittleScene");
+    }
 }

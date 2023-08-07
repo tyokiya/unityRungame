@@ -16,20 +16,35 @@ public class ResultUIController : MonoBehaviour
     //アイテムスコア
     int itemScore = 0;
 
-    //スコアテキストを入れる変数
-    [SerializeField] Text item_text;
+    GameObject sucore_object;
+
+    //アイテムスコアテキストを入れるテキストオブジェクト
+    [SerializeField] Text itemScore_text;
+    //スコア獲得スコアを入れるテキストオブジェクト
+    [SerializeField] Text runScore_text;
+    //トータルスコアを入れるテキストオブジェクト
+    [SerializeField] Text tortalScore_text;
 
     void Start()
     {
         //ゲームシーンのスコアオブジェクトからを受け取る
-        GameObject sucore_object = GameObject.Find("ScoreController");
+        sucore_object = GameObject.Find("ScoreController");
         //スコアを受け取る
         this.runScore = sucore_object.GetComponent<ScoreController>().ScoreGetter();
         //アイテム数を受け取る
-        this.itemScore = sucore_object.GetComponent <ScoreController>().ItemNumGetter();
+        this.itemScore = sucore_object.GetComponent<ScoreController>().ItemNumGetter();
+        //受け取った値からトータルスコアを計算
+        this.tortalScore = this.runScore + (this.itemScore * 100);
 
-        //int型をstring型に変換
-        string s = runScore.ToString();
-        item_text.text = s;
+        //int型をstring型に変換し、テキストに代入
+        string s = this.runScore.ToString();
+        this.runScore_text.text = s;
+
+        s = this.itemScore.ToString();
+        this.itemScore_text.text = s;
+
+        s = this.tortalScore.ToString();
+        this.tortalScore_text.text = s;
     }
+
 }
