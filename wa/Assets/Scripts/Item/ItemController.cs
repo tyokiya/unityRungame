@@ -9,7 +9,6 @@ public class ItemController : MonoBehaviour
 {
     //アイテムの回転スピード
     float rotateSpeed = 10.0f;
-
     void Update()
     {
         //一定の速度で回転

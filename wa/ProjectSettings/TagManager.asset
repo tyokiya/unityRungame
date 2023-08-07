@@ -10,6 +10,7 @@ TagManager:
   - Item
   - TurnGround
   - wall
+  - GoalItem
   layers:
   - Default
   - TransparentFX
