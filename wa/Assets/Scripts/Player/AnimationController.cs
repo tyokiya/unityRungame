@@ -37,4 +37,13 @@ public class AnimationController : MonoBehaviour
         //衝突フラグが立ってる場合トリガーを切り替える
         if (collisionFlg == true) this.animator.SetTrigger("CollisionTrigger");
     }
+
+    /// <summary>
+    /// アニメーショントリガーをゴールに切り替える
+    /// </summary>
+    public void ChangeTrigger_Goal()
+    {
+        //アニメーショントリガーをゴールトリガーに切り替える
+        this.animator.SetTrigger("GoalTrigger");
+    }
 }

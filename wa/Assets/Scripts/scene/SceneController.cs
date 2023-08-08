@@ -17,7 +17,7 @@ public class SceneController : MonoBehaviour
     /// <param name="stand_time">シーン切り替えまでの待機時間</param>
     public IEnumerator ChangeResultScene(float stand_time)
     {
-        //1秒待機後シーン切り替え
+        //引数分待機後シーン切り替え
         yield return new WaitForSeconds(stand_time);
         SceneManager.LoadScene("ResultScene");
     }

@@ -145,4 +145,17 @@ public class PlayerManager : MonoBehaviour
         //獲得音再生の命令
         this.playerSound_object.PlyGetItemSound();
     }
+
+    /// <summary>
+    /// プレイヤーがゴールした報告を受けとる
+    /// </summary>
+    public void GoalReport()
+    {
+        //デリゲートでリザルトシーンへの切り替え
+        StartCoroutine(this.change_ResultScene_delegate(3f));
+        //アニメーショントリガーを切り替える
+        this.playerAnimation_object.ChangeTrigger_Goal();
+        //生存状態を切り替える
+        this.playerStatus_object.ChangeNowSurvival_Goal();
+    }
 }

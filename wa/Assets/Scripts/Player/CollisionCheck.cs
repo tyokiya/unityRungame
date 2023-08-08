@@ -12,11 +12,8 @@ public class CollisionCheck : MonoBehaviour
     string ItemTag = "Item";
     //壁のタグ名
     string wallTag = "wall";
-
-    //アイテムタイマー
-    float itemDelta = 0;
-    //次のアイテムを獲得するまでのスパン
-    float itemGetSpan = 0.01f;
+    //ゴールのタグ
+    string goalTag = "GoalItem";
 
     //壁との衝突フラグ
     bool collisionFlg = false;
@@ -27,18 +24,6 @@ public class CollisionCheck : MonoBehaviour
     //スコアマネージャー
     [SerializeField] ScoreManager scoreManager;
 
-    void Update()
-    {
-        //タイマーの増加
-        this.itemDelta += Time.deltaTime;
-
-        //オーバーフローさせない処理
-        if(this.itemDelta > float.MaxValue)
-        {
-            this.itemDelta = 0;
-        }
-    }
-
     /// <summary>
     /// 衝突を感知しマネージャーに知らせる
     /// </summary>
@@ -46,17 +31,23 @@ public class CollisionCheck : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         //衝突したものがアイテムなのかを調べる
-        //連続で衝突を呼び出さないようスパンを設ける
-        if(other.tag == this.ItemTag && this.itemDelta > this.itemGetSpan)
+        if(other.tag == this.ItemTag)
         {
             //Debug.Log("アイテムと衝突");
             //プレイヤーマネージャーに報告
-            playerManager.ItemGetReport();
+            this.playerManager.ItemGetReport();
             //スコアマネージャーに報告
-            scoreManager.ItemGetReport();
-            //タイマー初期化
-            this.itemDelta = 0;
+            this.scoreManager.ItemGetReport();
             //獲得したアイテムオブジェクトを破壊
+            Destroy(other.gameObject);
+        }
+
+        //衝突したものがゴールなのかを調べる
+        if(other.tag == this.goalTag)
+        {
+            //プレイヤーマネージャーに報告
+            this.playerManager.GoalReport();
+            //獲得したゴールオブジェクトを破壊
             Destroy(other.gameObject);
         }
     }

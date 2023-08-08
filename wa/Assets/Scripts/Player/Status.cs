@@ -22,7 +22,7 @@ public class Status : MonoBehaviour
 
     //プレイヤーの状態
     public enum PlayerSituation
-    { 
+    {
         walk,
         run,
         jump
@@ -31,7 +31,7 @@ public class Status : MonoBehaviour
 
     //プレイヤーの生死状態
     public enum PlayerSurvival
-    { 
+    {
         life,                   //生存状態
         collisionDeath,         //衝突による死亡状態
         fallDeath,              //落下による死亡状態
@@ -118,19 +118,19 @@ public class Status : MonoBehaviour
         //向きを変える処理
         //ターン可能な地面にいるかの確認
         //走り状態化の確認
-        if(flick == ScreenInput.FlickDirection.RIGHT && this.delta > this.rotationSpan && nowSituation == PlayerSituation.run && turnGroundFlg == true)
+        if (flick == ScreenInput.FlickDirection.RIGHT && this.delta > this.rotationSpan && nowSituation == PlayerSituation.run && turnGroundFlg == true)
         {
             ChangeDirection(true);
             //デルタ初期化
             this.delta = 0;
         }
-        if(flick == ScreenInput.FlickDirection.LEFT && this.delta > this.rotationSpan && nowSituation == PlayerSituation.run && turnGroundFlg == true)
+        if (flick == ScreenInput.FlickDirection.LEFT && this.delta > this.rotationSpan && nowSituation == PlayerSituation.run && turnGroundFlg == true)
         {
             ChangeDirection(false);
             //デルタ初期化
             this.delta = 0;
         }
-  
+
     }
 
     /// <summary>
@@ -140,10 +140,10 @@ public class Status : MonoBehaviour
     void ChangeDirection(bool rightFlg)
     {
         //現在の方向と回転方向に応じた処理
-        switch(this.nowDirection)
+        switch (this.nowDirection)
         {
             case PlayerDirection.front:
-                if(rightFlg == true)
+                if (rightFlg == true)
                 {
                     this.nowDirection = PlayerDirection.right;
                     Debug.Log("プレイヤーの方向変更(右)");
@@ -191,7 +191,7 @@ public class Status : MonoBehaviour
                 }
                 break;
         }
-        
+
     }
 
     /// <summary>
@@ -204,17 +204,25 @@ public class Status : MonoBehaviour
     public void SurvivalChek(bool collisionFlg)
     {
         //プレヤーの座標が落下ボーダーより下にないかの確認
-        if(parent_transform.position.y < this.playerFallBorder_y)
+        if (parent_transform.position.y < this.playerFallBorder_y)
         {
             //プレイヤーの生存状態を変更
             this.nowSurvival = PlayerSurvival.fallDeath;
         }
         //衝突フラグが立っているかを確認
-        if(collisionFlg == true)
+        if (collisionFlg == true)
         {
-            
+
             //プレイヤーの生存状態を変更
             this.nowSurvival = PlayerSurvival.collisionDeath;
         }
+    }
+
+    /// <summary>
+    /// 現在のプレイヤーの状態をゴール状態にする
+    /// </summary>
+    public void ChangeNowSurvival_Goal()
+    {
+        this.nowSurvival = PlayerSurvival.clearLife;
     }
 }
