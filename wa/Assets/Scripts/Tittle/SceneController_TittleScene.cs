@@ -10,26 +10,32 @@ using UnityEngine.SceneManagement;
 public class SceneController_TittleScene : MonoBehaviour
 {
     /// <summary>
-    /// ゲームシーンへ切り替え
+    /// ゲームシーンへ切り替えコルーチン
     /// </summary>
-    public void ChangeScene_Game()
+    public IEnumerator ChangeScene_Game()
     {
+        //0.6後シーン切り替え
+        yield return new WaitForSeconds(0.6f);
         SceneManager.LoadScene("GameScene");
     }
 
     /// <summary>
-    /// クレジットシーンへの切り替え
+    /// クレジットシーンへの切り替えコルーチン
     /// </summary>
-    public void ChangeScene_Credit()
+    public IEnumerator ChangeScene_Credit()
     {
+        //0.6後シーン切り替え
+        yield return new WaitForSeconds(0.6f);
         SceneManager.LoadScene("CreditScene");
     }
 
     /// <summary>
-    /// チュートリアルシーンへの切り替え
+    /// チュートリアルシーンへの切り替えコルーチン
     /// </summary>
-    public void ChangeScene_Tutorial()
+    public IEnumerator ChangeScene_Tutorial()
     {
+        //0.6後シーン切り替え
+        yield return new WaitForSeconds(0.6f);
         SceneManager.LoadScene("TutorialScene");
     }
 }

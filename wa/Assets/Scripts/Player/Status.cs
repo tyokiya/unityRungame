@@ -146,48 +146,48 @@ public class Status : MonoBehaviour
                 if (rightFlg == true)
                 {
                     this.nowDirection = PlayerDirection.right;
-                    Debug.Log("プレイヤーの方向変更(右)");
+                    //Debug.Log("プレイヤーの方向変更(右)");
                 }
                 else
                 {
                     this.nowDirection = PlayerDirection.left;
-                    Debug.Log("プレイヤーの方向変更(左)");
+                    //Debug.Log("プレイヤーの方向変更(左)");
                 }
                 break;
             case PlayerDirection.right:
                 if (rightFlg == true)
                 {
                     this.nowDirection = PlayerDirection.back;
-                    Debug.Log("プレイヤーの方向変更(後)");
+                    //Debug.Log("プレイヤーの方向変更(後)");
                 }
                 else
                 {
                     this.nowDirection = PlayerDirection.front;
-                    Debug.Log("プレイヤーの方向変更(前)");
+                    //Debug.Log("プレイヤーの方向変更(前)");
                 }
                 break;
             case PlayerDirection.back:
                 if (rightFlg == true)
                 {
                     this.nowDirection = PlayerDirection.left;
-                    Debug.Log("プレイヤーの方向変更(左)");
+                    //Debug.Log("プレイヤーの方向変更(左)");
                 }
                 else
                 {
                     this.nowDirection = PlayerDirection.right;
-                    Debug.Log("プレイヤーの方向変更(右)");
+                    //Debug.Log("プレイヤーの方向変更(右)");
                 }
                 break;
             case PlayerDirection.left:
                 if (rightFlg == true)
                 {
                     this.nowDirection = PlayerDirection.front;
-                    Debug.Log("プレイヤーの方向変更(前)");
+                    //Debug.Log("プレイヤーの方向変更(前)");
                 }
                 else
                 {
                     this.nowDirection = PlayerDirection.back;
-                    Debug.Log("プレイヤーの方向変更(後)");
+                    //Debug.Log("プレイヤーの方向変更(後)");
                 }
                 break;
         }

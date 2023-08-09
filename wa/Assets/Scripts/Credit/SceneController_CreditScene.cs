@@ -12,8 +12,10 @@ public class SceneController_CreditScene : MonoBehaviour
     /// <summary>
     /// タイトルシーンへ切り替え
     /// </summary>
-    public void ChangeScene_Tittle()
+    public IEnumerator ChangeScene_Tittle()
     {
+        //0.6後シーン切り替え
+        yield return new WaitForSeconds(0.6f);
         SceneManager.LoadScene("TittleScene");
     }
 }
