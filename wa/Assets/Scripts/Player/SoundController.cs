@@ -19,7 +19,9 @@ public class SoundController : MonoBehaviour
     [SerializeField] AudioClip collision_sound;
     //アイテム取得音
     [SerializeField] AudioClip getItem_sound;
-    
+    //ゴール音
+    [SerializeField] AudioClip goal_sound;
+
     //歩きの足音スパン
     float walk_span = 0.5f;
     //走りの足音スパン
@@ -85,5 +87,13 @@ public class SoundController : MonoBehaviour
     public void PlyGetItemSound()
     {
         this.audioSource_object.PlayOneShot(this.getItem_sound);
+    }
+
+    /// <summary>
+    /// ゴール音再生
+    /// </summary>
+    public void PlyGoalSound()
+    {
+        this.audioSource_object.PlayOneShot(this.goal_sound);
     }
 }

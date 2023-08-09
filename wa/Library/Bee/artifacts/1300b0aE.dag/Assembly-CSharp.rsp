@@ -407,6 +407,7 @@
 "Assets/Scripts/Tittle/CameraController_TittleScene.cs"
 "Assets/Scripts/Tittle/SceneController_TittleScene.cs"
 "Assets/Scripts/UI/FadeInScoreController.cs"
+"Assets/Scripts/UI/GoalBornus_Text_controller.cs"
 "Assets/Scripts/UI/ItemUIController.cs"
 "Assets/Scripts/UI/ScoreUIController.cs"
 "Assets/Scripts/UI/UIManager.cs"

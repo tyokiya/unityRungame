@@ -29,6 +29,14 @@ public class ScoreController : MonoBehaviour
     }
 
     /// <summary>
+    /// ゴール分アイテムスコア上昇
+    /// </summary>
+    public void GoalScoreUp()
+    {
+        this.getItemCnt += 500;
+    }
+
+    /// <summary>
     /// 獲得アイテム数の上昇
     /// </summary>
     public void RiseItemSucore()

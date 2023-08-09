@@ -155,6 +155,8 @@ public class PlayerManager : MonoBehaviour
         StartCoroutine(this.change_ResultScene_delegate(3f));
         //アニメーショントリガーを切り替える
         this.playerAnimation_object.ChangeTrigger_Goal();
+        //ゴール音再生命令
+        this.playerSound_object.PlyGoalSound();
         //生存状態を切り替える
         this.playerStatus_object.ChangeNowSurvival_Goal();
     }

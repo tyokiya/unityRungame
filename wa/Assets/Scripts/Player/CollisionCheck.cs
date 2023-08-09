@@ -23,6 +23,8 @@ public class CollisionCheck : MonoBehaviour
     [SerializeField] PlayerManager playerManager;
     //スコアマネージャー
     [SerializeField] ScoreManager scoreManager;
+    //UIマネージャー
+    [SerializeField] UIManager uiManager;
 
     /// <summary>
     /// 衝突を感知しマネージャーに知らせる
@@ -47,6 +49,11 @@ public class CollisionCheck : MonoBehaviour
         {
             //プレイヤーマネージャーに報告
             this.playerManager.GoalReport();
+            //スコアマネージャーに報告
+            this.scoreManager.GoalItemGetReport();
+            //UIマネージャーに報告
+            this.uiManager.GoalReport();
+
             //獲得したゴールオブジェクトを破壊
             Destroy(other.gameObject);
         }

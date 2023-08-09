@@ -56,4 +56,13 @@ public class ScoreManager : MonoBehaviour
         //アイテム獲得フラグを立てる
         this.playerItemGetFlg = true;
     }
+
+    /// <summary>
+    /// プレイヤーがゴールアイテムをゲットした報告を受ける
+    /// </summary>
+    public void GoalItemGetReport()
+    {
+        //コントローラーにゴールスコア上昇処理
+        this.scoreController_object.GoalScoreUp();
+    }
 }
