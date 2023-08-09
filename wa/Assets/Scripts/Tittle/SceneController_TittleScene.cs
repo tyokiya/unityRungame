@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+////////////////////////////////////
+// タイトルシーンのシーンコントローラー
+////////////////////////////////////
+
 public class SceneController_TittleScene : MonoBehaviour
 {
     /// <summary>

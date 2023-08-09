@@ -398,14 +398,14 @@
       "DebugActionIndex": 3
     },
     {
-      "Annotation": "CopyFiles C:/UnityProject/unityRungame/wa/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/sharedassets0.resource",
-      "DisplayName": "Copying sharedassets0.resource",
+      "Annotation": "CopyFiles C:/UnityProject/unityRungame/wa/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/sharedassets3.resource",
+      "DisplayName": "Copying sharedassets3.resource",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "Library/PlayerDataCache/Android/Data/sharedassets0.resource"
+        "Library/PlayerDataCache/Android/Data/sharedassets3.resource"
       ],
       "Outputs": [
-        "C:/UnityProject/unityRungame/wa/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/sharedassets0.resource"
+        "C:/UnityProject/unityRungame/wa/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/sharedassets3.resource"
       ],
       "DebugActionIndex": 4
     },
@@ -432,7 +432,7 @@
         "Library/PlayerDataCache/Android/Data/data.unity3d",
         "Library/PlayerDataCache/Android/Data/RuntimeInitializeOnLoads.json",
         "Library/PlayerDataCache/Android/Data/ScriptingAssemblies.json",
-        "Library/PlayerDataCache/Android/Data/sharedassets0.resource",
+        "Library/PlayerDataCache/Android/Data/sharedassets3.resource",
         "C:/Program Files/Unity/Hub/Editor/2022.2.6f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.AIModule.dll",
         "C:/Program Files/Unity/Hub/Editor/2022.2.6f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.ARModule.dll",
         "C:/Program Files/Unity/Hub/Editor/2022.2.6f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.AccessibilityModule.dll",
@@ -9327,7 +9327,7 @@
         "Library/PlayerDataCache/Android/Data/data.unity3d",
         "Library/PlayerDataCache/Android/Data/RuntimeInitializeOnLoads.json",
         "Library/PlayerDataCache/Android/Data/ScriptingAssemblies.json",
-        "Library/PlayerDataCache/Android/Data/sharedassets0.resource",
+        "Library/PlayerDataCache/Android/Data/sharedassets3.resource",
         "Library/Bee/artifacts/Android/boot.config",
         "C:/Program Files/Unity/Hub/Editor/2022.2.6f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.AIModule.dll",
         "C:/Program Files/Unity/Hub/Editor/2022.2.6f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.ARModule.dll",
