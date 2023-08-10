@@ -412,6 +412,7 @@
 "Assets/Scripts/Tittle/TittleScene_Manager.cs"
 "Assets/Scripts/Tutorial/SceneController_TutorialScene.cs"
 "Assets/Scripts/Tutorial/SoundCOntroller_TutorialScene.cs"
+"Assets/Scripts/Tutorial/TutorialPage_controller.cs"
 "Assets/Scripts/Tutorial/TutorialScene_Manager.cs"
 "Assets/Scripts/UI/FadeInScoreController.cs"
 "Assets/Scripts/UI/GoalBornus_Text_controller.cs"

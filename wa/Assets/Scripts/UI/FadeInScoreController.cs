@@ -19,7 +19,7 @@ public class FadeInScoreController : MonoBehaviour
     //フェードインの回数カウンター
     int fadeIn_counter = 0;
     //カウンターのマックス数
-    int counsterMax_num = 50;
+    int counsterMax_num = 70;
 
     void Update()
     {
@@ -35,7 +35,7 @@ public class FadeInScoreController : MonoBehaviour
         if (this.fadeIn_counter == this.counsterMax_num)
         {
             //初期値へ移動
-            transform.Translate(0, 170, 0);
+            transform.Translate(0, 230, 0);
             //フラグを下ろす
             this.fadeInFlg = false;
             //カウンター初期化
