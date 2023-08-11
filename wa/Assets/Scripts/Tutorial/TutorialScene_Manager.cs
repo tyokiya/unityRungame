@@ -38,7 +38,7 @@ public class TutorialScene_Manager : MonoBehaviour
         //カウンターの増加
         this.nowPageNum++;
         //セレクトサウンド再生命令
-        this.soundCOntroller_object.PlySelectSound();
+        this.soundCOntroller_object.PlyPageSound();
         //ページのアクティブ状態の更新
         this.pageController_object.PageActiveUpdate(this.nowPageNum);
     }
@@ -51,7 +51,7 @@ public class TutorialScene_Manager : MonoBehaviour
         //カウンターの減少
         this.nowPageNum--;
         //セレクトサウンド再生命令
-        this.soundCOntroller_object.PlySelectSound();
+        this.soundCOntroller_object.PlyPageSound();
         //ページのアクティブ状態の更新
         this.pageController_object.PageActiveUpdate(this.nowPageNum);
     }

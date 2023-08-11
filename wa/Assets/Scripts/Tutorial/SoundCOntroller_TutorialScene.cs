@@ -9,6 +9,8 @@ public class SoundCOntroller_TutorialScene : MonoBehaviour
     [SerializeField] AudioSource audioSource_object;
     //決定音
     [SerializeField] AudioClip select_sound;
+    //ページをめくる音
+    [SerializeField] AudioClip page_sound;
 
     /// <summary>
     /// セレクトサウンドの再生
@@ -16,5 +18,13 @@ public class SoundCOntroller_TutorialScene : MonoBehaviour
     public void PlySelectSound()
     {
         this.audioSource_object.PlayOneShot(this.select_sound);
+    }
+
+    /// <summary>
+    /// ページをめくる音の再生
+    /// </summary>
+    public void PlyPageSound()
+    {
+        this.audioSource_object.PlayOneShot(this.page_sound);
     }
 }

@@ -2551,6 +2551,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource_object: {fileID: 1697723289}
   select_sound: {fileID: 8300000, guid: 9345d048d0ec3e5489ba8daa5a18ef59, type: 3}
+  page_sound: {fileID: 8300000, guid: 0ce0a42c772217c4f821abd3d44f5115, type: 3}
 --- !u!4 &1697723291
 Transform:
   m_ObjectHideFlags: 0
