@@ -38,9 +38,12 @@ public class CameraController : MonoBehaviour
         {
             RotationCamera(nowDirection);
         }
-        //プレイヤーの向いてる方向をもとに
-        //常に一定の距離を保ちながらプレイヤーを追従
-        MoveCamera(playerPos, nowDirection, situation);
+        else
+        {
+            //プレイヤーの向いてる方向をもとに
+            //常に一定の距離を保ちながらプレイヤーを追従
+            MoveCamera(playerPos, nowDirection, situation);
+        }        
     }
 
     /// <summary>
