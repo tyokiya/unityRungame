@@ -27,8 +27,8 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] SoundController playerSound_object;
     //シーンのコントローラーオブジェクト
     [SerializeField] SceneController sceneController_object;
-    //プレイヤーのパーティクルオブジェクト
-    [SerializeField] ParticleController particleSystem_object;
+    //プレイヤーのパーティクルコントローラーオブジェクト
+    [SerializeField] ParticleController particleController_object;
 
     //接地フラグ入れる変数
     bool isGroudFlg = false;
@@ -114,7 +114,7 @@ public class PlayerManager : MonoBehaviour
         if(this.nowSurvival == Status.PlayerSurvival.collisionDeath && this.deathFlg == false)
         {            
             //衝突パーティクル再生
-            this.particleSystem_object.PlyCollisionParticle();
+            this.particleController_object.PlyCollisionParticle();
             //衝突音再生
             this.player_collisionSound_delegate();
             //デリゲートでシーンをリザルトに変更
@@ -144,6 +144,8 @@ public class PlayerManager : MonoBehaviour
     {
         //獲得音再生の命令
         this.playerSound_object.PlyGetItemSound();
+        //獲得時kのパーティクル再生
+        this.particleController_object.PlyItemGetParticle();
     }
 
     /// <summary>

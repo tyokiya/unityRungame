@@ -6,9 +6,23 @@ public class ParticleController : MonoBehaviour
 {
     //インスペクター設定
     //プレイヤーのパーティクルオブジェクト
-    [SerializeField] ParticleSystem particle_object;
+    [SerializeField] ParticleSystem collidionParticle_object;
+    //プレイヤーのアイテムゲットパーティクルオブジェクト
+    [SerializeField] ParticleSystem itemGetParticle_object;
+
+    /// <summary>
+    /// 衝突時のパーティクル再生
+    /// </summary>
     public void PlyCollisionParticle()
     {
-        particle_object.Play();
+        collidionParticle_object.Play();
+    }
+
+    /// <summary>
+    /// アイテムゲット時のパーティクル再生
+    /// </summary>
+    public void PlyItemGetParticle()
+    {
+        this.itemGetParticle_object.Play();
     }
 }
