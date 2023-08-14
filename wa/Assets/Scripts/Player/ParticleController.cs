@@ -9,6 +9,22 @@ public class ParticleController : MonoBehaviour
     [SerializeField] ParticleSystem collidionParticle_object;
     //プレイヤーのアイテムゲットパーティクルオブジェクト
     [SerializeField] ParticleSystem itemGetParticle_object;
+    
+    //生成したパーティクルを入れる配列
+    ParticleSystem[] particleArray = new ParticleSystem[20];
+    //配列数のカウント
+    int arrayCnt = 0;
+    //配列のマックス数
+    const int arrayMax = 20;
+
+    void Update()
+    {
+        //配列のカウント数が最大値になったら初期化
+        if (arrayCnt == arrayMax)
+        {
+            arrayCnt = 0;
+        }
+    }
 
     /// <summary>
     /// 衝突時のパーティクル再生
@@ -21,8 +37,16 @@ public class ParticleController : MonoBehaviour
     /// <summary>
     /// アイテムゲット時のパーティクル再生
     /// </summary>
-    public void PlyItemGetParticle()
+    /// <param name="itemPos">アイテムを獲得した座標</param>
+    public void PlyItemGetParticle(Vector3 itemplayerPos)
     {
-        this.itemGetParticle_object.Play();
+        //this.itemGetParticle_object.Play();
+        //パーティクル生成
+        this.particleArray[this.arrayCnt] = Instantiate(itemGetParticle_object);
+        //座標設定
+        this.particleArray[this.arrayCnt].transform.position = itemplayerPos;
+        //パーティクル再生
+        this.particleArray[this.arrayCnt].Play();
+        this.arrayCnt++;
     }
 }

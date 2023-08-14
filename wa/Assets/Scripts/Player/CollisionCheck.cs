@@ -37,7 +37,7 @@ public class CollisionCheck : MonoBehaviour
         {
             //Debug.Log("アイテムと衝突");
             //プレイヤーマネージャーに報告
-            this.playerManager.ItemGetReport();
+            this.playerManager.ItemGetReport(other.transform.position);
             //スコアマネージャーに報告
             this.scoreManager.ItemGetReport();
             //獲得したアイテムオブジェクトを破壊

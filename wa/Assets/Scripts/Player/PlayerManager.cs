@@ -140,12 +140,13 @@ public class PlayerManager : MonoBehaviour
     /// <summary>
     /// アイテムが獲得した報告を受け取りサウンド再生命令
     /// </summary>
-    public void ItemGetReport()
+    /// <param name="itemPos">獲得したアイテムの座標</param>
+    public void ItemGetReport(Vector3 itemPos)
     {
         //獲得音再生の命令
         this.playerSound_object.PlyGetItemSound();
         //獲得時kのパーティクル再生
-        this.particleController_object.PlyItemGetParticle();
+        this.particleController_object.PlyItemGetParticle(itemPos);
     }
 
     /// <summary>
