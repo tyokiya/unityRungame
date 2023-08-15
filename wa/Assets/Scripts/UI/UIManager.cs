@@ -31,7 +31,7 @@ public class UIManager : MonoBehaviour
 
         //獲得数50ごとにフェードイン処理命令
         //連続処理を防ぐため処理した時のアイテム数を保持し、比較し確認
-        if (this.scoreController_object.ItemNumGetter() == 50 && this.fadeInItemNum != this.scoreController_object.ItemNumGetter())
+        if (this.scoreController_object.ItemNumGetter() % 50 == 0 && this.fadeInItemNum != this.scoreController_object.ItemNumGetter())
         {
             //フェードイン処理命令
             this.fadeinScoreController_object.fadeIn_itemScore(this.scoreController_object.ItemNumGetter());
