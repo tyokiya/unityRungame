@@ -47,6 +47,10 @@ public class ParticleController : MonoBehaviour
         this.particleArray[this.arrayCnt].transform.position = itemplayerPos;
         //パーティクル再生
         this.particleArray[this.arrayCnt].Play();
+        //時間経過後生成したパーティクルオブジェクトの削除
+        Destroy(this.particleArray[this.arrayCnt].gameObject,1.0f);
+        //カウント増加
         this.arrayCnt++;
     }
+
 }
