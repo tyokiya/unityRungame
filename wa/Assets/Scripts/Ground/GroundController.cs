@@ -14,26 +14,15 @@ public class GroundController : MonoBehaviour
     [SerializeField] GameObject ParentObject;
 
     /// <summary>
-    /// プレイヤーとのを受け取りオブジェクト破壊のコルーチン呼び出し
+    /// プレイヤーとのを受け取りオブジェクト破壊処理
     /// </summary>
     void OnTriggerEnter(Collider other)
     {
         //衝突したものがプレイヤーなのかを調べる
         if (other.tag == this.playerTag)
         {
-            StartCoroutine(GroundDestroyCoroutine());
+            //4秒後オブジェクトを破壊
+            Destroy(ParentObject,4.0f);
         }
-    }
-
-    /// <summary>
-    /// プレイヤーが触れた地面を時間経過で破壊する
-    /// </summary>
-
-    public IEnumerator GroundDestroyCoroutine()
-    {
-        //4秒待機
-        yield return new WaitForSeconds(4f);
-        //Debug.Log("グラウンドコルーチン実行");
-        Destroy(ParentObject);
     }
 }
