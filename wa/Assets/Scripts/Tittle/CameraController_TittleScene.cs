@@ -48,11 +48,14 @@ public class CameraController_TittleScene : MonoBehaviour
         }
 
         //移動処理
-        //カウント増加
-        this.rotationCnt++;
-        //プレイヤーを中心に周りを回る移動処理
-        transform.position = new Vector3(transform.position.x + this.moveSpeed_x, transform.position.y, transform.position.z + moveSpeed_z);
-        //プレイヤーを中心にカメラのアングル追従処理
-        transform.eulerAngles -= new Vector3(0, this.turnAngleSpeed, 0);
+        if(frameCnt % 2 == 0)
+        {
+            //カウント増加
+            this.rotationCnt++;
+            //プレイヤーを中心に周りを回る移動処理
+            transform.position = new Vector3(transform.position.x + this.moveSpeed_x, transform.position.y, transform.position.z + moveSpeed_z);
+            //プレイヤーを中心にカメラのアングル追従処理
+            transform.eulerAngles -= new Vector3(0, this.turnAngleSpeed, 0);
+        }        
     }
 }

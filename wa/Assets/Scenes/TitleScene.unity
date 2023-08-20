@@ -2332,7 +2332,7 @@ GameObject:
   - component: {fileID: 902707375}
   - component: {fileID: 902707374}
   m_Layer: 5
-  m_Name: TittleLogo_IMG
+  m_Name: TitleLogo_IMG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
