@@ -7,26 +7,21 @@ using UnityEngine;
 public class SoundController : MonoBehaviour
 {
     //インスペクターから設定
-    //オーディオソースを入れる変数
-    [SerializeField] AudioSource audioSource_object;
-    //足音
+    [Tooltip("オーディオソースオブジェクト")][SerializeField]
+    AudioSource audioSource_object;
+    
+    //再生音
     [SerializeField] AudioClip foot_sound;
-    //落下音
     [SerializeField] AudioClip fall_sound;
-    //ジャンプ音
     [SerializeField] AudioClip jump_sound;
-    //衝突音
     [SerializeField] AudioClip collision_sound;
-    //アイテム取得音
     [SerializeField] AudioClip getItem_sound;
-    //ゴール音
     [SerializeField] AudioClip goal_sound;
 
-    //歩きの足音スパン
-    float walk_span = 0.5f;
-    //走りの足音スパン
-    float run_span = 0.3f;
-    //足音のデルタ
+    [Tooltip("足音(歩き)再生のスパン定数")]
+    const float walkSound_span_const = 0.5f;
+    [Tooltip("足音(走り)再生のスパン定数")]
+    const float runSound_span_const = 0.3f;
     float foot_sound_delta = 0;
 
     //サウンド再生時のデリゲート定義
@@ -39,14 +34,14 @@ public class SoundController : MonoBehaviour
     public void PlyWalkSound(Status.PlayerSituation situation)
     {
         //現在の状態を見てサウンド再生
-        if(situation == Status.PlayerSituation.walk && this.foot_sound_delta > this.walk_span)
+        if(situation == Status.PlayerSituation.walk && this.foot_sound_delta > walkSound_span_const)
         {
             //足音再生
             this.audioSource_object.PlayOneShot(this.foot_sound);
             //デルタ初期化
             this.foot_sound_delta = 0;
         }
-        else if(situation == Status.PlayerSituation.run && this.foot_sound_delta > this.run_span)
+        else if(situation == Status.PlayerSituation.run && this.foot_sound_delta > runSound_span_const)
         {
             //足音再生
             this.audioSource_object.PlayOneShot(this.foot_sound);

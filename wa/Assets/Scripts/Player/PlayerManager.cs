@@ -39,35 +39,41 @@ public class PlayerManager : MonoBehaviour
     [Tooltip("プレイヤーのパーティクルコントローラーオブジェクト")][SerializeField]
     ParticleController particleController_object;
 
-    //接地フラグ入れる変数
+    [Tooltip("接地フラグ")]
     bool isGroudFlg = false;
     //ターン可能な地面との設置フラグを入れる
+    [Tooltip("ターン可能な地面との接地フラグ")]
     bool isTurnGroundFlg = false;
 
-    //現在の入力状態を入れる変数
+    [Tooltip("現在の入力状態を入れる変数")]
     ScreenInput.FlickDirection nowFlick;
-    //スマホの傾きを入れる変数
-    GyroInput.TiltDirection nowTili_direction;
-    //現在のプレイヤー状態を入れる変数
-    Status.PlayerSituation nowSituation;
-    //現在のプレイヤーの生死状態を入れる変数
-    Status.PlayerSurvival nowSurvival;
-    //現在のプレイヤーの向いてる方向を入れる変数
-    Status.PlayerDirection nowDirection;
-    //プレイヤーの衝突フラグを入れる変数
-    bool collisionFlg = false;
 
-    //死亡フラグ
+    [Tooltip("スマホの傾きを入れる変数")]
+    GyroInput.TiltDirection nowTili_direction;
+
+    [Tooltip("プレイヤーの状態を入れる変数")]
+    Status.PlayerSituation nowSituation;
+    
+    [Tooltip("現在のプレイヤーの生死状態を入れる変数")]
+    Status.PlayerSurvival nowSurvival;
+
+    [Tooltip("現在のプレイヤーの向いてる方向を入れる変数")]
+    Status.PlayerDirection nowDirection;
+
+    //プレイヤーのフラグ
+    bool collisionFlg = false;
     bool deathFlg = false;
     
-    //タイトルシーン切り替えのデリゲート
+    [Tooltip("タイトルシーン切り替えのデリゲート")]
     SceneController.changeScene_delegate change_ResultScene_delegate;
 
-    //落下音再生のデリゲート
+    [Tooltip("落下音再生のデリゲート")]
     SoundController.ply_playerSound_delegate player_fallSound_delegate;
-    //衝突音再生のデリゲート
+
+    [Tooltip("衝突音再生のデリゲート")]
     SoundController.ply_playerSound_delegate player_collisionSound_delegate;
-    //ジャンプ音再生のデリゲート
+
+    [Tooltip("ジャンプ音再生のデリゲート")]
     SoundController.ply_playerSound_delegate player_jumpound_delegate;
     void Awake()
     {

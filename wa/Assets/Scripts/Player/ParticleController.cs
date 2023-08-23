@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class ParticleController : MonoBehaviour
 {
-    //インスペクター設定
-    //プレイヤーのパーティクルオブジェクト
-    [SerializeField] ParticleSystem collidionParticle_object;
-    //プレイヤーのアイテムゲットパーティクルオブジェクト
-    [SerializeField] ParticleSystem itemGetParticle_object;
-    
-    //生成したパーティクルを入れる配列
+    //インスペクタからー設定
+    [Tooltip("プレイヤーの衝突パーティクルオブジェクト")][SerializeField]
+    ParticleSystem collidionParticle_object;
+
+    [Tooltip("プレイヤーのアイテムゲットパーティクルオブジェクト")][SerializeField]
+    ParticleSystem itemGetParticle_object;
+
+    [Tooltip("生成したパーティクルを入れる配列")]
     ParticleSystem[] particleArray = new ParticleSystem[20];
-    //配列数のカウント
-    int arrayCnt = 0;
-    //配列のマックス数
-    const int arrayMax = 20;
+    int particleArray_cnt = 0;
+    
+    const int arrayMax_const = 20;
 
     void Update()
     {
         //配列のカウント数が最大値になったら初期化
-        if (arrayCnt == arrayMax)
+        if (particleArray_cnt == arrayMax_const)
         {
-            arrayCnt = 0;
+            particleArray_cnt = 0;
         }
     }
 
@@ -42,15 +42,15 @@ public class ParticleController : MonoBehaviour
     {
         //this.itemGetParticle_object.Play();
         //パーティクル生成
-        this.particleArray[this.arrayCnt] = Instantiate(itemGetParticle_object);
+        this.particleArray[this.particleArray_cnt] = Instantiate(itemGetParticle_object);
         //座標設定
-        this.particleArray[this.arrayCnt].transform.position = itemplayerPos;
+        this.particleArray[this.particleArray_cnt].transform.position = itemplayerPos;
         //パーティクル再生
-        this.particleArray[this.arrayCnt].Play();
+        this.particleArray[this.particleArray_cnt].Play();
         //時間経過後生成したパーティクルオブジェクトの削除
-        Destroy(this.particleArray[this.arrayCnt].gameObject,1.0f);
+        Destroy(this.particleArray[this.particleArray_cnt].gameObject,1.0f);
         //カウント増加
-        this.arrayCnt++;
+        this.particleArray_cnt++;
     }
 
 }

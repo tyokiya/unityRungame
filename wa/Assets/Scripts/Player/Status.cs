@@ -11,14 +11,15 @@ using UnityEngine;
 public class Status : MonoBehaviour
 {
     //インスペクターから設定
-    //親オブジェクトのトランスフォームを入れる変数
-    [SerializeField] Transform parent_transform;
-    //プレイヤーの落下判定のy座標ボーダー
-    float playerFallBorder_y = -0.5f;
-    //タイマー
-    float delta = 0;
-    //連続で回転処理させないためのスパン
-    float rotationSpan = 1.0f;
+    [Tooltip("親オブジェクトのトランスフォーム")][SerializeField]
+    Transform parent_transform;
+
+    const float playerFallBorder_y_const = -0.5f;
+
+    [Tooltip("方向回転のデルタタイム")]
+    float rotationDelta = 0;
+    [Tooltip("方向回転のスパン定数")]
+    const float rotationSpan_const = 1.0f;
 
     //プレイヤーの状態
     public enum PlayerSituation
@@ -53,7 +54,7 @@ public class Status : MonoBehaviour
     void Update()
     {
         //デルタ増加
-        this.delta += Time.deltaTime;
+        this.rotationDelta += Time.deltaTime;
     }
 
 
@@ -118,17 +119,17 @@ public class Status : MonoBehaviour
         //向きを変える処理
         //ターン可能な地面にいるかの確認
         //走り状態化の確認
-        if (flick == ScreenInput.FlickDirection.RIGHT && this.delta > this.rotationSpan && nowSituation == PlayerSituation.run && turnGroundFlg == true)
+        if (flick == ScreenInput.FlickDirection.RIGHT && this.rotationDelta > rotationSpan_const && nowSituation == PlayerSituation.run && turnGroundFlg == true)
         {
             ChangeDirection(true);
             //デルタ初期化
-            this.delta = 0;
+            this.rotationDelta = 0;
         }
-        if (flick == ScreenInput.FlickDirection.LEFT && this.delta > this.rotationSpan && nowSituation == PlayerSituation.run && turnGroundFlg == true)
+        if (flick == ScreenInput.FlickDirection.LEFT && this.rotationDelta > rotationSpan_const && nowSituation == PlayerSituation.run && turnGroundFlg == true)
         {
             ChangeDirection(false);
             //デルタ初期化
-            this.delta = 0;
+            this.rotationDelta = 0;
         }
 
     }
@@ -204,7 +205,7 @@ public class Status : MonoBehaviour
     public void SurvivalChek(bool collisionFlg)
     {
         //プレヤーの座標が落下ボーダーより下にないかの確認
-        if (parent_transform.position.y < this.playerFallBorder_y)
+        if (parent_transform.position.y < playerFallBorder_y_const)
         {
             //プレイヤーの生存状態を変更
             this.nowSurvival = PlayerSurvival.fallDeath;
