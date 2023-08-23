@@ -16,6 +16,6 @@ public class SceneController_CreditScene : MonoBehaviour
     {
         //0.6後シーン切り替え
         yield return new WaitForSeconds(0.6f);
-        SceneManager.LoadScene("TittleScene");
+        SceneManager.LoadScene("TitleScene");
     }
 }

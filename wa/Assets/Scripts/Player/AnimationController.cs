@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AnimationController : MonoBehaviour
-{
-    //親オブジェクト
-    [SerializeField] GameObject parentObject;
+{    
+    //インスペクターから設定
+    [Tooltip("親オブジェクト")][SerializeField] 
+    GameObject parentObject;
 
-    //アニメーターを入れる変数
-    [SerializeField] Animator animator;
+    [Tooltip("アニメーターを入れる変数")][SerializeField]
+    Animator animator;
 
     /// <summary>
     /// 3秒後トリガーを切り替えるコルーチン

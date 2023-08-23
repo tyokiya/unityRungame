@@ -9,26 +9,35 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     //インスペクターから設定
-    //接地判定のオブジェクト
-    [SerializeField] GroudCheck groundCheck_object;
-    //プレイヤーの衝突チェックオブジェクト
-    [SerializeField] CollisionCheck collisionCheck_object;
-    //入力状態を返すオブジェクト
-    [SerializeField] ScreenInput screenInput_object;
-    //ジャイロ入力を返すオブジェクト
-    [SerializeField] GyroInput gyroInput_object;
-    //現在のプレイヤー状態を管理オブジェクト
-    [SerializeField] Status playerStatus_object;
-    //プレイヤーを動かすオブジェクト
-    [SerializeField] Move playerMove_object;
-    //アニメーションを管理するオブジェクト
-    [SerializeField] AnimationController playerAnimation_object;
-    //プレイヤーのサウンドを管理するオブジェクト
-    [SerializeField] SoundController playerSound_object;
-    //シーンのコントローラーオブジェクト
-    [SerializeField] SceneController sceneController_object;
-    //プレイヤーのパーティクルコントローラーオブジェクト
-    [SerializeField] ParticleController particleController_object;
+    [Tooltip("接地判定のオブジェクト")][SerializeField] 
+    GroudCheck groundCheck_object;
+
+    [Tooltip("プレイヤーの衝突チェックオブジェクト")][SerializeField] 
+    CollisionCheck collisionCheck_object;
+
+    [Tooltip("入力状態を返すオブジェクト")][SerializeField]
+    ScreenInput screenInput_object;    
+
+    [Tooltip("ジャイロ入力を返すオブジェクト")][SerializeField] 
+    GyroInput gyroInput_object;
+
+    [Tooltip("現在のプレイヤー状態を管理オブジェクト")][SerializeField] 
+    Status playerStatus_object; 
+    
+    [Tooltip("プレイヤーを動かすオブジェクト")][SerializeField]
+    Move playerMove_object;    
+
+    [Tooltip("アニメーションを管理するオブジェクト")][SerializeField] 
+    AnimationController playerAnimation_object;
+
+    [Tooltip("プレイヤーのサウンドを管理するオブジェクト")][SerializeField] 
+    SoundController playerSound_object;    
+
+    [Tooltip("シーンのコントローラーオブジェクト")][SerializeField]
+    SceneController sceneController_object;  
+    
+    [Tooltip("プレイヤーのパーティクルコントローラーオブジェクト")][SerializeField]
+    ParticleController particleController_object;
 
     //接地フラグ入れる変数
     bool isGroudFlg = false;

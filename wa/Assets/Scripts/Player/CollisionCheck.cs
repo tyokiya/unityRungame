@@ -8,23 +8,27 @@ using UnityEngine;
 
 public class CollisionCheck : MonoBehaviour
 {
-    //アイテムのタグ名
+    [Tooltip("アイテムのタグ名")] 
     string ItemTag = "Item";
-    //壁のタグ名
+
+    [Tooltip("壁のタグ名")] 
     string wallTag = "wall";
-    //ゴールのタグ
+
+    [Tooltip("ゴールのタグ名")] 
     string goalTag = "GoalItem";
 
-    //壁との衝突フラグ
+    [Tooltip("壁との衝突フラグ")] 
     bool collisionFlg = false;
 
     //インスペクターから設定
-    //プレイヤーマネージャーのスクリプト
-    [SerializeField] PlayerManager playerManager;
-    //スコアマネージャー
-    [SerializeField] ScoreManager scoreManager;
-    //UIマネージャー
-    [SerializeField] UIManager uiManager;
+    [Tooltip("プレイヤーマネージャーのスクリプト")][SerializeField] 
+    PlayerManager playerManager;
+
+    [Tooltip("スコアマネージャー")][SerializeField]
+    ScoreManager scoreManager;
+
+    [Tooltip("UIマネージャー")][SerializeField] 
+    UIManager uiManager;
 
     /// <summary>
     /// 衝突を感知しマネージャーに知らせる

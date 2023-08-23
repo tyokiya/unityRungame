@@ -8,11 +8,15 @@ using UnityEngine;
 
 public class GroudCheck : MonoBehaviour
 {
-    //地面のタグ名
+    [Tooltip("地面のタグ名")] 
     string groundTag = "Ground";
+
+    [Tooltip("回転可能な地面のタグ名")]
     string turnGroundTag = "TurnGround";
-    //地面に立っているか
+
+    [Tooltip("地面の接地フラグ")]
     bool standGroundFlg = true;
+    [Tooltip("回転地面の接地フラグ")]
     bool standTurnGroundFlg = false;
 
     /// <summary>
