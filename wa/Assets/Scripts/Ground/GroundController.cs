@@ -8,9 +8,9 @@ using UnityEngine;
 
 public class GroundController : MonoBehaviour
 {
-    //プレイヤーのタグ名
-    string playerTag = "Player";
-    //親オブジェクト
+    [Tooltip("プレイヤーのタグ名の定数")]
+    const string playerTag_const = "Player";
+
     [SerializeField] GameObject ParentObject;
 
     /// <summary>
@@ -19,7 +19,7 @@ public class GroundController : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         //衝突したものがプレイヤーなのかを調べる
-        if (other.tag == this.playerTag)
+        if (other.tag == playerTag_const)
         {
             //4秒後オブジェクトを破壊
             Destroy(ParentObject,4.0f);

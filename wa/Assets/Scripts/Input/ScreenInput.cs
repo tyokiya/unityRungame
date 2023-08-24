@@ -8,24 +8,24 @@ using UnityEngine;
 
 public class ScreenInput : MonoBehaviour
 {
-    //フリック最小移動距離
-    [SerializeField] 
+    [Tooltip("フリックの最小移動距離")][SerializeField] 
     Vector2 FlickMinRange = new Vector2(30.0f, 30.0f);
-    //スワイプ最小移動距離
-    [SerializeField]
+
+    [Tooltip("スワイプ最小移動距離")][SerializeField]
     Vector2 SwipeMinRange = new Vector2(50.0f, 50.0f);
-    //TAPをNONEに戻すまでのカウント
-    [SerializeField]
-    int NoneCountMax = 2;
+
+    [Tooltip("TAPをNONEに戻すまでのカウント")][SerializeField]
+    const int NoneCountMax = 2;
     int NoneCountNow = 0;
-    //スワイプ入力距離
+
+    [Tooltip("スワイプの入力距離")]
     Vector2 SwipeRange;
     //入力方向記録用
     Vector2 InputSTART;
     Vector2 InputMOVE;
     Vector2 InputEND;
 
-    //フリックの方向
+    [Tooltip("フリックの方向")]
     public enum FlickDirection
     {
         NONE,
@@ -37,7 +37,7 @@ public class ScreenInput : MonoBehaviour
     }
     FlickDirection NowFlick = FlickDirection.NONE;
 
-    //スワイプの方向
+    [Tooltip("スワイプの方向")]
     public enum SwipeDirection
     {
         NONE,

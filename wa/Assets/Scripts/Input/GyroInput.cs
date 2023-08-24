@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 public class GyroInput : MonoBehaviour
 {
-    //現在のスマホの傾きを入れる変数
+    [Tooltip("スマホの傾きを入れる")]
     Vector3 input_tilt;
 
     //テストキストを入れる変数
