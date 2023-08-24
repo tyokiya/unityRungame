@@ -8,15 +8,17 @@ using UnityEngine;
 
 public class TutorialScene_Manager : MonoBehaviour
 {
-    //インスペクターから設定
-    //シーンコントローラー
-    [SerializeField] SceneController_TutorialScene sceneController_object;
-    //サウンドコントローラー
-    [SerializeField] SoundCOntroller_TutorialScene soundCOntroller_object;
-    //ページコントローラー
-    [SerializeField] TutorialPage_controller pageController_object;
+    //インスペクターから設定    
+    [Tooltip("シーンコントローラーオブジェクト")][SerializeField]
+    SceneController_TutorialScene sceneController_object;
 
-    //現在の開いているチュートリアルのページ数のカウンター
+    [Tooltip("サウンドコントローラーオブジェクト")][SerializeField]
+    SoundCOntroller_TutorialScene soundCOntroller_object;
+    
+    [Tooltip("ページコントローラーオブジェクト")][SerializeField] 
+    TutorialPage_controller pageController_object;
+
+    [Tooltip("現在の開いてるページのカウンター")]
     int nowPageNum = 1;
 
     /// <summary>

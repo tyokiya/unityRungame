@@ -9,9 +9,8 @@ using UnityEngine;
 
 public class ScoreController : MonoBehaviour
 {
-    //獲得アイテム数
+    //スコア
     int getItemCnt = 0;
-    //獲得スコア
     int getSucore = 0;
 
     void Awake()

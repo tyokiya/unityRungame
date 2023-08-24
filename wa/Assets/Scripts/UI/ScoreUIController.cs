@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class ScoreUIController : MonoBehaviour
 {
-    //スコアオブジェクトを入れる変数
-    [SerializeField] GameObject score_object;
+    [Tooltip("スコアオブジェクト")][SerializeField] 
+    GameObject score_object;
 
-    //スコアテキストを入れる変数
-    [SerializeField] Text score_text;
+    [Tooltip("スコアテキスト")][SerializeField]
+    Text score_text;
 
     /// <summary>
     /// 描画するスコアを更新する

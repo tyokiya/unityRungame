@@ -9,11 +9,13 @@ using UnityEngine;
 
 public class TutorialPage_controller : MonoBehaviour
 {
-    //インスペクターから設定
-    //バックページボタンオブジェクト
-    [SerializeField] GameObject backPageButton_object;
-    //ネクストページボタンオブジェクト
-    [SerializeField] GameObject nextPageButton_object;
+    //インスペクターから設定    
+    [Tooltip("バックページボタンオブジェクト")][SerializeField] 
+    GameObject backPageButton_object;
+    
+    [Tooltip("ネクストページボタンオブジェクト")][SerializeField] 
+    GameObject nextPageButton_object;
+    
     //チュートリアルページのオブジェクト
     [SerializeField] GameObject tutorialPage_1_object;
     [SerializeField] GameObject tutorialPage_2_object;

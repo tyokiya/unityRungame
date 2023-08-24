@@ -9,17 +9,22 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     //インスペクターから設定
-    //スコア管理のオブジェクト
-    [SerializeField] ScoreController scoreController_object;
-    //スコアUI管理オブジェクト
-    [SerializeField] ScoreUIController scoreUIController_object;
-    //アイテムUI管理オブジェクト
-    [SerializeField] ItemUIController itemUIController_object;
-    //フェードインスコアのコントローラーオブジェクト
-    [SerializeField] FadeInScoreController fadeinScoreController_object;
-    [SerializeField] GoalBornus_Text_controller goalBornus_Text_Controller;
+    [Tooltip("スコア管理オブジェクト")][SerializeField] 
+    ScoreController scoreController_object;
 
-    //フェードイン処理した時の獲得アイテム数
+    [Tooltip("スコアUI管理オブジェクト")][SerializeField] 
+    ScoreUIController scoreUIController_object;
+    
+    [Tooltip("アイテムUI管理オブジェクト")][SerializeField]
+    ItemUIController itemUIController_object;
+    
+    [Tooltip("フェードイン処理のコントローラー")][SerializeField]
+    FadeInScoreController fadeinScoreController_object;
+
+    [Tooltip("ゴール処理のコントローラーオブジェクト")][SerializeField] 
+    GoalBornus_Text_controller goalBornus_Text_Controller;
+
+    [Tooltip("フェードイン処理した時の獲得アイテム数")]
     int fadeInItemNum = 0;  
 
     void Update()

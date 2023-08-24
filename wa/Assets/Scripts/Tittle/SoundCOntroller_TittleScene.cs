@@ -9,9 +9,9 @@ using UnityEngine;
 public class SoundCOntroller_TittleScene : MonoBehaviour
 {
     //インスペクターから設定
-    //オーディオソースを入れる変数
-    [SerializeField] AudioSource audioSource_object;
-    //決定音
+    [Tooltip("オーディオソースオブジェクト")][SerializeField] 
+    AudioSource audioSource_object;
+
     [SerializeField] AudioClip select_sound;
 
     /// <summary>

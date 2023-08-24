@@ -9,17 +9,21 @@ using UnityEngine.UI;
 public class FadeInScoreController : MonoBehaviour
 {
     //インスペクターから設定
-    //子オブジェクトのスコアオブジェクトを入れる
-    [SerializeField] Text child_score_object;
+    [Tooltip("子オブジェクト")][SerializeField]
+    Text child_score_object;
 
     //フェードインスピード
+    [Tooltip("フェードインスピード定数")]
     float fadeIn_speed = -3.0f;
-    //フェードインフラグ
+
+    [Tooltip("フェードインスピード")]
     bool fadeInFlg = false;
-    //フェードインの回数カウンター
+
+    [Tooltip("フェードインのカウンタ")]
     int fadeIn_counter = 0;
-    //カウンターのマックス数
-    int counsterMax_num = 70;
+
+    [Tooltip("カウンター最大数の定数")]
+    const int counsterMax_num = 70;
 
     void Update()
     {
@@ -32,7 +36,7 @@ public class FadeInScoreController : MonoBehaviour
             this.fadeIn_counter++;
         }
         //カウンター数がマックスまで達したらフラグを下ろし初期値へ移動
-        if (this.fadeIn_counter == this.counsterMax_num)
+        if (this.fadeIn_counter == counsterMax_num)
         {
             //初期値へ移動
             transform.Translate(0, 230, 0);

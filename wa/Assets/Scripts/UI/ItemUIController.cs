@@ -9,11 +9,11 @@ using UnityEngine.UI;
 
 public class ItemUIController : MonoBehaviour
 {
-    //スコアオブジェクトを入れる変数
-    [SerializeField] GameObject item_object;
+    [Tooltip("アイテムスコアオブジェクト")][SerializeField]
+    GameObject item_object;
 
-    //スコアテキストを入れる変数
-    [SerializeField] Text item_text;
+    [Tooltip("アイテムスコアのテキスト")][SerializeField]
+    Text item_text;
 
     /// <summary>
     /// 描画するスコアを更新する

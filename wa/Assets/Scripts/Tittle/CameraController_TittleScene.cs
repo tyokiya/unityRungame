@@ -8,14 +8,13 @@ using UnityEngine;
 
 public class CameraController_TittleScene : MonoBehaviour
 {
-    //カメラの移動速度
     float moveSpeed_x = 0.05f;
     float moveSpeed_z = 0.05f;
-    //カメラの回転スピード
+
     float turnAngleSpeed = 0.5625f;
-    //回転カウント
+
     int rotationCnt = 0;
-    //フレームカウント
+
     int frameCnt = 0;
 
     void Update()

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ScreenInput_TittleScene : MonoBehaviour
 {
-    [SerializeField] GameObject camera_objet;
+    [Tooltip("カメラオブジェクト")][SerializeField] 
+    GameObject camera_objet;
 
     void Update()
     {

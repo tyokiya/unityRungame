@@ -9,10 +9,12 @@ using UnityEngine;
 public class TittleScene_Manager : MonoBehaviour
 {
     //インスペクターから設定
-    //シーンコントローラー
-    [SerializeField] SceneController_TittleScene sceneController_object;
+    [Tooltip("シーンコントローラーオブジェクト")][SerializeField] 
+    SceneController_TittleScene sceneController_object;
+
     //サウンドコントローラー
-    [SerializeField] SoundCOntroller_TittleScene soundCOntroller_object;
+    [Tooltip("サウンドコントローラーオブジェクト")][SerializeField]
+    SoundCOntroller_TittleScene soundCOntroller_object;
 
     /// <summary>
     /// ゲームスタートボタンが押されたことを受け取りそれぞれに命令

@@ -9,14 +9,15 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour
 {
     //インスペクターから設定
-    //スコア管理のオブジェクト
-    [SerializeField] ScoreController scoreController_object;
-    //現在のプレイヤー状態を管理オブジェクト
-    [SerializeField] Status playerStatus_object;
+    [Tooltip("スコア管理オブジェクト")][SerializeField] 
+    ScoreController scoreController_object;
+    
+    [Tooltip("現在のプレイヤー状態を管理するオブジェクト")][SerializeField] 
+    Status playerStatus_object;
 
-    //プレイヤーのアイテム獲得フラグ
     bool playerItemGetFlg = false;
-    //現在のプレイヤーの生死状態を入れる変数
+
+    [Tooltip("プレイヤーの生死状態")]
     Status.PlayerSurvival nowSurvival;
 
     //オブジェクト生成時スコアのリセット処理を呼ぶ

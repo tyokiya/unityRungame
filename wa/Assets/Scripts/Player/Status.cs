@@ -21,7 +21,7 @@ public class Status : MonoBehaviour
     [Tooltip("方向回転のスパン定数")]
     const float rotationSpan_const = 1.0f;
 
-    //プレイヤーの状態
+    [Tooltip("プレイヤーの状態")]
     public enum PlayerSituation
     {
         walk,
@@ -29,8 +29,8 @@ public class Status : MonoBehaviour
         jump
     }
     PlayerSituation nowSituation = PlayerSituation.walk;
-
-    //プレイヤーの生死状態
+    
+    [Tooltip("プレイヤーの生死状態")]
     public enum PlayerSurvival
     {
         life,                   //生存状態
@@ -40,7 +40,7 @@ public class Status : MonoBehaviour
     }
     PlayerSurvival nowSurvival = PlayerSurvival.life;
 
-    //初期の向いてる方角を前のした時の現在のプレイヤー向いている方向
+    [Tooltip("現在のプレイヤー向いている方向")]
     public enum PlayerDirection
     {
         front,
