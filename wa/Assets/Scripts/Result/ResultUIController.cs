@@ -9,21 +9,24 @@ using UnityEngine.UI;
 
 public class ResultUIController : MonoBehaviour
 {
-    //合計得点
+    [Tooltip("合計得点")]
     int tortalScore = 0;
-    //ランスコア
+    [Tooltip("ランスコア")]
     int runScore = 0;
-    //アイテムスコア
+    [Tooltip("アイテムスコア")]
     int itemScore = 0;
 
+    [Tooltip("スコアオブジェクト")]
     GameObject score_object;
+    
+    [Tooltip("アイテムスコアを入れるテキストオブジェクト")][SerializeField]
+    Text itemScore_text;
 
-    //アイテムスコアテキストを入れるテキストオブジェクト
-    [SerializeField] Text itemScore_text;
-    //スコア獲得スコアを入れるテキストオブジェクト
-    [SerializeField] Text runScore_text;
-    //トータルスコアを入れるテキストオブジェクト
-    [SerializeField] Text tortalScore_text;
+    [Tooltip("スコアを入れるテキストオブジェクト")][SerializeField] 
+    Text runScore_text;
+    
+    [Tooltip("トータルスコアを入れるテキストオブジェクト")][SerializeField] 
+    Text tortalScore_text;
 
     void Start()
     {

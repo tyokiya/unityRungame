@@ -8,8 +8,8 @@ using UnityEngine;
 public class ResultSceneManager : MonoBehaviour
 {
     //インスペクターから設定
-    //シーンコントローラーオブジェクト
-    [SerializeField] SceneController_ResultScene sceneController_object;
+    [Tooltip("シーンコントローラーオブジェクト")][SerializeField]
+    SceneController_ResultScene sceneController_object;
 
     /// <summary>
     /// ボタン入力を受け取りシーン切り替え命令

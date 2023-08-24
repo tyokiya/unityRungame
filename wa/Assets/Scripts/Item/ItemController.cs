@@ -7,11 +7,11 @@ using UnityEngine;
 ////////////////////////////////////
 public class ItemController : MonoBehaviour
 {
-    //アイテムの回転スピード
-    float rotateSpeed = 10.0f;
+    [Tooltip("アイテムの回転スピード定数")]
+    const float rotateSpeed = 10.0f;
     void Update()
     {
         //一定の速度で回転
-        transform.eulerAngles += new Vector3(0, this.rotateSpeed, 0);
+        transform.eulerAngles += new Vector3(0, rotateSpeed, 0);
     }
 }
