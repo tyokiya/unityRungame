@@ -9,20 +9,25 @@ using UnityEngine;
 public class CameraManager : MonoBehaviour
 {
     //インスペクターから設定
-    //入力状態を返すオブジェクト
-    [SerializeField] ScreenInput screenInput_object;
-    //カメラの動きを管理するオブジェクト
-    [SerializeField] CameraController controller_object;
-    //現在のプレイヤー状態を返すオブジェクト
-    [SerializeField] Status playerStatus_object;
-    //プレイヤーオブジェクトを入れる変数
-    [SerializeField] GameObject player;
+    [Tooltip("入力状態を返すオブジェクト")][SerializeField]
+    ScreenInput screenInput_object;
 
-    //現在の入力状態を入れる変数
+    [Tooltip("カメラの動きを管理するオブジェクト")][SerializeField] 
+    CameraController controller_object;
+    
+    [Tooltip("プレイヤーの状態を返すオブジェクト")][SerializeField]
+    Status playerStatus_object;
+    
+    [Tooltip("プレイヤーオブジェクト")][SerializeField]
+    GameObject player;
+
+    [Tooltip("現在の入力状態")]
     ScreenInput.FlickDirection nowFlick;
-    //現在のプレイヤーの向いてる方向を入れる変数
+
+    [Tooltip("現在のプレイヤーの向いてる方向")]
     Status.PlayerDirection nowDirection;
-    //現在のプレイヤーの状態
+
+    [Tooltip("現在のプレイヤーの状態")]
     Status.PlayerSituation nowSituation;
 
     void Update()

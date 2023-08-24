@@ -9,20 +9,21 @@ using static Status;
 
 public class CameraController : MonoBehaviour
 {
-    //カメラの振り向き速度
-    float turnAngleSpeed = 6.0f;
+    [Tooltip("カメラの振り向き速度定数")]
+    const float turnAngleSpeed_const = 6.0f;
     float turnMoveSpeed = 0.2f;
 
-    //プレイヤーとカメラの距離
-    float playerDirection = 5.0f;
+    [Tooltip("プレイヤーとカメラの距離定数")]
+    const float playerDirection_const = 5.0f;
 
-    //変更前のプレイヤーの向き
+    [Tooltip("変更前のプレイヤーの向き")]
     PlayerDirection beforeDirection = PlayerDirection.front;
 
-    //角度に加算した回数をカウントする変数
+    [Tooltip("角度に加算した回数のカウンタ")]
     int turnCnt = 0;
-    //振り向きのマックス回数
-    int maxTurnCnt = 15;
+    
+    [Tooltip("振り向きの最大回数の定数")]
+    const int maxTurnCnt_const = 15;
 
     /// <summary>
     /// カメラの情報更新
@@ -55,23 +56,24 @@ public class CameraController : MonoBehaviour
         //カウント増加
         this.turnCnt++;
 
+        //プレイヤーの向いてる方向に合わせてカメラの回転処理
         switch (direction)
         {
             case PlayerDirection.front:
                 //前を向かせる　
                 if (this.beforeDirection == PlayerDirection.left)
                 {
-                    transform.eulerAngles += new Vector3(0, this.turnAngleSpeed, 0);
+                    transform.eulerAngles += new Vector3(0, turnAngleSpeed_const, 0);
                     transform.position += new Vector3(-turnMoveSpeed, 0, -turnMoveSpeed);
                 }
                 else if (this.beforeDirection == PlayerDirection.right)
                 {
-                    transform.eulerAngles -= new Vector3(0, this.turnAngleSpeed, 0);
+                    transform.eulerAngles -= new Vector3(0, turnAngleSpeed_const, 0);
                     transform.position += new Vector3(turnMoveSpeed, 0, -turnMoveSpeed);
                 }
                 //カウントが30回になったら回転処理完了
                 //プレイヤーの変更前の向きを更新
-                if (this.turnCnt == this.maxTurnCnt)
+                if (this.turnCnt == maxTurnCnt_const)
                 {
                     this.beforeDirection = PlayerDirection.front;
                     //カウント初期化
@@ -82,17 +84,17 @@ public class CameraController : MonoBehaviour
                 //右を向かせる　
                 if(this.beforeDirection == PlayerDirection.front)
                 {
-                    transform.eulerAngles += new Vector3(0, this.turnAngleSpeed, 0);
+                    transform.eulerAngles += new Vector3(0, turnAngleSpeed_const, 0);
                     transform.position += new Vector3(-turnMoveSpeed, 0, turnMoveSpeed);
                 }
                 else if(this.beforeDirection == PlayerDirection.back)
                 {
-                    transform.eulerAngles -= new Vector3(0, this.turnAngleSpeed, 0);
+                    transform.eulerAngles -= new Vector3(0, turnAngleSpeed_const, 0);
                     transform.position += new Vector3(-turnMoveSpeed, 0, -turnMoveSpeed);
                 }
                 //カウントが30回になったら回転処理完了
                 //プレイヤーの変更前の向きを更新
-                if (this.turnCnt == this.maxTurnCnt)
+                if (this.turnCnt == maxTurnCnt_const)
                 {
                     this.beforeDirection = PlayerDirection.right;
                     //カウント初期化
@@ -103,17 +105,17 @@ public class CameraController : MonoBehaviour
                 //後を向かせる　
                 if (this.beforeDirection == PlayerDirection.right)
                 {
-                    transform.eulerAngles += new Vector3(0, this.turnAngleSpeed, 0);
+                    transform.eulerAngles += new Vector3(0, turnAngleSpeed_const, 0);
                     transform.position += new Vector3(turnMoveSpeed, 0, turnMoveSpeed);
                 }
                 else if (this.beforeDirection == PlayerDirection.left)
                 {
-                    transform.eulerAngles -= new Vector3(0, this.turnAngleSpeed, 0);
+                    transform.eulerAngles -= new Vector3(0, turnAngleSpeed_const, 0);
                     transform.position += new Vector3(-turnMoveSpeed, 0, turnMoveSpeed);
                 }
                 //カウントが30回になったら回転処理完了
                 //プレイヤーの変更前の向きを更新
-                if (this.turnCnt == this.maxTurnCnt)
+                if (this.turnCnt == maxTurnCnt_const)
                 {
                     this.beforeDirection = PlayerDirection.back;
                     //カウント初期化
@@ -124,17 +126,17 @@ public class CameraController : MonoBehaviour
                 //左を向かせる　
                 if (this.beforeDirection == PlayerDirection.back)
                 {
-                    transform.eulerAngles += new Vector3(0, this.turnAngleSpeed, 0);
+                    transform.eulerAngles += new Vector3(0, turnAngleSpeed_const, 0);
                     transform.position += new Vector3(turnMoveSpeed, 0, -turnMoveSpeed);
                 }
                 else if (this.beforeDirection == PlayerDirection.front)
                 {
-                    transform.eulerAngles -= new Vector3(0, this.turnAngleSpeed, 0);
+                    transform.eulerAngles -= new Vector3(0, turnAngleSpeed_const, 0);
                     transform.position += new Vector3(turnMoveSpeed, 0, turnMoveSpeed);
                 }
                 //カウントが30回になったら回転処理完了
                 //プレイヤーの変更前の向きを更新
-                if (this.turnCnt == this.maxTurnCnt)
+                if (this.turnCnt == maxTurnCnt_const)
                 {
                     this.beforeDirection = PlayerDirection.left;
                     //カウント初期化
@@ -153,24 +155,24 @@ public class CameraController : MonoBehaviour
     {
         if(situation == PlayerSituation.walk)
         {
-            transform.position = new Vector3(playerPos.x, transform.position.y, playerPos.z - this.playerDirection);
+            transform.position = new Vector3(playerPos.x, transform.position.y, playerPos.z - playerDirection_const);
         }
         else
         {
             switch (direction)
             {
                 case PlayerDirection.front:
-                    transform.position = new Vector3(playerPos.x, transform.position.y, playerPos.z - this.playerDirection);
+                    transform.position = new Vector3(playerPos.x, transform.position.y, playerPos.z - playerDirection_const);
 
                     break;
                 case PlayerDirection.right:
-                    transform.position = new Vector3(playerPos.x - this.playerDirection, transform.position.y, playerPos.z);
+                    transform.position = new Vector3(playerPos.x - playerDirection_const, transform.position.y, playerPos.z);
                     break;
                 case PlayerDirection.back:
-                    transform.position = new Vector3(playerPos.x, transform.position.y, playerPos.z + this.playerDirection);
+                    transform.position = new Vector3(playerPos.x, transform.position.y, playerPos.z + playerDirection_const);
                     break;
                 case PlayerDirection.left:
-                    transform.position = new Vector3(playerPos.x + this.playerDirection, transform.position.y, playerPos.z);
+                    transform.position = new Vector3(playerPos.x + playerDirection_const, transform.position.y, playerPos.z);
                     break;
             }
         }
