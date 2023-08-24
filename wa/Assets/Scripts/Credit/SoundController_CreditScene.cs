@@ -5,9 +5,9 @@ using UnityEngine;
 public class SoundController_CreditScene : MonoBehaviour
 {
     //インスペクターから設定
-    //オーディオソースを入れる変数
-    [SerializeField] AudioSource audioSource_object;
-    //決定音
+    [Tooltip("オーディオソースを入れる変数")][SerializeField]
+    AudioSource audioSource_object;
+
     [SerializeField] AudioClip select_sound;
 
     /// <summary>

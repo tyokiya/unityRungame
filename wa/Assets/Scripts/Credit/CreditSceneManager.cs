@@ -5,10 +5,11 @@ using UnityEngine;
 public class CreditSceneManager : MonoBehaviour
 {
     //インスペクターから設定
-    //シーンコントローラー
-    [SerializeField] SceneController_CreditScene sceneController_object;
-    //サウンドコントローラー
-    [SerializeField] SoundController_CreditScene soundCOntroller_object;
+    [Tooltip("シーンコントローラーオブジェクト")][SerializeField] 
+    SceneController_CreditScene sceneController_object;
+
+    [Tooltip("サウンドコントローラーオブジェクト")][SerializeField]
+    SoundController_CreditScene soundCOntroller_object;
 
     /// <summary>
     /// バックボタンが押されたことを受け取りそれぞれに命令
