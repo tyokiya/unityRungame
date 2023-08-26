@@ -10,8 +10,9 @@ using static Status;
 public class CameraController : MonoBehaviour
 {
     [Tooltip("カメラの振り向き速度定数")]
-    const float turnAngleSpeed_const = 6.0f;
-    float turnMoveSpeed = 0.2f;
+    const float turnAngleSpeed_const = 9.0f;
+    [Tooltip("カメラの回転時の移動速度定数")]
+    float turnMoveSpeed = 0.6f;
 
     [Tooltip("プレイヤーとカメラの距離定数")]
     const float playerDirection_const = 5.0f;
@@ -21,9 +22,9 @@ public class CameraController : MonoBehaviour
 
     [Tooltip("角度に加算した回数のカウンタ")]
     int turnCnt = 0;
-    
+
     [Tooltip("振り向きの最大回数の定数")]
-    const int maxTurnCnt_const = 15;
+    const int maxTurnCnt_const = 10;
 
     /// <summary>
     /// カメラの情報更新

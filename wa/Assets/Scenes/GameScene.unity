@@ -7205,7 +7205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3913365798230291994, guid: 4e2d0ed7781ee794ab3f0c0f6769487a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 3913365798230291994, guid: 4e2d0ed7781ee794ab3f0c0f6769487a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8555,11 +8555,6 @@ MonoBehaviour:
   playerManager_object: {fileID: 1453115429}
   rd: {fileID: 1657095317}
   parent_transform: {fileID: 1657095326}
-  jumpForce: 0.21
-  down_jumpForce: 0.004
-  walkSpeed: 0.01
-  runSpeed: 0.3
-  sideMoveSpeed: 0.06
 --- !u!1001 &1176260536
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15251,7 +15246,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FlickMinRange: {x: 30, y: 30}
   SwipeMinRange: {x: 50, y: 50}
-  NoneCountMax: 2
 --- !u!4 &1783054618
 Transform:
   m_ObjectHideFlags: 0
