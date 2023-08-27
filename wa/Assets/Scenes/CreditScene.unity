@@ -595,7 +595,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -380, y: 464}
+  m_AnchoredPosition: {x: -380, y: 560}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &722681667
@@ -634,7 +634,8 @@ MonoBehaviour:
   m_Text: "\u25A0\u30AF\u30EC\u30B8\u30C3\u30C8\u30FB\u30E9\u30A4\u30BB\u30F3\u30B9\u8868\u8A18\u25A0\n\n\u25C7\u30B5\u30A6\u30F3\u30C9\u7D20\u6750\n\u30FB\u30E6\u30FC\u30D5\u30EB\u30AB
     \u69D8\n\u30FB\u52B9\u679C\u97F3\u5DE5\u623F \u69D8\n\u30FB\u52B9\u679C\u97F3\u30E9\u30DC
     \u69D8\n\u30FBOtoLogic \u69D8\n\n\u25C7\u753B\u50CF\u7D20\u6750\n\u30FB\u3072\u3060\u3061\u30FC\u7D20\u6750\u9928
-    \u69D8\n\u30FB\u514E\u3005\u3068\u3045\u308B\u308B \u69D8"
+    \u69D8\n\u30FB\u514E\u3005\u3068\u3045\u308B\u308B \u69D8\n\n\u25A0\u958B\u767A\u74B0\u5883\u25A0\nUnity
+    / C#"
 --- !u!222 &722681668
 CanvasRenderer:
   m_ObjectHideFlags: 0
