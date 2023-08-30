@@ -11,6 +11,9 @@ public class AnimationController : MonoBehaviour
     [Tooltip("アニメーターを入れる変数")][SerializeField]
     Animator animator;
 
+    //トリガー切り替え時の待機時間
+    float waitTime = 3f;
+
     /// <summary>
     /// 3秒後トリガーを切り替えるコルーチン
     /// </summary>
@@ -18,7 +21,7 @@ public class AnimationController : MonoBehaviour
     public IEnumerator ChangeAnimaiton()
     {
         //3秒待機
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(this.waitTime);
         //Debug.Log("トリガーコルーチン実行");
         //runアニメーションのトリガーに切り替える
         this.animator.SetTrigger("RunTrigger");

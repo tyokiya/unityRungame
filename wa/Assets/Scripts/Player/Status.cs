@@ -21,6 +21,9 @@ public class Status : MonoBehaviour
     [Tooltip("方向回転のスパン定数")]
     const float rotationSpan_const = 1.0f;
 
+    [Tooltip("状態切り替えの待機時間")]
+    float waitTime = 3.0f;
+
     [Tooltip("プレイヤーの状態")]
     public enum PlayerSituation
     {
@@ -65,7 +68,7 @@ public class Status : MonoBehaviour
     public IEnumerator ChangeSituation()
     {
         //3秒待機
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(this.waitTime);
         //Debug.Log("ステータスコルーチン実行");
         //状態を切り替え
         this.nowSituation = PlayerSituation.run;

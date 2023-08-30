@@ -23,7 +23,7 @@ public class TittleScene_Manager : MonoBehaviour
     {
         //セレクトサウンド再生命令
         this.soundCOntroller_object.PlySelectSound();
-        //シーン切り替え命令
+        //シーン切り替えコルーチン
         StartCoroutine(this.sceneController_object.ChangeScene_Game());
     }
 
@@ -34,7 +34,7 @@ public class TittleScene_Manager : MonoBehaviour
     {
         //セレクトサウンド再生命令
         this.soundCOntroller_object.PlySelectSound();
-        //シーン切り替え命令
+        //シーン切り替えコルーチン
         StartCoroutine(this.sceneController_object.ChangeScene_Tutorial());    
     }
 
@@ -42,7 +42,7 @@ public class TittleScene_Manager : MonoBehaviour
     {
         //セレクトサウンド再生命令
         this.soundCOntroller_object.PlySelectSound();
-        //シーン切り替え命令
+        //シーン切り替えコルーチン
         StartCoroutine(this.sceneController_object.ChangeScene_Credit());
     }
 }

@@ -20,6 +20,15 @@ public class Move : MonoBehaviour
     //親オブジェクトのトランスフォームを入れる変数
     [SerializeField] Transform parent_transform;
 
+    [Tooltip("プレイヤーが正面を向いている時の角度")]
+    Vector3 frontAngle = Vector3.zero;
+    [Tooltip("プレイヤーが右を向いている時の角度")]
+    Vector3 rightAngle = new Vector3(0, 90, 0);
+    [Tooltip("プレイヤーが後ろを向いている時の角度")]
+    Vector3 backAngle = new Vector3(0,180,0);
+    [Tooltip("プレイヤーが左を向いている時の角度")]
+    Vector3 leftAngle = new Vector3(0, 270, 0);
+
     //現在のジャンプ力
     float now_jumpForce = 0;
 
@@ -27,7 +36,6 @@ public class Move : MonoBehaviour
     const float jumpForce_const = 0.21f;
     const float down_jumpForce_const = 0.004f;
     
-
     //移動スピードの定数
     const float walkSpeed_const = 0.01f;
     const float runSpeed_const = 0.3f;
@@ -181,19 +189,19 @@ public class Move : MonoBehaviour
         {
             case PlayerDirection.front:
                 //前を向かせる　
-                this.parent_transform.eulerAngles = new Vector3(0, 0, 0);
+                this.parent_transform.eulerAngles = this.frontAngle;
                 break;
             case PlayerDirection.right:
                 //右を向かせる　
-                this.parent_transform.eulerAngles = new Vector3(0, 90.0f, 0);
+                this.parent_transform.eulerAngles = this.rightAngle;
                 break;
             case PlayerDirection.back:
                 //後を向かせる　
-                this.parent_transform.eulerAngles = new Vector3(0, 180.0f, 0);
+                this.parent_transform.eulerAngles = this.backAngle;
                 break;
             case PlayerDirection.left:
                 //左を向かせる　
-                this.parent_transform.eulerAngles = new Vector3(0, 270.0f, 0);
+                this.parent_transform.eulerAngles = this.leftAngle;
                 break;
         }
     }

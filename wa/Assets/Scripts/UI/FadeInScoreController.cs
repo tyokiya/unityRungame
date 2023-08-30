@@ -25,6 +25,9 @@ public class FadeInScoreController : MonoBehaviour
     [Tooltip("カウンター最大数の定数")]
     const int counsterMax_num = 70;
 
+    [Tooltip("初期位置")]
+    Vector3 initPos = new Vector3 (0, 230f, 0);
+
     void Update()
     {
         //フラグに応じてフェードイン処理
@@ -39,7 +42,7 @@ public class FadeInScoreController : MonoBehaviour
         if (this.fadeIn_counter == counsterMax_num)
         {
             //初期値へ移動
-            transform.Translate(0, 230, 0);
+            transform.Translate(this.initPos);
             //フラグを下ろす
             this.fadeInFlg = false;
             //カウンター初期化
