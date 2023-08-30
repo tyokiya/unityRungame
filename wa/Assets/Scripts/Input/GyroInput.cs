@@ -15,8 +15,8 @@ public class GyroInput : MonoBehaviour
 
     //テストキストを入れる変数
     //[SerializeField] Text test_text;
-
-    //傾きの方向
+    
+    [Tooltip("傾きの方向")]
     public enum TiltDirection
     {
         RIGHT,
@@ -24,11 +24,6 @@ public class GyroInput : MonoBehaviour
         FRONT
     }
     TiltDirection nowTilt = TiltDirection.FRONT;
-
-    void Awake()
-    {
-        Input.gyro.enabled = true;
-    }
 
     void Update()
     {

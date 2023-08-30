@@ -9,7 +9,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneController_ResultScene : MonoBehaviour
 {
-
     /// <summary>
     /// ゲームシーンへ切り替え
     /// </summary>
@@ -23,6 +22,6 @@ public class SceneController_ResultScene : MonoBehaviour
     /// </summary>
     public void ChangeScene_Tittle()
     {
-        SceneManager.LoadScene("TittleScene");
+        SceneManager.LoadScene("TitleScene");
     }
 }

@@ -48,8 +48,6 @@ public class ScreenInput : MonoBehaviour
         LEFT,
     }
     SwipeDirection NowSwipe = SwipeDirection.NONE;
-
-
     void Update()
     {
         GetInputVector();

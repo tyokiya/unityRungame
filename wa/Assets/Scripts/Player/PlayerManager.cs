@@ -40,10 +40,10 @@ public class PlayerManager : MonoBehaviour
     ParticleController particleController_object;
 
     [Tooltip("接地フラグ")]
-    bool isGroudFlg = false;
+    bool onGroudFlg = false;
     //ターン可能な地面との設置フラグを入れる
     [Tooltip("ターン可能な地面との接地フラグ")]
-    bool isTurnGroundFlg = false;
+    bool onTurnGroundFlg = false;
 
     [Tooltip("現在の入力状態を入れる変数")]
     ScreenInput.FlickDirection nowFlick;
@@ -59,6 +59,13 @@ public class PlayerManager : MonoBehaviour
 
     [Tooltip("現在のプレイヤーの向いてる方向を入れる変数")]
     Status.PlayerDirection nowDirection;
+
+    [Tooltip("落下死の待機時間定数")]
+    const float fallDeathWaitTime_const = 1.0f;
+    [Tooltip("衝突死の待機時間定数")]
+    const float collisionDeathWaitTImer_const = 2.1f;
+    [Tooltip("ゴール時の待機時間定数")]
+    const float goalWaitTImer = 3.0f;
 
     //プレイヤーのフラグ
     bool collisionFlg = false;
@@ -94,8 +101,8 @@ public class PlayerManager : MonoBehaviour
     void Update()
     {
         //接地判定を受け取る
-        this.isGroudFlg = this.groundCheck_object.GetGroundStandFlg();
-        this.isTurnGroundFlg = this.groundCheck_object.GetTurnGroundStandFlg();
+        this.onGroudFlg = this.groundCheck_object.GetGroundStandFlg();
+        this.onTurnGroundFlg = this.groundCheck_object.GetTurnGroundStandFlg();
 
         //フリック方向を受け取る
         this.nowFlick = this.screenInput_object.GetNowFlick();
@@ -114,9 +121,9 @@ public class PlayerManager : MonoBehaviour
         if(this.nowSurvival == Status.PlayerSurvival.life)
         {
             //ステータスの更新
-            this.playerStatus_object.SituationUpdate(this.isGroudFlg, this.nowFlick, this.isTurnGroundFlg);
+            this.playerStatus_object.SituationUpdate(this.onGroudFlg, this.nowFlick, this.onTurnGroundFlg);
             //移動の更新
-            this.playerMove_object.MovePlayerUpdate(this.nowFlick, this.nowSituation, this.nowDirection, this.nowTili_direction, this.isTurnGroundFlg,this.player_jumpound_delegate);
+            this.playerMove_object.MovePlayerUpdate(this.nowFlick, this.nowSituation, this.nowDirection, this.nowTili_direction, this.onTurnGroundFlg,this.player_jumpound_delegate);
             //アニメーション更新
             this.playerAnimation_object.AnimationUpdate(this.nowFlick, this.nowSituation, this.collisionFlg);
             //プレイヤーの生死確認
@@ -133,7 +140,7 @@ public class PlayerManager : MonoBehaviour
             //衝突音再生
             this.player_collisionSound_delegate();
             //デリゲートでシーンをリザルトに変更
-            StartCoroutine(this.change_ResultScene_delegate(2.1f));
+            StartCoroutine(this.change_ResultScene_delegate(collisionDeathWaitTImer_const));
 
             //死亡フラグを立てる
             this.deathFlg = true;
@@ -145,7 +152,7 @@ public class PlayerManager : MonoBehaviour
             //落下サウンド再生
             this.player_fallSound_delegate();
             //デリゲートでシーンをリザルトに変更
-            StartCoroutine(this.change_ResultScene_delegate(1f));
+            StartCoroutine(this.change_ResultScene_delegate(fallDeathWaitTime_const));
 
             //死亡フラグを立てる
             this.deathFlg = true;
@@ -170,7 +177,7 @@ public class PlayerManager : MonoBehaviour
     public void GoalReport()
     {
         //デリゲートでリザルトシーンへの切り替え
-        StartCoroutine(this.change_ResultScene_delegate(3f));
+        StartCoroutine(this.change_ResultScene_delegate(goalWaitTImer));
         //アニメーショントリガーを切り替える
         this.playerAnimation_object.ChangeTrigger_Goal();
         //ゴール音再生命令

@@ -64,7 +64,6 @@ public class Status : MonoBehaviour
     /// <summary>
     /// 3秒後状態を切りかえるコルーチン
     /// </summary>
-    /// <returns></returns>
     public IEnumerator ChangeSituation()
     {
         //3秒待機

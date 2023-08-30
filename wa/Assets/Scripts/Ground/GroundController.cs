@@ -14,7 +14,7 @@ public class GroundController : MonoBehaviour
     [SerializeField] GameObject ParentObject;
 
     /// <summary>
-    /// プレイヤーとのを受け取りオブジェクト破壊処理
+    /// プレイヤーとの衝突を受け取りオブジェクト破壊処理
     /// </summary>
     void OnTriggerEnter(Collider other)
     {

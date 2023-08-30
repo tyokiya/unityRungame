@@ -8,17 +8,17 @@ using UnityEngine;
 
 public class CollisionCheck : MonoBehaviour
 {
-    [Tooltip("アイテムのタグ名")] 
-    string ItemTag = "Item";
+    [Tooltip("アイテムのタグ名定数")] 
+    const string ItemTag_const = "Item";
 
-    [Tooltip("壁のタグ名")] 
-    string wallTag = "wall";
+    [Tooltip("壁のタグ名定数")] 
+    const string wallTag_const = "wall";
 
-    [Tooltip("ゴールのタグ名")] 
-    string goalTag = "GoalItem";
+    [Tooltip("ゴールのタグ名定数")] 
+    const string goalTag_const = "GoalItem";
 
     [Tooltip("壁との衝突フラグ")] 
-    bool collisionFlg = false;
+    bool collisionWallFlg = false;
 
     //インスペクターから設定
     [Tooltip("プレイヤーマネージャーのスクリプト")][SerializeField] 
@@ -28,7 +28,7 @@ public class CollisionCheck : MonoBehaviour
     ScoreManager scoreManager;
 
     [Tooltip("UIマネージャー")][SerializeField] 
-    UIManager uiManager;
+    UIManager UIManager;
 
     /// <summary>
     /// 衝突を感知しマネージャーに知らせる
@@ -37,7 +37,7 @@ public class CollisionCheck : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         //衝突したものがアイテムなのかを調べる
-        if(other.tag == this.ItemTag)
+        if(other.tag == ItemTag_const)
         {
             //Debug.Log("アイテムと衝突");
             //プレイヤーマネージャーに報告
@@ -49,14 +49,14 @@ public class CollisionCheck : MonoBehaviour
         }
 
         //衝突したものがゴールなのかを調べる
-        if(other.tag == this.goalTag)
+        if(other.tag == goalTag_const)
         {
             //プレイヤーマネージャーに報告
             this.playerManager.GoalReport();
             //スコアマネージャーに報告
             this.scoreManager.GoalItemGetReport();
             //UIマネージャーに報告
-            this.uiManager.GoalReport();
+            this.UIManager.GoalReport();
 
             //獲得したゴールオブジェクトを破壊
             Destroy(other.gameObject);
@@ -70,10 +70,10 @@ public class CollisionCheck : MonoBehaviour
     void OnCollisionEnter(Collision other)
     {
         //衝突したものが壁なのかを調べる
-        if (other.gameObject.tag == this.wallTag)
+        if (other.gameObject.tag == wallTag_const)
         {
             //衝突フラグを立てる
-            this.collisionFlg = true;
+            collisionWallFlg = true;
             //Debug.Log("衝突");
         }
     }
@@ -84,6 +84,6 @@ public class CollisionCheck : MonoBehaviour
     /// <returns>プレイヤーの壁との衝突フラグ</returns>
     public bool GetCollisionFlg()
     {
-        return this.collisionFlg;
+        return this.collisionWallFlg;
     }
 }
