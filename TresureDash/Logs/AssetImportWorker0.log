@@ -1,0 +1,575 @@
+Using pre-set license
+Built from '2022.2/staging' branch; Version is '2022.2.6f1 (10bfa6201ced) revision 1097638'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22621) 64bit Core' Language: 'ja' Physical Memory: 16068 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2022.2.6f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/UnityProject/unityRungame/TresureDash
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+51794
+Successfully changed project path to: C:/UnityProject/unityRungame/TresureDash
+C:/UnityProject/unityRungame/TresureDash
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [19524] Host "[IP] 192.168.10.114 [Port] 0 [Flags] 2 [Guid] 4036706238 [EditorId] 4036706238 [Version] 1048832 [Id] WindowsEditor(7,ririri) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [19524] Host "[IP] 192.168.10.114 [Port] 0 [Flags] 2 [Guid] 4036706238 [EditorId] 4036706238 [Version] 1048832 [Id] WindowsEditor(7,ririri) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+Refreshing native plugins compatible for Editor in 5.32 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.2.6f1 (10bfa6201ced)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.2.6f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/UnityProject/unityRungame/TresureDash/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3060 Laptop GPU (ID=0x2560)
+    Vendor:   NVIDIA
+    VRAM:     6009 MB
+    Driver:   31.0.15.3713
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.2.6f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.2.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.2.6f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56464
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.2.6f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.2.6f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.2.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.007547 seconds.
+- Loaded All Assemblies, in  0.391 seconds
+Native extension for WindowsStandalone target not found
+[usbmuxd] Start listen thread
+[usbmuxd] Listen thread started
+Native extension for iOS target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 668 ms
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.926 seconds
+Domain Reload Profiling:
+	ReloadAssembly (227ms)
+		BeginReloadAssembly (102ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		LoadAllAssembliesAndSetupDomain (0ms)
+			LoadAssemblies (102ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (156ms)
+				TypeCache.Initialize (154ms)
+					TypeCache.ScanAssembly (153ms)
+				ResolveRequiredComponents (1ms)
+		FinalizeReload (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (0ms)
+			SetupLoadedEditorAssemblies (870ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (753ms)
+				SetLoadedEditorAssemblies (3ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (75ms)
+				ProcessInitializeOnLoadMethodAttributes (37ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\UnityProject\unityRungame\TresureDash\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\UnityProject\unityRungame\TresureDash\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.714 seconds
+Refreshing native plugins compatible for Editor in 2.18 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.400 seconds
+Domain Reload Profiling:
+	ReloadAssembly (155ms)
+		BeginReloadAssembly (87ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (18ms)
+		LoadAllAssembliesAndSetupDomain (557ms)
+			LoadAssemblies (214ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (376ms)
+				TypeCache.Initialize (228ms)
+					TypeCache.ScanAssembly (225ms)
+				ResolveRequiredComponents (3ms)
+		FinalizeReload (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (0ms)
+			SetupLoadedEditorAssemblies (281ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (22ms)
+				SetLoadedEditorAssemblies (5ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (55ms)
+				ProcessInitializeOnLoadAttributes (172ms)
+				ProcessInitializeOnLoadMethodAttributes (22ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 2.56 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3872 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 67 unused Assets / (8.6 MB). Loaded Objects now: 4317.
+Memory consumption went from 0.62 GB to 0.61 GB.
+Total: 5.302300 ms (FindLiveObjects: 0.284000 ms CreateObjectMapping: 0.128600 ms MarkObjects: 2.388600 ms  DeleteObjects: 2.499900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 4946.830787 seconds.
+  path: Assets/Models/Player/和装少女.Avatar
+  artifactKey: Guid(3eb6d032e7e62b44fa4e6d901352f5fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/和装少女.Avatar using Guid(3eb6d032e7e62b44fa4e6d901352f5fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1a00eb2df51706619dd37708f1811ef') in 0.001403 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000071 seconds.
+  path: Assets/Models/Player/和装少女.AvatarDescription
+  artifactKey: Guid(1437f9942d413394fb8dd9d2152f629e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/和装少女.AvatarDescription using Guid(1437f9942d413394fb8dd9d2152f629e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3cb01c7f889cdc0200cbac37afa37e07') in 0.000518 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000069 seconds.
+  path: Assets/Models/Player/和装少女.prefab
+  artifactKey: Guid(4e2d0ed7781ee794ab3f0c0f6769487a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/和装少女.prefab using Guid(4e2d0ed7781ee794ab3f0c0f6769487a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fe8bd66b40e038c329a0bbbcebe69c9') in 1.282774 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 444
+========================================================================
+Received Import Request.
+  Time since last request: 3.308100 seconds.
+  path: Assets/Models/Player/PCModel
+  artifactKey: Guid(3eb6d032e7e62b44fa4e6d901352f5fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/PCModel using Guid(3eb6d032e7e62b44fa4e6d901352f5fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '739f33ed7cc1508544c794465338300a') in 0.000487 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 12.400374 seconds.
+  path: Assets/Models/Player/PCModel.AvatarDescription
+  artifactKey: Guid(1437f9942d413394fb8dd9d2152f629e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/PCModel.AvatarDescription using Guid(1437f9942d413394fb8dd9d2152f629e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1cffa30561b2208be7b6cdf0fb3fc760') in 0.000682 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.232297 seconds.
+  path: Assets/Models/Player/和装少女.BlendShapes
+  artifactKey: Guid(684d39761bb57c74aa98b85af4962d65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/和装少女.BlendShapes using Guid(684d39761bb57c74aa98b85af4962d65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0daf9131b4c35b71c22f346e527a9020') in 0.000416 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 5.913998 seconds.
+  path: Assets/Models/Player/和装少女.Materials
+  artifactKey: Guid(2eff844ffa65c0740877ba45a50e971c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/和装少女.Materials using Guid(2eff844ffa65c0740877ba45a50e971c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01d3d5b5d5197e4493c617758be95a95') in 0.000680 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 4.216294 seconds.
+  path: Assets/Models/Player/和装少女.MetaObject
+  artifactKey: Guid(6ed58dfc649aefc4198706448a562814) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/和装少女.MetaObject using Guid(6ed58dfc649aefc4198706448a562814) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9980b6343c41f93bd44e790238ff7cc1') in 0.000377 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.047041 seconds.
+  path: Assets/Models/Player/和装少女.MetaObject/Meta.asset
+  artifactKey: Guid(2f4525f0dbbe506469b5eb5313770682) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/和装少女.MetaObject/Meta.asset using Guid(2f4525f0dbbe506469b5eb5313770682) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95217857d7328022f9be8bf246e18518') in 0.015842 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 2.041042 seconds.
+  path: Assets/Models/Player/和装少女.Textures
+  artifactKey: Guid(27f1b10218eb61146865c08843d44b5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/和装少女.Textures using Guid(27f1b10218eb61146865c08843d44b5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75e5bcfd84ed3f9f41dfbe7ee33b2898') in 0.000443 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.087323 seconds.
+  path: Assets/Models/Player/和装少女.Textures/_01.png
+  artifactKey: Guid(14a7fc68902b1714eb6bcb2e86522ce5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/和装少女.Textures/_01.png using Guid(14a7fc68902b1714eb6bcb2e86522ce5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06588da40600873a8e625dd34b3819cc') in 0.018664 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Models/Player/和装少女.Textures/Thumbnail.png
+  artifactKey: Guid(4f3a1f627ee5bdc4c900ba79d9f55d65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/和装少女.Textures/Thumbnail.png using Guid(4f3a1f627ee5bdc4c900ba79d9f55d65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4afe85da2d39c8260b62e8bf00dc0607') in 0.050875 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Models/Player/和装少女.Textures/MatcapWarp_01.png
+  artifactKey: Guid(15b80e0f7c163494581f69a17edf3d80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/和装少女.Textures/MatcapWarp_01.png using Guid(15b80e0f7c163494581f69a17edf3d80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88d18db185638da917ef2ab72da3b645') in 0.015261 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Models/Player/和装少女.Textures/_03.png
+  artifactKey: Guid(234330e5788aa3b41be98b91d9168367) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/和装少女.Textures/_03.png using Guid(234330e5788aa3b41be98b91d9168367) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55cfaff97dcb076813ee27a53e14d618') in 0.016419 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000060 seconds.
+  path: Assets/Models/Player/和装少女.Textures/N00_000_00_Face_00_out.png
+  artifactKey: Guid(4901da494b1d6844d876455caf4d6a0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/和装少女.Textures/N00_000_00_Face_00_out.png using Guid(4901da494b1d6844d876455caf4d6a0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '860ead523765a57ab2acfd4782b3f2b3') in 0.013075 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Models/Player/和装少女.Textures/N00_000_Hair_00_nml.png
+  artifactKey: Guid(4600f0101537bd6469e6ee1297a19ff9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/和装少女.Textures/N00_000_Hair_00_nml.png using Guid(4600f0101537bd6469e6ee1297a19ff9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '570825f2c040df10cd987613090bad24') in 0.012915 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Models/Player/和装少女.Textures/_20.png
+  artifactKey: Guid(6f3ae679d5053ac479d4d329cdf955dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/和装少女.Textures/_20.png using Guid(6f3ae679d5053ac479d4d329cdf955dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cba92f13c6b8252b4aef13c14463e353') in 0.008481 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Models/Player/和装少女.Textures/_04.png
+  artifactKey: Guid(871c78c4f633d1d4daffccc40f41c88e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/和装少女.Textures/_04.png using Guid(871c78c4f633d1d4daffccc40f41c88e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84bc57ba2cb4aa0e59f1c6875c54a6c0') in 0.009284 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Models/Player/和装少女.Textures/_09.png
+  artifactKey: Guid(68edaa3303b98fc4b9df24d343126fc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/和装少女.Textures/_09.png using Guid(68edaa3303b98fc4b9df24d343126fc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ac7eb63965f68db2d65c7e3128d9112') in 0.007901 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Models/Player/和装少女.Textures/_06.png
+  artifactKey: Guid(c11606cdc24c9ea4ebec44ab4b4e97c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/和装少女.Textures/_06.png using Guid(c11606cdc24c9ea4ebec44ab4b4e97c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85b72faea4996d9d0b6ca2a7988d0557') in 0.007551 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Models/Player/和装少女.Textures/_22.png
+  artifactKey: Guid(71f4f739694f4674997e1fd232de0e66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/和装少女.Textures/_22.png using Guid(71f4f739694f4674997e1fd232de0e66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd76420310fab6e80113eef7fe9a60bb') in 0.006855 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/Models/Player/和装少女.Textures/_12.png
+  artifactKey: Guid(ae9fa6b2ff1264a41a445c5f44e6b2dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/和装少女.Textures/_12.png using Guid(ae9fa6b2ff1264a41a445c5f44e6b2dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6916b388800a163abd1b81ec355793c') in 0.010250 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Models/Player/和装少女.Textures/_18.png
+  artifactKey: Guid(d203aca945bae004fb71598b9e4d5c43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/和装少女.Textures/_18.png using Guid(d203aca945bae004fb71598b9e4d5c43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7db138e664cfca70892dce5a63e081d1') in 0.019664 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000211 seconds.
+  path: Assets/Models/Player/和装少女.Textures/_14.png
+  artifactKey: Guid(1915ffcfbe051094caf2e18b70c2a40f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/和装少女.Textures/_14.png using Guid(1915ffcfbe051094caf2e18b70c2a40f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '395cdf0dca4cf1eef240e729edbae934') in 0.008084 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Models/Player/和装少女.Textures/_16.png
+  artifactKey: Guid(9a2bdb2a803dab8438ea50cee2b24675) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/和装少女.Textures/_16.png using Guid(9a2bdb2a803dab8438ea50cee2b24675) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3602c343323e0bcd200371da175b807c') in 0.017539 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Models/Player/和装少女.Textures/N00_000_00_HairBack_00_nml.png
+  artifactKey: Guid(30d620c2b851a5a41a153a8e3e2bf347) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/和装少女.Textures/N00_000_00_HairBack_00_nml.png using Guid(30d620c2b851a5a41a153a8e3e2bf347) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e1f41c58165d0e601f753a3c831fab7') in 0.008445 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Models/Player/和装少女.Textures/_07.png
+  artifactKey: Guid(3ffbd2fbf6a5fd849b789c0b7952369e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/和装少女.Textures/_07.png using Guid(3ffbd2fbf6a5fd849b789c0b7952369e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9240f56e403887582647c6d3824c7db2') in 0.007156 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000092 seconds.
+  path: Assets/Models/Player/和装少女.Textures/_08.png
+  artifactKey: Guid(293451424820fdc459cb639d016fb0a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/和装少女.Textures/_08.png using Guid(293451424820fdc459cb639d016fb0a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbd1f168793c33a8781b20824d4e4259') in 0.006518 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Models/Player/和装少女.Textures/_10.png
+  artifactKey: Guid(4a9fed78b55b16042b2fa32ea09d2773) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/和装少女.Textures/_10.png using Guid(4a9fed78b55b16042b2fa32ea09d2773) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a42917b25e99eabfc618892320b738f0') in 0.018451 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 12.285127 seconds.
+  path: Assets/Models/Player/PCModel.BlendShapes
+  artifactKey: Guid(684d39761bb57c74aa98b85af4962d65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/PCModel.BlendShapes using Guid(684d39761bb57c74aa98b85af4962d65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '903855245f670937c1725e84323a2228') in 0.000449 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 9.258598 seconds.
+  path: Assets/Models/Player/PCModel.Materials
+  artifactKey: Guid(2eff844ffa65c0740877ba45a50e971c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/PCModel.Materials using Guid(2eff844ffa65c0740877ba45a50e971c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b7fe7c0e1e5e4fdd94d6afb070a48ba') in 0.000478 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 4.297555 seconds.
+  path: Assets/Models/Player/和装少女.Meshes
+  artifactKey: Guid(35da7538f07720c4294cbaeb17596e89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/和装少女.Meshes using Guid(35da7538f07720c4294cbaeb17596e89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b24f5f76df6f8be2b92c57a2487ed609') in 0.000360 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.065863 seconds.
+  path: Assets/Models/Player/和装少女.Meshes/Body (merged).baked.asset
+  artifactKey: Guid(9925d0a65f6f3f443aabe5d822aef51c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/和装少女.Meshes/Body (merged).baked.asset using Guid(9925d0a65f6f3f443aabe5d822aef51c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2936f2af2240fda01709be726c2030b') in 0.033676 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Models/Player/和装少女.Meshes/Hair001 (merged).baked.asset
+  artifactKey: Guid(cdaa3d5f643b8ec46881ed79eaa2b106) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/和装少女.Meshes/Hair001 (merged).baked.asset using Guid(cdaa3d5f643b8ec46881ed79eaa2b106) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13007eac14d03b6b7ed2e1220602d825') in 0.018346 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 7.617843 seconds.
+  path: Assets/Models/Player/PCModel.Meshes
+  artifactKey: Guid(35da7538f07720c4294cbaeb17596e89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/PCModel.Meshes using Guid(35da7538f07720c4294cbaeb17596e89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4a1bcc4bda989d0e44826fc18b54019') in 0.000447 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 7.495129 seconds.
+  path: Assets/Models/Player/PCModel.MetaObject
+  artifactKey: Guid(6ed58dfc649aefc4198706448a562814) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/PCModel.MetaObject using Guid(6ed58dfc649aefc4198706448a562814) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe0932e8229decd0fa937e922f63dc96') in 0.000539 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 12.140568 seconds.
+  path: Assets/Models/Player/和装少女.fbx
+  artifactKey: Guid(eff14f5fa45c9f84fb6a2bb8053d08ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/和装少女.fbx using Guid(eff14f5fa45c9f84fb6a2bb8053d08ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6308f67a74416067c91f55a31aaccdb8') in 0.642642 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 381
+========================================================================
+Received Import Request.
+  Time since last request: 8.799752 seconds.
+  path: Assets/Models/Player/PCModel.fbx
+  artifactKey: Guid(eff14f5fa45c9f84fb6a2bb8053d08ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/PCModel.fbx using Guid(eff14f5fa45c9f84fb6a2bb8053d08ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab59fde7fd6f55cbd16501d8467fb915') in 0.378307 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 381
+========================================================================
+Received Import Request.
+  Time since last request: 4.538997 seconds.
+  path: Assets/Models/Player/PCModel.prefab
+  artifactKey: Guid(4e2d0ed7781ee794ab3f0c0f6769487a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/PCModel.prefab using Guid(4e2d0ed7781ee794ab3f0c0f6769487a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c41731971bb10ebc7bc22b61dfcbdc87') in 1.068495 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 444
+========================================================================
+Received Import Request.
+  Time since last request: 4.590547 seconds.
+  path: Assets/Models/Player/和装少女.vrm
+  artifactKey: Guid(26f90363a73e4f04fb04a0d74ee0643b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/和装少女.vrm using Guid(26f90363a73e4f04fb04a0d74ee0643b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e19ddbca0401eaf2f0c13ad74182863') in 0.001368 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 20.211042 seconds.
+  path: Assets/Models/Player/PCModel.fbx
+  artifactKey: Guid(eff14f5fa45c9f84fb6a2bb8053d08ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Player/PCModel.fbx using Guid(eff14f5fa45c9f84fb6a2bb8053d08ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ea395efba892fc94c28dd53c9b9fc25') in 0.555397 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 381
+========================================================================
+Received Import Request.
+  Time since last request: 40.299469 seconds.
+  path: Assets/Scenes/TitleScene.unity
+  artifactKey: Guid(65892a44b5f8c67448b6e490d7ef4d2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/TitleScene.unity using Guid(65892a44b5f8c67448b6e490d7ef4d2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2329ad08b42d1813521e4d5ee2f2de2e') in 0.000515 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\UnityProject\unityRungame\TresureDash\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\UnityProject\unityRungame\TresureDash\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.685 seconds
+Refreshing native plugins compatible for Editor in 2.79 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.565 seconds
+Domain Reload Profiling:
+	ReloadAssembly (154ms)
+		BeginReloadAssembly (99ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (2ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (32ms)
+		LoadAllAssembliesAndSetupDomain (527ms)
+			LoadAssemblies (195ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (364ms)
+				TypeCache.Initialize (207ms)
+					TypeCache.ScanAssembly (203ms)
+				ResolveRequiredComponents (4ms)
+		FinalizeReload (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (0ms)
+			SetupLoadedEditorAssemblies (279ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (23ms)
+				SetLoadedEditorAssemblies (4ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (61ms)
+				ProcessInitializeOnLoadAttributes (161ms)
+				ProcessInitializeOnLoadMethodAttributes (25ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 2.84 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3819 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 62 unused Assets / (8.5 MB). Loaded Objects now: 4372.
+Memory consumption went from 0.61 GB to 0.60 GB.
+Total: 4.993300 ms (FindLiveObjects: 0.219900 ms CreateObjectMapping: 0.099600 ms MarkObjects: 2.026200 ms  DeleteObjects: 2.646800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
