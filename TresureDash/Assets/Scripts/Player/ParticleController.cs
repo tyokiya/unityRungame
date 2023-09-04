@@ -5,11 +5,11 @@ using UnityEngine;
 public class ParticleController : MonoBehaviour
 {
     //インスペクタからー設定
-    [Tooltip("プレイヤーの衝突パーティクルオブジェクト")][SerializeField]
-    ParticleSystem collidionParticle_object;
+    [Tooltip("プレイヤーの衝突時パーティクル")][SerializeField]
+    ParticleSystem collision_particle;
 
     [Tooltip("プレイヤーのアイテムゲットパーティクルオブジェクト")][SerializeField]
-    ParticleSystem itemGetParticle_object;
+    ParticleSystem itemGet_particle;
 
     [Tooltip("生成したパーティクルを入れる配列")]
     ParticleSystem[] particleArray = new ParticleSystem[20];
@@ -31,7 +31,7 @@ public class ParticleController : MonoBehaviour
     /// </summary>
     public void PlyCollisionParticle()
     {
-        collidionParticle_object.Play();
+        collision_particle.Play();
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ public class ParticleController : MonoBehaviour
     /// <param name="itemPos">アイテムを獲得した座標</param>
     public void PlyItemGetParticle(Vector3 itemplayerPos)
     {
-        //this.itemGetParticle_object.Play();
+        //this.itemGet_particle.Play();
         //パーティクル生成
-        this.particleArray[this.particleArray_cnt] = Instantiate(itemGetParticle_object);
+        this.particleArray[this.particleArray_cnt] = Instantiate(itemGet_particle);
         //座標設定
         this.particleArray[this.particleArray_cnt].transform.position = itemplayerPos;
         //パーティクル再生

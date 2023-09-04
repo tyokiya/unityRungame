@@ -15542,8 +15542,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c751a6e063181874fbb436b12ecb27f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collidionParticle_object: {fileID: 2024843252}
-  itemGetParticle_object: {fileID: 495703370}
+  collision_particle: {fileID: 2024843252}
+  itemGet_particle: {fileID: 495703370}
 --- !u!4 &1606790132
 Transform:
   m_ObjectHideFlags: 0
