@@ -16,6 +16,7 @@ public class ParticleController : MonoBehaviour
     int particleArray_cnt = 0;
     
     const int arrayMax_const = 20;
+    const float waitDestroyTimer = 1.0f;
 
     void Update()
     {
@@ -47,7 +48,7 @@ public class ParticleController : MonoBehaviour
         //パーティクル再生
         this.particleArray[this.particleArray_cnt].Play();
         //時間経過後生成したパーティクルオブジェクトの削除
-        Destroy(this.particleArray[this.particleArray_cnt].gameObject,1.0f);
+        Destroy(this.particleArray[this.particleArray_cnt].gameObject, waitDestroyTimer);
         //カウント増加
         this.particleArray_cnt++;
     }

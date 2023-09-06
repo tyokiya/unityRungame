@@ -16,9 +16,6 @@ public class ScreenInput_TittleScene : MonoBehaviour
     [Tooltip("タップしたワールド座標")]
     Vector3 tapPos;
 
-    [Tooltip("エフェクトを生成する座標のカメラとの距離定数")]
-    public float distance_const = 10.0f;
-
     bool tapFlg = false;
 
     void Update()
@@ -28,7 +25,7 @@ public class ScreenInput_TittleScene : MonoBehaviour
         {
             // タップしたワールド座標取得し
             //エフェクトの生成座標設定
-            this.tapPos = effectCamera_objet.ScreenToWorldPoint(Input.mousePosition + effectCamera_objet.transform.forward * distance_const);
+            this.tapPos = effectCamera_objet.ScreenToWorldPoint(Input.mousePosition + effectCamera_objet.transform.forward);
 
             //フラグを立てる
             this.tapFlg = true;

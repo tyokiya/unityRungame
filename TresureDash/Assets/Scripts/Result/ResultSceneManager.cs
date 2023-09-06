@@ -14,6 +14,25 @@ public class ResultSceneManager : MonoBehaviour
     [Tooltip("サウンドコントローラーオブジェクト")][SerializeField]
     SoundController_ResultScene soundController_object;
 
+    [Tooltip("エフェクトのコントローラーオブジェクト")]
+    [SerializeField]
+    TapEffectController effectController_object;
+
+    [Tooltip("リザルトシーンシーンの入力を受けるオブジェクト")]
+    [SerializeField]
+    ScreenInput_TittleScene screenInput_object;
+
+    void Update()
+    {
+        //プレイヤーからの入力があるか確認
+        if (this.screenInput_object.TapFlgGetter())
+        {
+            //座標を受け取りエフェクトの表示命令
+            Vector3 pos = this.screenInput_object.TapPosGetter();
+            this.effectController_object.PlyTapEffect(pos);
+        }
+    }
+
     /// <summary>
     /// ボタン入力を受け取りシーン切り替え命令
     /// </summary>

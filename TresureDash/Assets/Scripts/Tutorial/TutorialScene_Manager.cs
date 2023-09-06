@@ -21,6 +21,25 @@ public class TutorialScene_Manager : MonoBehaviour
     [Tooltip("現在の開いてるページのカウンター")]
     int nowPageNum = 1;
 
+    [Tooltip("エフェクトのコントローラーオブジェクト")]
+    [SerializeField]
+    TapEffectController effectController_object;
+
+    [Tooltip("チュートリアルシーンシーンの入力を受けるオブジェクト")]
+    [SerializeField]
+    ScreenInput_TittleScene screenInput_object;
+
+    void Update()
+    {
+        //プレイヤーからの入力があるか確認
+        if (this.screenInput_object.TapFlgGetter())
+        {
+            //座標を受け取りエフェクトの表示命令
+            Vector3 pos = this.screenInput_object.TapPosGetter();
+            this.effectController_object.PlyTapEffect(pos);
+        }
+    }
+
     /// <summary>
     /// バックボタンが押されたことを受け取りそれぞれに命令
     /// </summary>
