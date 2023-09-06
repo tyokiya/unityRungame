@@ -12,13 +12,13 @@ public class ScoreManager : MonoBehaviour
     [Tooltip("スコア管理オブジェクト")][SerializeField] 
     ScoreController scoreController_object;
     
-    [Tooltip("現在のプレイヤー状態を管理するオブジェクト")][SerializeField] 
+    [Tooltip("プレイヤー状態を管理するオブジェクト")][SerializeField] 
     Status playerStatus_object;
 
     bool playerItemGetFlg = false;
 
     [Tooltip("プレイヤーの生死状態")]
-    Status.PlayerSurvival nowSurvival;
+    Status.PlayerAlive currentAlive;
 
     //オブジェクト生成時スコアのリセット処理を呼ぶ
     void Awake()
@@ -29,7 +29,7 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         //現在の生死状態を受け取る
-        this.nowSurvival = this.playerStatus_object.GetNowPlayerSurvival();
+        this.currentAlive = this.playerStatus_object.GetNowPlayerSurvival();
 
         //アイテム獲得フラグが立ってる場合それぞれに処理を命令
         if (this.playerItemGetFlg == true)
@@ -43,7 +43,7 @@ public class ScoreManager : MonoBehaviour
         }
 
         //プレイヤーが生存状態ならスコア上昇命令
-        if(this.nowSurvival == Status.PlayerSurvival.life)
+        if(this.currentAlive == Status.PlayerAlive.life)
         {
             this.scoreController_object.ScoreUp();
         }

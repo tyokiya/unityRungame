@@ -21,7 +21,7 @@ public class PlayerManager : MonoBehaviour
     [Tooltip("ジャイロ入力を返すオブジェクト")][SerializeField] 
     GyroInput gyroInput_object;
 
-    [Tooltip("現在のプレイヤー状態を管理オブジェクト")][SerializeField] 
+    [Tooltip("プレイヤー状態を管理オブジェクト")][SerializeField] 
     Status playerStatus_object; 
     
     [Tooltip("プレイヤーを動かすオブジェクト")][SerializeField]
@@ -46,19 +46,19 @@ public class PlayerManager : MonoBehaviour
     bool onTurnGroundFlg = false;
 
     [Tooltip("現在の入力状態を入れる変数")]
-    ScreenInput.FlickDirection nowFlick;
+    ScreenInput.FlickDirection currentFlick;
 
     [Tooltip("スマホの傾きを入れる変数")]
-    GyroInput.TiltDirection nowTili_direction;
+    GyroInput.TiltDirection currentTili_direction;
 
     [Tooltip("プレイヤーの状態を入れる変数")]
-    Status.PlayerSituation nowSituation;
+    Status.PlayerState currentSituation;
     
     [Tooltip("現在のプレイヤーの生死状態を入れる変数")]
-    Status.PlayerSurvival nowSurvival;
+    Status.PlayerAlive currentAlive;
 
     [Tooltip("現在のプレイヤーの向いてる方向を入れる変数")]
-    Status.PlayerDirection nowDirection;
+    Status.PlayerDirection currentDirection;
 
     [Tooltip("落下死の待機時間定数")]
     const float fallDeathWaitTime_const = 1.0f;
@@ -105,35 +105,35 @@ public class PlayerManager : MonoBehaviour
         this.onTurnGroundFlg = this.groundCheck_object.GetTurnGroundStandFlg();
 
         //フリック方向を受け取る
-        this.nowFlick = this.screenInput_object.GetNowFlick();
+        this.currentFlick = this.screenInput_object.GetNowFlick();
         //スマホの傾きを受け取る
-        this.nowTili_direction = this.gyroInput_object.GetDifferenceTilt();
+        this.currentTili_direction = this.gyroInput_object.GetDifferenceTilt();
         //現在の状態を受け取る
-        this.nowSituation = this.playerStatus_object.GetNowPlayerSituation();
+        this.currentSituation = this.playerStatus_object.GetNowPlayerSituation();
         //現在の生死状態を受け取る
-        this.nowSurvival = this.playerStatus_object.GetNowPlayerSurvival();
+        this.currentAlive = this.playerStatus_object.GetNowPlayerSurvival();
         //現在のプレイヤーの向いてる方向を受け取る
-        this.nowDirection = this.playerStatus_object.GetNowPlayerDirection();
+        this.currentDirection = this.playerStatus_object.GetNowPlayerDirection();
         //プレイヤーの衝突フラグを受け取る
         this.collisionFlg = this.collisionCheck_object.GetCollisionFlg();
 
         //プレイヤーが生存状態での処理
-        if(this.nowSurvival == Status.PlayerSurvival.life)
+        if(this.currentAlive == Status.PlayerAlive.life)
         {
             //ステータスの更新
-            this.playerStatus_object.SituationUpdate(this.onGroudFlg, this.nowFlick, this.onTurnGroundFlg);
+            this.playerStatus_object.SituationUpdate(this.onGroudFlg, this.currentFlick, this.onTurnGroundFlg);
             //移動の更新
-            this.playerMove_object.MovePlayerUpdate(this.nowFlick, this.nowSituation, this.nowDirection, this.nowTili_direction, this.onTurnGroundFlg,this.player_jumpound_delegate);
+            this.playerMove_object.MovePlayerUpdate(this.currentFlick, this.currentSituation, this.currentDirection, this.currentTili_direction, this.onTurnGroundFlg,this.player_jumpound_delegate);
             //アニメーション更新
-            this.playerAnimation_object.AnimationUpdate(this.nowFlick, this.nowSituation, this.collisionFlg);
+            this.playerAnimation_object.AnimationUpdate(this.currentFlick, this.currentSituation, this.collisionFlg);
             //プレイヤーの生死確認
             this.playerStatus_object.SurvivalChek(this.collisionFlg);
             //プレイヤーの移動サウンド再生
-            this.playerSound_object.PlyWalkSound(this.nowSituation);
+            this.playerSound_object.PlyWalkSound(this.currentSituation);
         }
 
         //衝突死の処理
-        if(this.nowSurvival == Status.PlayerSurvival.collisionDeath && this.deathFlg == false)
+        if(this.currentAlive == Status.PlayerAlive.collisionDeath && this.deathFlg == false)
         {            
             //衝突パーティクル再生
             this.particleController_object.PlyCollisionParticle();
@@ -147,7 +147,7 @@ public class PlayerManager : MonoBehaviour
         }
 
         //落下死処理
-        if(this.nowSurvival == Status.PlayerSurvival.fallDeath && this.deathFlg == false)
+        if(this.currentAlive == Status.PlayerAlive.fallDeath && this.deathFlg == false)
         {
             //落下サウンド再生
             this.player_fallSound_delegate();

@@ -30,18 +30,18 @@ public class SoundController : MonoBehaviour
     /// <summary>
     /// 現在のプレイヤーの状態に応じて移動音再生
     /// </summary>
-    /// <param name="situation">現在のプレイヤーの状態</param>
-    public void PlyWalkSound(Status.PlayerSituation situation)
+    /// <param name="state">現在のプレイヤーの状態</param>
+    public void PlyWalkSound(Status.PlayerState state)
     {
         //現在の状態を見てサウンド再生
-        if(situation == Status.PlayerSituation.walk && this.foot_sound_delta > walkSound_span_const)
+        if(state == Status.PlayerState.walk && this.foot_sound_delta > walkSound_span_const)
         {
             //足音再生
             this.audioSource_object.PlayOneShot(this.foot_sound);
             //デルタ初期化
             this.foot_sound_delta = 0;
         }
-        else if(situation == Status.PlayerSituation.run && this.foot_sound_delta > runSound_span_const)
+        else if(state == Status.PlayerState.run && this.foot_sound_delta > runSound_span_const)
         {
             //足音再生
             this.audioSource_object.PlayOneShot(this.foot_sound);

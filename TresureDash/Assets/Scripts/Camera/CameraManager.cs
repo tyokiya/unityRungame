@@ -28,7 +28,7 @@ public class CameraManager : MonoBehaviour
     Status.PlayerDirection nowDirection;
 
     [Tooltip("現在のプレイヤーの状態")]
-    Status.PlayerSituation nowSituation;
+    Status.PlayerState nowSituation;
 
     void Update()
     {
