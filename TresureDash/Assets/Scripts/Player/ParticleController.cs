@@ -40,7 +40,6 @@ public class ParticleController : MonoBehaviour
     /// <param name="itemPos">アイテムを獲得した座標</param>
     public void PlyItemGetParticle(Vector3 itemplayerPos)
     {
-        //this.itemGet_particle.Play();
         //パーティクル生成
         this.particleArray[this.particleArray_cnt] = Instantiate(itemGet_particle);
         //座標設定

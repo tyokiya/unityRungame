@@ -13,8 +13,11 @@ public class ScreenInput_TittleScene : MonoBehaviour
     [Tooltip("エフェクト表示用カメラオブジェクト")][SerializeField] 
     Camera effectCamera_objet;
 
-    [Tooltip("タップワールド座標")]
+    [Tooltip("タップしたワールド座標")]
     Vector3 tapPos;
+
+    [Tooltip("エフェクトを生成する座標のカメラとの距離定数")]
+    public float distance_const = 10.0f;
 
     bool tapFlg = false;
 
@@ -23,8 +26,10 @@ public class ScreenInput_TittleScene : MonoBehaviour
         //入力があった場合座標設定
         if (Input.GetMouseButtonDown(0))
         {
-            // マウスのワールド座標取得
-            this.tapPos = effectCamera_objet.ScreenToWorldPoint(Input.mousePosition + effectCamera_objet.transform.forward * 10);
+            // タップしたワールド座標取得し
+            //エフェクトの生成座標設定
+            this.tapPos = effectCamera_objet.ScreenToWorldPoint(Input.mousePosition + effectCamera_objet.transform.forward * distance_const);
+
             //フラグを立てる
             this.tapFlg = true;
         }
