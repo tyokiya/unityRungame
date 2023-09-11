@@ -133,7 +133,7 @@ public class PlayerManager : MonoBehaviour
         }
 
         //衝突死の処理
-        if(this.currentAlive == Status.PlayerAlive.collisionDeath && this.deathFlg == false)
+        if(this.currentAlive == Status.PlayerAlive.collisionDeath && !this.deathFlg)
         {            
             //衝突パーティクル再生
             this.particleController_object.PlyCollisionParticle();
@@ -147,7 +147,7 @@ public class PlayerManager : MonoBehaviour
         }
 
         //落下死処理
-        if(this.currentAlive == Status.PlayerAlive.fallDeath && this.deathFlg == false)
+        if(this.currentAlive == Status.PlayerAlive.fallDeath && !this.deathFlg)
         {
             //落下サウンド再生
             this.player_fallSound_delegate();

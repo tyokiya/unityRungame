@@ -39,7 +39,7 @@ public class AnimationController : MonoBehaviour
         if(flick == ScreenInput.FlickDirection.UP && state == Status.PlayerState.run) this.animator.SetTrigger("JumpTrigger");
 
         //衝突フラグが立ってる場合トリガーを切り替える
-        if (collisionFlg == true) this.animator.SetTrigger("CollisionTrigger");
+        if (collisionFlg) this.animator.SetTrigger("CollisionTrigger");
     }
 
     /// <summary>

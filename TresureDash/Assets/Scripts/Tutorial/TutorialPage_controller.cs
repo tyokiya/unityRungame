@@ -23,7 +23,6 @@ public class TutorialPage_controller : MonoBehaviour
     [SerializeField] GameObject tutorialPage_4_object;
     [SerializeField] GameObject tutorialPage_5_object;
 
-
     void Awake()
     {
         //不要なUIの非表示

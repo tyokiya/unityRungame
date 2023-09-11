@@ -17,6 +17,8 @@ public class CameraController_TittleScene : MonoBehaviour
 
     int frameCnt = 0;
 
+    const float moveSpeed_const = 0.05f;
+
     void Update()
     {
         //カウント増加
@@ -25,25 +27,25 @@ public class CameraController_TittleScene : MonoBehaviour
         //カウント数に応じて移動方向回転方向の変更
         if (this.rotationCnt % 640 == 0)
         {
-            this.moveSpeed_x = 0.05f;
-            this.moveSpeed_z = 0.05f;
+            this.moveSpeed_x = moveSpeed_const;
+            this.moveSpeed_z = moveSpeed_const;
             //カウント初期化
             this.rotationCnt = 0;
         }
         else if (this.rotationCnt % 480 == 0)
         {
-            this.moveSpeed_x = 0.05f;
-            this.moveSpeed_z = -0.05f;
+            this.moveSpeed_x = moveSpeed_const;
+            this.moveSpeed_z = -moveSpeed_const;
         }
         else if (this.rotationCnt % 320 == 0)
         {
-            this.moveSpeed_x = -0.05f;
-            this.moveSpeed_z = -0.05f;
+            this.moveSpeed_x = -moveSpeed_const;
+            this.moveSpeed_z = -moveSpeed_const;
         }
         else if (this.rotationCnt % 160 == 0)
         {
-            this.moveSpeed_x = -0.05f;
-            this.moveSpeed_z = 0.05f;
+            this.moveSpeed_x = -moveSpeed_const;
+            this.moveSpeed_z = moveSpeed_const;
         }
 
         //移動処理

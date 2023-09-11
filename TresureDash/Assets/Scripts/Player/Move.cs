@@ -76,7 +76,7 @@ public class Move : MonoBehaviour
         }
 
         //回転可能な地面の上か歩き常態である時場合での移動処理回転処理
-        if (turnGroundFlg == true || state == PlayerState.walk 
+        if (turnGroundFlg || state == PlayerState.walk 
             || tili_direction == GyroInput.TiltDirection.FRONT)
         {
             //回転可能な地面の上での移動処理

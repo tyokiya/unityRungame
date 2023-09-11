@@ -31,7 +31,7 @@ public class FadeInScoreController : MonoBehaviour
     void Update()
     {
         //フラグに応じてフェードイン処理
-        if (this.fadeInFlg == true)
+        if (this.fadeInFlg)
         {
             //y軸移動
             transform.Translate(0, this.fadeIn_speed, 0);

@@ -32,7 +32,7 @@ public class ScoreManager : MonoBehaviour
         this.currentAlive = this.playerStatus_object.GetNowPlayerSurvival();
 
         //アイテム獲得フラグが立ってる場合それぞれに処理を命令
-        if (this.playerItemGetFlg == true)
+        if (this.playerItemGetFlg)
         {
             //Debug.Log("アイテム獲得処理開始");
             //アイテム獲得数上昇処理

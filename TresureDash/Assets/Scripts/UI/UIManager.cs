@@ -25,7 +25,10 @@ public class UIManager : MonoBehaviour
     GoalBornus_Text_controller goalBornus_Text_Controller;
 
     [Tooltip("フェードイン処理した時の獲得アイテム数")]
-    int fadeInItemNum = 0;  
+    int fadeInItemNum = 0;
+
+    [Tooltip("フェードイン処理を行うアイテムの個数定数")]
+    const int fadeInNum_const = 50;
 
     void Update()
     {
@@ -36,7 +39,7 @@ public class UIManager : MonoBehaviour
 
         //獲得数50ごとにフェードイン処理命令
         //連続処理を防ぐため処理した時のアイテム数を保持し、比較し確認
-        if (this.scoreController_object.ItemNumGetter() % 50 == 0 && this.fadeInItemNum != this.scoreController_object.ItemNumGetter())
+        if (this.scoreController_object.ItemNumGetter() % fadeInNum_const == 0 && this.fadeInItemNum != this.scoreController_object.ItemNumGetter())
         {
             //フェードイン処理命令
             this.fadeinScoreController_object.fadeIn_itemScore(this.scoreController_object.ItemNumGetter());

@@ -106,7 +106,7 @@ public class Status : MonoBehaviour
     public void SituationUpdate(bool GroundFlg, ScreenInput.FlickDirection flick, bool turnGroundFlg)
     {
         //ジャンプ状態から地面についた場合ステータスを変更
-        if (GroundFlg == true && this.currentSituation == PlayerState.jump)
+        if (GroundFlg && this.currentSituation == PlayerState.jump)
         {
             this.currentSituation = PlayerState.run;
         }
@@ -121,13 +121,13 @@ public class Status : MonoBehaviour
         //向きを変える処理
         //ターン可能な地面にいるかの確認
         //走り状態化の確認
-        if (flick == ScreenInput.FlickDirection.RIGHT && this.rotationDelta > rotationSpan_const && currentSituation == PlayerState.run && turnGroundFlg == true)
+        if (flick == ScreenInput.FlickDirection.RIGHT && this.rotationDelta > rotationSpan_const && currentSituation == PlayerState.run && turnGroundFlg)
         {
             ChangeDirection(true);
             //デルタ初期化
             this.rotationDelta = 0;
         }
-        if (flick == ScreenInput.FlickDirection.LEFT && this.rotationDelta > rotationSpan_const && currentSituation == PlayerState.run && turnGroundFlg == true)
+        if (flick == ScreenInput.FlickDirection.LEFT && this.rotationDelta > rotationSpan_const && currentSituation == PlayerState.run && turnGroundFlg)
         {
             ChangeDirection(false);
             //デルタ初期化
@@ -139,14 +139,14 @@ public class Status : MonoBehaviour
     /// <summary>
     /// プレイヤーの方向を変える
     /// </summary>
-    /// <param name="rightFlg">右向きの回転かのフラグ</param>
+    /// <param name="rightFlg">右向き回転のフラグ</param>
     void ChangeDirection(bool rightFlg)
     {
         //現在の方向と回転方向に応じた処理
         switch (this.currentDirection)
         {
             case PlayerDirection.front:
-                if (rightFlg == true)
+                if (rightFlg)
                 {
                     this.currentDirection = PlayerDirection.right;
                     //Debug.Log("プレイヤーの方向変更(右)");
@@ -158,7 +158,7 @@ public class Status : MonoBehaviour
                 }
                 break;
             case PlayerDirection.right:
-                if (rightFlg == true)
+                if (rightFlg)
                 {
                     this.currentDirection = PlayerDirection.back;
                     //Debug.Log("プレイヤーの方向変更(後)");
@@ -170,7 +170,7 @@ public class Status : MonoBehaviour
                 }
                 break;
             case PlayerDirection.back:
-                if (rightFlg == true)
+                if (rightFlg)
                 {
                     this.currentDirection = PlayerDirection.left;
                     //Debug.Log("プレイヤーの方向変更(左)");
@@ -182,7 +182,7 @@ public class Status : MonoBehaviour
                 }
                 break;
             case PlayerDirection.left:
-                if (rightFlg == true)
+                if (rightFlg)
                 {
                     this.currentDirection = PlayerDirection.front;
                     //Debug.Log("プレイヤーの方向変更(前)");
@@ -213,7 +213,7 @@ public class Status : MonoBehaviour
             this.currentAlive = PlayerAlive.fallDeath;
         }
         //衝突フラグが立っているかを確認
-        if (collisionFlg == true)
+        if (collisionFlg)
         {
 
             //プレイヤーの生存状態を変更
