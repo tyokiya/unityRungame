@@ -13,9 +13,9 @@ public class ParticleController : MonoBehaviour
 
     [Tooltip("生成したパーティクルを入れる配列")]
     ParticleSystem[] particleArray = new ParticleSystem[20];
-    int particleArray_cnt = 0;
-    
-    const int arrayMax_const = 20;
+
+    int particleArray_cnt =           0;
+    const int arrayMax_const =       20;
     const float waitDestroyTimer = 1.0f;
 
     void Update()

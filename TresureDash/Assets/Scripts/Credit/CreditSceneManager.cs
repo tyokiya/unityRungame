@@ -11,12 +11,10 @@ public class CreditSceneManager : MonoBehaviour
     [Tooltip("サウンドコントローラーオブジェクト")][SerializeField]
     SoundController_CreditScene soundCOntroller_object;
 
-    [Tooltip("エフェクトのコントローラーオブジェクト")]
-    [SerializeField]
+    [Tooltip("エフェクトのコントローラーオブジェクト")][SerializeField]
     TapEffectController effectController_object;
 
-    [Tooltip("クレジットシーンシーンの入力を受けるオブジェクト")]
-    [SerializeField]
+    [Tooltip("クレジットシーンシーンの入力を受けるオブジェクト")][SerializeField]
     ScreenInput_TittleScene screenInput_object;
 
     void Update()

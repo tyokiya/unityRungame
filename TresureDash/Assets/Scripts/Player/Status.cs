@@ -53,13 +53,11 @@ public class Status : MonoBehaviour
     }
     PlayerDirection currentDirection = PlayerDirection.front;
 
-
     void Update()
     {
         //デルタ増加
         this.rotationDelta += Time.deltaTime;
     }
-
 
     /// <summary>
     /// 3秒後状態を切りかえるコルーチン

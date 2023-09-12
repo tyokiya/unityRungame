@@ -15,10 +15,10 @@ public class ScoreManager : MonoBehaviour
     [Tooltip("プレイヤー状態を管理するオブジェクト")][SerializeField] 
     Status playerStatus_object;
 
-    bool playerItemGetFlg = false;
-
     [Tooltip("プレイヤーの生死状態")]
     Status.PlayerAlive currentAlive;
+
+    bool playerItemGetFlg = false;
 
     //オブジェクト生成時スコアのリセット処理を呼ぶ
     void Awake()

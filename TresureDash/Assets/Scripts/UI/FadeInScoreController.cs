@@ -12,18 +12,14 @@ public class FadeInScoreController : MonoBehaviour
     [Tooltip("子オブジェクト")][SerializeField]
     Text child_score_object;
 
-    //フェードインスピード
-    [Tooltip("フェードインスピード定数")]
-    float fadeIn_speed = -3.0f;
-
-    [Tooltip("フェードインスピード")]
+    [Tooltip("フェードインフラグ")]
     bool fadeInFlg = false;
 
     [Tooltip("フェードインのカウンタ")]
     int fadeIn_counter = 0;
 
-    [Tooltip("カウンター最大数の定数")]
-    const int counsterMax_num = 70;
+    const float fadeIn_speed_const  = -3.0f;
+    const int counsterMax_num_const = 70;
 
     [Tooltip("初期位置")]
     Vector3 initPos = new Vector3 (0, 230f, 0);
@@ -34,12 +30,12 @@ public class FadeInScoreController : MonoBehaviour
         if (this.fadeInFlg)
         {
             //y軸移動
-            transform.Translate(0, this.fadeIn_speed, 0);
+            transform.Translate(0, fadeIn_speed_const, 0);
             //カウンター増加
             this.fadeIn_counter++;
         }
         //カウンター数がマックスまで達したらフラグを下ろし初期値へ移動
-        if (this.fadeIn_counter == counsterMax_num)
+        if (this.fadeIn_counter == counsterMax_num_const)
         {
             //初期値へ移動
             transform.Translate(this.initPos);

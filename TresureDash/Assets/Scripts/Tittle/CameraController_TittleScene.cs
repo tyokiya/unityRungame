@@ -11,13 +11,11 @@ public class CameraController_TittleScene : MonoBehaviour
     float moveSpeed_x = 0.05f;
     float moveSpeed_z = 0.05f;
 
-    float turnAngleSpeed = 0.5625f;
-
     int rotationCnt = 0;
+    int frameCnt    = 0;
 
-    int frameCnt = 0;
-
-    const float moveSpeed_const = 0.05f;
+    const float turnAngleSpeed_const = 0.5625f;
+    const float moveSpeed_const      = 0.05f;
 
     void Update()
     {
@@ -56,7 +54,7 @@ public class CameraController_TittleScene : MonoBehaviour
             //プレイヤーを中心に周りを回る移動処理
             transform.position = new Vector3(transform.position.x + this.moveSpeed_x, transform.position.y, transform.position.z + moveSpeed_z);
             //プレイヤーを中心にカメラのアングル追従処理
-            transform.eulerAngles -= new Vector3(0, this.turnAngleSpeed, 0);
+            transform.eulerAngles -= new Vector3(0, turnAngleSpeed_const, 0);
         }        
     }
 }

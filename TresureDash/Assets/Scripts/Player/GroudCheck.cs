@@ -9,13 +9,12 @@ using UnityEngine;
 public class GroudCheck : MonoBehaviour
 {
     [Tooltip("地面のタグ名定数")] 
-    const string groundTag_const = "Ground";
-
+    const string groundTag_const     = "Ground";
     [Tooltip("回転可能な地面のタグ名定数")]
     const string turnGroundTag_const = "TurnGround";
 
     [Tooltip("地面の接地フラグ")]
-    bool standGroundFlg = true;
+    bool standGroundFlg     = true;
     [Tooltip("回転地面の接地フラグ")]
     bool standTurnGroundFlg = false;
 
@@ -33,7 +32,7 @@ public class GroudCheck : MonoBehaviour
         else if(other.tag == turnGroundTag_const)
         {
             //回転可能な地面の処理
-            this.standGroundFlg = true;
+            this.standGroundFlg =     true;
             this.standTurnGroundFlg = true;
         }
     }
@@ -50,7 +49,7 @@ public class GroudCheck : MonoBehaviour
         }
         else if (other.tag == turnGroundTag_const)
         {
-            this.standGroundFlg = false;
+            this.standGroundFlg =     false;
             this.standTurnGroundFlg = false;
         }
     }
@@ -67,5 +66,4 @@ public class GroudCheck : MonoBehaviour
     {
         return standTurnGroundFlg;
     }
-
 }

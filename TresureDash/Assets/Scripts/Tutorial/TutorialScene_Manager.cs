@@ -18,9 +18,6 @@ public class TutorialScene_Manager : MonoBehaviour
     [Tooltip("ページコントローラーオブジェクト")][SerializeField] 
     TutorialPage_controller pageController_object;
 
-    [Tooltip("現在の開いてるページのカウンター")]
-    int nowPageNum = 1;
-
     [Tooltip("エフェクトのコントローラーオブジェクト")]
     [SerializeField]
     TapEffectController effectController_object;
@@ -28,6 +25,9 @@ public class TutorialScene_Manager : MonoBehaviour
     [Tooltip("チュートリアルシーンシーンの入力を受けるオブジェクト")]
     [SerializeField]
     ScreenInput_TittleScene screenInput_object;
+
+    [Tooltip("現在の開いてるページのカウンター")]
+    int nowPageNum = 1;
 
     void Update()
     {

@@ -28,7 +28,7 @@ public class UIManager : MonoBehaviour
     int fadeInItemNum = 0;
 
     [Tooltip("フェードイン処理を行うアイテムの個数定数")]
-    const int fadeInNum_const = 50;
+    const int fadeInNum_const = 50; 
 
     void Update()
     {

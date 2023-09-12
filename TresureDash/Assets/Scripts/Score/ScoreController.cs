@@ -11,7 +11,7 @@ public class ScoreController : MonoBehaviour
 {
     //スコア
     int getItemCnt = 0;
-    int getSucore = 0;
+    int getSucore  = 0;
 
     [Tooltip("ゴール時のボーナススコア定数")]
     const int bonusScore_const = 500;

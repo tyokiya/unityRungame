@@ -5,11 +5,9 @@ using UnityEngine;
 public class SoundController_ResultScene : MonoBehaviour
 {
     //インスペクターから設定
-    [Tooltip("オーディオソースオブジェクト")]
-    [SerializeField]
-    AudioSource audioSource_object;
+    [SerializeField] AudioSource audioSource_object;
 
-    [SerializeField] AudioClip select_sound;
+    [SerializeField] AudioClip   select_sound;
 
     /// <summary>
     /// セレクトサウンドの再生

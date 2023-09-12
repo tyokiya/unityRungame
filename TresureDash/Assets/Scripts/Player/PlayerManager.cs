@@ -61,15 +61,15 @@ public class PlayerManager : MonoBehaviour
     Status.PlayerDirection currentDirection;
 
     [Tooltip("落下死の待機時間定数")]
-    const float fallDeathWaitTime_const = 1.0f;
+    const float fallDeathWaitTime_const       = 1.0f;
     [Tooltip("衝突死の待機時間定数")]
     const float collisionDeathWaitTImer_const = 2.1f;
     [Tooltip("ゴール時の待機時間定数")]
-    const float goalWaitTImer = 3.0f;
+    const float goalWaitTImer                 = 3.0f;
 
     //プレイヤーのフラグ
     bool collisionFlg = false;
-    bool deathFlg = false;
+    bool deathFlg =     false;
     
     [Tooltip("タイトルシーン切り替えのデリゲート")]
     SceneController.changeScene_delegate change_ResultScene_delegate;

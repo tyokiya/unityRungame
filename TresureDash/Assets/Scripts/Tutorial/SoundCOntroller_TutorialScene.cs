@@ -5,11 +5,9 @@ using UnityEngine;
 public class SoundCOntroller_TutorialScene : MonoBehaviour
 {
     //インスペクターから設定
-    [Tooltip("オーディオソースオブジェクト")][SerializeField] 
-    AudioSource audioSource_object;
+    [SerializeField] AudioSource audioSource_object;
 
-    [SerializeField] 
-    AudioClip select_sound;
+    [SerializeField] AudioClip select_sound;
 
     [Tooltip("ページをめくる音")][SerializeField] 
     AudioClip page_sound;

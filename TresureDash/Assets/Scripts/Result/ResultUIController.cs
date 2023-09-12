@@ -12,9 +12,9 @@ public class ResultUIController : MonoBehaviour
     [Tooltip("合計得点")]
     int tortalScore = 0;
     [Tooltip("ランスコア")]
-    int runScore = 0;
+    int runScore    = 0;
     [Tooltip("アイテムスコア")]
-    int itemScore = 0;
+    int itemScore   = 0;
 
     [Tooltip("スコアオブジェクト")]
     GameObject score_object;

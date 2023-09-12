@@ -16,7 +16,7 @@ public class ScreenInput : MonoBehaviour
 
     [Tooltip("TAPをNONEに戻すまでのカウント")][SerializeField]
     const int NoneCountMax = 2;
-    int NoneCountNow = 0;
+    int NoneCountNow       = 0;
 
     [Tooltip("スワイプの入力距離")]
     Vector2 SwipeRange;

@@ -14,12 +14,10 @@ public class ResultSceneManager : MonoBehaviour
     [Tooltip("サウンドコントローラーオブジェクト")][SerializeField]
     SoundController_ResultScene soundController_object;
 
-    [Tooltip("エフェクトのコントローラーオブジェクト")]
-    [SerializeField]
+    [Tooltip("エフェクトのコントローラーオブジェクト")][SerializeField]
     TapEffectController effectController_object;
 
-    [Tooltip("リザルトシーンシーンの入力を受けるオブジェクト")]
-    [SerializeField]
+    [Tooltip("リザルトシーンシーンの入力を受けるオブジェクト")][SerializeField]
     ScreenInput_TittleScene screenInput_object;
 
     void Update()

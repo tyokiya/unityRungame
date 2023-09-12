@@ -13,32 +13,29 @@ using static Status;
 public class Move : MonoBehaviour
 {
     //インスペクターから設定
-    //プレイヤーマネージャーのオブジェクト
     [SerializeField] PlayerManager playerManager_object;
-    //リジッドボディを入れる変数
-    [SerializeField] Rigidbody rd;
-    //親オブジェクトのトランスフォームを入れる変数
-    [SerializeField] Transform parent_transform;
+    [SerializeField] Rigidbody     rd;
+    [SerializeField] Transform     parent_transform;
 
     [Tooltip("プレイヤーが正面を向いている時の角度")]
     Vector3 frontAngle = Vector3.zero;
     [Tooltip("プレイヤーが右を向いている時の角度")]
     Vector3 rightAngle = new Vector3(0, 90, 0);
     [Tooltip("プレイヤーが後ろを向いている時の角度")]
-    Vector3 backAngle = new Vector3(0,180,0);
+    Vector3 backAngle  = new Vector3(0,180,0);
     [Tooltip("プレイヤーが左を向いている時の角度")]
-    Vector3 leftAngle = new Vector3(0, 270, 0);
+    Vector3 leftAngle  = new Vector3(0, 270, 0);
 
     //現在のジャンプ力
     float current_jumpForce = 0;
 
     //ジャンプ力重力の定数
-    const float jumpForce_const = 0.21f;
+    const float jumpForce_const      = 0.21f;
     const float down_jumpForce_const = 0.004f;
     
     //移動スピードの定数
-    const float walkSpeed_const = 0.01f;
-    const float runSpeed_const = 0.3f;
+    const float walkSpeed_const     = 0.01f;
+    const float runSpeed_const      = 0.3f;
     const float sideMoveSpeed_const = 0.08f;
 
     void Update()
