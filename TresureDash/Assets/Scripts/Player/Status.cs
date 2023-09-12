@@ -213,7 +213,6 @@ public class Status : MonoBehaviour
         //衝突フラグが立っているかを確認
         if (collisionFlg)
         {
-
             //プレイヤーの生存状態を変更
             this.currentAlive = PlayerAlive.collisionDeath;
         }

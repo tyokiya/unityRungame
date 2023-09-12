@@ -39,7 +39,7 @@ public class CameraManager : MonoBehaviour
         //現在のプレイヤーの状態を受け取る
         this.nowSituation = this.playerStatus_object.GetNowPlayerSituation();
         //フリック方向を受け取る
-        this.nowFlick = this.screenInput_object.GetNowFlick();
+        this.nowFlick     = this.screenInput_object.GetNowFlick();
 
         //カメラの更新処理命令
         this.controller_object.UpdateCamera(playerPos, nowDirection, nowSituation);

@@ -31,18 +31,9 @@ public class GyroInput : MonoBehaviour
         this.input_tilt.x = Mathf.Asin(Mathf.Clamp(Input.acceleration.x, -1, 1)) * Mathf.Rad2Deg;
 
         //値に応じて傾き状況を変更
-        if(input_tilt.x > 8)
-        {
-            this.nowTilt = TiltDirection.RIGHT;
-        }
-        else if(input_tilt.x < 0)
-        {
-            this.nowTilt = TiltDirection.LEFT;
-        }
-        else
-        {
-            this.nowTilt = TiltDirection.FRONT;
-        }
+        if(input_tilt.x > 8)        this.nowTilt = TiltDirection.RIGHT;
+        else if(input_tilt.x < 0)   this.nowTilt = TiltDirection.LEFT;
+        else                        this.nowTilt = TiltDirection.FRONT;
 
         ////////    下のコメントアウトの部分はテスト用で残している
         //四元数を受け取る

@@ -32,7 +32,7 @@ public class GroudCheck : MonoBehaviour
         else if(other.tag == turnGroundTag_const)
         {
             //回転可能な地面の処理
-            this.standGroundFlg =     true;
+            this.standGroundFlg     = true;
             this.standTurnGroundFlg = true;
         }
     }
@@ -49,7 +49,7 @@ public class GroudCheck : MonoBehaviour
         }
         else if (other.tag == turnGroundTag_const)
         {
-            this.standGroundFlg =     false;
+            this.standGroundFlg     = false;
             this.standTurnGroundFlg = false;
         }
     }

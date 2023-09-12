@@ -89,33 +89,40 @@ public class PlayerManager : MonoBehaviour
         StartCoroutine(playerAnimation_object.ChangeAnimaiton());
 
         //タイトルシーンへの切り替えメソッドをchange_ResultScene_delegateへ代入
-        this.change_ResultScene_delegate = new SceneController.changeScene_delegate(this.sceneController_object.ChangeResultScene);
+        this.change_ResultScene_delegate = new 
+        SceneController.changeScene_delegate(this.sceneController_object.ChangeResultScene);
+
         //落下音の再生メソッドをplayer_fallSound_delegateへ代入
-        this.player_fallSound_delegate = new SoundController.ply_playerSound_delegate(this.playerSound_object.PlyFallSound);
+        this.player_fallSound_delegate = new 
+        SoundController.ply_playerSound_delegate(this.playerSound_object.PlyFallSound);
+
         //衝突音再生メソッドを
-        this.player_collisionSound_delegate = new SoundController.ply_playerSound_delegate(this.playerSound_object.PlyCollisionSound);
+        this.player_collisionSound_delegate = new 
+        SoundController.ply_playerSound_delegate(this.playerSound_object.PlyCollisionSound);
+
         //ジャンプ音の再生メソッドをplayer_jumpound_delegateへ代入
-        this.player_jumpound_delegate = new SoundController.ply_playerSound_delegate(this.playerSound_object.PlyJumpSound);
+        this.player_jumpound_delegate = new 
+        SoundController.ply_playerSound_delegate(this.playerSound_object.PlyJumpSound);
     }
 
     void Update()
     {
         //接地判定を受け取る
-        this.onGroudFlg = this.groundCheck_object.GetGroundStandFlg();
+        this.onGroudFlg      = this.groundCheck_object.GetGroundStandFlg();
         this.onTurnGroundFlg = this.groundCheck_object.GetTurnGroundStandFlg();
 
         //フリック方向を受け取る
-        this.currentFlick = this.screenInput_object.GetNowFlick();
+        this.currentFlick          = this.screenInput_object.GetNowFlick();
         //スマホの傾きを受け取る
         this.currentTili_direction = this.gyroInput_object.GetDifferenceTilt();
         //現在の状態を受け取る
-        this.currentSituation = this.playerStatus_object.GetNowPlayerSituation();
+        this.currentSituation      = this.playerStatus_object.GetNowPlayerSituation();
         //現在の生死状態を受け取る
-        this.currentAlive = this.playerStatus_object.GetNowPlayerSurvival();
+        this.currentAlive          = this.playerStatus_object.GetNowPlayerSurvival();
         //現在のプレイヤーの向いてる方向を受け取る
-        this.currentDirection = this.playerStatus_object.GetNowPlayerDirection();
+        this.currentDirection      = this.playerStatus_object.GetNowPlayerDirection();
         //プレイヤーの衝突フラグを受け取る
-        this.collisionFlg = this.collisionCheck_object.GetCollisionFlg();
+        this.collisionFlg          = this.collisionCheck_object.GetCollisionFlg();
 
         //プレイヤーが生存状態での処理
         if(this.currentAlive == Status.PlayerAlive.life)

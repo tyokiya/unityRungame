@@ -120,13 +120,13 @@ public class ScreenInput : MonoBehaviour
         else if (_work.x > _work.y)
         {
             float _x = Mathf.Sign(InputEND.x - InputSTART.x);
-            if (_x > 0) NowFlick = FlickDirection.RIGHT;
+            if (_x > 0)      NowFlick = FlickDirection.RIGHT;
             else if (_x < 0) NowFlick = FlickDirection.LEFT;
         }
         else
         {
             float _y = Mathf.Sign(InputEND.y - InputSTART.y);
-            if (_y > 0) NowFlick = FlickDirection.UP;
+            if (_y > 0)      NowFlick = FlickDirection.UP;
             else if (_y < 0) NowFlick = FlickDirection.DOWN;
         }
     }
@@ -145,13 +145,13 @@ public class ScreenInput : MonoBehaviour
         else if (SwipeRange.x > SwipeRange.y)
         {
             float _x = Mathf.Sign(InputMOVE.x - InputSTART.x);
-            if (_x > 0) NowSwipe = SwipeDirection.RIGHT;
+            if (_x > 0)      NowSwipe = SwipeDirection.RIGHT;
             else if (_x < 0) NowSwipe = SwipeDirection.LEFT;
         }
         else
         {
             float _y = Mathf.Sign(InputMOVE.y - InputSTART.y);
-            if (_y > 0) NowSwipe = SwipeDirection.UP;
+            if (_y > 0)      NowSwipe = SwipeDirection.UP;
             else if (_y < 0) NowSwipe = SwipeDirection.DOWN;
         }
     }
