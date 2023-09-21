@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 ////////////////////////////////////
 // タイトルシーンのマネージャースクリプト
@@ -21,6 +22,11 @@ public class TittleScene_Manager : MonoBehaviour
     [Tooltip("タイトルシーンの入力を受けるオブジェクト")][SerializeField]
     ScreenInput_TittleScene screenInput_object;
 
+    [SerializeField][Tooltip("フェード処理オブジェクト")]
+    Fade fade_obj;
+
+    [SerializeField][Tooltip("フェード所要時間定数")]
+    int fade_time;
     void Update()
     {
         //プレイヤーからの入力があるか確認
@@ -37,8 +43,23 @@ public class TittleScene_Manager : MonoBehaviour
     /// </summary>
     public void Down_GameStartButton()
     {
+        //フェードアウト処理
+        fade_obj.FadeOut(fade_time);
+        //シーン切り替えコルーチン
+        StartCoroutine(ChangeGameScene());
+    }
+
+    /// <summary>
+    /// ゲームシーンへの切り替えコルーチン
+    /// </summary>
+    IEnumerator ChangeGameScene()
+    {
         //セレクトサウンド再生命令
         this.soundCOntroller_object.PlySelectSound();
+
+        //フェードアウトの時間分待機
+        yield return new WaitForSeconds(fade_time);
+        
         //シーン切り替えコルーチン
         StartCoroutine(this.sceneController_object.ChangeScene_Game());
     }
