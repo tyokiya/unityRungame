@@ -27,6 +27,13 @@ public class TittleScene_Manager : MonoBehaviour
 
     [SerializeField][Tooltip("フェード所要時間定数")]
     int fade_time;
+
+    void Start()
+    {
+        //画面のフェードイン処理
+        this.fade_obj.FadeIn(fade_time);
+    }
+
     void Update()
     {
         //プレイヤーからの入力があるか確認

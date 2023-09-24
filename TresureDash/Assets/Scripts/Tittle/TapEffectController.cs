@@ -35,11 +35,6 @@ public class TapEffectController : MonoBehaviour
     /// <param name="pos">エフェクトの生成座標</param>
     public void PlyTapEffect(Vector3 pos)
     {
-        ////座標設定
-        //this.tapEffect_particle.transform.position = pos;
-        ////エフェクト生成
-        //this.tapEffect_particle.Emit(1);
-
         //パーティクル生成
         this.particleArray[this.particleArray_cnt] = Instantiate(this.tapEffect_particle);
         //座標設定
