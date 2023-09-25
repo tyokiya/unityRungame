@@ -36,11 +36,7 @@ public class TapEffectController : MonoBehaviour
     public void PlyTapEffect(Vector3 pos)
     {
         //パーティクル生成
-        this.particleArray[this.particleArray_cnt] = Instantiate(this.tapEffect_particle);
-        //座標設定
-        this.particleArray[this.particleArray_cnt].transform.position = pos;
-        //パーティクル再生
-        this.particleArray[this.particleArray_cnt].Play();
+        this.particleArray[this.particleArray_cnt] = Instantiate(this.tapEffect_particle, pos, Quaternion.identity);
         //時間経過後生成したパーティクルオブジェクトの削除
         Destroy(this.particleArray[this.particleArray_cnt].gameObject, waitDestroyTimer_const);
         //カウント増加
