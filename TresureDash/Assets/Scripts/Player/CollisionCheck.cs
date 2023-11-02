@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 ////////////////////////////////////
 // プレイヤーの被弾を管理するスクリプト
@@ -9,13 +7,13 @@ using UnityEngine;
 public class CollisionCheck : MonoBehaviour
 {
     [Tooltip("アイテムのタグ名定数")] 
-    const string ItemTag_const = "Item";
+    const string ItemTagName = "Item";
 
     [Tooltip("壁のタグ名定数")] 
-    const string wallTag_const = "wall";
+    const string WallTagName = "wall";
 
     [Tooltip("ゴールのタグ名定数")] 
-    const string goalTag_const = "GoalItem";
+    const string GoalTagName = "GoalItem";
 
     [Tooltip("壁との衝突フラグ")] 
     bool collisionWallFlg = false;
@@ -37,7 +35,7 @@ public class CollisionCheck : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         //衝突したものがアイテムなのかを調べる
-        if(other.tag == ItemTag_const)
+        if(other.tag == ItemTagName)
         {
             //Debug.Log("アイテムと衝突");
             //プレイヤーマネージャーに報告
@@ -49,7 +47,7 @@ public class CollisionCheck : MonoBehaviour
         }
 
         //衝突したものがゴールなのかを調べる
-        if(other.tag == goalTag_const)
+        if(other.tag == GoalTagName)
         {
             //プレイヤーマネージャーに報告
             this.playerManager.GoalReport();
@@ -70,7 +68,7 @@ public class CollisionCheck : MonoBehaviour
     void OnCollisionEnter(Collision other)
     {
         //衝突したものが壁なのかを調べる
-        if (other.gameObject.tag == wallTag_const)
+        if (other.gameObject.tag == WallTagName)
         {
             //衝突フラグを立てる
             collisionWallFlg = true;

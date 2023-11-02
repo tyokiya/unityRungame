@@ -1,18 +1,14 @@
-﻿    using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 
 public class AnimationController : MonoBehaviour
 {    
     //インスペクターから設定
-    [Tooltip("親オブジェクト")][SerializeField] 
-    GameObject parentObject;
-
     [Tooltip("アニメーターを入れる変数")][SerializeField]
     Animator animator;
 
     //トリガー切り替え時の待機時間
-    float waitTime = 3f;
+    const float WaitTime = 3f;
 
     /// <summary>
     /// 3秒後トリガーを切り替えるコルーチン
@@ -21,7 +17,7 @@ public class AnimationController : MonoBehaviour
     public IEnumerator ChangeAnimaiton()
     {
         //3秒待機
-        yield return new WaitForSeconds(this.waitTime);
+        yield return new WaitForSeconds(WaitTime);
         //Debug.Log("トリガーコルーチン実行");
         //runアニメーションのトリガーに切り替える
         this.animator.SetTrigger("RunTrigger");

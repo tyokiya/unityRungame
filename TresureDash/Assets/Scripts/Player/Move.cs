@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Xml.Schema;
-using UnityEngine;
-using UnityEngine.UIElements;
+﻿using UnityEngine;
 using static Status;
 
 ////////////////////////////////////
@@ -30,20 +25,20 @@ public class Move : MonoBehaviour
     float current_jumpForce = 0;
 
     //ジャンプ力重力の定数
-    const float jumpForce_const      = 0.21f;
-    const float down_jumpForce_const = 0.004f;
+    const float JumpForce      = 0.21f;
+    const float Down_JumpForce = 0.004f;
     
     //移動スピードの定数
-    const float walkSpeed_const     = 0.01f;
-    const float runSpeed_const      = 0.3f;
-    const float sideMoveSpeed_const = 0.08f;
+    const float WalkSpeed     = 0.01f;
+    const float RunSpeed      = 0.3f;
+    const float SideMoveSpeed = 0.08f;
 
     void Update()
     {
         //毎フレームジャンプ力の減少(0以下になることはない)
         if(this.current_jumpForce > 0)
         {
-            this.current_jumpForce -= down_jumpForce_const;
+            this.current_jumpForce -= Down_JumpForce;
             if(this.current_jumpForce < 0)
             {
                 this.current_jumpForce = 0;
@@ -67,7 +62,7 @@ public class Move : MonoBehaviour
         if (flick == ScreenInput.FlickDirection.UP && state == Status.PlayerState.run)
         {
             //現在のジャンプ力に力を代入
-            this.current_jumpForce = jumpForce_const;
+            this.current_jumpForce = JumpForce;
             //ジャンプ音再生
             ply_jumpSound_delegate();
         }
@@ -99,7 +94,7 @@ public class Move : MonoBehaviour
     {
         if (state == PlayerState.walk)
         {
-            this.rd.MovePosition(new Vector3(parent_transform.position.x, parent_transform.position.y, parent_transform.position.z + walkSpeed_const));
+            this.rd.MovePosition(new Vector3(parent_transform.position.x, parent_transform.position.y, parent_transform.position.z + WalkSpeed));
         }
         else
         {
@@ -108,20 +103,20 @@ public class Move : MonoBehaviour
                 case PlayerDirection.front:
                     this.rd.MovePosition(new Vector3(parent_transform.position.x, 
                                                      parent_transform.position.y + this.current_jumpForce, 
-                                                     parent_transform.position.z + runSpeed_const));
+                                                     parent_transform.position.z + RunSpeed));
                     break;
                 case PlayerDirection.right:
-                    this.rd.MovePosition(new Vector3(parent_transform.position.x + runSpeed_const, 
+                    this.rd.MovePosition(new Vector3(parent_transform.position.x + RunSpeed, 
                                                      parent_transform.position.y + this.current_jumpForce,
                                                      parent_transform.position.z));
                     break;
                 case PlayerDirection.back:
                     this.rd.MovePosition(new Vector3(parent_transform.position.x, 
                                                      parent_transform.position.y + this.current_jumpForce, 
-                                                     parent_transform.position.z - runSpeed_const));
+                                                     parent_transform.position.z - RunSpeed));
                     break;
                 case PlayerDirection.left:
-                    this.rd.MovePosition(new Vector3(parent_transform.position.x - runSpeed_const,
+                    this.rd.MovePosition(new Vector3(parent_transform.position.x - RunSpeed,
                                                      parent_transform.position.y + this.current_jumpForce,
                                                      parent_transform.position.z));
                     break;
@@ -143,57 +138,57 @@ public class Move : MonoBehaviour
                 //傾きに合わせた横移動
                 if (tili_direction == GyroInput.TiltDirection.RIGHT)
                 {
-                    this.rd.MovePosition(new Vector3(parent_transform.position.x + sideMoveSpeed_const,
+                    this.rd.MovePosition(new Vector3(parent_transform.position.x + SideMoveSpeed,
                                                      parent_transform.position.y + this.current_jumpForce,
-                                                     parent_transform.position.z + runSpeed_const));
+                                                     parent_transform.position.z + RunSpeed));
                 }
                 else if(tili_direction == GyroInput.TiltDirection.LEFT)
                 {
-                    this.rd.MovePosition(new Vector3(parent_transform.position.x - sideMoveSpeed_const, 
+                    this.rd.MovePosition(new Vector3(parent_transform.position.x - SideMoveSpeed, 
                                                      parent_transform.position.y + this.current_jumpForce, 
-                                                     parent_transform.position.z + runSpeed_const));
+                                                     parent_transform.position.z + RunSpeed));
                 }
                 break;
             case PlayerDirection.right:
                 if (tili_direction == GyroInput.TiltDirection.RIGHT)
                 {
-                    this.rd.MovePosition(new Vector3(parent_transform.position.x + runSpeed_const,
+                    this.rd.MovePosition(new Vector3(parent_transform.position.x + RunSpeed,
                                                      parent_transform.position.y + this.current_jumpForce,
-                                                     parent_transform.position.z - sideMoveSpeed_const));
+                                                     parent_transform.position.z - SideMoveSpeed));
                 }
                 else if(tili_direction == GyroInput.TiltDirection.LEFT)
                 {
-                    this.rd.MovePosition(new Vector3(parent_transform.position.x + runSpeed_const,
+                    this.rd.MovePosition(new Vector3(parent_transform.position.x + RunSpeed,
                                                      parent_transform.position.y + this.current_jumpForce,
-                                                     parent_transform.position.z + sideMoveSpeed_const));
+                                                     parent_transform.position.z + SideMoveSpeed));
                 }
                 break;
             case PlayerDirection.back:
                 if (tili_direction == GyroInput.TiltDirection.RIGHT)
                 {
-                    this.rd.MovePosition(new Vector3(parent_transform.position.x - sideMoveSpeed_const,
+                    this.rd.MovePosition(new Vector3(parent_transform.position.x - SideMoveSpeed,
                                                      parent_transform.position.y + this.current_jumpForce,
-                                                     parent_transform.position.z - runSpeed_const));
+                                                     parent_transform.position.z - RunSpeed));
                 }
                 else if (tili_direction == GyroInput.TiltDirection.LEFT)
                 {
-                    this.rd.MovePosition(new Vector3(parent_transform.position.x + sideMoveSpeed_const,
+                    this.rd.MovePosition(new Vector3(parent_transform.position.x + SideMoveSpeed,
                                                      parent_transform.position.y + this.current_jumpForce,
-                                                     parent_transform.position.z - runSpeed_const));
+                                                     parent_transform.position.z - RunSpeed));
                 }
                 break;
             case PlayerDirection.left:
                 if (tili_direction == GyroInput.TiltDirection.RIGHT)
                 {
-                    this.rd.MovePosition(new Vector3(parent_transform.position.x - runSpeed_const,
+                    this.rd.MovePosition(new Vector3(parent_transform.position.x - RunSpeed,
                                                      parent_transform.position.y + this.current_jumpForce,
-                                                     parent_transform.position.z + sideMoveSpeed_const));
+                                                     parent_transform.position.z + SideMoveSpeed));
                 }
                 else if (tili_direction == GyroInput.TiltDirection.LEFT)
                 {
-                    this.rd.MovePosition(new Vector3(parent_transform.position.x - runSpeed_const,
+                    this.rd.MovePosition(new Vector3(parent_transform.position.x - RunSpeed,
                                                      parent_transform.position.y + this.current_jumpForce, 
-                                                     parent_transform.position.z - sideMoveSpeed_const));
+                                                     parent_transform.position.z - SideMoveSpeed));
                 }
                 break;
         }

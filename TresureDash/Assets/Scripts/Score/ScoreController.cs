@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEngine;
+﻿using UnityEngine;
 
 ////////////////////////////////////
 // 獲得スコアのコントローラースクリプト
@@ -14,7 +11,7 @@ public class ScoreController : MonoBehaviour
     int getSucore  = 0;
 
     [Tooltip("ゴール時のボーナススコア定数")]
-    const int bonusScore_const = 500;
+    const int BonusScore = 500;
 
     void Awake()
     {
@@ -35,7 +32,7 @@ public class ScoreController : MonoBehaviour
     /// </summary>
     public void GoalScoreUp()
     {
-        this.getItemCnt += bonusScore_const;
+        this.getItemCnt += BonusScore;
     }
 
     /// <summary>

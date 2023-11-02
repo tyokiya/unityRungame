@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 ////////////////////////////////////
 // タイトルシーンのエフェクトのコントローラースクリプト
@@ -16,13 +14,13 @@ public class TapEffectController : MonoBehaviour
     ParticleSystem[] particleArray = new ParticleSystem[20];
     int particleArray_cnt = 0;
 
-    const int arrayMax_const           = 20;
-    const float waitDestroyTimer_const = 0.5f;
+    const int ArrayMax           = 20;
+    const float WaitDestroyTimer = 0.5f;
 
     void Update()
     {
         //配列のカウント数が最大値になったら初期化
-        if (particleArray_cnt == arrayMax_const)
+        if (particleArray_cnt == ArrayMax)
         {
             particleArray_cnt = 0;
         }
@@ -37,7 +35,7 @@ public class TapEffectController : MonoBehaviour
         //パーティクル生成
         this.particleArray[this.particleArray_cnt] = Instantiate(this.tapEffect_particle, pos, Quaternion.identity);
         //時間経過後生成したパーティクルオブジェクトの削除
-        Destroy(this.particleArray[this.particleArray_cnt].gameObject, waitDestroyTimer_const);
+        Destroy(this.particleArray[this.particleArray_cnt].gameObject, WaitDestroyTimer);
         //カウント増加
         this.particleArray_cnt++;
     }

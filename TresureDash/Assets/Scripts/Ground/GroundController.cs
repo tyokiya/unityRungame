@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 ////////////////////////////////////
 // 地面のコントローラースクリプト
@@ -9,7 +7,7 @@ using UnityEngine;
 public class GroundController : MonoBehaviour
 {
     [Tooltip("プレイヤーのタグ名の定数")]
-    const string playerTag_const = "Player";
+    const string PlayerTagName = "Player";
 
     [SerializeField] GameObject ParentObject;
 
@@ -19,7 +17,7 @@ public class GroundController : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         //衝突したものがプレイヤーなのかを調べる
-        if (other.tag == playerTag_const)
+        if (other.tag == PlayerTagName)
         {
             //4秒後オブジェクトを破壊
             Destroy(ParentObject,4.0f);

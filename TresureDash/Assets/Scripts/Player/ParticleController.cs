@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ParticleController : MonoBehaviour
 {
@@ -15,13 +13,13 @@ public class ParticleController : MonoBehaviour
     ParticleSystem[] particleArray = new ParticleSystem[20];
 
     int particleArray_cnt =           0;
-    const int arrayMax_const =       20;
-    const float waitDestroyTimer = 1.0f;
+    const int ArrayMax =       20;
+    const float WaitDestroyTimer = 1.0f;
 
     void Update()
     {
         //配列のカウント数が最大値になったら初期化
-        if (particleArray_cnt == arrayMax_const)
+        if (particleArray_cnt == ArrayMax)
         {
             particleArray_cnt = 0;
         }
@@ -48,7 +46,7 @@ public class ParticleController : MonoBehaviour
         //パーティクル再生
         this.particleArray[this.particleArray_cnt].Play();
         //時間経過後生成したパーティクルオブジェクトの削除
-        Destroy(this.particleArray[this.particleArray_cnt].gameObject, waitDestroyTimer);
+        Destroy(this.particleArray[this.particleArray_cnt].gameObject, WaitDestroyTimer);
         //カウント増加
         this.particleArray_cnt++;
     }

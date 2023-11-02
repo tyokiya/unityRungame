@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 ////////////////////////////////////
 // 傾きの入力を受け取るスクリプト

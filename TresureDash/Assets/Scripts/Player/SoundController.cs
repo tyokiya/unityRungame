@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 ////////////////////////////////////
 // プレイヤーのサウンドを管理するマネージャースクリプト
 ////////////////////////////////////
@@ -19,9 +17,9 @@ public class SoundController : MonoBehaviour
     [SerializeField] AudioClip goal_sound;
 
     [Tooltip("足音(歩き)再生のスパン定数")]
-    const float walkSound_span_const = 0.5f;
+    const float WalkSound_span = 0.5f;
     [Tooltip("足音(走り)再生のスパン定数")]
-    const float runSound_span_const = 0.3f;
+    const float RunSound_span = 0.3f;
     float foot_sound_delta = 0;
 
     //サウンド再生時のデリゲート定義
@@ -34,14 +32,14 @@ public class SoundController : MonoBehaviour
     public void PlyWalkSound(Status.PlayerState state)
     {
         //現在の状態を見てサウンド再生
-        if(state == Status.PlayerState.walk && this.foot_sound_delta > walkSound_span_const)
+        if(state == Status.PlayerState.walk && this.foot_sound_delta > WalkSound_span)
         {
             //足音再生
             this.audioSource_object.PlayOneShot(this.foot_sound);
             //デルタ初期化
             this.foot_sound_delta = 0;
         }
-        else if(state == Status.PlayerState.run && this.foot_sound_delta > runSound_span_const)
+        else if(state == Status.PlayerState.run && this.foot_sound_delta > RunSound_span)
         {
             //足音再生
             this.audioSource_object.PlayOneShot(this.foot_sound);

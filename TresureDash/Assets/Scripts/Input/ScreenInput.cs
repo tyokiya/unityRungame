@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 ////////////////////////////////////
 // タップスワイプの入力を受け取るスクリプト

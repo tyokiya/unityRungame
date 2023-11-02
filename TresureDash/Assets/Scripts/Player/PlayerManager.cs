@@ -61,11 +61,11 @@ public class PlayerManager : MonoBehaviour
     Status.PlayerDirection currentDirection;
 
     [Tooltip("落下死の待機時間定数")]
-    const float fallDeathWaitTime_const       = 1.0f;
+    const float FallDeathWaitTime       = 1.0f;
     [Tooltip("衝突死の待機時間定数")]
-    const float collisionDeathWaitTImer_const = 2.1f;
+    const float CollisionDeathWaitTImer = 2.1f;
     [Tooltip("ゴール時の待機時間定数")]
-    const float goalWaitTImer                 = 3.0f;
+    const float GoalWaitTimer                 = 3.0f;
 
     //プレイヤーのフラグ
     bool collisionFlg = false;
@@ -147,7 +147,7 @@ public class PlayerManager : MonoBehaviour
             //衝突音再生
             this.player_collisionSound_delegate();
             //デリゲートでシーンをリザルトに変更
-            StartCoroutine(this.change_ResultScene_delegate(collisionDeathWaitTImer_const));
+            StartCoroutine(this.change_ResultScene_delegate(CollisionDeathWaitTImer));
 
             //死亡フラグを立てる
             this.deathFlg = true;
@@ -159,7 +159,7 @@ public class PlayerManager : MonoBehaviour
             //落下サウンド再生
             this.player_fallSound_delegate();
             //デリゲートでシーンをリザルトに変更
-            StartCoroutine(this.change_ResultScene_delegate(fallDeathWaitTime_const));
+            StartCoroutine(this.change_ResultScene_delegate(FallDeathWaitTime));
 
             //死亡フラグを立てる
             this.deathFlg = true;
@@ -184,7 +184,7 @@ public class PlayerManager : MonoBehaviour
     public void GoalReport()
     {
         //デリゲートでリザルトシーンへの切り替え
-        StartCoroutine(this.change_ResultScene_delegate(goalWaitTImer));
+        StartCoroutine(this.change_ResultScene_delegate(GoalWaitTimer));
         //アニメーショントリガーを切り替える
         this.playerAnimation_object.ChangeTrigger_Goal();
         //ゴール音再生命令

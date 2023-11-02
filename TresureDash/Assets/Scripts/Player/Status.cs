@@ -1,7 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using System.Xml.Schema;
-using Unity.VisualScripting;
 using UnityEngine;
 
 ////////////////////////////////////
@@ -14,12 +11,13 @@ public class Status : MonoBehaviour
     [Tooltip("親オブジェクトのトランスフォーム")][SerializeField]
     Transform parent_transform;
 
-    const float playerFallBorder_y_const = -0.5f;
+    //プレイヤーの落下判定のボーダーラインY軸
+    const float PlayerFallBorder_y = -0.5f;
 
     [Tooltip("方向回転のデルタタイム")]
     float rotationDelta = 0;
     [Tooltip("方向回転のスパン定数")]
-    const float rotationSpan_const = 1.0f;
+    const float RotationSpan = 1.0f;
 
     [Tooltip("状態切り替えの待機時間")]
     float waitTime = 3.0f;
@@ -119,13 +117,13 @@ public class Status : MonoBehaviour
         //向きを変える処理
         //ターン可能な地面にいるかの確認
         //走り状態化の確認
-        if (flick == ScreenInput.FlickDirection.RIGHT && this.rotationDelta > rotationSpan_const && currentSituation == PlayerState.run && turnGroundFlg)
+        if (flick == ScreenInput.FlickDirection.RIGHT && this.rotationDelta > RotationSpan && currentSituation == PlayerState.run && turnGroundFlg)
         {
             ChangeDirection(true);
             //デルタ初期化
             this.rotationDelta = 0;
         }
-        if (flick == ScreenInput.FlickDirection.LEFT && this.rotationDelta > rotationSpan_const && currentSituation == PlayerState.run && turnGroundFlg)
+        if (flick == ScreenInput.FlickDirection.LEFT && this.rotationDelta > RotationSpan && currentSituation == PlayerState.run && turnGroundFlg)
         {
             ChangeDirection(false);
             //デルタ初期化
@@ -205,7 +203,7 @@ public class Status : MonoBehaviour
     public void SurvivalChek(bool collisionFlg)
     {
         //プレヤーの座標が落下ボーダーより下にないかの確認
-        if (parent_transform.position.y < playerFallBorder_y_const)
+        if (parent_transform.position.y < PlayerFallBorder_y)
         {
             //プレイヤーの生存状態を変更
             this.currentAlive = PlayerAlive.fallDeath;
