@@ -1,10 +1,9 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-////////////////////////////////////
-// タイトルシーンのマネージャースクリプト
-////////////////////////////////////
-
+/// <summary>
+/// タイトルシーンのマネージャークラス
+/// </summary>
 public class TittleScene_Manager : MonoBehaviour
 {
     //インスペクターから設定

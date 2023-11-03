@@ -2,6 +2,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// フェードアウト処理を行うクラス
+/// </summary>
 public class Fade : MonoBehaviour
 {
     [SerializeField]

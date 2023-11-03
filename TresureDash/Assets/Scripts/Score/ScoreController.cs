@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 
-////////////////////////////////////
-// 獲得スコアのコントローラースクリプト
-////////////////////////////////////
-
+/// <summary>
+/// 獲得スコアのコントローラークラス
+/// </summary>
 public class ScoreController : MonoBehaviour
 {
     //スコア

@@ -2,6 +2,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// チュートリアルシーンのシーンコントローラークラス
+/// </summary>
 public class SceneController_TutorialScene : MonoBehaviour
 {
     [Tooltip("シーン切り替え時の待機時間")]

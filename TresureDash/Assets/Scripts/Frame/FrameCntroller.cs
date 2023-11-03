@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 
-////////////////////////////////////
-// フレームレートの制御スクリプト
-////////////////////////////////////
-
+/// <summary>
+/// フレームレート制御クラス
+/// </summary>
 public class FrameCntroller : MonoBehaviour
 {
     void Awake()

@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-////////////////////////////////////
-// アイテムUIのコントローラースクリプト
-////////////////////////////////////
-
+/// <summary>
+/// アイテムUIのコントローラーくらす
+/// </summary>
 public class ItemUIController : MonoBehaviour
 {
     [Tooltip("アイテムスコアオブジェクト")][SerializeField]

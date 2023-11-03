@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 
-////////////////////////////////////
-// ボーナス獲得時のUIコントローラースクリプト
-////////////////////////////////////
-
+/// <summary>
+/// ボーナスUIのコントローラークラス
+/// </summary>
 public class GoalBornus_Text_controller : MonoBehaviour
 {
     void Awake()

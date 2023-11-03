@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// クレジットシーンのマネージャークラス
+/// </summary>
 public class CreditSceneManager : MonoBehaviour
 {
     //インスペクターから設定

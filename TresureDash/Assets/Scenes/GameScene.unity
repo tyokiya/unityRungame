@@ -6365,7 +6365,7 @@ MonoBehaviour:
   gyroInput_object: {fileID: 2067138492}
   playerStatus_object: {fileID: 806446435}
   playerMove_object: {fileID: 1175857004}
-  playerAnimation_object: {fileID: 1976741124}
+  playerAnimation_object: {fileID: 1976741123}
   playerSound_object: {fileID: 745963749}
   sceneController_object: {fileID: 1633805262}
   particleController_object: {fileID: 1606790131}
@@ -13454,7 +13454,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1976741122}
-  - component: {fileID: 1976741124}
+  - component: {fileID: 1976741123}
   m_Layer: 0
   m_Name: AnimationController
   m_TagString: Untagged
@@ -13477,7 +13477,7 @@ Transform:
   m_Father: {fileID: 1657095326}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1976741124
+--- !u!114 &1976741123
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13486,10 +13486,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1976741121}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07be0b1dbb2899c4d9d2f85b281aaea0, type: 3}
+  m_Script: {fileID: 11500000, guid: 489fc65fca1c69a47882a9376dd1f566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentObject: {fileID: 1657095306}
   animator: {fileID: 1657095339}
 --- !u!1 &1986679693
 GameObject:

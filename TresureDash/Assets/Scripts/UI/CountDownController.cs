@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-////////////////////////////////////
-// カウントダウンテキストのコントローラースクリプト
-////////////////////////////////////
 
+/// <summary>
+/// カウントダウンUIのコントローラースクリプト
+/// </summary>
 public class CountDownController : MonoBehaviour
 {
     [Tooltip("カウントダウンのテキストオブジェクト")][SerializeField]

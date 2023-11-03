@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 
-////////////////////////////////////
-// タイトルシーンの入力を受け取るスクリプト
-////////////////////////////////////
-
+/// <summary>
+/// タイトルシーンの入力を受け取るスクリプト
+/// </summary>
 public class ScreenInput_TittleScene : MonoBehaviour
 {
     //インスペクターから設定

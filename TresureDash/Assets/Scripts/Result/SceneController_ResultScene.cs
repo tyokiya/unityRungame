@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-////////////////////////////////////
-// リザルトシーンでのシーンコントローラー
-////////////////////////////////////
-
+/// <summary>
+/// リザルトシーンのシーンコントローラークラス
+/// </summary>
 public class SceneController_ResultScene : MonoBehaviour
 {
     /// <summary>

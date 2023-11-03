@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-////////////////////////////////////
-// リザルトシーンのスコアUIのコントローラースクリプト
-////////////////////////////////////
-
+/// <summary>
+/// リザルトシーンのスコアUIのコントローラークラス
+/// </summary>
 public class ResultUIController : MonoBehaviour
 {
     [Tooltip("合計得点")]

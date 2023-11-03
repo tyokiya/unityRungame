@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 
-////////////////////////////////////
-// 傾きの入力を受け取るスクリプト
-////////////////////////////////////
-
+/// <summary>
+/// 傾きを感知するクラス
+/// </summary>
 public class GyroInput : MonoBehaviour
 {
     [Tooltip("スマホの傾きを入れる")]

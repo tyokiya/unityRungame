@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 
-////////////////////////////////////
-// チュートリアルページのコントローラー
-////////////////////////////////////
-
+/// <summary>
+/// チュートリアルページのコントローラークラス
+/// </summary>
 public class TutorialPage_controller : MonoBehaviour
 {
     //インスペクターから設定    

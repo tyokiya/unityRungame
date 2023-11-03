@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// チュートリアルシーンのサウンドコントローラークラス
+/// </summary>
 public class SoundCOntroller_TutorialScene : MonoBehaviour
 {
     //インスペクターから設定

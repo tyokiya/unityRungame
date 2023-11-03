@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-////////////////////////////////////
-// プレイヤーを管理するマネージャースクリプト
-////////////////////////////////////
+/// <summary>
+/// プレイヤーを管理するマネージャークラス
+/// </summary>
 public class PlayerManager : MonoBehaviour
 {
     //インスペクターから設定
@@ -28,13 +28,13 @@ public class PlayerManager : MonoBehaviour
     Move playerMove_object;    
 
     [Tooltip("アニメーションを管理するオブジェクト")][SerializeField] 
-    AnimationController playerAnimation_object;
+    PlayerAnimationController playerAnimation_object;
 
     [Tooltip("プレイヤーのサウンドを管理するオブジェクト")][SerializeField] 
     SoundController playerSound_object;    
 
     [Tooltip("シーンのコントローラーオブジェクト")][SerializeField]
-    SceneController sceneController_object;  
+    SceneChenger sceneController_object;  
     
     [Tooltip("プレイヤーのパーティクルコントローラーオブジェクト")][SerializeField]
     ParticleController particleController_object;
@@ -72,7 +72,7 @@ public class PlayerManager : MonoBehaviour
     bool deathFlg =     false;
     
     [Tooltip("タイトルシーン切り替えのデリゲート")]
-    SceneController.changeScene_delegate change_ResultScene_delegate;
+    SceneChenger.changeScene_delegate change_ResultScene_delegate;
 
     [Tooltip("落下音再生のデリゲート")]
     SoundController.ply_playerSound_delegate player_fallSound_delegate;
@@ -82,6 +82,7 @@ public class PlayerManager : MonoBehaviour
 
     [Tooltip("ジャンプ音再生のデリゲート")]
     SoundController.ply_playerSound_delegate player_jumpound_delegate;
+
     void Awake()
     {
         //コルーチン呼び出し
@@ -90,7 +91,7 @@ public class PlayerManager : MonoBehaviour
 
         //タイトルシーンへの切り替えメソッドをchange_ResultScene_delegateへ代入
         this.change_ResultScene_delegate = new 
-        SceneController.changeScene_delegate(this.sceneController_object.ChangeResultScene);
+        SceneChenger.changeScene_delegate(this.sceneController_object.ChangeResultScene);
 
         //落下音の再生メソッドをplayer_fallSound_delegateへ代入
         this.player_fallSound_delegate = new 

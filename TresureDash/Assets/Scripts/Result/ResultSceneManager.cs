@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-////////////////////////////////////
-// リザルトシーンのマネージャースクリプト
-////////////////////////////////////
+/// <summary>
+/// リザルトシーンのマネージャークラス
+/// </summary>
 public class ResultSceneManager : MonoBehaviour
 {
     //インスペクターから設定

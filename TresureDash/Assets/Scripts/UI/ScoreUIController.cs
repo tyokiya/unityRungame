@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// スコアUIのコントローラークラス
+/// </summary>
 public class ScoreUIController : MonoBehaviour
 {
     [Tooltip("スコアオブジェクト")][SerializeField] 

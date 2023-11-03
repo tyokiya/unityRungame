@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 using static Status;
 
-////////////////////////////////////
-// カメラのコントローラースクリプト
-////////////////////////////////////
-
+/// <summary>
+/// カメラのコントローラークラス
+/// </summary>
 public class CameraController : MonoBehaviour
 {
     [Tooltip("カメラの振り向き速度定数")]

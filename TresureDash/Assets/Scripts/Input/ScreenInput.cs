@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 
-////////////////////////////////////
-// タップスワイプの入力を受け取るスクリプト
-////////////////////////////////////
-
+/// <summary>
+/// タップ入力を感知するクラス
+/// </summary>
 public class ScreenInput : MonoBehaviour
 {
     [Tooltip("フリックの最小移動距離")][SerializeField] 

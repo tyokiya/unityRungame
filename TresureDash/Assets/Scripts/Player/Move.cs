@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 using static Status;
 
-////////////////////////////////////
-// プレイヤーの動きを管理するスクリプト
-////////////////////////////////////
-
+/// <summary>
+/// プレイヤーの移動を管理するクラス
+/// </summary>
 public class Move : MonoBehaviour
 {
     //インスペクターから設定

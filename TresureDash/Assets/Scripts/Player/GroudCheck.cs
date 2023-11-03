@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 
-////////////////////////////////////
-// 地面の衝突を管理するスクリプト
-////////////////////////////////////
-
+/// <summary>
+/// プレイヤーの接地を判定クラス
+/// </summary>
 public class GroudCheck : MonoBehaviour
 {
     [Tooltip("地面のタグ名定数")] 

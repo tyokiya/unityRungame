@@ -1,10 +1,9 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-////////////////////////////////////
-// プレイヤーのステータスを管理するスクリプト
-////////////////////////////////////
-
+/// <summary>
+/// プレイヤーの状態を管理するクラス
+/// </summary>
 public class Status : MonoBehaviour
 {
     //インスペクターから設定

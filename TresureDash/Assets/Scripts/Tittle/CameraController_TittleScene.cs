@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using UnityEngine;
-////////////////////////////////////
-// タイトルシーンのカメラコントローラー
-////////////////////////////////////
 
+/// <summary>
+/// タイトルシーンのカメラコントローラークラス
+/// </summary>
 public class CameraController_TittleScene : MonoBehaviour
 {
     float moveSpeed_x = 0.05f;

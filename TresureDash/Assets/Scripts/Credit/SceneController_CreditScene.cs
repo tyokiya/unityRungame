@@ -2,10 +2,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-////////////////////////////////////
-// クレジットシーンのシーンコントローラー
-////////////////////////////////////
-
+/// <summary>
+/// クレジットシーンのシーン管理クラス
+/// </summary>
 public class SceneController_CreditScene : MonoBehaviour
 {
     /// <summary>

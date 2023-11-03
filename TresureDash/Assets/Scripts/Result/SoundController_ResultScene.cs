@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// リザルトシーンのサウンドコントローラー
+/// </summary>
 public class SoundController_ResultScene : MonoBehaviour
 {
     //インスペクターから設定

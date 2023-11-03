@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// プレイヤーのパーティクル管理クラス
+/// </summary>
 public class ParticleController : MonoBehaviour
 {
     //インスペクタからー設定

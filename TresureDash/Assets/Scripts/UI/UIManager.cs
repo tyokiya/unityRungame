@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-////////////////////////////////////
-// UIマネージャースクリプト
-////////////////////////////////////
+/// <summary>
+/// UIのマネージャークラス
+/// </summary>
 public class UIManager : MonoBehaviour
 {
     //インスペクターから設定

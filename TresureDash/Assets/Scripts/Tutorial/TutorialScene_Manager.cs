@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 
-////////////////////////////////////
-// チュートリアルシーンのマネージャースクリプト
-////////////////////////////////////
-
+/// <summary>
+/// チュートリアルシーンのマネージャークラス
+/// </summary>
 public class TutorialScene_Manager : MonoBehaviour
 {
     //インスペクターから設定    

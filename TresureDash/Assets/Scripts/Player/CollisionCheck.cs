@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 
-////////////////////////////////////
-// プレイヤーの被弾を管理するスクリプト
-////////////////////////////////////
-
+/// <summary>
+/// プレイヤーの衝突管理クラス
+/// </summary>
 public class CollisionCheck : MonoBehaviour
 {
     [Tooltip("アイテムのタグ名定数")] 

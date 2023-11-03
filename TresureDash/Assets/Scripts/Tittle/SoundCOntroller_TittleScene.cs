@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 
-////////////////////////////////////
-// タイトルシーンのサウンドコントローラースクリプト
-////////////////////////////////////
-
+/// <summary>
+/// タイトルシーンのサウンドコントローラークラス
+/// </summary>
 public class SoundCOntroller_TittleScene : MonoBehaviour
 {
     //インスペクターから設定
