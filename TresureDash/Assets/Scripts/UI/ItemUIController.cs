@@ -18,9 +18,9 @@ public class ItemUIController : MonoBehaviour
     /// <param name="score">現在のプレイヤーのスコア</param>
     public void ItemTextUpdate(int score)
     {
-        //int型をstring型に変換
-        string s = score.ToString();
-        //スコア更新
-        this.item_text.text = s;
+        // int型をstring型に変換
+        string stringText = score.ToString();
+        // スコア更新
+        this.item_text.text = stringText;
     }
 }

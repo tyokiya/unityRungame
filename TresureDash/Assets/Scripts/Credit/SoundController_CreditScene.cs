@@ -5,7 +5,7 @@
 /// </summary>
 public class SoundController_CreditScene : MonoBehaviour
 {
-    //インスペクターから設定
+    // インスペクターから設定
     [SerializeField] AudioSource audioSource_object;
     [SerializeField] AudioClip   select_sound;
 

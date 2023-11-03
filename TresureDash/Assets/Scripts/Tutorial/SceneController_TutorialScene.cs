@@ -15,7 +15,7 @@ public class SceneController_TutorialScene : MonoBehaviour
     /// </summary>
     public IEnumerator ChangeScene_Tittle()
     {
-        //0.6後シーン切り替え
+        // 0.6後シーン切り替え
         yield return new WaitForSeconds(this.waitTime);
         SceneManager.LoadScene("TitleScene");
     }

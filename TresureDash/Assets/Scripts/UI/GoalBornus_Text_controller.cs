@@ -7,7 +7,7 @@ public class GoalBornus_Text_controller : MonoBehaviour
 {
     void Awake()
     {
-        //描画しない状態に切り替える
+        // 描画しない状態に切り替える
         gameObject.SetActive(false);
     }
 
@@ -16,7 +16,7 @@ public class GoalBornus_Text_controller : MonoBehaviour
     /// </summary>
     public void GoalBornusUI_Active()
     {
-        //描画切り替え
+        // 描画切り替え
         gameObject.SetActive(true);
     }
 }

@@ -7,9 +7,9 @@ using UnityEngine.UI;
 /// </summary>
 public class CountDownController : MonoBehaviour
 {
-    //カウントダウンのテキストオブジェクト
+    // カウントダウンのテキストオブジェクト
     [SerializeField] Text countDown_text;
-    //残りカウントを表示するイメージオブジェクト
+    // 残りカウントを表示するイメージオブジェクト
     [SerializeField] Image countDownImg;
 
     // 数える時間の定数
@@ -21,7 +21,7 @@ public class CountDownController : MonoBehaviour
 
     void Awake()
     {
-        //カウントダウンコルーチンのスタート
+        // カウントダウンコルーチンのスタート
         StartCoroutine(StartCountDown());
     }
 
@@ -31,7 +31,7 @@ public class CountDownController : MonoBehaviour
     /// <returns></returns>
     public IEnumerator StartCountDown()
     {
-        //時間をテキストにセット
+        // 時間をテキストにセット
         int nowCountDownTime = 3;
         countDown_text.text = nowCountDownTime.ToString();
 
@@ -43,8 +43,8 @@ public class CountDownController : MonoBehaviour
             nowCountDownTime--;
         }
 
-        //カウントダウンテキストオブジェクトと
-        //このコントローラーオブジェクトの破壊
+        // カウントダウンテキストオブジェクトと
+        // このコントローラーオブジェクトの破壊
         Destroy(gameObject);
         Destroy(this.countDown_text.gameObject);
         Destroy(this.countDownImg.gameObject);
@@ -67,12 +67,12 @@ public class CountDownController : MonoBehaviour
             yield return null;
         }
         // 一秒ごとにカウントダウンのテキスト更新
-        //カウント減少
+        // カウント減少
         nowCountDownTime--;
-        //string型に変換
-        string s = nowCountDownTime.ToString();
-        //カウントダウンのテキスト変更
-        this.countDown_text.text = s;
+        // string型に変換
+        string stringText = nowCountDownTime.ToString();
+        // カウントダウンのテキスト変更
+        this.countDown_text.text = stringText;
         countDownImg.fillAmount = InitialFillAmount; // fillAmount初期化
     }
 }

@@ -15,7 +15,7 @@ public class SceneController_TittleScene : MonoBehaviour
     /// </summary>
     public IEnumerator ChangeScene_Game()
     {
-        //0.6後シーン切り替え
+        // 0.6後シーン切り替え
         yield return new WaitForSeconds(this.waitTime);
         SceneManager.LoadScene("GameScene");
     }
@@ -25,7 +25,7 @@ public class SceneController_TittleScene : MonoBehaviour
     /// </summary>
     public IEnumerator ChangeScene_Credit()
     {
-        //0.6後シーン切り替え
+        // 0.6後シーン切り替え
         yield return new WaitForSeconds(this.waitTime);
         SceneManager.LoadScene("CreditScene");
     }
@@ -35,7 +35,7 @@ public class SceneController_TittleScene : MonoBehaviour
     /// </summary>
     public IEnumerator ChangeScene_Tutorial()
     {
-        //0.6後シーン切り替え
+        // 0.6後シーン切り替え
         yield return new WaitForSeconds(this.waitTime);
         SceneManager.LoadScene("TutorialScene");
     }

@@ -22,7 +22,7 @@ public class GyroInput : MonoBehaviour
 
     void Update()
     {
-        //x軸の加速度を取得
+        // x軸の加速度を取得
         this.input_tilt.x = Mathf.Asin(Mathf.Clamp(Input.acceleration.x, -1, 1)) * Mathf.Rad2Deg;
 
         //値に応じて傾き状況を変更
@@ -30,7 +30,7 @@ public class GyroInput : MonoBehaviour
         else if(input_tilt.x < 0)   this.nowTilt = TiltDirection.LEFT;
         else                        this.nowTilt = TiltDirection.FRONT;
 
-        ////////    下のコメントアウトの部分はテスト用で残している
+        ////////    下のコメントアウトの部分はテスト用で残している       ////////////////
         //四元数を受け取る
         //Quaternion quaternion = Input.gyro.attitude;
         //オイラー変換
@@ -59,7 +59,7 @@ public class GyroInput : MonoBehaviour
     /// <returns>傾き方向</returns>
     public TiltDirection GetDifferenceTilt()
     {
-        //中心から傾いた値を返す
+        // 中心から傾いた値を返す
         return this.nowTilt;
     }
 }

@@ -8,7 +8,7 @@ using UnityEngine;
 /// </summary>
 public class PlayerManager : MonoBehaviour
 {
-    //インスペクターから設定
+    // インスペクターから設定
     [Tooltip("接地判定のオブジェクト")][SerializeField] 
     GroudCheck groundCheck_object;
 
@@ -41,7 +41,7 @@ public class PlayerManager : MonoBehaviour
 
     [Tooltip("接地フラグ")]
     bool onGroudFlg = false;
-    //ターン可能な地面との設置フラグを入れる
+    // ターン可能な地面との設置フラグを入れる
     [Tooltip("ターン可能な地面との接地フラグ")]
     bool onTurnGroundFlg = false;
 
@@ -61,11 +61,11 @@ public class PlayerManager : MonoBehaviour
     Status.PlayerDirection currentDirection;
 
     [Tooltip("落下死の待機時間定数")]
-    const float FallDeathWaitTime       = 1.0f;
+    const float FallDeathWaitTime = 1.0f;
     [Tooltip("衝突死の待機時間定数")]
     const float CollisionDeathWaitTImer = 2.1f;
     [Tooltip("ゴール時の待機時間定数")]
-    const float GoalWaitTimer                 = 3.0f;
+    const float GoalWaitTimer = 3.0f;
 
     //プレイヤーのフラグ
     bool collisionFlg = false;
@@ -85,84 +85,84 @@ public class PlayerManager : MonoBehaviour
 
     void Awake()
     {
-        //コルーチン呼び出し
+        // コルーチン呼び出し
         StartCoroutine(playerStatus_object.ChangeSituation());
         StartCoroutine(playerAnimation_object.ChangeAnimaiton());
 
-        //タイトルシーンへの切り替えメソッドをchange_ResultScene_delegateへ代入
+        // タイトルシーンへの切り替えメソッドをchange_ResultScene_delegateへ代入
         this.change_ResultScene_delegate = new 
         SceneChenger.changeScene_delegate(this.sceneController_object.ChangeResultScene);
 
-        //落下音の再生メソッドをplayer_fallSound_delegateへ代入
+        // 落下音の再生メソッドをplayer_fallSound_delegateへ代入
         this.player_fallSound_delegate = new 
         SoundController.ply_playerSound_delegate(this.playerSound_object.PlyFallSound);
 
-        //衝突音再生メソッドを
+        // 衝突音再生メソッドを
         this.player_collisionSound_delegate = new 
         SoundController.ply_playerSound_delegate(this.playerSound_object.PlyCollisionSound);
 
-        //ジャンプ音の再生メソッドをplayer_jumpound_delegateへ代入
+        // ジャンプ音の再生メソッドをplayer_jumpound_delegateへ代入
         this.player_jumpound_delegate = new 
         SoundController.ply_playerSound_delegate(this.playerSound_object.PlyJumpSound);
     }
 
     void Update()
     {
-        //接地判定を受け取る
+        // 接地判定を受け取る
         this.onGroudFlg      = this.groundCheck_object.GetGroundStandFlg();
         this.onTurnGroundFlg = this.groundCheck_object.GetTurnGroundStandFlg();
 
-        //フリック方向を受け取る
+        // フリック方向を受け取る
         this.currentFlick          = this.screenInput_object.GetNowFlick();
-        //スマホの傾きを受け取る
+        // スマホの傾きを受け取る
         this.currentTili_direction = this.gyroInput_object.GetDifferenceTilt();
-        //現在の状態を受け取る
+        // 現在の状態を受け取る
         this.currentSituation      = this.playerStatus_object.GetNowPlayerSituation();
-        //現在の生死状態を受け取る
+        // 現在の生死状態を受け取る
         this.currentAlive          = this.playerStatus_object.GetNowPlayerSurvival();
-        //現在のプレイヤーの向いてる方向を受け取る
+        // 現在のプレイヤーの向いてる方向を受け取る
         this.currentDirection      = this.playerStatus_object.GetNowPlayerDirection();
-        //プレイヤーの衝突フラグを受け取る
+        // レイヤーの衝突フラグを受け取る
         this.collisionFlg          = this.collisionCheck_object.GetCollisionFlg();
 
-        //プレイヤーが生存状態での処理
+        // プレイヤーが生存状態での処理
         if(this.currentAlive == Status.PlayerAlive.Life)
         {
-            //ステータスの更新
+            // ステータスの更新
             this.playerStatus_object.SituationUpdate(this.onGroudFlg, this.currentFlick, this.onTurnGroundFlg);
-            //移動の更新
+            // 移動の更新
             this.playerMove_object.MovePlayerUpdate(this.currentFlick, this.currentSituation, this.currentDirection, this.currentTili_direction, this.onTurnGroundFlg,this.player_jumpound_delegate);
-            //アニメーション更新
+            // アニメーション更新
             this.playerAnimation_object.AnimationUpdate(this.currentFlick, this.currentSituation, this.collisionFlg);
-            //プレイヤーの生死確認
+            // プレイヤーの生死確認
             this.playerStatus_object.SurvivalChek(this.collisionFlg);
-            //プレイヤーの移動サウンド再生
+            // プレイヤーの移動サウンド再生
             this.playerSound_object.PlyWalkSound(this.currentSituation);
         }
 
-        //衝突死の処理
+        // 衝突死の処理
         if(this.currentAlive == Status.PlayerAlive.CollisionDeath && !this.deathFlg)
         {            
-            //衝突パーティクル再生
+            // 衝突パーティクル再生
             this.particleController_object.PlyCollisionParticle();
-            //衝突音再生
+            // 衝突音再生
             this.player_collisionSound_delegate();
-            //デリゲートでシーンをリザルトに変更
+            // デリゲートでシーンをリザルトに変更
             StartCoroutine(this.change_ResultScene_delegate(CollisionDeathWaitTImer));
 
-            //死亡フラグを立てる
+            // 死亡フラグを立てる
             this.deathFlg = true;
         }
 
-        //落下死処理
+        // 落下死処理
         if(this.currentAlive == Status.PlayerAlive.FallDeath && !this.deathFlg)
         {
-            //落下サウンド再生
+            // 落下サウンド再生
             this.player_fallSound_delegate();
-            //デリゲートでシーンをリザルトに変更
+            // デリゲートでシーンをリザルトに変更
             StartCoroutine(this.change_ResultScene_delegate(FallDeathWaitTime));
 
-            //死亡フラグを立てる
+            // 死亡フラグを立てる
             this.deathFlg = true;
         }
     }
@@ -173,9 +173,9 @@ public class PlayerManager : MonoBehaviour
     /// <param name="itemPos">獲得したアイテムの座標</param>
     public void ItemGetReport(Vector3 itemPos)
     {
-        //獲得音再生の命令
+        // 獲得音再生の命令
         this.playerSound_object.PlyGetItemSound();
-        //獲得時kのパーティクル再生
+        // 獲得時kのパーティクル再生
         this.particleController_object.PlyItemGetParticle(itemPos);
     }
 
@@ -184,13 +184,13 @@ public class PlayerManager : MonoBehaviour
     /// </summary>
     public void GoalReport()
     {
-        //デリゲートでリザルトシーンへの切り替え
+        // デリゲートでリザルトシーンへの切り替え
         StartCoroutine(this.change_ResultScene_delegate(GoalWaitTimer));
-        //アニメーショントリガーを切り替える
+        // アニメーショントリガーを切り替える
         this.playerAnimation_object.ChangeTrigger_Goal();
-        //ゴール音再生命令
+        // ゴール音再生命令
         this.playerSound_object.PlyGoalSound();
-        //生存状態を切り替える
+        // 生存状態を切り替える
         this.playerStatus_object.ChangeNowSurvival_Goal();
     }
 }

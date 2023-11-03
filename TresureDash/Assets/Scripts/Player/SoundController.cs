@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
-////////////////////////////////////
-// プレイヤーのサウンドを管理するマネージャースクリプト
-////////////////////////////////////
+
+/// <summary>
+/// プレイヤーのサウンドを管理するコントローラークラス
+/// </summary>
 public class SoundController : MonoBehaviour
 {
-    //インスペクターから設定
+    // インスペクターから設定
     [Tooltip("オーディオソースオブジェクト")][SerializeField]
     AudioSource audioSource_object;
     
-    //再生音
+    // 再生音
     [SerializeField] AudioClip foot_sound;
     [SerializeField] AudioClip fall_sound;
     [SerializeField] AudioClip jump_sound;
@@ -22,7 +23,7 @@ public class SoundController : MonoBehaviour
     const float RunSound_span = 0.3f;
     float foot_sound_delta = 0;
 
-    //サウンド再生時のデリゲート定義
+    // サウンド再生時のデリゲート定義
     public delegate void ply_playerSound_delegate();
 
     /// <summary>
@@ -31,22 +32,22 @@ public class SoundController : MonoBehaviour
     /// <param name="state">現在のプレイヤーの状態</param>
     public void PlyWalkSound(Status.PlayerState state)
     {
-        //現在の状態を見てサウンド再生
+        // 現在の状態を見てサウンド再生
         if(state == Status.PlayerState.Walk && this.foot_sound_delta > WalkSound_span)
         {
-            //足音再生
+            // 足音再生
             this.audioSource_object.PlayOneShot(this.foot_sound);
-            //デルタ初期化
+            // デルタ初期化
             this.foot_sound_delta = 0;
         }
         else if(state == Status.PlayerState.Run && this.foot_sound_delta > RunSound_span)
         {
-            //足音再生
+            // 足音再生
             this.audioSource_object.PlayOneShot(this.foot_sound);
-            //デルタ初期化
+            // デルタ初期化
             this.foot_sound_delta = 0;
         }
-        //デルタ増加
+        // デルタ増加
         this.foot_sound_delta += Time.deltaTime;
     }
 

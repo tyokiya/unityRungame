@@ -5,7 +5,7 @@
 /// </summary>
 public class ScoreManager : MonoBehaviour
 {
-    //インスペクターから設定
+    // インスペクターから設定
     [Tooltip("スコア管理オブジェクト")][SerializeField] 
     ScoreController scoreController_object;
     
@@ -17,7 +17,7 @@ public class ScoreManager : MonoBehaviour
 
     bool playerItemGetFlg = false;
 
-    //オブジェクト生成時スコアのリセット処理を呼ぶ
+    // オブジェクト生成時スコアのリセット処理を呼ぶ
     void Awake()
     {
         this.scoreController_object.ScoreReset();
@@ -25,21 +25,21 @@ public class ScoreManager : MonoBehaviour
 
     void Update()
     {
-        //現在の生死状態を受け取る
+        // 現在の生死状態を受け取る
         this.currentAlive = this.playerStatus_object.GetNowPlayerSurvival();
 
-        //アイテム獲得フラグが立ってる場合それぞれに処理を命令
+        // アイテム獲得フラグが立ってる場合それぞれに処理を命令
         if (this.playerItemGetFlg)
         {
             //Debug.Log("アイテム獲得処理開始");
-            //アイテム獲得数上昇処理
+            // アイテム獲得数上昇処理
             this.scoreController_object.RiseItemSucore();
 
-            //フラグを下ろす
+            // フラグを下ろす
             this.playerItemGetFlg = false;
         }
 
-        //プレイヤーが生存状態ならスコア上昇命令
+        // プレイヤーが生存状態ならスコア上昇命令
         if(this.currentAlive == Status.PlayerAlive.Life)
         {
             this.scoreController_object.ScoreUp();
@@ -51,7 +51,7 @@ public class ScoreManager : MonoBehaviour
     /// </summary>
     public void ItemGetReport()
     {
-        //アイテム獲得フラグを立てる
+        // アイテム獲得フラグを立てる
         this.playerItemGetFlg = true;
     }
 
@@ -60,7 +60,7 @@ public class ScoreManager : MonoBehaviour
     /// </summary>
     public void GoalItemGetReport()
     {
-        //コントローラーにゴールスコア上昇処理
+        // コントローラーにゴールスコア上昇処理
         this.scoreController_object.GoalScoreUp();
     }
 }

@@ -17,15 +17,15 @@ public class CameraController_TittleScene : MonoBehaviour
 
     void Update()
     {
-        //カウント増加
+        // カウント増加
         this.frameCnt++;
 
-        //カウント数に応じて移動方向回転方向の変更
+        // カウント数に応じて移動方向回転方向の変更
         if (this.rotationCnt % 640 == 0)
         {
             this.moveSpeed_x = MoveSpeed;
             this.moveSpeed_z = MoveSpeed;
-            //カウント初期化
+            // カウント初期化
             this.rotationCnt = 0;
         }
         else if (this.rotationCnt % 480 == 0)
@@ -44,14 +44,14 @@ public class CameraController_TittleScene : MonoBehaviour
             this.moveSpeed_z = MoveSpeed;
         }
 
-        //移動処理
+        // 移動処理
         if(frameCnt % 2 == 0)
         {
-            //カウント増加
+            // カウント増加
             this.rotationCnt++;
-            //プレイヤーを中心に周りを回る移動処理
+            // プレイヤーを中心に周りを回る移動処理
             transform.position = new Vector3(transform.position.x + this.moveSpeed_x, transform.position.y, transform.position.z + moveSpeed_z);
-            //プレイヤーを中心にカメラのアングル追従処理
+            // プレイヤーを中心にカメラのアングル追従処理
             transform.eulerAngles -= new Vector3(0, TurnAngleSpeed, 0);
         }        
     }

@@ -5,7 +5,7 @@
 /// </summary>
 public class UIManager : MonoBehaviour
 {
-    //インスペクターから設定
+    // インスペクターから設定
     [Tooltip("スコア管理オブジェクト")][SerializeField] 
     ScoreController scoreController_object;
 
@@ -20,9 +20,9 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        //スコアUIの更新命令
+        // スコアUIの更新命令
         this.scoreUIController_object.ScoreTextUpdate(this.scoreController_object.ScoreGetter());
-        //アイテムUIの更新命令
+        // アイテムUIの更新命令
         this.itemUIController_object.ItemTextUpdate(this.scoreController_object.ItemNumGetter());
     }
 
@@ -31,7 +31,7 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void GoalReport()
     {
-        //ボーナスUI表示の命令
+        // ボーナスUI表示の命令
         this.goalBornus_Text_Controller.GoalBornusUI_Active();
     }
 }

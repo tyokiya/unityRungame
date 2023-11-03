@@ -6,7 +6,7 @@ using UnityEngine;
 /// </summary>
 public class TittleScene_Manager : MonoBehaviour
 {
-    //インスペクターから設定
+    // インスペクターから設定
     [Tooltip("シーンコントローラーオブジェクト")][SerializeField] 
     SceneController_TittleScene sceneController_object;
 
@@ -26,17 +26,17 @@ public class TittleScene_Manager : MonoBehaviour
     int fade_time;
 
     void Start()
-    {
-        //画面のフェードイン処理
+    { 
+        // 画面のフェードイン処理
         this.fade_obj.FadeIn(fade_time);
     }
 
     void Update()
     {
-        //プレイヤーからの入力があるか確認
+        // プレイヤーからの入力があるか確認
         if(this.screenInput_object.TapFlgGetter())
         {
-            //座標を受け取りエフェクトの表示命令
+            // 座標を受け取りエフェクトの表示命令
             Vector3 pos = this.screenInput_object.TapPosGetter();
             this.effectController_object.PlyTapEffect(pos);
         }
@@ -47,9 +47,9 @@ public class TittleScene_Manager : MonoBehaviour
     /// </summary>
     public void Down_GameStartButton()
     {
-        //フェードアウト処理
+        // フェードアウト処理
         fade_obj.FadeOut(fade_time);
-        //シーン切り替えコルーチン
+        // シーン切り替えコルーチン
         StartCoroutine(ChangeGameScene());
     }
 
@@ -58,13 +58,13 @@ public class TittleScene_Manager : MonoBehaviour
     /// </summary>
     IEnumerator ChangeGameScene()
     {
-        //セレクトサウンド再生命令
+        // セレクトサウンド再生命令
         this.soundCOntroller_object.PlySelectSound();
 
-        //フェードアウトの時間分待機
+        // フェードアウトの時間分待機
         yield return new WaitForSeconds(fade_time);
         
-        //シーン切り替えコルーチン
+        // シーン切り替えコルーチン
         StartCoroutine(this.sceneController_object.ChangeScene_Game());
     }
 
@@ -73,17 +73,17 @@ public class TittleScene_Manager : MonoBehaviour
     /// </summary>
     public void Down_TutorialButton()
     {
-        //セレクトサウンド再生命令
+        // セレクトサウンド再生命令
         this.soundCOntroller_object.PlySelectSound();
-        //シーン切り替えコルーチン
+        // シーン切り替えコルーチン
         StartCoroutine(this.sceneController_object.ChangeScene_Tutorial());    
     }
 
     public void Down_CreditButton()
     {
-        //セレクトサウンド再生命令
+        // セレクトサウンド再生命令
         this.soundCOntroller_object.PlySelectSound();
-        //シーン切り替えコルーチン
+        // シーン切り替えコルーチン
         StartCoroutine(this.sceneController_object.ChangeScene_Credit());
     }
 }

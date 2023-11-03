@@ -5,16 +5,17 @@
 /// </summary>
 public class ScoreController : MonoBehaviour
 {
-    //スコア
+    // 獲得アイテム数
     int getItemCnt = 0;
+    // 獲得スコア
     int getSucore  = 0;
 
     [Tooltip("ゴール時のボーナススコア定数")]
     const int BonusScore = 500;
 
     void Awake()
-    {
-        //リザルトシーンにスコアを残すためオブジェクトの破壊を行わない処理
+    { 
+        // リザルトシーンにスコアを残すためオブジェクトの破壊を行わない処理
         DontDestroyOnLoad(this);
     }
 

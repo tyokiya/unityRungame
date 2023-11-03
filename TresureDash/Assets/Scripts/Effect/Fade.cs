@@ -7,8 +7,7 @@ using UnityEngine.UI;
 /// </summary>
 public class Fade : MonoBehaviour
 {
-    [SerializeField]
-    Image m_image = null;
+    [SerializeField] Image m_image = null;
 
     void Reset()
     {

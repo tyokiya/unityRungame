@@ -17,7 +17,7 @@ public class ScreenInput : MonoBehaviour
 
     [Tooltip("スワイプの入力距離")]
     Vector2 SwipeRange;
-    //入力方向記録用
+    // 入力方向記録用
     Vector2 InputSTART;
     Vector2 InputMOVE;
     Vector2 InputEND;
@@ -50,10 +50,10 @@ public class ScreenInput : MonoBehaviour
         GetInputVector();
     }
 
-    //入力の取得
+    // 入力の取得
     void GetInputVector()
     {
-        //Unity上での操作取得
+        // Unity上での操作取得
         if (Application.isEditor)
         {
             if (Input.GetMouseButtonDown(0))
@@ -75,7 +75,7 @@ public class ScreenInput : MonoBehaviour
                 ResetParameter();
             }
         }
-        //端末上での操作取得
+        // 端末上での操作取得
         else
         {
             if (Input.touchCount > 0)

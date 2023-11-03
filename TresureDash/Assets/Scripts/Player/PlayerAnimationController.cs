@@ -6,11 +6,11 @@ using UnityEngine;
 /// </summary>
 public class PlayerAnimationController : MonoBehaviour
 {    
-    //インスペクターから設定
+    // インスペクターから設定
     [Tooltip("アニメーターを入れる変数")][SerializeField]
     Animator animator;
 
-    //トリガー切り替え時の待機時間
+    // トリガー切り替え時の待機時間
     const float WaitTime = 3f;
 
     /// <summary>
@@ -34,10 +34,10 @@ public class PlayerAnimationController : MonoBehaviour
     /// <param name="collisionFlg">衝突フラグ</param>
     public void AnimationUpdate(ScreenInput.FlickDirection flick, Status.PlayerState state, bool collisionFlg)
     {
-        //入力を受けつけトリガーを切り替える
+        // 入力を受けつけトリガーを切り替える
         if(flick == ScreenInput.FlickDirection.UP && state == Status.PlayerState.Run) this.animator.SetTrigger("JumpTrigger");
 
-        //衝突フラグが立ってる場合トリガーを切り替える
+        // 衝突フラグが立ってる場合トリガーを切り替える
         if (collisionFlg) this.animator.SetTrigger("CollisionTrigger");
     }
 

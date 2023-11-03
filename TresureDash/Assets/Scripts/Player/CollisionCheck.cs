@@ -33,29 +33,29 @@ public class CollisionCheck : MonoBehaviour
     /// <param name="other"></param>
     void OnTriggerEnter(Collider other)
     {
-        //衝突したものがアイテムなのかを調べる
+        // 衝突したものがアイテムなのかを調べる
         if(other.tag == ItemTagName)
         {
             //Debug.Log("アイテムと衝突");
-            //プレイヤーマネージャーに報告
+            // プレイヤーマネージャーに報告
             this.playerManager.ItemGetReport(other.transform.position);
-            //スコアマネージャーに報告
+            // スコアマネージャーに報告
             this.scoreManager.ItemGetReport();
-            //獲得したアイテムオブジェクトを破壊
+            // 獲得したアイテムオブジェクトを破壊
             Destroy(other.gameObject);
         }
 
-        //衝突したものがゴールなのかを調べる
+        // 衝突したものがゴールなのかを調べる
         if(other.tag == GoalTagName)
         {
-            //プレイヤーマネージャーに報告
+            // プレイヤーマネージャーに報告
             this.playerManager.GoalReport();
-            //スコアマネージャーに報告
+            // スコアマネージャーに報告
             this.scoreManager.GoalItemGetReport();
-            //UIマネージャーに報告
+            // UIマネージャーに報告
             this.UIManager.GoalReport();
 
-            //獲得したゴールオブジェクトを破壊
+            // 獲得したゴールオブジェクトを破壊
             Destroy(other.gameObject);
         }
     }
@@ -66,10 +66,10 @@ public class CollisionCheck : MonoBehaviour
     /// <param name="collision"></param>
     void OnCollisionEnter(Collision other)
     {
-        //衝突したものが壁なのかを調べる
+        // 衝突したものが壁なのかを調べる
         if (other.gameObject.tag == WallTagName)
         {
-            //衝突フラグを立てる
+            // 衝突フラグを立てる
             collisionWallFlg = true;
             //Debug.Log("衝突");
         }

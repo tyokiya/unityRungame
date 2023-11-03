@@ -5,7 +5,7 @@
 /// </summary>
 public class TutorialScene_Manager : MonoBehaviour
 {
-    //インスペクターから設定    
+    // インスペクターから設定    
     [Tooltip("シーンコントローラーオブジェクト")][SerializeField]
     SceneController_TutorialScene sceneController_object;
 
@@ -28,10 +28,10 @@ public class TutorialScene_Manager : MonoBehaviour
 
     void Update()
     {
-        //プレイヤーからの入力があるか確認
+        // プレイヤーからの入力があるか確認
         if (this.screenInput_object.TapFlgGetter())
         {
-            //座標を受け取りエフェクトの表示命令
+            // 座標を受け取りエフェクトの表示命令
             Vector3 pos = this.screenInput_object.TapPosGetter();
             this.effectController_object.PlyTapEffect(pos);
         }
@@ -42,9 +42,9 @@ public class TutorialScene_Manager : MonoBehaviour
     /// </summary>
     public void Down_BackButton()
     {
-        //セレクトサウンド再生命令
+        // セレクトサウンド再生命令
         this.soundCOntroller_object.PlySelectSound();
-        //シーン切り替え命令
+        // シーン切り替え命令
         StartCoroutine(this.sceneController_object.ChangeScene_Tittle());
     }
 
@@ -53,11 +53,11 @@ public class TutorialScene_Manager : MonoBehaviour
     /// </summary>
     public void Down_NextPageButton()
     {
-        //カウンターの増加
+        // カウンターの増加
         this.nowPageNum++;
-        //セレクトサウンド再生命令
+        // セレクトサウンド再生命令
         this.soundCOntroller_object.PlyPageSound();
-        //ページのアクティブ状態の更新
+        // ページのアクティブ状態の更新
         this.pageController_object.PageActiveUpdate(this.nowPageNum);
     }
 
@@ -66,11 +66,11 @@ public class TutorialScene_Manager : MonoBehaviour
     /// </summary>
     public void Down_BackPageButton()
     {
-        //カウンターの減少
+        // カウンターの減少
         this.nowPageNum--;
-        //セレクトサウンド再生命令
+        // セレクトサウンド再生命令
         this.soundCOntroller_object.PlyPageSound();
-        //ページのアクティブ状態の更新
+        // ページのアクティブ状態の更新
         this.pageController_object.PageActiveUpdate(this.nowPageNum);
     }
 }

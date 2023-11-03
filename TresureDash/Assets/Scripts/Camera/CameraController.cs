@@ -31,16 +31,16 @@ public class CameraController : MonoBehaviour
     /// <param name="state">現在のプレイヤーの状態</param>
     public void UpdateCamera(Vector3 playerPos, PlayerDirection currentDirection, PlayerState state)
     {
-        //プレイヤーの向いてる方向に変更があったら
-        //カメラの向きを変える(走り出して以降)
+        // プレイヤーの向いてる方向に変更があったら
+        // カメラの向きを変える(走り出して以降)
         if(state == PlayerState.Run && currentDirection != this.beforeDirection)
         {
             RotationCamera(currentDirection);
         }
         else
         {
-            //プレイヤーの向いてる方向をもとに
-            //常に一定の距離を保ちながらプレイヤーを追従
+            // プレイヤーの向いてる方向をもとに
+            // 常に一定の距離を保ちながらプレイヤーを追従
             MoveCamera(playerPos, currentDirection, state);
         }        
     }
@@ -51,14 +51,14 @@ public class CameraController : MonoBehaviour
     /// <param name="direction">現在のプレイヤーの向いてる方向</param>
     void RotationCamera(PlayerDirection direction)
     {
-        //カウント増加
+        // カウント増加
         this.turnCnt++;
 
-        //プレイヤーの向いてる方向に合わせてカメラの回転処理
+        // プレイヤーの向いてる方向に合わせてカメラの回転処理
         switch (direction)
         {
             case Status.PlayerDirection.Front:
-                //前を向かせる　
+                // 前を向かせる　
                 if (this.beforeDirection == Status.PlayerDirection.Left)
                 {
                     transform.eulerAngles += new Vector3(0, TurnAngleSpeed, 0);
@@ -71,7 +71,7 @@ public class CameraController : MonoBehaviour
                 }
                 break;
             case Status.PlayerDirection.Right:
-                //右を向かせる　
+                // 右を向かせる　
                 if(this.beforeDirection == Status.PlayerDirection.Front)
                 {
                     transform.eulerAngles += new Vector3(0, TurnAngleSpeed, 0);
@@ -84,7 +84,7 @@ public class CameraController : MonoBehaviour
                 }
                 break;
             case Status.PlayerDirection.Back:
-                //後を向かせる　
+                // 後を向かせる　
                 if (this.beforeDirection == Status.PlayerDirection.Right)
                 {
                     transform.eulerAngles += new Vector3(0, TurnAngleSpeed, 0);
@@ -97,7 +97,7 @@ public class CameraController : MonoBehaviour
                 }
                 break;
             case Status.PlayerDirection.Left:
-                //左を向かせる　
+                // 左を向かせる　
                 if (this.beforeDirection == Status.PlayerDirection.Back)
                 {
                     transform.eulerAngles += new Vector3(0, TurnAngleSpeed, 0);
@@ -110,12 +110,12 @@ public class CameraController : MonoBehaviour
                 }
                 break;
         }
-        //カウントが30回になったら回転処理完了
-        //プレイヤーの変更前の向きを更新
+        // カウントが30回になったら回転処理完了
+        // プレイヤーの変更前の向きを更新
         if (this.turnCnt == MaxTurnCnt)
         {
             this.beforeDirection = direction;
-            //カウント初期化
+            // カウント初期化
             this.turnCnt = 0;
         }
     }

@@ -7,7 +7,7 @@ public class FrameCntroller : MonoBehaviour
 {
     void Awake()
     {
-        //フレームレート固定
+        // フレームレート固定
         Application.targetFrameRate = 60;
     }
 }

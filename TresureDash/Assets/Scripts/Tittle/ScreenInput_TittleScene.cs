@@ -5,7 +5,7 @@
 /// </summary>
 public class ScreenInput_TittleScene : MonoBehaviour
 {
-    //インスペクターから設定
+    // インスペクターから設定
     [Tooltip("エフェクト表示用カメラオブジェクト")][SerializeField] 
     Camera effectCamera_objet;
 
@@ -16,19 +16,17 @@ public class ScreenInput_TittleScene : MonoBehaviour
 
     void Update()
     {
-        //入力があった場合座標設定
+        // 入力があった場合座標設定
         if (Input.GetMouseButtonDown(0))
         {
-            // タップしたワールド座標取得し
-            //エフェクトの生成座標設定
+            // タップしたワールド座標取得しエフェクトの生成座標設定
             this.tapPos = effectCamera_objet.ScreenToWorldPoint(Input.mousePosition + effectCamera_objet.transform.forward);
-
-            //フラグを立てる
+            // フラグを立てる
             this.tapFlg = true;
         }
         else
         {
-            //フラグを下ろす
+            // フラグを下ろす
             this.tapFlg = false;
         }
     }

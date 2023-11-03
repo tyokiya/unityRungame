@@ -5,7 +5,7 @@
 /// </summary>
 public class CreditSceneManager : MonoBehaviour
 {
-    //インスペクターから設定
+    // インスペクターから設定
     [Tooltip("シーンコントローラーオブジェクト")][SerializeField] 
     SceneController_CreditScene sceneController_object;
 
@@ -20,10 +20,10 @@ public class CreditSceneManager : MonoBehaviour
 
     void Update()
     {
-        //プレイヤーからの入力があるか確認
+        // プレイヤーからの入力があるか確認
         if (this.screenInput_object.TapFlgGetter())
         {
-            //座標を受け取りエフェクトの表示命令
+            // 座標を受け取りエフェクトの表示命令
             Vector3 pos = this.screenInput_object.TapPosGetter();
             this.effectController_object.PlyTapEffect(pos);
         }
@@ -34,9 +34,9 @@ public class CreditSceneManager : MonoBehaviour
     /// </summary>
     public void Down_BackButton()
     {
-        //セレクトサウンド再生命令
+        // セレクトサウンド再生命令
         this.soundCOntroller_object.PlySelectSound();
-        //シーン切り替え命令
+        // シーン切り替え命令
         StartCoroutine(this.sceneController_object.ChangeScene_Tittle());
     }
 }

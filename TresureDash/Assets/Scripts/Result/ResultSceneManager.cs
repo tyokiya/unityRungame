@@ -5,7 +5,7 @@
 /// </summary>
 public class ResultSceneManager : MonoBehaviour
 {
-    //インスペクターから設定
+    // インスペクターから設定
     [Tooltip("シーンコントローラーオブジェクト")][SerializeField]
     SceneController_ResultScene sceneController_object;
 
@@ -20,7 +20,7 @@ public class ResultSceneManager : MonoBehaviour
 
     void Update()
     {
-        //プレイヤーからの入力があるか確認
+        // プレイヤーからの入力があるか確認
         if (this.screenInput_object.TapFlgGetter())
         {
             //座標を受け取りエフェクトの表示命令
@@ -34,16 +34,16 @@ public class ResultSceneManager : MonoBehaviour
     /// </summary>
     public void ReStartButtonDown()
     {
-        //ゲームシーンへ切り替え
+        // ゲームシーンへ切り替え
         this.sceneController_object.ChangeScene_Game();
-        //セレクト音再生
+        // セレクト音再生
         this.soundController_object.PlySelectSound();
     }
     public void TittleButtonDown()
-    {
-        //タイトルシーンへの切り替え
+    { 
+        // タイトルシーンへの切り替え
         this.sceneController_object.ChangeScene_Tittle();
-        //セレクト音再生
+        // セレクト音再生
         this.soundController_object.PlySelectSound();
     }
 }

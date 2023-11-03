@@ -6,7 +6,7 @@ using static Status;
 /// </summary>
 public class Move : MonoBehaviour
 {
-    //インスペクターから設定
+    // インスペクターから設定
     [SerializeField] PlayerManager playerManager_object;
     [SerializeField] Rigidbody     rd;
     [SerializeField] Transform     parent_transform;
@@ -20,21 +20,21 @@ public class Move : MonoBehaviour
     [Tooltip("プレイヤーが左を向いている時の角度")]
     Vector3 leftAngle  = new Vector3(0, 270, 0);
 
-    //現在のジャンプ力
+    // 現在のジャンプ力
     float current_jumpForce = 0;
 
-    //ジャンプ力重力の定数
+    // ジャンプ力重力の定数
     const float JumpForce      = 0.21f;
     const float Down_JumpForce = 0.004f;
     
-    //移動スピードの定数
+    // 移動スピードの定数
     const float WalkSpeed     = 0.01f;
     const float RunSpeed      = 0.3f;
     const float SideMoveSpeed = 0.08f;
 
     void Update()
     {
-        //毎フレームジャンプ力の減少(0以下になることはない)
+        // 毎フレームジャンプ力の減少(0以下になることはない)
         if(this.current_jumpForce > 0)
         {
             this.current_jumpForce -= Down_JumpForce;
@@ -57,7 +57,7 @@ public class Move : MonoBehaviour
     public void MovePlayerUpdate(ScreenInput.FlickDirection flick, Status.PlayerState state, Status.PlayerDirection direction, GyroInput.TiltDirection tili_direction,
                                  bool turnGroundFlg, SoundController.ply_playerSound_delegate ply_jumpSound_delegate)
     {
-        //ジャンプの入力でジャンプ力を入れる
+        // ジャンプの入力でジャンプ力を入れる
         if (flick == ScreenInput.FlickDirection.UP && state == Status.PlayerState.Run)
         {
             //現在のジャンプ力に力を代入
@@ -66,21 +66,21 @@ public class Move : MonoBehaviour
             ply_jumpSound_delegate();
         }
 
-        //回転可能な地面の上か歩き常態である時場合での移動処理回転処理
+        // 回転可能な地面の上か歩き常態である時場合での移動処理回転処理
         if (turnGroundFlg || state == PlayerState.Walk 
             || tili_direction == GyroInput.TiltDirection.FRONT)
         {
-            //回転可能な地面の上での移動処理
-            //歩きモーション中の移動処理
+            // 回転可能な地面の上での移動処理
+            // 歩きモーション中の移動処理
             MovePlayer(state, direction);
         }
         else
         {
-            //横移動を含めた移動処理
+            // 横移動を含めた移動処理
             MoveSide(direction, tili_direction);
         }
         
-        //現在の向きに合わせてプレイヤーを回転
+        // 現在の向きに合わせてプレイヤーを回転
         RotationPlayer(direction);
     }
 
@@ -130,11 +130,11 @@ public class Move : MonoBehaviour
     /// <param name="tili_direction">スマホの傾き方向</param>
     void MoveSide(PlayerDirection direction, GyroInput.TiltDirection tili_direction)
     {
-        //傾きと向いてる向きから移動処理をだす
+        // 傾きと向いてる向きから移動処理をだす
         switch (direction)
         {
             case PlayerDirection.Front:
-                //傾きに合わせた横移動
+                // 傾きに合わせた横移動
                 if (tili_direction == GyroInput.TiltDirection.RIGHT)
                 {
                     this.rd.MovePosition(new Vector3(parent_transform.position.x + SideMoveSpeed,
@@ -199,7 +199,7 @@ public class Move : MonoBehaviour
     /// <param name="direction">プレイヤーの向いてる方向</param>
     void RotationPlayer(Status.PlayerDirection direction)
     {
-        //ステータスの向いてる方向に応じて回転
+        // ステータスの向いてる方向に応じて回転
         switch(direction)
         {
             case PlayerDirection.Front:
