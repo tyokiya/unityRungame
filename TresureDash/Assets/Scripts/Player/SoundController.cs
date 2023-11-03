@@ -32,14 +32,14 @@ public class SoundController : MonoBehaviour
     public void PlyWalkSound(Status.PlayerState state)
     {
         //現在の状態を見てサウンド再生
-        if(state == Status.PlayerState.walk && this.foot_sound_delta > WalkSound_span)
+        if(state == Status.PlayerState.Walk && this.foot_sound_delta > WalkSound_span)
         {
             //足音再生
             this.audioSource_object.PlayOneShot(this.foot_sound);
             //デルタ初期化
             this.foot_sound_delta = 0;
         }
-        else if(state == Status.PlayerState.run && this.foot_sound_delta > RunSound_span)
+        else if(state == Status.PlayerState.Run && this.foot_sound_delta > RunSound_span)
         {
             //足音再生
             this.audioSource_object.PlayOneShot(this.foot_sound);

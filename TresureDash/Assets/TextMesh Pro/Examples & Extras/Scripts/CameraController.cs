@@ -146,7 +146,7 @@ namespace TMPro.Examples
                     MovementSmoothing = !MovementSmoothing;
 
 
-                // Check for right mouse button to change camera follow and elevation angle
+                // Check for Right mouse button to change camera follow and elevation angle
                 if (Input.GetMouseButton(1))
                 {
                     mouseY = Input.GetAxis("Mouse Y");
@@ -183,7 +183,7 @@ namespace TMPro.Examples
                     }
 
 
-                    // Handle left & right 
+                    // Handle Left & Right 
                     if (deltaPosition.x > 0.01f || deltaPosition.x < -0.01f)
                     {
                         OrbitalAngle += deltaPosition.x * 0.1f;
@@ -195,7 +195,7 @@ namespace TMPro.Examples
 
                 }
 
-                // Check for left mouse button to select a new CameraTarget or to reset Follow position
+                // Check for Left mouse button to select a new CameraTarget or to reset Follow position
                 if (Input.GetMouseButton(0))
                 {
                     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

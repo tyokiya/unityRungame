@@ -41,7 +41,7 @@ public class ScoreManager : MonoBehaviour
         }
 
         //プレイヤーが生存状態ならスコア上昇命令
-        if(this.currentAlive == Status.PlayerAlive.life)
+        if(this.currentAlive == Status.PlayerAlive.Life)
         {
             this.scoreController_object.ScoreUp();
         }

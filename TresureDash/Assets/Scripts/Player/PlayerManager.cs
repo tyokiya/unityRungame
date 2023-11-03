@@ -125,7 +125,7 @@ public class PlayerManager : MonoBehaviour
         this.collisionFlg          = this.collisionCheck_object.GetCollisionFlg();
 
         //プレイヤーが生存状態での処理
-        if(this.currentAlive == Status.PlayerAlive.life)
+        if(this.currentAlive == Status.PlayerAlive.Life)
         {
             //ステータスの更新
             this.playerStatus_object.SituationUpdate(this.onGroudFlg, this.currentFlick, this.onTurnGroundFlg);
@@ -140,7 +140,7 @@ public class PlayerManager : MonoBehaviour
         }
 
         //衝突死の処理
-        if(this.currentAlive == Status.PlayerAlive.collisionDeath && !this.deathFlg)
+        if(this.currentAlive == Status.PlayerAlive.CollisionDeath && !this.deathFlg)
         {            
             //衝突パーティクル再生
             this.particleController_object.PlyCollisionParticle();
@@ -154,7 +154,7 @@ public class PlayerManager : MonoBehaviour
         }
 
         //落下死処理
-        if(this.currentAlive == Status.PlayerAlive.fallDeath && !this.deathFlg)
+        if(this.currentAlive == Status.PlayerAlive.FallDeath && !this.deathFlg)
         {
             //落下サウンド再生
             this.player_fallSound_delegate();
