@@ -553,10 +553,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f9293a252960b46bab67d32a12ec79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneController_object: {fileID: 1031970114}
-  soundCOntroller_object: {fileID: 2003902525}
-  effectController_object: {fileID: 40236457}
-  screenInput_object: {fileID: 285583954}
+  sceneController: {fileID: 1031970114}
+  soundController: {fileID: 2003902525}
+  effectController: {fileID: 40236457}
+  screenInput: {fileID: 285583954}
 --- !u!4 &380486818
 Transform:
   m_ObjectHideFlags: 0
@@ -1142,8 +1142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a0f825e868e82c4f8ca5c097fa68f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource_object: {fileID: 2003902526}
-  select_sound: {fileID: 8300000, guid: 9345d048d0ec3e5489ba8daa5a18ef59, type: 3}
+  audioSource: {fileID: 2003902526}
+  selectSound: {fileID: 8300000, guid: 9345d048d0ec3e5489ba8daa5a18ef59, type: 3}
 --- !u!82 &2003902526
 AudioSource:
   m_ObjectHideFlags: 0
