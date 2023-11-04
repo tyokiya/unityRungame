@@ -622,7 +622,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 105,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/UnityEngine.TestRunner.AdditionalFile.txt"
@@ -648,7 +648,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 45657,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/UnityEngine.TestRunner.rsp2"
@@ -2826,7 +2826,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 53595,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/UnityEngine.UI.AdditionalFile.txt"
@@ -2852,7 +2852,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 93644,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/UnityEngine.UI.rsp2"
@@ -3518,7 +3518,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 102120,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/UnityEditor.TestRunner.AdditionalFile.txt"
@@ -3544,7 +3544,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 154145,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/UnityEditor.TestRunner.rsp2"
@@ -4275,7 +4275,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 162520,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/UnityEditor.UI.AdditionalFile.txt"
@@ -4301,7 +4301,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 200033,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/UnityEditor.UI.rsp2"
@@ -4893,7 +4893,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 209103,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Autodesk.Fbx.Editor.AdditionalFile.txt"
@@ -4919,7 +4919,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 243746,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Autodesk.Fbx.Editor.rsp2"
@@ -5461,7 +5461,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 252890,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Autodesk.Fbx.AdditionalFile.txt"
@@ -5487,7 +5487,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 295456,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Autodesk.Fbx.rsp2"
@@ -6102,7 +6102,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 304079,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/DepthFirstScheduler.AdditionalFile.txt"
@@ -6639,7 +6639,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 346589,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/MToon.AdditionalFile.txt"
@@ -7169,7 +7169,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 388470,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/MeshUtility.AdditionalFile.txt"
@@ -7704,7 +7704,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 430725,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/ShaderProperty.Runtime.AdditionalFile.txt"
@@ -8243,7 +8243,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 473631,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/UniHumanoid.AdditionalFile.txt"
@@ -8792,7 +8792,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 517033,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/UniJSON.AdditionalFile.txt"
@@ -9386,7 +9386,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 564350,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/UniUnlit.AdditionalFile.txt"
@@ -9911,7 +9911,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 605874,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.AI.Navigation.Editor.ConversionSystem.AdditionalFile.txt"
@@ -9937,7 +9937,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 641453,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.AI.Navigation.Editor.ConversionSystem.rsp2"
@@ -10469,7 +10469,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 650628,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.AI.Navigation.AdditionalFile.txt"
@@ -10495,7 +10495,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 683982,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.AI.Navigation.rsp2"
@@ -10999,7 +10999,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 692622,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.EditorCoroutines.Editor.AdditionalFile.txt"
@@ -11025,7 +11025,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 727587,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.EditorCoroutines.Editor.rsp2"
@@ -11552,7 +11552,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 736754,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.Formats.Fbx.Runtime.AdditionalFile.txt"
@@ -11578,7 +11578,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 769780,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.Formats.Fbx.Runtime.rsp2"
@@ -12078,7 +12078,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 778438,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.Performance.Profile-Analyzer.Editor.AdditionalFile.txt"
@@ -12104,7 +12104,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 816388,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.Performance.Profile-Analyzer.Editor.rsp2"
@@ -12662,7 +12662,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 825565,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.PlasticSCM.Editor.AdditionalFile.txt"
@@ -12688,7 +12688,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 890901,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.PlasticSCM.Editor.rsp2"
@@ -13488,7 +13488,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 899604,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.Rider.Editor.AdditionalFile.txt"
@@ -13514,7 +13514,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 936637,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.Rider.Editor.rsp2"
@@ -14054,7 +14054,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 945251,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.Settings.Editor.AdditionalFile.txt"
@@ -14080,7 +14080,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 980916,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.Settings.Editor.rsp2"
@@ -14616,7 +14616,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 990101,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.AdditionalFile.txt"
@@ -14642,7 +14642,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1026587,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.rsp2"
@@ -15180,7 +15180,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1035812,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.AdditionalFile.txt"
@@ -15206,7 +15206,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1071091,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.rsp2"
@@ -15733,7 +15733,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1080282,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.TextMeshPro.AdditionalFile.txt"
@@ -15759,7 +15759,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1118431,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.TextMeshPro.rsp2"
@@ -16317,7 +16317,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1127054,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.Timeline.AdditionalFile.txt"
@@ -16343,7 +16343,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1166281,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.Timeline.rsp2"
@@ -16915,7 +16915,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1174906,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.VSCode.Editor.AdditionalFile.txt"
@@ -16941,7 +16941,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1210216,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.VSCode.Editor.rsp2"
@@ -17472,7 +17472,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1219374,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.VisualScripting.Core.AdditionalFile.txt"
@@ -17498,7 +17498,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1306228,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.VisualScripting.Core.rsp2"
@@ -18424,7 +18424,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1314871,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.VisualStudio.Editor.AdditionalFile.txt"
@@ -18450,7 +18450,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1351901,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.VisualStudio.Editor.rsp2"
@@ -18992,7 +18992,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1360515,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/lilToon.Editor.AdditionalFile.txt"
@@ -19563,7 +19563,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1405587,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/FbxBuildTestAssets.AdditionalFile.txt"
@@ -19589,7 +19589,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1437792,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/FbxBuildTestAssets.rsp2"
@@ -20079,7 +20079,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1446044,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/MToon.Editor.AdditionalFile.txt"
@@ -20632,7 +20632,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1489950,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/MeshUtility.Editor.AdditionalFile.txt"
@@ -21185,7 +21185,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1533877,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/ShaderProperty.Editor.AdditionalFile.txt"
@@ -21736,7 +21736,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1577699,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/UniJSON.Editor.Tests.AdditionalFile.txt"
@@ -22287,7 +22287,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1621551,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/UniUnlit.Editor.AdditionalFile.txt"
@@ -22838,7 +22838,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1665323,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.AI.Navigation.Editor.AdditionalFile.txt"
@@ -22864,7 +22864,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1700950,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.AI.Navigation.Editor.rsp2"
@@ -23441,7 +23441,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1710299,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.CollabProxy.Editor.AdditionalFile.txt"
@@ -23467,7 +23467,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1745052,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.CollabProxy.Editor.rsp2"
@@ -24013,7 +24013,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1754309,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.TestTools.CodeCoverage.Editor.AdditionalFile.txt"
@@ -24039,7 +24039,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1792934,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.TestTools.CodeCoverage.Editor.rsp2"
@@ -24653,7 +24653,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1801887,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.TextMeshPro.Editor.AdditionalFile.txt"
@@ -24679,7 +24679,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1841004,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.TextMeshPro.Editor.rsp2"
@@ -25272,7 +25272,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1850241,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.Timeline.Editor.AdditionalFile.txt"
@@ -25298,7 +25298,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1909105,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.Timeline.Editor.rsp2"
@@ -26114,7 +26114,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 1918348,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.VisualScripting.Core.Editor.AdditionalFile.txt"
@@ -26140,7 +26140,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 2009988,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.VisualScripting.Core.Editor.rsp2"
@@ -27155,7 +27155,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 2019248,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.VisualScripting.Flow.AdditionalFile.txt"
@@ -27181,7 +27181,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 2101634,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.VisualScripting.Flow.rsp2"
@@ -28086,7 +28086,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 2110343,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/VRM.AdditionalFile.txt"
@@ -28740,7 +28740,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 2161694,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/lilToon.Editor.External.AdditionalFile.txt"
@@ -29292,7 +29292,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 2205578,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/DepthFirstScheduler.Editor.Tests.AdditionalFile.txt"
@@ -29824,7 +29824,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 2247874,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/UniGLTF.Editor.Tests.AdditionalFile.txt"
@@ -30360,7 +30360,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 2290375,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/UniGLTF.Editor.AdditionalFile.txt"
@@ -30924,7 +30924,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 2335064,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/UniHumanoid.Editor.Tests.AdditionalFile.txt"
@@ -31456,7 +31456,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 2377289,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/UniHumanoid.Editor.AdditionalFile.txt"
@@ -32012,7 +32012,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 2421375,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/UniVRM.Editor.AdditionalFile.txt"
@@ -32610,7 +32610,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 2468719,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.AI.Navigation.Updater.AdditionalFile.txt"
@@ -32636,7 +32636,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 2504042,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.AI.Navigation.Updater.rsp2"
@@ -33194,7 +33194,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 2513480,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.Formats.Fbx.Editor.AdditionalFile.txt"
@@ -33220,7 +33220,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 2550093,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.Formats.Fbx.Editor.rsp2"
@@ -33813,7 +33813,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 2559509,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.VisualScripting.Flow.Editor.AdditionalFile.txt"
@@ -33839,7 +33839,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 2614606,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.VisualScripting.Flow.Editor.rsp2"
@@ -34578,7 +34578,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 2624050,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.VisualScripting.State.AdditionalFile.txt"
@@ -34604,7 +34604,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 2660445,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.VisualScripting.State.rsp2"
@@ -35142,7 +35142,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 2669259,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/UniVRM.Editor.Tests.AdditionalFile.txt"
@@ -35684,7 +35684,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 2712072,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.VisualScripting.SettingsProvider.Editor.AdditionalFile.txt"
@@ -35710,7 +35710,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 2748225,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.VisualScripting.SettingsProvider.Editor.rsp2"
@@ -36298,7 +36298,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 2757872,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.VisualScripting.State.Editor.AdditionalFile.txt"
@@ -36324,7 +36324,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 2800960,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.VisualScripting.State.Editor.rsp2"
@@ -36935,7 +36935,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 2810597,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.VisualScripting.Shared.Editor.AdditionalFile.txt"
@@ -36961,7 +36961,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 2845836,
       "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Tres",
+      "PayloadDebugContentSnippet": "/pathmap:\"C:\\UnityProject\\Solo",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Unity.VisualScripting.Shared.Editor.rsp2"
@@ -37527,7 +37527,7 @@
       "ActionType": "WriteFile",
       "PayloadOffset": 2855550,
       "PayloadLength": 39,
-      "PayloadDebugContentSnippet": "C:\\UnityProject\\TresureRush\\Tr",
+      "PayloadDebugContentSnippet": "C:\\UnityProject\\SoloProject\\Tr",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1300b0aEDbg.dag/Assembly-CSharp.AdditionalFile.txt"
@@ -40206,7 +40206,7 @@
     {
       "Annotation": "BuildPlayerDataGenerator Library/BuildPlayerData/Editor/TypeDb-All.json",
       "DisplayName": "BuildPlayerDataGenerator TypeDb-All",
-      "Action": "\"C:/Program Files/Unity/Hub/Editor/2022.2.6f1/Editor/Data\\Tools\\netcorerun\\netcorerun.exe\" \"C:/Program Files/Unity/Hub/Editor/2022.2.6f1/Editor/Data/Tools/BuildPlayerDataGenerator/BuildPlayerDataGenerator.exe\" -a=\"C:/UnityProject/TresureRush/TresureDash/Library/ScriptAssemblies/Assembly-CSharp.dll\" -a=\"C:/UnityProject/TresureRush/TresureDash/Library/ScriptAssemblies/Autodesk.Fbx.dll\" -a=\"C:/UnityProject/TresureRush/TresureDash/Library/ScriptAssemblies/DepthFirstScheduler.dll\" -a=\"C:/UnityProject/TresureRush/TresureDash/Library/ScriptAssemblies/FbxBuildTestAssets.dll\" -a=\"C:/UnityProject/TresureRush/TresureDash/Library/ScriptAssemblies/MeshUtility.dll\" -a=\"C:/UnityProject/TresureRush/TresureDash/Library/ScriptAssemblies/MToon.dll\" -a=\"C:/UnityProject/TresureRush/TresureDash/Library/ScriptAssemblies/ShaderProperty.Runtime.dll\" -a=\"C:/UnityProject/TresureRush/TresureDash/Library/ScriptAssemblies/UniHumanoid.dll\" -a=\"C:/UnityProject/TresureRush/TresureDash/Library/ScriptAssemblies/UniJSON.dll\" -a=\"C:/UnityProject/TresureRush/TresureDash/Library/ScriptAssemblies/Unity.AI.Navigation.dll\" -a=\"C:/UnityProject/TresureRush/TresureDash/Library/ScriptAssemblies/Unity.Formats.Fbx.Runtime.dll\" -a=\"C:/UnityProject/TresureRush/TresureDash/Library/ScriptAssemblies/Unity.TextMeshPro.dll\" -a=\"C:/UnityProject/TresureRush/TresureDash/Library/ScriptAssemblies/Unity.Timeline.dll\" -a=\"C:/UnityProject/TresureRush/TresureDash/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll\" -a=\"C:/UnityProject/TresureRush/TresureDash/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll\" -a=\"C:/UnityProject/TresureRush/TresureDash/Library/ScriptAssemblies/Unity.VisualScripting.State.dll\" -a=\"C:/UnityProject/TresureRush/TresureDash/Library/ScriptAssemblies/UnityEngine.TestRunner.dll\" -a=\"C:/UnityProject/TresureRush/TresureDash/Library/ScriptAssemblies/UnityEngine.UI.dll\" -a=\"C:/UnityProject/TresureRush/TresureDash/Library/ScriptAssemblies/UniUnlit.dll\" -a=\"C:/UnityProject/TresureRush/TresureDash/Library/ScriptAssemblies/VRM.dll\" -a=\"C:/UnityProject/TresureRush/TresureDash/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll\" -a=\"C:/UnityProject/TresureRush/TresureDash/Library/PackageCache/com.unity.testtools.codecoverage@1.2.2/lib/ReportGenerator/ReportGeneratorMerged.dll\" -a=\"C:/UnityProject/TresureRush/TresureDash/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll\" -s=\"C:/Program Files/Unity/Hub/Editor/2022.2.6f1/Editor/Data/Managed/UnityEngine\" -s=\"C:/Program Files/Unity/Hub/Editor/2022.2.6f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx\" -s=\"C:/Program Files/Unity/Hub/Editor/2022.2.6f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard\" -s=\"C:/Program Files/Unity/Hub/Editor/2022.2.6f1/Editor/Data/NetStandard/Extensions/2.0.0\" -s=\"C:/Program Files/Unity/Hub/Editor/2022.2.6f1/Editor/Data/NetStandard/ref/2.1.0\" -s=\"C:/UnityProject/TresureRush/TresureDash/Library/ScriptAssemblies\" -s=\"C:/UnityProject/TresureRush/TresureDash/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom\" -s=\"C:/UnityProject/TresureRush/TresureDash/Library/PackageCache/com.unity.testtools.codecoverage@1.2.2/lib/ReportGenerator\" -s=\"C:/UnityProject/TresureRush/TresureDash/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc\" -o=\"Library/BuildPlayerData/Editor\" -rn=\"\" -tn=\"TypeDb-All.json\"",
+      "Action": "\"C:/Program Files/Unity/Hub/Editor/2022.2.6f1/Editor/Data\\Tools\\netcorerun\\netcorerun.exe\" \"C:/Program Files/Unity/Hub/Editor/2022.2.6f1/Editor/Data/Tools/BuildPlayerDataGenerator/BuildPlayerDataGenerator.exe\" -a=\"C:/UnityProject/SoloProject/TresureDash/Library/ScriptAssemblies/Assembly-CSharp.dll\" -a=\"C:/UnityProject/SoloProject/TresureDash/Library/ScriptAssemblies/Autodesk.Fbx.dll\" -a=\"C:/UnityProject/SoloProject/TresureDash/Library/ScriptAssemblies/DepthFirstScheduler.dll\" -a=\"C:/UnityProject/SoloProject/TresureDash/Library/ScriptAssemblies/FbxBuildTestAssets.dll\" -a=\"C:/UnityProject/SoloProject/TresureDash/Library/ScriptAssemblies/MeshUtility.dll\" -a=\"C:/UnityProject/SoloProject/TresureDash/Library/ScriptAssemblies/MToon.dll\" -a=\"C:/UnityProject/SoloProject/TresureDash/Library/ScriptAssemblies/ShaderProperty.Runtime.dll\" -a=\"C:/UnityProject/SoloProject/TresureDash/Library/ScriptAssemblies/UniHumanoid.dll\" -a=\"C:/UnityProject/SoloProject/TresureDash/Library/ScriptAssemblies/UniJSON.dll\" -a=\"C:/UnityProject/SoloProject/TresureDash/Library/ScriptAssemblies/Unity.AI.Navigation.dll\" -a=\"C:/UnityProject/SoloProject/TresureDash/Library/ScriptAssemblies/Unity.Formats.Fbx.Runtime.dll\" -a=\"C:/UnityProject/SoloProject/TresureDash/Library/ScriptAssemblies/Unity.TextMeshPro.dll\" -a=\"C:/UnityProject/SoloProject/TresureDash/Library/ScriptAssemblies/Unity.Timeline.dll\" -a=\"C:/UnityProject/SoloProject/TresureDash/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll\" -a=\"C:/UnityProject/SoloProject/TresureDash/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll\" -a=\"C:/UnityProject/SoloProject/TresureDash/Library/ScriptAssemblies/Unity.VisualScripting.State.dll\" -a=\"C:/UnityProject/SoloProject/TresureDash/Library/ScriptAssemblies/UnityEngine.TestRunner.dll\" -a=\"C:/UnityProject/SoloProject/TresureDash/Library/ScriptAssemblies/UnityEngine.UI.dll\" -a=\"C:/UnityProject/SoloProject/TresureDash/Library/ScriptAssemblies/UniUnlit.dll\" -a=\"C:/UnityProject/SoloProject/TresureDash/Library/ScriptAssemblies/VRM.dll\" -a=\"C:/UnityProject/SoloProject/TresureDash/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll\" -a=\"C:/UnityProject/SoloProject/TresureDash/Library/PackageCache/com.unity.testtools.codecoverage@1.2.2/lib/ReportGenerator/ReportGeneratorMerged.dll\" -a=\"C:/UnityProject/SoloProject/TresureDash/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll\" -s=\"C:/Program Files/Unity/Hub/Editor/2022.2.6f1/Editor/Data/Managed/UnityEngine\" -s=\"C:/Program Files/Unity/Hub/Editor/2022.2.6f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx\" -s=\"C:/Program Files/Unity/Hub/Editor/2022.2.6f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard\" -s=\"C:/Program Files/Unity/Hub/Editor/2022.2.6f1/Editor/Data/NetStandard/Extensions/2.0.0\" -s=\"C:/Program Files/Unity/Hub/Editor/2022.2.6f1/Editor/Data/NetStandard/ref/2.1.0\" -s=\"C:/UnityProject/SoloProject/TresureDash/Library/ScriptAssemblies\" -s=\"C:/UnityProject/SoloProject/TresureDash/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom\" -s=\"C:/UnityProject/SoloProject/TresureDash/Library/PackageCache/com.unity.testtools.codecoverage@1.2.2/lib/ReportGenerator\" -s=\"C:/UnityProject/SoloProject/TresureDash/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc\" -o=\"Library/BuildPlayerData/Editor\" -rn=\"\" -tn=\"TypeDb-All.json\"",
       "Inputs": [
         "C:/Program Files/Unity/Hub/Editor/2022.2.6f1/Editor/Data/Tools/netcorerun/netcorerun.exe",
         "C:/Program Files/Unity/Hub/Editor/2022.2.6f1/Editor/Data/Tools/BuildPlayerDataGenerator/BuildPlayerDataGenerator.exe",
@@ -40615,6 +40615,6 @@
   "SharedResources": [],
   "Scanners": [],
   "Identifier": "Library/Bee/1300b0aEDbg.dag.json",
-  "PayloadsFile": "C:/UnityProject/TresureRush/TresureDash/Library/Bee/1300b0aEDbg.dag.payloads",
+  "PayloadsFile": "C:/UnityProject/SoloProject/TresureDash/Library/Bee/1300b0aEDbg.dag.payloads",
   "RelativePathToRoot": "../.."
 }
