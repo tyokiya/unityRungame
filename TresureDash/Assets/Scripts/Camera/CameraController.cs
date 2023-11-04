@@ -11,10 +11,10 @@ public class CameraController : MonoBehaviour
 
     int addTurnCnt = 0; //角度に加算した回数のカウンタ
 
-    const float TurnAngleSpeed = 9.0f;  // カメラの振り向き速度定数
+    const float TurnAngleSpeed  = 9.0f; // カメラの振り向き速度定数
     const float AngularVelocity = 0.6f; // カメラの回転時の移動速度定数
     const float PlayerDirection = 5.0f; // プレイヤーとカメラの距離定数
-    const int   MaxTurnCnt = 10;        // 振り向きの最大回数の定数
+    const int   MaxTurnCnt      = 10;   // 振り向きの最大回数の定数
 
     /// <summary>
     /// カメラの情報更新

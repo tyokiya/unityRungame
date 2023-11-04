@@ -3496,7 +3496,7 @@ GameObject:
   - component: {fileID: 806446434}
   - component: {fileID: 806446435}
   m_Layer: 0
-  m_Name: Status
+  m_Name: State
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4857,9 +4857,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0197ca010d4a9224fac6ffc270e7d67a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screenInput_object: {fileID: 1783054617}
-  controller_object: {fileID: 963194229}
-  playerStatus_object: {fileID: 806446435}
+  screenInput: {fileID: 1783054617}
+  cameraController: {fileID: 963194229}
+  playerState: {fileID: 806446435}
   player: {fileID: 1657095306}
 --- !u!1001 &1156946438
 PrefabInstance:
