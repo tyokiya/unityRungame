@@ -6,22 +6,15 @@ using static Status;
 /// </summary>
 public class CameraController : MonoBehaviour
 {
-    [Tooltip("カメラの振り向き速度定数")]
-    const float TurnAngleSpeed = 9.0f;
-    [Tooltip("カメラの回転時の移動速度定数")]
-    const float AngularVelocity = 0.6f;
+    // 変更前のプレイヤーの向き
+    PlayerDirection beforeDirection = Status.PlayerDirection.Front; 
 
-    [Tooltip("プレイヤーとカメラの距離定数")]
-    const float PlayerDirection = 5.0f;
+    int addTurnCnt = 0; //角度に加算した回数のカウンタ
 
-    [Tooltip("振り向きの最大回数の定数")]
-    const int MaxTurnCnt = 10;
-
-    [Tooltip("変更前のプレイヤーの向き")]
-    PlayerDirection beforeDirection = Status.PlayerDirection.Front;
-
-    [Tooltip("角度に加算した回数のカウンタ")]
-    int turnCnt = 0;
+    const float TurnAngleSpeed = 9.0f;  // カメラの振り向き速度定数
+    const float AngularVelocity = 0.6f; // カメラの回転時の移動速度定数
+    const float PlayerDirection = 5.0f; // プレイヤーとカメラの距離定数
+    const int   MaxTurnCnt = 10;        // 振り向きの最大回数の定数
 
     /// <summary>
     /// カメラの情報更新
@@ -33,7 +26,7 @@ public class CameraController : MonoBehaviour
     {
         // プレイヤーの向いてる方向に変更があったら
         // カメラの向きを変える(走り出して以降)
-        if(state == PlayerState.Run && currentDirection != this.beforeDirection)
+        if(state == PlayerState.Run && currentDirection != beforeDirection)
         {
             RotationCamera(currentDirection);
         }
@@ -52,58 +45,54 @@ public class CameraController : MonoBehaviour
     void RotationCamera(PlayerDirection direction)
     {
         // カウント増加
-        this.turnCnt++;
+        addTurnCnt++;
 
         // プレイヤーの向いてる方向に合わせてカメラの回転処理
         switch (direction)
         {
-            case Status.PlayerDirection.Front:
-                // 前を向かせる　
-                if (this.beforeDirection == Status.PlayerDirection.Left)
+            case Status.PlayerDirection.Front: // 前を向かせる　
+                if (beforeDirection == Status.PlayerDirection.Left)
                 {
                     transform.eulerAngles += new Vector3(0, TurnAngleSpeed, 0);
                     transform.position += new Vector3(-AngularVelocity, 0, -AngularVelocity);
                 }
-                else if (this.beforeDirection == Status.PlayerDirection.Right)
+                else if (beforeDirection == Status.PlayerDirection.Right)
                 {
                     transform.eulerAngles -= new Vector3(0, TurnAngleSpeed, 0);
                     transform.position += new Vector3(AngularVelocity, 0, -AngularVelocity);
                 }
                 break;
-            case Status.PlayerDirection.Right:
-                // 右を向かせる　
-                if(this.beforeDirection == Status.PlayerDirection.Front)
+            case Status.PlayerDirection.Right: // 右を向かせる　
+                if (beforeDirection == Status.PlayerDirection.Front)
                 {
                     transform.eulerAngles += new Vector3(0, TurnAngleSpeed, 0);
                     transform.position += new Vector3(-AngularVelocity, 0, AngularVelocity);
                 }
-                else if(this.beforeDirection == Status.PlayerDirection.Back)
+                else if(beforeDirection == Status.PlayerDirection.Back)
                 {
                     transform.eulerAngles -= new Vector3(0, TurnAngleSpeed, 0);
                     transform.position += new Vector3(-AngularVelocity, 0, -AngularVelocity);
                 }
                 break;
-            case Status.PlayerDirection.Back:
-                // 後を向かせる　
-                if (this.beforeDirection == Status.PlayerDirection.Right)
+            case Status.PlayerDirection.Back: // 後ろを向かせる
+                if (beforeDirection == Status.PlayerDirection.Right)
                 {
                     transform.eulerAngles += new Vector3(0, TurnAngleSpeed, 0);
                     transform.position += new Vector3(AngularVelocity, 0, AngularVelocity);
                 }
-                else if (this.beforeDirection == Status.PlayerDirection.Left)
+                else if (beforeDirection == Status.PlayerDirection.Left)
                 {
                     transform.eulerAngles -= new Vector3(0, TurnAngleSpeed, 0);
                     transform.position += new Vector3(-AngularVelocity, 0, AngularVelocity);
                 }
                 break;
-            case Status.PlayerDirection.Left:
-                // 左を向かせる　
-                if (this.beforeDirection == Status.PlayerDirection.Back)
+            case Status.PlayerDirection.Left: // 左を向かせる　
+                if (beforeDirection == Status.PlayerDirection.Back)
                 {
                     transform.eulerAngles += new Vector3(0, TurnAngleSpeed, 0);
                     transform.position += new Vector3(AngularVelocity, 0, -AngularVelocity);
                 }
-                else if (this.beforeDirection == Status.PlayerDirection.Front)
+                else if (beforeDirection == Status.PlayerDirection.Front)
                 {
                     transform.eulerAngles -= new Vector3(0, TurnAngleSpeed, 0);
                     transform.position += new Vector3(AngularVelocity, 0, AngularVelocity);
@@ -112,11 +101,10 @@ public class CameraController : MonoBehaviour
         }
         // カウントが30回になったら回転処理完了
         // プレイヤーの変更前の向きを更新
-        if (this.turnCnt == MaxTurnCnt)
+        if (addTurnCnt == MaxTurnCnt)
         {
-            this.beforeDirection = direction;
-            // カウント初期化
-            this.turnCnt = 0;
+            beforeDirection = direction; // 変更後の方向を保持          
+            addTurnCnt = 0;              // カウント初期化
         }
     }
 
@@ -134,6 +122,7 @@ public class CameraController : MonoBehaviour
         }
         else
         {
+            // プレイヤーの方向に合わせて常に一定距離を開け追従
             switch (direction)
             {
                 case Status.PlayerDirection.Front:
