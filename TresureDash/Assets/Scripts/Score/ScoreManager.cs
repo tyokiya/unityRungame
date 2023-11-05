@@ -6,43 +6,39 @@
 public class ScoreManager : MonoBehaviour
 {
     // インスペクターから設定
-    [Tooltip("スコア管理オブジェクト")][SerializeField] 
-    ScoreController scoreController_object;
-    
-    [Tooltip("プレイヤー状態を管理するオブジェクト")][SerializeField] 
-    Status playerStatus_object;
+    [SerializeField] ScoreController scoreController; // スコア管理クラス
+    [SerializeField] Status          playerState;     // プレイヤーの状態管理クラス
 
-    [Tooltip("プレイヤーの生死状態")]
-    Status.PlayerAlive currentAlive;
+    Status.PlayerAlive currentAlive; // プレイヤーの生死状態管理
 
-    bool playerItemGetFlg = false;
+    bool playerItemGetFlg = false; // アイテム獲得フラグ
 
-    // オブジェクト生成時スコアのリセット処理を呼ぶ
     void Awake()
     {
-        this.scoreController_object.ScoreReset();
+        // オブジェクト生成時スコアのリセット処理を呼ぶ
+        scoreController.ScoreReset();
     }
 
     void Update()
     {
         // 現在の生死状態を受け取る
-        this.currentAlive = this.playerStatus_object.GetNowPlayerSurvival();
+        currentAlive = playerState.GetNowPlayerSurvival();
 
         // アイテム獲得フラグが立ってる場合それぞれに処理を命令
-        if (this.playerItemGetFlg)
+        if (playerItemGetFlg)
         {
             //Debug.Log("アイテム獲得処理開始");
             // アイテム獲得数上昇処理
-            this.scoreController_object.RiseItemSucore();
+            scoreController.RiseItemSucore();
 
             // フラグを下ろす
-            this.playerItemGetFlg = false;
+            playerItemGetFlg = false;
         }
 
         // プレイヤーが生存状態ならスコア上昇命令
-        if(this.currentAlive == Status.PlayerAlive.Life)
+        if(currentAlive == Status.PlayerAlive.Life)
         {
-            this.scoreController_object.ScoreUp();
+            scoreController.ScoreUp();
         }
     }
 
@@ -52,7 +48,7 @@ public class ScoreManager : MonoBehaviour
     public void ItemGetReport()
     {
         // アイテム獲得フラグを立てる
-        this.playerItemGetFlg = true;
+        playerItemGetFlg = true;
     }
 
     /// <summary>
@@ -61,6 +57,6 @@ public class ScoreManager : MonoBehaviour
     public void GoalItemGetReport()
     {
         // コントローラーにゴールスコア上昇処理
-        this.scoreController_object.GoalScoreUp();
+        scoreController.GoalScoreUp();
     }
 }

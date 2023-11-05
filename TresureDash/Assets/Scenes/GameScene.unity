@@ -4038,8 +4038,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91121be859cb4a2448b89eda92829324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreController_object: {fileID: 564433199}
-  playerStatus_object: {fileID: 806446435}
+  scoreController: {fileID: 564433199}
+  playerState: {fileID: 806446435}
 --- !u!4 &959826262
 Transform:
   m_ObjectHideFlags: 0

@@ -5,13 +5,12 @@
 /// </summary>
 public class ScoreController : MonoBehaviour
 {
-    // 獲得アイテム数
-    int getItemCnt = 0;
-    // 獲得スコア
-    int getSucore  = 0;
+    // カウンター
+    int getItemCnt = 0; // 獲得アイテム数
+    int getSucore  = 0; // 獲得スコア
 
-    [Tooltip("ゴール時のボーナススコア定数")]
-    const int BonusScore = 500;
+    // 定数
+    const int BonusScore = 500; // ゴール時のボーナススコア定数
 
     void Awake()
     { 
@@ -24,7 +23,7 @@ public class ScoreController : MonoBehaviour
     /// </summary>
     public void ScoreUp()
     {
-        this.getSucore++;
+        getSucore++;
     }
 
     /// <summary>
@@ -32,7 +31,7 @@ public class ScoreController : MonoBehaviour
     /// </summary>
     public void GoalScoreUp()
     {
-        this.getItemCnt += BonusScore;
+        getItemCnt += BonusScore;
     }
 
     /// <summary>
@@ -41,7 +40,7 @@ public class ScoreController : MonoBehaviour
     public void RiseItemSucore()
     {
         //Debug.Log("アイテム数上昇");
-        this.getItemCnt++;
+        getItemCnt++;
     }
 
     /// <summary>
@@ -49,7 +48,7 @@ public class ScoreController : MonoBehaviour
     /// </summary>
     public int ItemNumGetter()
     {
-        return this.getItemCnt;
+        return getItemCnt;
     }
 
     /// <summary>
@@ -57,7 +56,7 @@ public class ScoreController : MonoBehaviour
     /// </summary>
     public int ScoreGetter()
     {
-        return this.getSucore;
+        return getSucore;
     }
 
     /// <summary>
@@ -65,7 +64,7 @@ public class ScoreController : MonoBehaviour
     /// </summary>
     public void ScoreReset()
     {
-        this.getItemCnt = 0;
-        this.getSucore = 0;
+        getItemCnt = 0;
+        getSucore  = 0;
     }
 }
