@@ -6,15 +6,14 @@
 public class TapEffectController : MonoBehaviour
 {
     // インスペクターから設定
-    [Tooltip("タップエフェクトのパーティクル")][SerializeField]
-    ParticleSystem tapEffect_particle;
+    [SerializeField] ParticleSystem tapEffectParticle; // タップエフェクトのパーティクル
 
-    [Tooltip("生成したパーティクルを入れる配列")]
-    ParticleSystem[] particleArray = new ParticleSystem[ArrayMax];
-    int particleArray_cnt = 0;
+    ParticleSystem[] particleArray = new ParticleSystem[ArrayMax]; // 生成したパーティクルを入れる配列
+    int particleArray_cnt = 0;                                     // インデックスのカウンター
 
-    const int ArrayMax           = 20;
-    const float WaitDestroyTimer = 0.5f;
+    // 定数
+    const int ArrayMax           = 20;   // インデックスの最大数
+    const float WaitDestroyTimer = 0.5f; // オブジェクト破壊までの待機時間
 
     void Update()
     {
@@ -32,10 +31,10 @@ public class TapEffectController : MonoBehaviour
     public void PlyTapEffect(Vector3 pos)
     {
         // パーティクル生成
-        this.particleArray[this.particleArray_cnt] = Instantiate(this.tapEffect_particle, pos, Quaternion.identity);
+        particleArray[particleArray_cnt] = Instantiate(tapEffectParticle, pos, Quaternion.identity);
         // 時間経過後生成したパーティクルオブジェクトの削除
-        Destroy(this.particleArray[this.particleArray_cnt].gameObject, WaitDestroyTimer);
+        Destroy(particleArray[particleArray_cnt].gameObject, WaitDestroyTimer);
         // カウント増加
-        this.particleArray_cnt++;
+        particleArray_cnt++;
     }
 }

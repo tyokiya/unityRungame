@@ -377,7 +377,7 @@ GameObject:
   - component: {fileID: 239030888}
   - component: {fileID: 239030887}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: UICamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1920,7 +1920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a578134dc9afc8546a9bfb2ae7585e7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectCamera_objet: {fileID: 239030888}
+  UICamera: {fileID: 239030888}
 --- !u!4 &1473125786
 Transform:
   m_ObjectHideFlags: 0
@@ -2099,7 +2099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69da37db263d85e4185c7155711188c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tapEffect_particle: {fileID: 1878370471274381544, guid: bc3578e5bdda43e4ca6de7b374a96127, type: 3}
+  tapEffectParticle: {fileID: 1878370471274381544, guid: bc3578e5bdda43e4ca6de7b374a96127, type: 3}
 --- !u!4 &1870518547
 Transform:
   m_ObjectHideFlags: 0

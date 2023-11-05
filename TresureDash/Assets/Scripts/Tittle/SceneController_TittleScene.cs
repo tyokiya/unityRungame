@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class SceneController_TittleScene : MonoBehaviour
 {
-    [Tooltip("シーン切り替え時の待機時間")]
-    float waitTime = 0.6f;
+    // 定数
+    const float waitChangeSceneTime = 0.6f; // シーン切り替え時の待機時間
 
     /// <summary>
     /// ゲームシーンへ切り替えコルーチン
@@ -16,7 +16,7 @@ public class SceneController_TittleScene : MonoBehaviour
     public IEnumerator ChangeScene_Game()
     {
         // 0.6後シーン切り替え
-        yield return new WaitForSeconds(this.waitTime);
+        yield return new WaitForSeconds(waitChangeSceneTime);
         SceneManager.LoadScene("GameScene");
     }
 
@@ -26,7 +26,7 @@ public class SceneController_TittleScene : MonoBehaviour
     public IEnumerator ChangeScene_Credit()
     {
         // 0.6後シーン切り替え
-        yield return new WaitForSeconds(this.waitTime);
+        yield return new WaitForSeconds(waitChangeSceneTime);
         SceneManager.LoadScene("CreditScene");
     }
 
@@ -36,7 +36,7 @@ public class SceneController_TittleScene : MonoBehaviour
     public IEnumerator ChangeScene_Tutorial()
     {
         // 0.6後シーン切り替え
-        yield return new WaitForSeconds(this.waitTime);
+        yield return new WaitForSeconds(waitChangeSceneTime);
         SceneManager.LoadScene("TutorialScene");
     }
 }

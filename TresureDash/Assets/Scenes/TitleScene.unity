@@ -414,7 +414,7 @@ GameObject:
   - component: {fileID: 48723231}
   - component: {fileID: 48723230}
   m_Layer: 0
-  m_Name: SE_Controller
+  m_Name: Sound_Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -447,8 +447,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 865a90b7cecda20469c43ce1fbc5155c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource_object: {fileID: 48723231}
-  select_sound: {fileID: 8300000, guid: 9345d048d0ec3e5489ba8daa5a18ef59, type: 3}
+  audioSource: {fileID: 48723231}
+  selectSound: {fileID: 8300000, guid: 9345d048d0ec3e5489ba8daa5a18ef59, type: 3}
 --- !u!82 &48723231
 AudioSource:
   m_ObjectHideFlags: 0
@@ -635,12 +635,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804e686ea880b1a4495a896da944b272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneController_object: {fileID: 389631646}
-  soundCOntroller_object: {fileID: 48723230}
+  sceneController: {fileID: 389631646}
+  soundController: {fileID: 48723230}
   effectController_object: {fileID: 681158562}
   screenInput_object: {fileID: 1687962970}
   fade_obj: {fileID: 1229678582}
-  fade_time: 3
 --- !u!4 &70427798
 Transform:
   m_ObjectHideFlags: 0
@@ -2385,7 +2384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69da37db263d85e4185c7155711188c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tapEffect_particle: {fileID: 1878370471274381544, guid: bc3578e5bdda43e4ca6de7b374a96127, type: 3}
+  tapEffectParticle: {fileID: 1878370471274381544, guid: bc3578e5bdda43e4ca6de7b374a96127, type: 3}
 --- !u!4 &681158563
 Transform:
   m_ObjectHideFlags: 0
@@ -4955,7 +4954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a578134dc9afc8546a9bfb2ae7585e7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectCamera_objet: {fileID: 1794157047}
+  UICamera: {fileID: 1794157047}
 --- !u!1001 &1701166382
 PrefabInstance:
   m_ObjectHideFlags: 0

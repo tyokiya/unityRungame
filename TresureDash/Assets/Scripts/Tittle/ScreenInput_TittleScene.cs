@@ -6,12 +6,12 @@
 public class ScreenInput_TittleScene : MonoBehaviour
 {
     // インスペクターから設定
-    [Tooltip("エフェクト表示用カメラオブジェクト")][SerializeField] 
-    Camera effectCamera_objet;
+    [SerializeField] Camera UICamera; // エフェクト表示用カメラオブジェクト
 
-    [Tooltip("タップしたワールド座標")]
+    // タップしたワールド座標保持
     Vector3 tapPos;
-
+    
+    // タップフラグ
     bool tapFlg = false;
 
     void Update()
@@ -20,14 +20,14 @@ public class ScreenInput_TittleScene : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             // タップしたワールド座標取得しエフェクトの生成座標設定
-            this.tapPos = effectCamera_objet.ScreenToWorldPoint(Input.mousePosition + effectCamera_objet.transform.forward);
+            tapPos = UICamera.ScreenToWorldPoint(Input.mousePosition + UICamera.transform.forward);
             // フラグを立てる
-            this.tapFlg = true;
+            tapFlg = true;
         }
         else
         {
             // フラグを下ろす
-            this.tapFlg = false;
+            tapFlg = false;
         }
     }
 
@@ -37,7 +37,7 @@ public class ScreenInput_TittleScene : MonoBehaviour
     /// <returns>タップフラグ</returns>
     public bool TapFlgGetter()
     {
-        return this.tapFlg;
+        return tapFlg;
     }
 
     /// <summary>
@@ -46,6 +46,6 @@ public class ScreenInput_TittleScene : MonoBehaviour
     /// <returns>タップ座標</returns>
     public Vector3 TapPosGetter()
     {
-        return this.tapPos;
+        return tapPos;
     }
 }

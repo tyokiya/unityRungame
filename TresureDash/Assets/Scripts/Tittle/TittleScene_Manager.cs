@@ -7,28 +7,19 @@ using UnityEngine;
 public class TittleScene_Manager : MonoBehaviour
 {
     // インスペクターから設定
-    [Tooltip("シーンコントローラーオブジェクト")][SerializeField] 
-    SceneController_TittleScene sceneController_object;
+    [SerializeField] SceneController_TittleScene sceneController; // シーンコントローラークラス
+    [SerializeField] SoundCOntroller_TittleScene soundController; // サウンドコントローラークラス
+    [SerializeField] TapEffectController effectController_object; // エフェクトコントローラークラス
+    [SerializeField] ScreenInput_TittleScene screenInput_object;  // 入力を感知するクラス
+    [SerializeField] Fade fade_obj;                             　// フェード処理オブジェクト
 
-    [Tooltip("サウンドコントローラーオブジェクト")][SerializeField]
-    SoundCOntroller_TittleScene soundCOntroller_object;
-
-    [Tooltip("エフェクトのコントローラーオブジェクト")][SerializeField]
-    TapEffectController effectController_object;
-
-    [Tooltip("タイトルシーンの入力を受けるオブジェクト")][SerializeField]
-    ScreenInput_TittleScene screenInput_object;
-
-    [SerializeField][Tooltip("フェード処理オブジェクト")]
-    Fade fade_obj;
-
-    [SerializeField][Tooltip("フェード所要時間定数")]
-    int fade_time;
+    // 定数
+    const int fadeTime = 3; // フェード所要時間定数
 
     void Start()
     { 
         // 画面のフェードイン処理
-        this.fade_obj.FadeIn(fade_time);
+        this.fade_obj.FadeIn(fadeTime);
     }
 
     void Update()
@@ -48,7 +39,7 @@ public class TittleScene_Manager : MonoBehaviour
     public void Down_GameStartButton()
     {
         // フェードアウト処理
-        fade_obj.FadeOut(fade_time);
+        fade_obj.FadeOut(fadeTime);
         // シーン切り替えコルーチン
         StartCoroutine(ChangeGameScene());
     }
@@ -59,13 +50,13 @@ public class TittleScene_Manager : MonoBehaviour
     IEnumerator ChangeGameScene()
     {
         // セレクトサウンド再生命令
-        this.soundCOntroller_object.PlySelectSound();
+        this.soundController.PlySelectSound();
 
         // フェードアウトの時間分待機
-        yield return new WaitForSeconds(fade_time);
+        yield return new WaitForSeconds(fadeTime);
         
         // シーン切り替えコルーチン
-        StartCoroutine(this.sceneController_object.ChangeScene_Game());
+        StartCoroutine(this.sceneController.ChangeScene_Game());
     }
 
     /// <summary>
@@ -74,16 +65,16 @@ public class TittleScene_Manager : MonoBehaviour
     public void Down_TutorialButton()
     {
         // セレクトサウンド再生命令
-        this.soundCOntroller_object.PlySelectSound();
+        this.soundController.PlySelectSound();
         // シーン切り替えコルーチン
-        StartCoroutine(this.sceneController_object.ChangeScene_Tutorial());    
+        StartCoroutine(this.sceneController.ChangeScene_Tutorial());    
     }
 
     public void Down_CreditButton()
     {
         // セレクトサウンド再生命令
-        this.soundCOntroller_object.PlySelectSound();
+        this.soundController.PlySelectSound();
         // シーン切り替えコルーチン
-        StartCoroutine(this.sceneController_object.ChangeScene_Credit());
+        StartCoroutine(this.sceneController.ChangeScene_Credit());
     }
 }
