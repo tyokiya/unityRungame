@@ -5,24 +5,18 @@
 /// </summary>
 public class ScreenInput : MonoBehaviour
 {
-    [Tooltip("フリックの最小移動距離")][SerializeField] 
-    Vector2 FlickMinRange = new Vector2(30.0f, 30.0f);
+    readonly Vector2 FlickMinRange = new Vector2(30.0f, 30.0f); // フリックの最小移動距離
+    readonly Vector2 SwipeMinRange = new Vector2(50.0f, 50.0f); // スワイプ最小移動距離
 
-    [Tooltip("スワイプ最小移動距離")][SerializeField]
-    Vector2 SwipeMinRange = new Vector2(50.0f, 50.0f);
+    [SerializeField] const int NoneCountMax = 2; // TAPをNONEに戻すまでのカウント
+    int nowNoneCount = 0;
 
-    [Tooltip("TAPをNONEに戻すまでのカウント")][SerializeField]
-    const int NoneCountMax = 2;
-    int NoneCountNow       = 0;
+    Vector2 SwipeRange; // スワイプの入力距離
 
-    [Tooltip("スワイプの入力距離")]
-    Vector2 SwipeRange;
     // 入力方向記録用
     Vector2 InputSTART;
     Vector2 InputMOVE;
     Vector2 InputEND;
-
-    [Tooltip("フリックの方向")]
     public enum FlickDirection
     {
         NONE,
@@ -32,9 +26,7 @@ public class ScreenInput : MonoBehaviour
         DOWN,
         LEFT,
     }
-    FlickDirection NowFlick = FlickDirection.NONE;
-
-    [Tooltip("スワイプの方向")]
+    FlickDirection NowFlick = FlickDirection.NONE; // フリックの方向   
     public enum SwipeDirection
     {
         NONE,
@@ -44,13 +36,15 @@ public class ScreenInput : MonoBehaviour
         DOWN,
         LEFT,
     }
-    SwipeDirection NowSwipe = SwipeDirection.NONE;
+    SwipeDirection NowSwipe = SwipeDirection.NONE; // スワイプの方向
     void Update()
     {
         GetInputVector();
     }
 
-    // 入力の取得
+    /// <summary>
+    /// 入力の取得
+    /// </summary>
     void GetInputVector()
     {
         // Unity上での操作取得
@@ -158,10 +152,10 @@ public class ScreenInput : MonoBehaviour
     /// </summary>
     void ResetParameter()
     {
-        NoneCountNow++;
-        if (NoneCountNow >= NoneCountMax)
+        nowNoneCount++;
+        if (nowNoneCount >= NoneCountMax)
         {
-            NoneCountNow = 0;
+            nowNoneCount = 0;
             NowFlick = FlickDirection.NONE;
             NowSwipe = SwipeDirection.NONE;
             SwipeRange = new Vector2(0, 0);
