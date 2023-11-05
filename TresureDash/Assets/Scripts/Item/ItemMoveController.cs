@@ -5,8 +5,7 @@
 /// </summary>
 public class ItemMoveController : MonoBehaviour
 {
-    [Tooltip("アイテムのy軸回転スピード定数")]
-    const float RotateSpeed_y = 10.0f;
+    const float RotateSpeed_y = 10.0f; // アイテムのy軸回転スピード定数
     void Update()
     {
         // 一定の速度で回転
