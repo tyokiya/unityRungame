@@ -7,30 +7,24 @@ using UnityEngine;
 public class Status : MonoBehaviour
 {
     // インスペクターから設定
-    [Tooltip("親オブジェクトのトランスフォーム")][SerializeField]
-    Transform parent_transform;
+    [SerializeField] Transform parentTransform; // 親オブジェクトのトランスフォーム
 
-    // プレイヤーの落下判定のボーダーラインY軸
-    const float PlayerFallBorder_y = -0.5f;
-
-    [Tooltip("方向回転のデルタタイム")]
+    // 方向回転のデルタタイム
     float rotationDelta = 0;
-    [Tooltip("方向回転のスパン定数")]
-    const float RotationSpan = 1.0f;
 
-    [Tooltip("状態切り替えの待機時間")]
-    float waitTime = 3.0f;
+    // 定数
+    const float PlayerFallBorder_y  = -0.5f; // プレイヤーの落下判定のボーダーラインY軸
+    const float RotationSpan        = 1.0f;  // 方向回転のスパン定数
+    const float ChangeStateWaitTime = 3.0f;  // 状態切り替えの待機時間
 
-    [Tooltip("プレイヤーの状態")]
     public enum PlayerState
     {
         Walk,
         Run,
         Jump
     }
-    PlayerState currentSituation = PlayerState.Walk;
-    
-    [Tooltip("プレイヤーの生死状態")]
+    PlayerState currentSituation = PlayerState.Walk; // プレイヤーの状態
+
     public enum PlayerAlive
     {
         Life,           //生存状態
@@ -38,9 +32,8 @@ public class Status : MonoBehaviour
         FallDeath,      //落下による死亡状態
         ClearLife       //生存状態でのクリア
     }
-    PlayerAlive currentAlive = PlayerAlive.Life;
+    PlayerAlive currentAlive = PlayerAlive.Life; // プレイヤーの生死状態
 
-    [Tooltip("現在のプレイヤー向いている方向")]
     public enum PlayerDirection
     {
         Front,
@@ -48,12 +41,12 @@ public class Status : MonoBehaviour
         Back,
         Left
     }
-    PlayerDirection currentDirection = PlayerDirection.Front;
+    PlayerDirection currentDirection = PlayerDirection.Front; // 現在のプレイヤー向いている方向
 
     void Update()
     {
         //デルタ増加
-        this.rotationDelta += Time.deltaTime;
+        rotationDelta += Time.deltaTime;
     }
 
     /// <summary>
@@ -62,10 +55,10 @@ public class Status : MonoBehaviour
     public IEnumerator ChangeSituation()
     {
         // 3秒待機
-        yield return new WaitForSeconds(this.waitTime);
+        yield return new WaitForSeconds(ChangeStateWaitTime);
         //Debug.Log("ステータスコルーチン実行");
         // 状態を切り替え
-        this.currentSituation = PlayerState.Run;
+        currentSituation = PlayerState.Run;
     }
 
     /// <summary>
@@ -73,7 +66,7 @@ public class Status : MonoBehaviour
     /// </summary>
     public PlayerState GetNowPlayerSituation()
     {
-        return this.currentSituation;
+        return currentSituation;
     }
 
     /// <summary>
@@ -81,7 +74,7 @@ public class Status : MonoBehaviour
     /// </summary>
     public PlayerDirection GetNowPlayerDirection()
     {
-        return this.currentDirection;
+        return currentDirection;
     }
 
     /// <summary>
@@ -89,7 +82,7 @@ public class Status : MonoBehaviour
     /// </summary>
     public PlayerAlive GetNowPlayerSurvival()
     {
-        return this.currentAlive;
+        return currentAlive;
     }
 
     /// <summary>
@@ -101,32 +94,32 @@ public class Status : MonoBehaviour
     public void SituationUpdate(bool GroundFlg, ScreenInput.FlickDirection flick, bool turnGroundFlg)
     { 
         // ジャンプ状態から地面についた場合ステータスを変更
-        if (GroundFlg && this.currentSituation == PlayerState.Jump)
+        if (GroundFlg && currentSituation == PlayerState.Jump)
         {
-            this.currentSituation = PlayerState.Run;
+            currentSituation = PlayerState.Run;
         }
 
         // フリックの状態に応じてステータスを変更
         // プレイヤーが走っている状態のときはジャンプに切り替える
-        if (flick == ScreenInput.FlickDirection.UP && this.currentSituation == PlayerState.Run)
+        if (flick == ScreenInput.FlickDirection.UP && currentSituation == PlayerState.Run)
         {
-            this.currentSituation = PlayerState.Jump;
+            currentSituation = PlayerState.Jump;
         }
 
         // 向きを変える処理
         // ターン可能な地面にいるかの確認
         // 走り状態化の確認
-        if (flick == ScreenInput.FlickDirection.RIGHT && this.rotationDelta > RotationSpan && currentSituation == PlayerState.Run && turnGroundFlg)
+        if (flick == ScreenInput.FlickDirection.RIGHT && rotationDelta > RotationSpan && currentSituation == PlayerState.Run && turnGroundFlg)
         {
             ChangeDirection(true);
             // デルタ初期化
-            this.rotationDelta = 0;
+            rotationDelta = 0;
         }
-        if (flick == ScreenInput.FlickDirection.LEFT && this.rotationDelta > RotationSpan && currentSituation == PlayerState.Run && turnGroundFlg)
+        if (flick == ScreenInput.FlickDirection.LEFT && rotationDelta > RotationSpan && currentSituation == PlayerState.Run && turnGroundFlg)
         {
             ChangeDirection(false);
             // デルタ初期化
-            this.rotationDelta = 0;
+            rotationDelta = 0;
         }
 
     }
@@ -138,53 +131,53 @@ public class Status : MonoBehaviour
     void ChangeDirection(bool rightFlg)
     {
         // 現在の方向と回転方向に応じた処理
-        switch (this.currentDirection)
+        switch (currentDirection)
         {
             case PlayerDirection.Front:
                 if (rightFlg)
                 {
-                    this.currentDirection = PlayerDirection.Right;
+                    currentDirection = PlayerDirection.Right;
                     //Debug.Log("プレイヤーの方向変更(右)");
                 }
                 else
                 {
-                    this.currentDirection = PlayerDirection.Left;
+                    currentDirection = PlayerDirection.Left;
                     //Debug.Log("プレイヤーの方向変更(左)");
                 }
                 break;
             case PlayerDirection.Right:
                 if (rightFlg)
                 {
-                    this.currentDirection = PlayerDirection.Back;
+                    currentDirection = PlayerDirection.Back;
                     //Debug.Log("プレイヤーの方向変更(後)");
                 }
                 else
                 {
-                    this.currentDirection = PlayerDirection.Front;
+                    currentDirection = PlayerDirection.Front;
                     //Debug.Log("プレイヤーの方向変更(前)");
                 }
                 break;
             case PlayerDirection.Back:
                 if (rightFlg)
                 {
-                    this.currentDirection = PlayerDirection.Left;
+                    currentDirection = PlayerDirection.Left;
                     //Debug.Log("プレイヤーの方向変更(左)");
                 }
                 else
                 {
-                    this.currentDirection = PlayerDirection.Right;
+                    currentDirection = PlayerDirection.Right;
                     //Debug.Log("プレイヤーの方向変更(右)");
                 }
                 break;
             case PlayerDirection.Left:
                 if (rightFlg)
                 {
-                    this.currentDirection = PlayerDirection.Front;
+                    currentDirection = PlayerDirection.Front;
                     //Debug.Log("プレイヤーの方向変更(前)");
                 }
                 else
                 {
-                    this.currentDirection = PlayerDirection.Back;
+                    currentDirection = PlayerDirection.Back;
                     //Debug.Log("プレイヤーの方向変更(後)");
                 }
                 break;
@@ -202,16 +195,16 @@ public class Status : MonoBehaviour
     public void SurvivalChek(bool collisionFlg)
     { 
         // プレヤーの座標が落下ボーダーより下にないかの確認
-        if (parent_transform.position.y < PlayerFallBorder_y)
+        if (parentTransform.position.y < PlayerFallBorder_y)
         {
             // プレイヤーの生存状態を変更
-            this.currentAlive = PlayerAlive.FallDeath;
+            currentAlive = PlayerAlive.FallDeath;
         }
         // 衝突フラグが立っているかを確認
         if (collisionFlg)
         {
             //プレイヤーの生存状態を変更
-            this.currentAlive = PlayerAlive.CollisionDeath;
+            currentAlive = PlayerAlive.CollisionDeath;
         }
     }
 
@@ -220,6 +213,6 @@ public class Status : MonoBehaviour
     /// </summary>
     public void ChangeNowSurvival_Goal()
     {
-        this.currentAlive = PlayerAlive.ClearLife;
+        currentAlive = PlayerAlive.ClearLife;
     }
 }

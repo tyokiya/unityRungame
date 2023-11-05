@@ -9,161 +9,121 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     // インスペクターから設定
-    [Tooltip("接地判定のオブジェクト")][SerializeField] 
-    GroudCheck groundCheck_object;
+    [SerializeField] GroudCheck                groundCheck;        // プレイヤーの接地判定クラス
+    [SerializeField] CollisionCheck            collisionCheck;     // プレイヤーの衝突管理クラス
+    [SerializeField] Status                    playerState;        // プレイヤーの状態管理クラス     
+    [SerializeField] PlayerMove                playerMove;         // プレイヤーの動きを管理するクラス
+    [SerializeField] PlayerAnimationController playerAnimation;    // プレイヤーのアニメーション管理クラス
+    [SerializeField] SoundController           playerSound;        // プレイヤーのサウンド管理クラス
+    [SerializeField] ParticleController        particleController; // プレイヤーのパーティクルコントローラークラス
+    [SerializeField] SceneChenger              sceneController;    // シーンのコントローラークラス
+    [SerializeField] ScreenInput               screenInput;        // タップ入力感知クラス
+    [SerializeField] GyroInput                 gyroInput;          // ジャイロ入力感知クラス
 
-    [Tooltip("プレイヤーの衝突チェックオブジェクト")][SerializeField] 
-    CollisionCheck collisionCheck_object;
+    ScreenInput.FlickDirection currentFlick;       // 現在の入力状態を入れる変数
+    GyroInput.TiltDirection currentTili_direction; // スマホの傾きを入れる変数
+    Status.PlayerState currentSituation;           // プレイヤーの状態を入れる変数
+    Status.PlayerAlive currentAlive;               // 現在のプレイヤーの生死状態を入れる変数
+    Status.PlayerDirection currentDirection;       // 現在のプレイヤーの向いてる方向を入れる変数
 
-    [Tooltip("入力状態を返すオブジェクト")][SerializeField]
-    ScreenInput screenInput_object;    
+    // フラグ
+    bool onGroudFlg      = false; // 接地フラグ
+    bool onTurnGroundFlg = false; // ターン可能な地面との設置フラグを入れる
+    bool collisionFlg    = false; // プレイヤーの衝突フラグ
+    bool deathFlg        = false; // プレイヤーの死亡フラグ
 
-    [Tooltip("ジャイロ入力を返すオブジェクト")][SerializeField] 
-    GyroInput gyroInput_object;
+    // 定数
+    const float FallDeathWaitTime       = 1.0f; // 落下死の待機時間
+    const float CollisionDeathWaitTImer = 2.1f; // 衝突死の待機時間
+    const float GoalWaitTimer           = 3.0f; // ゴール時の待機時間
 
-    [Tooltip("プレイヤー状態を管理オブジェクト")][SerializeField] 
-    Status playerStatus_object; 
-    
-    [Tooltip("プレイヤーを動かすオブジェクト")][SerializeField]
-    Move playerMove_object;    
-
-    [Tooltip("アニメーションを管理するオブジェクト")][SerializeField] 
-    PlayerAnimationController playerAnimation_object;
-
-    [Tooltip("プレイヤーのサウンドを管理するオブジェクト")][SerializeField] 
-    SoundController playerSound_object;    
-
-    [Tooltip("シーンのコントローラーオブジェクト")][SerializeField]
-    SceneChenger sceneController_object;  
-    
-    [Tooltip("プレイヤーのパーティクルコントローラーオブジェクト")][SerializeField]
-    ParticleController particleController_object;
-
-    [Tooltip("接地フラグ")]
-    bool onGroudFlg = false;
-    // ターン可能な地面との設置フラグを入れる
-    [Tooltip("ターン可能な地面との接地フラグ")]
-    bool onTurnGroundFlg = false;
-
-    [Tooltip("現在の入力状態を入れる変数")]
-    ScreenInput.FlickDirection currentFlick;
-
-    [Tooltip("スマホの傾きを入れる変数")]
-    GyroInput.TiltDirection currentTili_direction;
-
-    [Tooltip("プレイヤーの状態を入れる変数")]
-    Status.PlayerState currentSituation;
-    
-    [Tooltip("現在のプレイヤーの生死状態を入れる変数")]
-    Status.PlayerAlive currentAlive;
-
-    [Tooltip("現在のプレイヤーの向いてる方向を入れる変数")]
-    Status.PlayerDirection currentDirection;
-
-    [Tooltip("落下死の待機時間定数")]
-    const float FallDeathWaitTime = 1.0f;
-    [Tooltip("衝突死の待機時間定数")]
-    const float CollisionDeathWaitTImer = 2.1f;
-    [Tooltip("ゴール時の待機時間定数")]
-    const float GoalWaitTimer = 3.0f;
-
-    //プレイヤーのフラグ
-    bool collisionFlg = false;
-    bool deathFlg =     false;
-    
-    [Tooltip("タイトルシーン切り替えのデリゲート")]
-    SceneChenger.changeScene_delegate change_ResultScene_delegate;
-
-    [Tooltip("落下音再生のデリゲート")]
-    SoundController.ply_playerSound_delegate player_fallSound_delegate;
-
-    [Tooltip("衝突音再生のデリゲート")]
-    SoundController.ply_playerSound_delegate player_collisionSound_delegate;
-
-    [Tooltip("ジャンプ音再生のデリゲート")]
-    SoundController.ply_playerSound_delegate player_jumpound_delegate;
+    // デリゲート
+    SceneChenger.changeScene_delegate        ChangeResultScene;    // タイトルシーン切り替えのデリゲート
+    SoundController.PlyPlayerSound PlayerFallSound;      // 落下音再生のデリゲート
+    SoundController.PlyPlayerSound PlayerCollisionSound; // 衝突音再生のデリゲート
+    SoundController.PlyPlayerSound PlayJumpoSound;       // ジャンプ音再生のデリゲート
 
     void Awake()
     {
         // コルーチン呼び出し
-        StartCoroutine(playerStatus_object.ChangeSituation());
-        StartCoroutine(playerAnimation_object.ChangeAnimaiton());
+        StartCoroutine(playerState.ChangeSituation());
+        StartCoroutine(playerAnimation.ChangeAnimaiton());
 
         // タイトルシーンへの切り替えメソッドをchange_ResultScene_delegateへ代入
-        this.change_ResultScene_delegate = new 
-        SceneChenger.changeScene_delegate(this.sceneController_object.ChangeResultScene);
+        ChangeResultScene = new 
+        SceneChenger.changeScene_delegate(sceneController.ChangeResultScene);
 
         // 落下音の再生メソッドをplayer_fallSound_delegateへ代入
-        this.player_fallSound_delegate = new 
-        SoundController.ply_playerSound_delegate(this.playerSound_object.PlyFallSound);
+        PlayerFallSound = new 
+        SoundController.PlyPlayerSound(playerSound.PlyFallSound);
 
         // 衝突音再生メソッドを
-        this.player_collisionSound_delegate = new 
-        SoundController.ply_playerSound_delegate(this.playerSound_object.PlyCollisionSound);
+        PlayerCollisionSound = new 
+        SoundController.PlyPlayerSound(playerSound.PlyCollisionSound);
 
         // ジャンプ音の再生メソッドをplayer_jumpound_delegateへ代入
-        this.player_jumpound_delegate = new 
-        SoundController.ply_playerSound_delegate(this.playerSound_object.PlyJumpSound);
+        PlayJumpoSound = new 
+        SoundController.PlyPlayerSound(playerSound.PlyJumpSound);
     }
 
     void Update()
     {
         // 接地判定を受け取る
-        this.onGroudFlg      = this.groundCheck_object.GetGroundStandFlg();
-        this.onTurnGroundFlg = this.groundCheck_object.GetTurnGroundStandFlg();
+        onGroudFlg      = groundCheck.GetGroundStandFlg();
+        onTurnGroundFlg = groundCheck.GetTurnGroundStandFlg();
 
         // フリック方向を受け取る
-        this.currentFlick          = this.screenInput_object.GetNowFlick();
+        currentFlick          = screenInput.GetNowFlick();
         // スマホの傾きを受け取る
-        this.currentTili_direction = this.gyroInput_object.GetDifferenceTilt();
+        currentTili_direction = gyroInput.GetDifferenceTilt();
         // 現在の状態を受け取る
-        this.currentSituation      = this.playerStatus_object.GetNowPlayerSituation();
+        currentSituation      = playerState.GetNowPlayerSituation();
         // 現在の生死状態を受け取る
-        this.currentAlive          = this.playerStatus_object.GetNowPlayerSurvival();
+        currentAlive          = playerState.GetNowPlayerSurvival();
         // 現在のプレイヤーの向いてる方向を受け取る
-        this.currentDirection      = this.playerStatus_object.GetNowPlayerDirection();
+        currentDirection      = playerState.GetNowPlayerDirection();
         // レイヤーの衝突フラグを受け取る
-        this.collisionFlg          = this.collisionCheck_object.GetCollisionFlg();
+        collisionFlg          = collisionCheck.GetCollisionFlg();
 
         // プレイヤーが生存状態での処理
-        if(this.currentAlive == Status.PlayerAlive.Life)
+        if(currentAlive == Status.PlayerAlive.Life)
         {
             // ステータスの更新
-            this.playerStatus_object.SituationUpdate(this.onGroudFlg, this.currentFlick, this.onTurnGroundFlg);
+            playerState.SituationUpdate(onGroudFlg, currentFlick, onTurnGroundFlg);
             // 移動の更新
-            this.playerMove_object.MovePlayerUpdate(this.currentFlick, this.currentSituation, this.currentDirection, this.currentTili_direction, this.onTurnGroundFlg,this.player_jumpound_delegate);
+            playerMove.MovePlayerUpdate(currentFlick, currentSituation, currentDirection, currentTili_direction, onTurnGroundFlg,PlayJumpoSound);
             // アニメーション更新
-            this.playerAnimation_object.AnimationUpdate(this.currentFlick, this.currentSituation, this.collisionFlg);
+            playerAnimation.AnimationUpdate(currentFlick, currentSituation, collisionFlg);
             // プレイヤーの生死確認
-            this.playerStatus_object.SurvivalChek(this.collisionFlg);
+            playerState.SurvivalChek(collisionFlg);
             // プレイヤーの移動サウンド再生
-            this.playerSound_object.PlyWalkSound(this.currentSituation);
+            playerSound.PlyWalkSound(currentSituation);
         }
 
         // 衝突死の処理
-        if(this.currentAlive == Status.PlayerAlive.CollisionDeath && !this.deathFlg)
+        if(currentAlive == Status.PlayerAlive.CollisionDeath && !deathFlg)
         {            
             // 衝突パーティクル再生
-            this.particleController_object.PlyCollisionParticle();
+            particleController.PlyCollisionParticle();
             // 衝突音再生
-            this.player_collisionSound_delegate();
+            PlayerCollisionSound();
             // デリゲートでシーンをリザルトに変更
-            StartCoroutine(this.change_ResultScene_delegate(CollisionDeathWaitTImer));
+            StartCoroutine(ChangeResultScene(CollisionDeathWaitTImer));
 
             // 死亡フラグを立てる
-            this.deathFlg = true;
+            deathFlg = true;
         }
 
         // 落下死処理
-        if(this.currentAlive == Status.PlayerAlive.FallDeath && !this.deathFlg)
+        if(currentAlive == Status.PlayerAlive.FallDeath && !deathFlg)
         {
             // 落下サウンド再生
-            this.player_fallSound_delegate();
+            PlayerFallSound();
             // デリゲートでシーンをリザルトに変更
-            StartCoroutine(this.change_ResultScene_delegate(FallDeathWaitTime));
+            StartCoroutine(ChangeResultScene(FallDeathWaitTime));
 
             // 死亡フラグを立てる
-            this.deathFlg = true;
+            deathFlg = true;
         }
     }
 
@@ -174,9 +134,9 @@ public class PlayerManager : MonoBehaviour
     public void ItemGetReport(Vector3 itemPos)
     {
         // 獲得音再生の命令
-        this.playerSound_object.PlyGetItemSound();
+        playerSound.PlyGetItemSound();
         // 獲得時kのパーティクル再生
-        this.particleController_object.PlyItemGetParticle(itemPos);
+        particleController.PlyItemGetParticle(itemPos);
     }
 
     /// <summary>
@@ -185,12 +145,12 @@ public class PlayerManager : MonoBehaviour
     public void GoalReport()
     {
         // デリゲートでリザルトシーンへの切り替え
-        StartCoroutine(this.change_ResultScene_delegate(GoalWaitTimer));
+        StartCoroutine(ChangeResultScene(GoalWaitTimer));
         // アニメーショントリガーを切り替える
-        this.playerAnimation_object.ChangeTrigger_Goal();
+        playerAnimation.ChangeTrigger_Goal();
         // ゴール音再生命令
-        this.playerSound_object.PlyGoalSound();
+        playerSound.PlyGoalSound();
         // 生存状態を切り替える
-        this.playerStatus_object.ChangeNowSurvival_Goal();
+        playerState.ChangeNowSurvival_Goal();
     }
 }

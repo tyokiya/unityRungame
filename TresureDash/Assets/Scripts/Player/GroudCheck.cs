@@ -5,15 +5,13 @@
 /// </summary>
 public class GroudCheck : MonoBehaviour
 {
-    [Tooltip("地面のタグ名定数")] 
-    const string GroundTagName     = "Ground";
-    [Tooltip("回転可能な地面のタグ名定数")]
-    const string TurnGroundTagName = "TurnGround";
+    // タグ名定数
+    const string GroundTagName     = "Ground";     // 地面のタグ名定数
+    const string TurnGroundTagName = "TurnGround"; // 回転可能な地面のタグ名定数
 
-    [Tooltip("地面の接地フラグ")]
-    bool standGroundFlg     = true;
-    [Tooltip("回転地面の接地フラグ")]
-    bool standTurnGroundFlg = false;
+    // フラグ
+    bool standGroundFlg     = true;  // 地面の接地フラグ
+    bool standTurnGroundFlg = false; // 回転地面の接地フラグ
 
     /// <summary>
     /// 接地を受け取りフラグを立てる
@@ -24,13 +22,13 @@ public class GroudCheck : MonoBehaviour
         if (other.tag == GroundTagName)
         {
             // 通常の地面の処理
-            this.standGroundFlg = true;
+            standGroundFlg = true;
         }
         else if(other.tag == TurnGroundTagName)
         {
             // 回転可能な地面の処理
-            this.standGroundFlg     = true;
-            this.standTurnGroundFlg = true;
+            standGroundFlg     = true;
+            standTurnGroundFlg = true;
         }
     }
 
@@ -42,12 +40,12 @@ public class GroudCheck : MonoBehaviour
         // 衝突したものが地面なのかを調べる
         if (other.tag == GroundTagName)
         {
-            this.standGroundFlg = false;
+            standGroundFlg = false;
         }
         else if (other.tag == TurnGroundTagName)
         {
-            this.standGroundFlg     = false;
-            this.standTurnGroundFlg = false;
+            standGroundFlg     = false;
+            standTurnGroundFlg = false;
         }
     }
     /// <summary>

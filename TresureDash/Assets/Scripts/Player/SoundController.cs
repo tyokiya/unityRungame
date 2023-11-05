@@ -6,25 +6,24 @@
 public class SoundController : MonoBehaviour
 {
     // インスペクターから設定
-    [Tooltip("オーディオソースオブジェクト")][SerializeField]
-    AudioSource audioSource_object;
-    
+    [SerializeField] AudioSource audioSource; // オーディオソースオブジェクト
+
     // 再生音
-    [SerializeField] AudioClip foot_sound;
-    [SerializeField] AudioClip fall_sound;
-    [SerializeField] AudioClip jump_sound;
-    [SerializeField] AudioClip collision_sound;
-    [SerializeField] AudioClip getItem_sound;
-    [SerializeField] AudioClip goal_sound;
+    [SerializeField] AudioClip foot_sound;      // 足音
+    [SerializeField] AudioClip fall_sound;      // 落下音
+    [SerializeField] AudioClip jump_sound;      // ジャンプ音
+    [SerializeField] AudioClip collision_sound; // 衝突音
+    [SerializeField] AudioClip getItem_sound;   // アイテム獲得音
+    [SerializeField] AudioClip goal_sound;      // ゴール音
 
-    [Tooltip("足音(歩き)再生のスパン定数")]
-    const float WalkSound_span = 0.5f;
-    [Tooltip("足音(走り)再生のスパン定数")]
-    const float RunSound_span = 0.3f;
-    float foot_sound_delta = 0;
+    // 定数
+    const float WalkSound_span = 0.5f; // 足音(歩き)再生のスパン定数
+    const float RunSound_span = 0.3f;  // 足音(走り)再生のスパン
 
-    // サウンド再生時のデリゲート定義
-    public delegate void ply_playerSound_delegate();
+    float foot_sound_delta = 0; // デルタタイムを保持する
+
+    // サウンド再生時のデリゲート
+    public delegate void PlyPlayerSound();
 
     /// <summary>
     /// 現在のプレイヤーの状態に応じて移動音再生
@@ -33,22 +32,22 @@ public class SoundController : MonoBehaviour
     public void PlyWalkSound(Status.PlayerState state)
     {
         // 現在の状態を見てサウンド再生
-        if(state == Status.PlayerState.Walk && this.foot_sound_delta > WalkSound_span)
+        if(state == Status.PlayerState.Walk && foot_sound_delta > WalkSound_span)
         {
             // 足音再生
-            this.audioSource_object.PlayOneShot(this.foot_sound);
+            audioSource.PlayOneShot(foot_sound);
             // デルタ初期化
-            this.foot_sound_delta = 0;
+            foot_sound_delta = 0;
         }
-        else if(state == Status.PlayerState.Run && this.foot_sound_delta > RunSound_span)
+        else if(state == Status.PlayerState.Run && foot_sound_delta > RunSound_span)
         {
             // 足音再生
-            this.audioSource_object.PlayOneShot(this.foot_sound);
+            audioSource.PlayOneShot(foot_sound);
             // デルタ初期化
-            this.foot_sound_delta = 0;
+            foot_sound_delta = 0;
         }
         // デルタ増加
-        this.foot_sound_delta += Time.deltaTime;
+        foot_sound_delta += Time.deltaTime;
     }
 
     /// <summary>
@@ -56,7 +55,7 @@ public class SoundController : MonoBehaviour
     /// </summary>
     public void PlyFallSound()
     {
-        this.audioSource_object.PlayOneShot(this.fall_sound);
+        audioSource.PlayOneShot(fall_sound);
     }
 
     /// <summary>
@@ -64,7 +63,7 @@ public class SoundController : MonoBehaviour
     /// </summary>
     public void PlyCollisionSound()
     {
-        this.audioSource_object.PlayOneShot(this.collision_sound);
+        audioSource.PlayOneShot(collision_sound);
     }
 
     /// <summary>
@@ -72,7 +71,7 @@ public class SoundController : MonoBehaviour
     /// </summary>
     public void PlyJumpSound()
     {
-        this.audioSource_object.PlayOneShot(this.jump_sound);
+        audioSource.PlayOneShot(jump_sound);
     }
 
     /// <summary>
@@ -80,7 +79,7 @@ public class SoundController : MonoBehaviour
     /// </summary>
     public void PlyGetItemSound()
     {
-        this.audioSource_object.PlayOneShot(this.getItem_sound);
+        audioSource.PlayOneShot(getItem_sound);
     }
 
     /// <summary>
@@ -88,6 +87,6 @@ public class SoundController : MonoBehaviour
     /// </summary>
     public void PlyGoalSound()
     {
-        this.audioSource_object.PlayOneShot(this.goal_sound);
+        audioSource.PlayOneShot(goal_sound);
     }
 }

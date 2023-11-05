@@ -7,11 +7,10 @@ using UnityEngine;
 public class PlayerAnimationController : MonoBehaviour
 {    
     // インスペクターから設定
-    [Tooltip("アニメーターを入れる変数")][SerializeField]
-    Animator animator;
+    [SerializeField] Animator animator; // アニメーターを入れる変数
 
-    // トリガー切り替え時の待機時間
-    const float WaitTime = 3f;
+    // 定数
+    const float WaitTime = 3f; // トリガー切り替え時の待機時間
 
     /// <summary>
     /// 3秒後トリガーを切り替えるコルーチン
@@ -23,7 +22,7 @@ public class PlayerAnimationController : MonoBehaviour
         yield return new WaitForSeconds(WaitTime);
         //Debug.Log("トリガーコルーチン実行");
         //runアニメーションのトリガーに切り替える
-        this.animator.SetTrigger("RunTrigger");
+        animator.SetTrigger("RunTrigger");
     }
 
     /// <summary>
@@ -35,10 +34,10 @@ public class PlayerAnimationController : MonoBehaviour
     public void AnimationUpdate(ScreenInput.FlickDirection flick, Status.PlayerState state, bool collisionFlg)
     {
         // 入力を受けつけトリガーを切り替える
-        if(flick == ScreenInput.FlickDirection.UP && state == Status.PlayerState.Run) this.animator.SetTrigger("JumpTrigger");
+        if(flick == ScreenInput.FlickDirection.UP && state == Status.PlayerState.Run) animator.SetTrigger("JumpTrigger");
 
         // 衝突フラグが立ってる場合トリガーを切り替える
-        if (collisionFlg) this.animator.SetTrigger("CollisionTrigger");
+        if (collisionFlg) animator.SetTrigger("CollisionTrigger");
     }
 
     /// <summary>
@@ -47,6 +46,6 @@ public class PlayerAnimationController : MonoBehaviour
     public void ChangeTrigger_Goal()
     {
         //アニメーショントリガーをゴールトリガーに切り替える
-        this.animator.SetTrigger("GoalTrigger");
+        animator.SetTrigger("GoalTrigger");
     }
 }
