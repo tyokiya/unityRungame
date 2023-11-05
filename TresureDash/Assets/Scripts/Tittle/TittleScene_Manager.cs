@@ -19,17 +19,17 @@ public class TittleScene_Manager : MonoBehaviour
     void Start()
     { 
         // 画面のフェードイン処理
-        this.fade_obj.FadeIn(fadeTime);
+        fade_obj.FadeIn(fadeTime);
     }
 
     void Update()
     {
         // プレイヤーからの入力があるか確認
-        if(this.screenInput_object.TapFlgGetter())
+        if(screenInput_object.TapFlgGetter())
         {
             // 座標を受け取りエフェクトの表示命令
-            Vector3 pos = this.screenInput_object.TapPosGetter();
-            this.effectController_object.PlyTapEffect(pos);
+            Vector3 pos = screenInput_object.TapPosGetter();
+            effectController_object.PlyTapEffect(pos);
         }
     }
 
@@ -50,13 +50,13 @@ public class TittleScene_Manager : MonoBehaviour
     IEnumerator ChangeGameScene()
     {
         // セレクトサウンド再生命令
-        this.soundController.PlySelectSound();
+        soundController.PlySelectSound();
 
         // フェードアウトの時間分待機
         yield return new WaitForSeconds(fadeTime);
         
         // シーン切り替えコルーチン
-        StartCoroutine(this.sceneController.ChangeScene_Game());
+        StartCoroutine(sceneController.ChangeScene_Game());
     }
 
     /// <summary>
@@ -65,16 +65,16 @@ public class TittleScene_Manager : MonoBehaviour
     public void Down_TutorialButton()
     {
         // セレクトサウンド再生命令
-        this.soundController.PlySelectSound();
+        soundController.PlySelectSound();
         // シーン切り替えコルーチン
-        StartCoroutine(this.sceneController.ChangeScene_Tutorial());    
+        StartCoroutine(sceneController.ChangeScene_Tutorial());    
     }
 
     public void Down_CreditButton()
     {
         // セレクトサウンド再生命令
-        this.soundController.PlySelectSound();
+        soundController.PlySelectSound();
         // シーン切り替えコルーチン
-        StartCoroutine(this.sceneController.ChangeScene_Credit());
+        StartCoroutine(sceneController.ChangeScene_Credit());
     }
 }

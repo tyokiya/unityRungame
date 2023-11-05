@@ -6,19 +6,16 @@
 public class SoundCOntroller_TutorialScene : MonoBehaviour
 {
     // インスペクターから設定
-    [SerializeField] AudioSource audioSource_object;
-
-    [SerializeField] AudioClip select_sound;
-
-    [Tooltip("ページをめくる音")][SerializeField] 
-    AudioClip page_sound;
+    [SerializeField] AudioSource audioSource; // オーディオソース
+    [SerializeField] AudioClip   selectSound; // 決定音
+    [SerializeField] AudioClip   pageSound;   // ページをめくる音
 
     /// <summary>
     /// セレクトサウンドの再生
     /// </summary>
     public void PlySelectSound()
     {
-        this.audioSource_object.PlayOneShot(this.select_sound);
+        audioSource.PlayOneShot(selectSound);
     }
 
     /// <summary>
@@ -26,6 +23,6 @@ public class SoundCOntroller_TutorialScene : MonoBehaviour
     /// </summary>
     public void PlyPageSound()
     {
-        this.audioSource_object.PlayOneShot(this.page_sound);
+        audioSource.PlayOneShot(pageSound);
     }
 }

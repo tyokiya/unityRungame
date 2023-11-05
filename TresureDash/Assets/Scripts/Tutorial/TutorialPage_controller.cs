@@ -6,12 +6,8 @@
 public class TutorialPage_controller : MonoBehaviour
 {
     // インスペクターから設定    
-    [Tooltip("バックページボタンオブジェクト")][SerializeField] 
-    GameObject backPageButton_object;
-    
-    [Tooltip("ネクストページボタンオブジェクト")][SerializeField] 
-    GameObject nextPageButton_object;
-    
+    [SerializeField] GameObject backPageButton; // バックページボタンオブジェクト
+    [SerializeField] GameObject nextPageButton; // ネクストページボタンオブジェクト
     // チュートリアルページのオブジェクト
     [SerializeField] GameObject tutorialPage_1_object;
     [SerializeField] GameObject tutorialPage_2_object;
@@ -22,7 +18,7 @@ public class TutorialPage_controller : MonoBehaviour
     void Awake()
     {
         // 不要なUIの非表示
-        this.backPageButton_object.SetActive(false);
+        backPageButton.SetActive(false);
     }
 
     /// <summary>
@@ -35,14 +31,14 @@ public class TutorialPage_controller : MonoBehaviour
         switch (nowPageNum)
         {
             case 1:
-                this.backPageButton_object.SetActive(false);
+                backPageButton.SetActive(false);
                 break;
             case 5:
-                this.nextPageButton_object.SetActive(false);
+                nextPageButton.SetActive(false);
                 break;
             default:
-                this.backPageButton_object.SetActive(true);
-                this.nextPageButton_object.SetActive(true);
+                backPageButton.SetActive(true);
+                nextPageButton.SetActive(true);
                 break;
         }
 
@@ -50,27 +46,27 @@ public class TutorialPage_controller : MonoBehaviour
         switch (nowPageNum)
         {
             case 1:
-                this.tutorialPage_1_object.SetActive(true);
-                this.tutorialPage_2_object.SetActive(false);
+                tutorialPage_1_object.SetActive(true);
+                tutorialPage_2_object.SetActive(false);
                 break;
             case 2:
-                this.tutorialPage_1_object.SetActive(false);
-                this.tutorialPage_2_object.SetActive(true);
-                this.tutorialPage_3_object.SetActive(false);
+                tutorialPage_1_object.SetActive(false);
+                tutorialPage_2_object.SetActive(true);
+                tutorialPage_3_object.SetActive(false);
                 break;
             case 3:
-                this.tutorialPage_2_object.SetActive(false);
-                this.tutorialPage_3_object.SetActive(true);
-                this.tutorialPage_4_object.SetActive(false);
+                tutorialPage_2_object.SetActive(false);
+                tutorialPage_3_object.SetActive(true);
+                tutorialPage_4_object.SetActive(false);
                 break;
             case 4:
-                this.tutorialPage_3_object.SetActive(false);
-                this.tutorialPage_4_object.SetActive(true);
-                this.tutorialPage_5_object.SetActive(false);
+                tutorialPage_3_object.SetActive(false);
+                tutorialPage_4_object.SetActive(true);
+                tutorialPage_5_object.SetActive(false);
                 break;
             case 5:
-                this.tutorialPage_4_object.SetActive(false);
-                this.tutorialPage_5_object.SetActive(true);
+                tutorialPage_4_object.SetActive(false);
+                tutorialPage_5_object.SetActive(true);
                 break;
         }
     }

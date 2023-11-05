@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class SceneController_TutorialScene : MonoBehaviour
 {
-    [Tooltip("シーン切り替え時の待機時間")]
-    float waitTime = 0.6f;
+    // 定数
+    const float waitTime = 0.6f; // シーン切り替え時の待機時間 
 
     /// <summary>
     /// タイトルシーンへ切り替えコルーチン
@@ -16,7 +16,7 @@ public class SceneController_TutorialScene : MonoBehaviour
     public IEnumerator ChangeScene_Tittle()
     {
         // 0.6後シーン切り替え
-        yield return new WaitForSeconds(this.waitTime);
+        yield return new WaitForSeconds(waitTime);
         SceneManager.LoadScene("TitleScene");
     }
 }

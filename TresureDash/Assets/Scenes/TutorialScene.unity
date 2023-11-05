@@ -152,11 +152,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cfd14e17ac3e7441a1eab9ec643d4ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneController_object: {fileID: 1593381001}
-  soundCOntroller_object: {fileID: 1697723290}
-  pageController_object: {fileID: 1232023445}
-  effectController_object: {fileID: 2132583622}
-  screenInput_object: {fileID: 150524516}
+  sceneController: {fileID: 1593381001}
+  soundController: {fileID: 1697723290}
+  pageController: {fileID: 1232023445}
+  effectController: {fileID: 2132583622}
+  screenInput: {fileID: 150524516}
 --- !u!4 &115660484
 Transform:
   m_ObjectHideFlags: 0
@@ -1675,8 +1675,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f7313de8bdf494890edb7741d7fb7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backPageButton_object: {fileID: 358041158}
-  nextPageButton_object: {fileID: 165749387}
+  backPageButton: {fileID: 358041158}
+  nextPageButton: {fileID: 165749387}
   tutorialPage_1_object: {fileID: 1497315798}
   tutorialPage_2_object: {fileID: 1150890945}
   tutorialPage_3_object: {fileID: 1495034375}
@@ -2633,9 +2633,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6de440f688672b48969b6d7d986b170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource_object: {fileID: 1697723289}
-  select_sound: {fileID: 8300000, guid: 9345d048d0ec3e5489ba8daa5a18ef59, type: 3}
-  page_sound: {fileID: 8300000, guid: 0ce0a42c772217c4f821abd3d44f5115, type: 3}
+  audioSource: {fileID: 1697723289}
+  selectSound: {fileID: 8300000, guid: 9345d048d0ec3e5489ba8daa5a18ef59, type: 3}
+  pageSound: {fileID: 8300000, guid: 0ce0a42c772217c4f821abd3d44f5115, type: 3}
 --- !u!4 &1697723291
 Transform:
   m_ObjectHideFlags: 0

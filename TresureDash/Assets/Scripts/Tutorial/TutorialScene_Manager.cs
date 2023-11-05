@@ -5,35 +5,24 @@
 /// </summary>
 public class TutorialScene_Manager : MonoBehaviour
 {
-    // インスペクターから設定    
-    [Tooltip("シーンコントローラーオブジェクト")][SerializeField]
-    SceneController_TutorialScene sceneController_object;
+    // インスペクターから設定     
+    [SerializeField] SceneController_TutorialScene sceneController;  // シーンコントローラークラス
+    [SerializeField] SoundCOntroller_TutorialScene soundController;  // サウンドコントローラークラス
+    [SerializeField] TutorialPage_controller       pageController;   // ページコントローラークラス
+    [SerializeField] TapEffectController           effectController; // エフェクトのコントローラークラス
+    [SerializeField] ScreenInput_TittleScene       screenInput;　　　// 入力感知クラス
 
-    [Tooltip("サウンドコントローラーオブジェクト")][SerializeField]
-    SoundCOntroller_TutorialScene soundCOntroller_object;
-    
-    [Tooltip("ページコントローラーオブジェクト")][SerializeField] 
-    TutorialPage_controller pageController_object;
-
-    [Tooltip("エフェクトのコントローラーオブジェクト")]
-    [SerializeField]
-    TapEffectController effectController_object;
-
-    [Tooltip("チュートリアルシーンシーンの入力を受けるオブジェクト")]
-    [SerializeField]
-    ScreenInput_TittleScene screenInput_object;
-
-    [Tooltip("現在の開いてるページのカウンター")]
-    int nowPageNum = 1;
+    // 現在の開いてるページのカウンター
+    int nowPageNum = 1; 
 
     void Update()
     {
         // プレイヤーからの入力があるか確認
-        if (this.screenInput_object.TapFlgGetter())
+        if (screenInput.TapFlgGetter())
         {
             // 座標を受け取りエフェクトの表示命令
-            Vector3 pos = this.screenInput_object.TapPosGetter();
-            this.effectController_object.PlyTapEffect(pos);
+            Vector3 pos = screenInput.TapPosGetter();
+            effectController.PlyTapEffect(pos);
         }
     }
 
@@ -43,9 +32,9 @@ public class TutorialScene_Manager : MonoBehaviour
     public void Down_BackButton()
     {
         // セレクトサウンド再生命令
-        this.soundCOntroller_object.PlySelectSound();
+        soundController.PlySelectSound();
         // シーン切り替え命令
-        StartCoroutine(this.sceneController_object.ChangeScene_Tittle());
+        StartCoroutine(sceneController.ChangeScene_Tittle());
     }
 
     /// <summary>
@@ -54,11 +43,11 @@ public class TutorialScene_Manager : MonoBehaviour
     public void Down_NextPageButton()
     {
         // カウンターの増加
-        this.nowPageNum++;
+        nowPageNum++;
         // セレクトサウンド再生命令
-        this.soundCOntroller_object.PlyPageSound();
+        soundController.PlyPageSound();
         // ページのアクティブ状態の更新
-        this.pageController_object.PageActiveUpdate(this.nowPageNum);
+        pageController.PageActiveUpdate(nowPageNum);
     }
 
     /// <summary>
@@ -67,10 +56,10 @@ public class TutorialScene_Manager : MonoBehaviour
     public void Down_BackPageButton()
     {
         // カウンターの減少
-        this.nowPageNum--;
+        nowPageNum--;
         // セレクトサウンド再生命令
-        this.soundCOntroller_object.PlyPageSound();
+        soundController.PlyPageSound();
         // ページのアクティブ状態の更新
-        this.pageController_object.PageActiveUpdate(this.nowPageNum);
+        pageController.PageActiveUpdate(nowPageNum);
     }
 }
