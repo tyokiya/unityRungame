@@ -7,17 +7,14 @@ using UnityEngine.UI;
 /// </summary>
 public class CountDownController : MonoBehaviour
 {
-    // カウントダウンのテキストオブジェクト
-    [SerializeField] Text countDown_text;
-    // 残りカウントを表示するイメージオブジェクト
-    [SerializeField] Image countDownImg;
+    // インスペクターから設定
+    [SerializeField] Text countDown_text; // カウントダウンのテキストオブジェクト
+    [SerializeField] Image countDownImg;  // 残りカウントを表示する画像オブジェクト
 
-    // 数える時間の定数
-    const float CountTimeNum = 1.0f;
-    // 合計の数える時間
-    const int TortalCountTime = 3;
-    // fillAmountの初期値定数
-    const float InitialFillAmount = 1.0f;
+    // 定数       
+    const int   TortalCountTime   = 3;    // 合計の数える時間   
+    const float InitialFillAmount = 1.0f; // fillAmountの初期値定数
+    const float waitTime = 1.0f;          // 待機時間
 
     void Awake()
     {
@@ -60,7 +57,7 @@ public class CountDownController : MonoBehaviour
         float time = 0;
 
         // 1秒ループ
-        while (time < 1.0f)
+        while (time < waitTime)
         {
             countDownImg.fillAmount -= Time.deltaTime; // 差分をfillAmountに減算
             time += Time.deltaTime;

@@ -6,11 +6,8 @@ using UnityEngine.UI;
 /// </summary>
 public class ItemUIController : MonoBehaviour
 {
-    [Tooltip("アイテムスコアオブジェクト")][SerializeField]
-    GameObject item_object;
-
-    [Tooltip("アイテムスコアのテキスト")][SerializeField]
-    Text item_text;
+    // インスペクターから設定
+    [SerializeField] Text itemText; // アイテムスコアのテキスト
 
     /// <summary>
     /// 描画するスコアを更新する
@@ -21,6 +18,6 @@ public class ItemUIController : MonoBehaviour
         // int型をstring型に変換
         string stringText = score.ToString();
         // スコア更新
-        this.item_text.text = stringText;
+        itemText.text = stringText;
     }
 }

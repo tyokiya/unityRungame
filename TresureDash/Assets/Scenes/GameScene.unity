@@ -1393,8 +1393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 522af4898bf3bb34da487f59f44e3289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score_object: {fileID: 1713818067}
-  score_text: {fileID: 1713818069}
+  scoreText: {fileID: 1713818069}
 --- !u!1001 &373870439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1708,8 +1707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb2169e7a388b0843aafe3494bb06fc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item_object: {fileID: 1783901851}
-  item_text: {fileID: 1783901853}
+  itemText: {fileID: 1783901853}
 --- !u!1001 &393086532
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2229,10 +2227,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eeded5907885fd4f9150a2a7b24bed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreController_object: {fileID: 564433199}
-  scoreUIController_object: {fileID: 344193575}
-  itemUIController_object: {fileID: 393008194}
-  goalBornus_Text_Controller: {fileID: 1537348102}
+  scoreController: {fileID: 564433199}
+  scoreUIController: {fileID: 344193575}
+  itemUIController: {fileID: 393008194}
+  goalController: {fileID: 1537348102}
 --- !u!4 &570079910
 Transform:
   m_ObjectHideFlags: 0
