@@ -7,7 +7,8 @@ using UnityEngine.UI;
 /// </summary>
 public class Fade : MonoBehaviour
 {
-    [SerializeField] Image m_image = null;
+    // フェードアウト、フェードイン時に使う画像素材
+    [SerializeField] Image m_image = null; 
 
     void Reset()
     {
