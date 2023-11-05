@@ -9,13 +9,10 @@
 /// </summary>
 public class GroundCollisionController : MonoBehaviour
 {
-    [Tooltip("プレイヤーのタグ名の定数")]
-    const string PlayerTagName = "Player";
+    [SerializeField] GameObject ParentObject; // アタッチ元の親オブジェクト
 
-    [SerializeField] GameObject ParentObject;
-
-    // オブジェクト破壊までの待機時間
-    const float WaitTimeObjectDestroy = 4.0f;
+    const string PlayerTagName = "Player"; // プレイヤーのタグ名
+    const float WaitTimeObjectDestroy = 4.0f; // オブジェクト破壊までの待機時間
 
     /// <summary>
     /// プレイヤーとの衝突を受け取りオブジェクト破壊処理
