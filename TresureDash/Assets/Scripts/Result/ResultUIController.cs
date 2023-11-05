@@ -6,48 +6,41 @@ using UnityEngine.UI;
 /// </summary>
 public class ResultUIController : MonoBehaviour
 {
-    [Tooltip("合計得点")]
-    int tortalScore = 0;
-    [Tooltip("ランスコア")]
-    int runScore    = 0;
-    [Tooltip("アイテムスコア")]
-    int itemScore   = 0;
+    // インスペクターから設定
+    [SerializeField] Text itemScoreText;    // アイテムスコアを入れるテキストオブジェクト
+    [SerializeField] Text runScoreText;     // スコアを入れるテキストオブジェクト
+    [SerializeField] Text tortalScoreText; // トータルスコアを入れるテキストオブジェクト
 
-    [Tooltip("スコアオブジェクト")]
-    GameObject score_object;
-    
-    [Tooltip("アイテムスコアを入れるテキストオブジェクト")][SerializeField]
-    Text itemScore_text;
+    GameObject score_object; // 生成されたスコアオブジェクトを保持する
 
-    [Tooltip("スコアを入れるテキストオブジェクト")][SerializeField] 
-    Text runScore_text;
-    
-    [Tooltip("トータルスコアを入れるテキストオブジェクト")][SerializeField] 
-    Text tortalScore_text;
+    // スコア
+    int tortalScore = 0; // 合計得点
+    int runScore    = 0; // ランスコア
+    int itemScore   = 0; //アイテムスコア
 
-    // スコア倍率の定数
-    const int ScoreMagnification = 100;
+    // 定数
+    const int ScoreMagnification = 100; // スコア倍率の定数
 
     void Start()
     {
         // ゲームシーンのスコアオブジェクトからを受け取る
         score_object = GameObject.Find("Score_Controller");
         // スコアを受け取る
-        this.runScore = score_object.GetComponent<ScoreController>().ScoreGetter();
+        runScore = score_object.GetComponent<ScoreController>().ScoreGetter();
         // アイテム数を受け取る
-        this.itemScore = score_object.GetComponent<ScoreController>().ItemNumGetter();
+        itemScore = score_object.GetComponent<ScoreController>().ItemNumGetter();
         // 受け取った値からトータルスコアを計算
-        this.tortalScore = this.runScore + (this.itemScore * ScoreMagnification);
+        tortalScore = runScore + (itemScore * ScoreMagnification);
 
         // int型をstring型に変換し、テキストに代入
-        string stringText = this.runScore.ToString();
-        this.runScore_text.text = stringText;
+        string stringText = runScore.ToString();
+        runScoreText.text = stringText;
 
-        stringText = this.itemScore.ToString();
-        this.itemScore_text.text = stringText;
+        stringText = itemScore.ToString();
+        itemScoreText.text = stringText;
 
-        stringText = this.tortalScore.ToString();
-        this.tortalScore_text.text = stringText;
+        stringText = tortalScore.ToString();
+        tortalScoreText.text = stringText;
     }
 
 }

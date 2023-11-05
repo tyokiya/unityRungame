@@ -1035,10 +1035,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5bc703cf962b5d40943c906628e23bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneController_object: {fileID: 1404166041}
-  soundController_object: {fileID: 1060858886}
-  effectController_object: {fileID: 1870518546}
-  screenInput_object: {fileID: 1473125785}
+  sceneController: {fileID: 1404166041}
+  soundController: {fileID: 1060858886}
+  effectController: {fileID: 1870518546}
+  screenInput: {fileID: 1473125785}
 --- !u!4 &846167118
 Transform:
   m_ObjectHideFlags: 0
@@ -1428,8 +1428,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4f6b0384f57d1848a06d600ef59a948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource_object: {fileID: 1060858887}
-  select_sound: {fileID: 8300000, guid: 9345d048d0ec3e5489ba8daa5a18ef59, type: 3}
+  audioSource: {fileID: 1060858887}
+  selectSound: {fileID: 8300000, guid: 9345d048d0ec3e5489ba8daa5a18ef59, type: 3}
 --- !u!82 &1060858887
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1555,9 +1555,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb8dc97c74bfd3e489d3dc659c6c504c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemScore_text: {fileID: 1401076037}
-  runScore_text: {fileID: 1930151753}
-  tortalScore_text: {fileID: 39580502}
+  itemScoreText: {fileID: 1401076037}
+  runScoreText: {fileID: 1930151753}
+  tortalScoreText: {fileID: 39580502}
 --- !u!4 &1081495442
 Transform:
   m_ObjectHideFlags: 0
