@@ -13,6 +13,8 @@ public class GroudCheck : MonoBehaviour
     bool standGroundFlg     = true;  // 地面の接地フラグ
     bool standTurnGroundFlg = false; // 回転地面の接地フラグ
 
+    Vector3 turnGroundPosition;      // 回転地面の座標保存変数
+
     /// <summary>
     /// 接地を受け取りフラグを立てる
     /// </summary>
@@ -27,8 +29,9 @@ public class GroudCheck : MonoBehaviour
         else if(other.tag == TurnGroundTagName)
         {
             // 回転可能な地面の処理
-            standGroundFlg     = true;
-            standTurnGroundFlg = true;
+            standTurnGroundFlg = true;                     // 回転地面との接地フラグを立てる
+            standGroundFlg     = true;                     // 接地フラグを立てる
+            turnGroundPosition = other.transform.position; // 座標を保持
         }
     }
 
@@ -51,14 +54,24 @@ public class GroudCheck : MonoBehaviour
     /// <summary>
     /// プレイヤーが地面に立っているかのフラグを返す
     /// </summary>
-    /// <returns></returns>
     public bool GetGroundStandFlg()
     {
         return standGroundFlg;
     }
 
+    /// <summary>
+    /// プレイヤーが回転地面に立っているかのフラグを返す
+    /// </summary>
     public bool GetTurnGroundStandFlg()
     {
         return standTurnGroundFlg;
+    }
+
+    /// <summary>
+    /// 回転地面の座標を渡す
+    /// </summary>
+    public Vector3 GetTurnGroundPos()
+    {
+        return turnGroundPosition;
     }
 }

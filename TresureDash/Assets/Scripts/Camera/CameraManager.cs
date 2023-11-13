@@ -18,10 +18,10 @@ public class CameraManager : MonoBehaviour
     void Update()
     {
         // カメラの更新処理に必要な情報を受け取り更新命令
-        Vector3 playerPos = player.transform.position;                                 // プレイヤーの座標を取得      
-        nowPlayerDirection = playerState.GetNowPlayerDirection();              // 現在のプレイヤーの向いてる方向を受け取る        
-        nowPlayerState = playerState.GetNowPlayerSituation();                  // 現在のプレイヤーの状態を受け取る       
-        nowFlick = screenInput.GetNowFlick();                                   // フリック方向を受け取る       
+        Vector3 playerPos = player.transform.position;                                // プレイヤーの座標を取得      
+        nowPlayerDirection = playerState.GetNowPlayerDirection();                     // 現在のプレイヤーの向いてる方向を受け取る        
+        nowPlayerState = playerState.GetNowPlayerSituation();                         // 現在のプレイヤーの状態を受け取る       
+        nowFlick = screenInput.GetNowFlick();                                         // フリック方向を受け取る       
         cameraController.UpdateCamera(playerPos, nowPlayerDirection, nowPlayerState); // カメラの更新処理命令
     }
 
