@@ -50,7 +50,7 @@ public class PlayerMove : MonoBehaviour
     /// <param name="tili_direction">前フレームとのスマホの傾きの差</param>
     /// <param name="turnGroundFlg">回転可能な地面の上に立っているかのフラグ</param>
     /// <param name="ply_jumpSound_delegate">ジャンプ音再生のデリゲート</param>
-    public void MovePlayerUpdate(ScreenInput.FlickDirection flick, Status.PlayerState state, Status.PlayerDirection direction, GyroInput.TiltDirection tili_direction,
+    public void UpdatePlayerMove(ScreenInput.FlickDirection flick, Status.PlayerState state, Status.PlayerDirection direction, GyroInput.TiltDirection tili_direction,
                                  bool turnGroundFlg, SoundController.PlyPlayerSound ply_jumpSound_delegate)
     {
         // ジャンプの入力でジャンプ力を入れる

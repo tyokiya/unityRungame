@@ -11,11 +11,24 @@ public class CollisionCheck : MonoBehaviour
     [SerializeField] UIManager     UIManager;     // UIマネージャークラス
 
     // タグ名定数
-    const string ItemTagName = "Item";     // アイテムのタグ名定数
-    const string WallTagName = "wall"; 　　// 壁のタグ名定数
-    const string GoalTagName = "GoalItem"; // ゴールのタグ名定数
+    const string ItemTagName              = "Item";              // アイテムのタグ名
+    const string WallTagName              = "wall"; 　　         // 壁のタグ名
+    const string GoalTagName              = "GoalItem";          // ゴールのタグ名
+    const string BufferedInputZoneTagName = "BufferedInputZone"; // 先行入力ゾーンのタグ名
 
     bool collisionWallFlg = false; //壁との衝突フラグ
+
+    // イベントリスト宣言
+    EventList eventList = new EventList();
+
+    /// <summary>
+    /// イベントリストの設定
+    /// </summary>
+    /// <param name="setEventList"></param>
+    public void SetEventList(EventList setEventList)
+    {
+        eventList = setEventList;
+    }
 
     /// <summary>
     /// 衝突を感知しマネージャーに知らせる
@@ -47,6 +60,23 @@ public class CollisionCheck : MonoBehaviour
 
             // 獲得したゴールオブジェクトを破壊
             Destroy(other.gameObject);
+        }
+
+        // 先行入力ゾーンなのか調べる
+        if(other.tag == BufferedInputZoneTagName)
+        {
+            Debug.Log("専攻入力ゾーン");
+            eventList.OnBufferedInputFlg(); // 先行入力状態を報告
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        // 先行入力ゾーンなのか調べる
+        if (other.tag == BufferedInputZoneTagName)
+        {
+            Debug.Log("専攻入力ゾーンをでた");
+            eventList.OffBufferedInputFlg(); // 非先行入力状態を報告
         }
     }
 

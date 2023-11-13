@@ -11,6 +11,7 @@ TagManager:
   - TurnGround
   - wall
   - GoalItem
+  - BufferedInputZone
   layers:
   - Default
   - TransparentFX

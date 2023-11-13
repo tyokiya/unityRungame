@@ -388,6 +388,7 @@
 "Assets/Scripts/Credit/SceneController_CreditScene.cs"
 "Assets/Scripts/Credit/SoundController_CreditScene.cs"
 "Assets/Scripts/Effect/Fade.cs"
+"Assets/Scripts/Event/EventList.cs"
 "Assets/Scripts/Frame/FrameCntroller.cs"
 "Assets/Scripts/Ground/GroundCollisionController.cs"
 "Assets/Scripts/Input/GyroInput.cs"

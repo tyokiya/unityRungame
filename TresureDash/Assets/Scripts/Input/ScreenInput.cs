@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 
 /// <summary>
 /// タップ入力を感知するクラス
@@ -19,27 +20,54 @@ public class ScreenInput : MonoBehaviour
     Vector2 InputEND;
     public enum FlickDirection
     {
-        NONE,
-        TAP,
-        UP,
-        RIGHT,
-        DOWN,
-        LEFT,
+        NONE,  // 入力なし
+        TAP,   // タップ
+        UP,    // 上
+        RIGHT, // 右
+        DOWN,  // 下
+        LEFT,  // 左
     }
     FlickDirection NowFlick = FlickDirection.NONE; // フリックの方向   
     public enum SwipeDirection
     {
-        NONE,
-        TAP,
-        UP,
-        RIGHT,
-        DOWN,
-        LEFT,
+        NONE,  // 入力なし
+        TAP,   // タップ
+        UP,    // 上
+        RIGHT, // 右
+        DOWN,  // 下
+        LEFT,  // 左
     }
     SwipeDirection NowSwipe = SwipeDirection.NONE; // スワイプの方向
+
+    public enum BufferedFlick
+    {
+        None,  // 入力なし
+        RIGHT, // 右
+        LEFT,  // 左
+    }
+    BufferedFlick nowBufferedFlick = BufferedFlick.None; // 先行入力のフリック方向
+
+    // 先行入力ゾーンにいるフラグ
+    bool isBufferedInputZone = false;
+
+    // イベントリストの宣言
+    EventList eventList = new EventList();
+
+    void Start()
+    {
+        // イベントリストへのメソッドの追加
+        AddEvent();
+    }
+
     void Update()
     {
         GetInputVector();
+    }
+
+    void AddEvent()
+    {
+        eventList.OnBufferedInputFlg  += OnBufferedInputFlg;  // 先行入力フラグを立てるイベント
+        eventList.OffBufferedInputFlg += OffBufferedInputFlg; // 先行入力フラグを下ろすイベント
     }
 
     /// <summary>
@@ -93,6 +121,21 @@ public class ScreenInput : MonoBehaviour
             else if (NowFlick != FlickDirection.NONE || NowSwipe != SwipeDirection.NONE)
             {
                 ResetParameter();
+            }
+        }
+
+        // 先行入力の更新
+        if(isBufferedInputZone)
+        {
+            if(NowFlick == FlickDirection.RIGHT)
+            {
+                nowBufferedFlick = BufferedFlick.RIGHT;
+                Debug.Log("先行入力[右]");
+            }
+            else if(NowFlick == FlickDirection.LEFT)
+            {
+                nowBufferedFlick = BufferedFlick.LEFT;
+                Debug.Log("先行入力[左]");
             }
         }
     }
@@ -179,6 +222,15 @@ public class ScreenInput : MonoBehaviour
     }
 
     /// <summary>
+    /// 先行入力状態の取得
+    /// </summary>
+    /// <returns></returns>
+    public BufferedFlick GetNowBufferedFLick()
+    {
+        return nowBufferedFlick;
+    }
+
+    /// <summary>
     /// スワイプ量の取得
     /// </summary>
     public float GetSwipeRange()
@@ -206,5 +258,31 @@ public class ScreenInput : MonoBehaviour
         {
             return new Vector2(0, 0);
         }
+    }
+
+    /// <summary>
+    /// イベントリストの取得
+    /// </summary>
+    public EventList GetEventList()
+    {
+        return eventList;
+    }
+
+    /// <summary>
+    /// 先行入力ゾーンのフラグを立てる
+    /// </summary>
+    public void OnBufferedInputFlg()
+    {
+        isBufferedInputZone = true;
+        Debug.Log("先行入力状態の変更");
+    }
+
+    /// <summary>
+    /// 先行入力ゾーンのフラグを下ろす
+    /// </summary>
+    public void OffBufferedInputFlg()
+    {
+        isBufferedInputZone = false;
+        Debug.Log("非先行入力状態の変更");
     }
 }

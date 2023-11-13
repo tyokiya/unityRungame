@@ -91,7 +91,8 @@ public class Status : MonoBehaviour
     /// <param name="GroundFlg">接地フラグ</param>
     /// <param name="flick">現在の入力状態</param>
     /// <param name="turnGroundFlg">ターン可能な地面との接地フラグ</param>
-    public void SituationUpdate(bool GroundFlg, ScreenInput.FlickDirection flick, bool turnGroundFlg)
+    /// <param name="bufferedFlick">先行入力のフリック方向</param>
+    public void SituationUpdate(bool GroundFlg, ScreenInput.FlickDirection flick, bool turnGroundFlg, ScreenInput.BufferedFlick bufferedFlick)
     { 
         // ジャンプ状態から地面についた場合ステータスを変更
         if (GroundFlg && currentSituation == PlayerState.Jump)
@@ -109,13 +110,13 @@ public class Status : MonoBehaviour
         // 向きを変える処理
         // ターン可能な地面にいるかの確認
         // 走り状態化の確認
-        if (flick == ScreenInput.FlickDirection.RIGHT && rotationDelta > RotationSpan && currentSituation == PlayerState.Run && turnGroundFlg)
+        if (bufferedFlick == ScreenInput.BufferedFlick.RIGHT && rotationDelta > RotationSpan && currentSituation == PlayerState.Run && turnGroundFlg)
         {
             ChangeDirection(true);
             // デルタ初期化
             rotationDelta = 0;
         }
-        if (flick == ScreenInput.FlickDirection.LEFT && rotationDelta > RotationSpan && currentSituation == PlayerState.Run && turnGroundFlg)
+        if (bufferedFlick == ScreenInput.BufferedFlick.LEFT && rotationDelta > RotationSpan && currentSituation == PlayerState.Run && turnGroundFlg)
         {
             ChangeDirection(false);
             // デルタ初期化

@@ -20,11 +20,12 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] ScreenInput               screenInput;        // タップ入力感知クラス
     [SerializeField] GyroInput                 gyroInput;          // ジャイロ入力感知クラス
 
-    ScreenInput.FlickDirection currentFlick;       // 現在の入力状態を入れる変数
-    GyroInput.TiltDirection currentTili_direction; // スマホの傾きを入れる変数
-    Status.PlayerState currentSituation;           // プレイヤーの状態を入れる変数
-    Status.PlayerAlive currentAlive;               // 現在のプレイヤーの生死状態を入れる変数
-    Status.PlayerDirection currentDirection;       // 現在のプレイヤーの向いてる方向を入れる変数
+    ScreenInput.FlickDirection nowFlick;          // 現在の入力状態を入れる変数
+    ScreenInput.BufferedFlick  nowBufferedFlick;  // 現在の先行入力状態を入れる変数
+    GyroInput.TiltDirection    nowTili_direction; // スマホの傾きを入れる変数
+    Status.PlayerState         nowSituation;      // プレイヤーの状態を入れる変数
+    Status.PlayerAlive         nowAlive;          // 現在のプレイヤーの生死状態を入れる変数
+    Status.PlayerDirection     nowDirection;      // 現在のプレイヤーの向いてる方向を入れる変数
 
     // フラグ
     bool onGroudFlg      = false; // 接地フラグ
@@ -64,44 +65,41 @@ public class PlayerManager : MonoBehaviour
         // ジャンプ音の再生メソッドをplayer_jumpound_delegateへ代入
         PlayJumpoSound = new 
         SoundController.PlyPlayerSound(playerSound.PlyJumpSound);
+
+        // イベントリストのセット
+        collisionCheck.SetEventList(screenInput.GetEventList());
     }
 
     void Update()
     {
-        // 接地判定を受け取る
-        onGroudFlg      = groundCheck.GetGroundStandFlg();
-        onTurnGroundFlg = groundCheck.GetTurnGroundStandFlg();
-
-        // フリック方向を受け取る
-        currentFlick          = screenInput.GetNowFlick();
-        // スマホの傾きを受け取る
-        currentTili_direction = gyroInput.GetDifferenceTilt();
-        // 現在の状態を受け取る
-        currentSituation      = playerState.GetNowPlayerSituation();
-        // 現在の生死状態を受け取る
-        currentAlive          = playerState.GetNowPlayerSurvival();
-        // 現在のプレイヤーの向いてる方向を受け取る
-        currentDirection      = playerState.GetNowPlayerDirection();
-        // レイヤーの衝突フラグを受け取る
-        collisionFlg          = collisionCheck.GetCollisionFlg();
+        // 必要情報を取得
+        onGroudFlg        = groundCheck.GetGroundStandFlg();     // 接地判定を受け取る
+        onTurnGroundFlg   = groundCheck.GetTurnGroundStandFlg(); // 回転地面接地判定を受け取る  
+        nowFlick          = screenInput.GetNowFlick();           // フリック方向を受け取る        
+        nowBufferedFlick  = screenInput.GetNowBufferedFLick();   // 先行入力を受け取る        
+        nowTili_direction = gyroInput.GetDifferenceTilt();       // スマホの傾きを受け取る       
+        nowSituation      = playerState.GetNowPlayerSituation(); // 現在の状態を受け取る     
+        nowAlive          = playerState.GetNowPlayerSurvival();  // 現在の生死状態を受け取る       
+        nowDirection      = playerState.GetNowPlayerDirection(); // 現在のプレイヤーの向いてる方向を受け取る
+        collisionFlg      = collisionCheck.GetCollisionFlg();    // プレイヤーの衝突フラグを受け取る
 
         // プレイヤーが生存状態での処理
-        if(currentAlive == Status.PlayerAlive.Life)
+        if (nowAlive == Status.PlayerAlive.Life)
         {
             // ステータスの更新
-            playerState.SituationUpdate(onGroudFlg, currentFlick, onTurnGroundFlg);
+            playerState.SituationUpdate(onGroudFlg, nowFlick, onTurnGroundFlg, nowBufferedFlick);
             // 移動の更新
-            playerMove.MovePlayerUpdate(currentFlick, currentSituation, currentDirection, currentTili_direction, onTurnGroundFlg,PlayJumpoSound);
+            playerMove.UpdatePlayerMove(nowFlick, nowSituation, nowDirection, nowTili_direction, onTurnGroundFlg,PlayJumpoSound);
             // アニメーション更新
-            playerAnimation.AnimationUpdate(currentFlick, currentSituation, collisionFlg);
+            playerAnimation.AnimationUpdate(nowFlick, nowSituation, collisionFlg);
             // プレイヤーの生死確認
             playerState.SurvivalChek(collisionFlg);
             // プレイヤーの移動サウンド再生
-            playerSound.PlyWalkSound(currentSituation);
+            playerSound.PlyWalkSound(nowSituation);
         }
 
         // 衝突死の処理
-        if(currentAlive == Status.PlayerAlive.CollisionDeath && !deathFlg)
+        if(nowAlive == Status.PlayerAlive.CollisionDeath && !deathFlg)
         {            
             // 衝突パーティクル再生
             particleController.PlyCollisionParticle();
@@ -115,7 +113,7 @@ public class PlayerManager : MonoBehaviour
         }
 
         // 落下死処理
-        if(currentAlive == Status.PlayerAlive.FallDeath && !deathFlg)
+        if(nowAlive == Status.PlayerAlive.FallDeath && !deathFlg)
         {
             // 落下サウンド再生
             PlayerFallSound();
