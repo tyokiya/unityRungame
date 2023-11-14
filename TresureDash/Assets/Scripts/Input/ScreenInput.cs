@@ -1,5 +1,4 @@
-﻿using Unity.VisualScripting;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// タップ入力を感知するクラス
@@ -9,7 +8,7 @@ public class ScreenInput : MonoBehaviour
     readonly Vector2 FlickMinRange = new Vector2(30.0f, 30.0f); // フリックの最小移動距離
     readonly Vector2 SwipeMinRange = new Vector2(50.0f, 50.0f); // スワイプ最小移動距離
 
-    [SerializeField] const int NoneCountMax = 2; // TAPをNONEに戻すまでのカウント
+    const int NoneCountMax = 2; // TAPをNONEに戻すまでのカウント
     int nowNoneCount = 0;
 
     Vector2 SwipeRange; // スワイプの入力距離
@@ -284,5 +283,6 @@ public class ScreenInput : MonoBehaviour
     {
         isBufferedInputZone = false;
         Debug.Log("非先行入力状態の変更");
+        nowBufferedFlick = BufferedFlick.None; // 先行入力なしに切り替え
     }
 }
