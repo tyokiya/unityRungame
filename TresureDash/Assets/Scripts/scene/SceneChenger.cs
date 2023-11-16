@@ -7,9 +7,6 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class SceneChenger : MonoBehaviour
 {
-    // シーン切り替えの用のデリゲート定義
-    public delegate IEnumerator changeScene_delegate(float stand_time);
-
     /// <summary>
     /// リザルトシーンに切り替える
     /// </summary>

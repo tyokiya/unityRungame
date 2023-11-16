@@ -22,9 +22,6 @@ public class SoundController : MonoBehaviour
 
     float foot_sound_delta = 0; // デルタタイムを保持する
 
-    // サウンド再生時のデリゲート
-    public delegate void PlyPlayerSound();
-
     /// <summary>
     /// 現在のプレイヤーの状態に応じて移動音再生
     /// </summary>

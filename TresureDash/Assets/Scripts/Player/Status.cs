@@ -189,10 +189,7 @@ public class Status : MonoBehaviour
     /// <summary>
     /// プレイヤーの生死判定
     /// </summary>
-    /// <param name="changeScene_delegate">リザルトシーンへの切り替えデリゲート</param>
-    /// <param name="ply_fallSound_delegate">落下音再生のデリゲート</param>
     /// <param name="collisionFlg">プレイヤーの衝突フラグ</param>
-    /// <param name="ply_collision_delegate">衝突音再生のデリゲート</param>
     public void SurvivalChek(bool collisionFlg)
     { 
         // プレヤーの座標が落下ボーダーより下にないかの確認

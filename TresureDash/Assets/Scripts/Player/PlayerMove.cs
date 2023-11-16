@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using static Status;
 
 /// <summary>
@@ -49,9 +50,9 @@ public class PlayerMove : MonoBehaviour
     /// <param name="direction">現在のプレイヤーの向いてる方向</param>
     /// <param name="tili_direction">前フレームとのスマホの傾きの差</param>
     /// <param name="turnGroundFlg">回転可能な地面の上に立っているかのフラグ</param>
-    /// <param name="ply_jumpSound_delegate">ジャンプ音再生のデリゲート</param>
+    /// <param name="PlyJumpSound">ジャンプ音再生のデリゲート</param>
     public void UpdatePlayerMove(ScreenInput.FlickDirection flick, Status.PlayerState state, Status.PlayerDirection direction, GyroInput.TiltDirection tili_direction,
-                                 bool turnGroundFlg, SoundController.PlyPlayerSound ply_jumpSound_delegate)
+                                 bool turnGroundFlg, Action PlyJumpSound)
     {
         // ジャンプの入力でジャンプ力を入れる
         if (flick == ScreenInput.FlickDirection.UP && state == Status.PlayerState.Run)
@@ -59,7 +60,7 @@ public class PlayerMove : MonoBehaviour
             // 現在のジャンプ力に力を代入
             current_jumpForce = JumpForce;
             // ジャンプ音再生
-            ply_jumpSound_delegate();
+            PlyJumpSound();
         }
 
         // 回転可能な地面の上か歩き常態である時場合での移動処理回転処理

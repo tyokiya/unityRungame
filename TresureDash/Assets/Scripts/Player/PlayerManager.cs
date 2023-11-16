@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 
 /// <summary>
 /// プレイヤーを管理するマネージャークラス
@@ -35,11 +36,7 @@ public class PlayerManager : MonoBehaviour
     const float CollisionDeathWaitTImer = 2.1f; // 衝突死の待機時間
     const float GoalWaitTimer           = 3.0f; // ゴール時の待機時間
 
-    // デリゲート
-    SceneChenger.changeScene_delegate        ChangeResultScene;    // タイトルシーン切り替えのデリゲート
-    SoundController.PlyPlayerSound PlayerFallSound;      // 落下音再生のデリゲート
-    SoundController.PlyPlayerSound PlayerCollisionSound; // 衝突音再生のデリゲート
-    SoundController.PlyPlayerSound PlayJumpoSound;       // ジャンプ音再生のデリゲート
+    Action PlayJumpoSound;       // ジャンプ音再生のデリゲート
 
     void Awake()
     {
@@ -47,22 +44,8 @@ public class PlayerManager : MonoBehaviour
         StartCoroutine(playerState.ChangeSituation());
         StartCoroutine(playerAnimation.ChangeAnimaiton());
 
-        // タイトルシーンへの切り替えメソッドをchange_ResultScene_delegateへ代入
-        ChangeResultScene = new 
-        SceneChenger.changeScene_delegate(sceneController.ChangeResultScene);
-
-        // 落下音の再生メソッドをplayer_fallSound_delegateへ代入
-        PlayerFallSound = new 
-        SoundController.PlyPlayerSound(playerSound.PlyFallSound);
-
-        // 衝突音再生メソッドを
-        PlayerCollisionSound = new 
-        SoundController.PlyPlayerSound(playerSound.PlyCollisionSound);
-
-        // ジャンプ音の再生メソッドをplayer_jumpound_delegateへ代入
-        PlayJumpoSound = new 
-        SoundController.PlyPlayerSound(playerSound.PlyJumpSound);
-
+        // ジャンプ音の再生メソッドを追加
+        PlayJumpoSound += playerSound.PlyJumpSound;
         // イベントリストのセット
         collisionCheck.SetEventList(screenInput.GetEventList());
     }
@@ -100,10 +83,9 @@ public class PlayerManager : MonoBehaviour
         {            
             // 衝突パーティクル再生
             particleController.PlyCollisionParticle();
-            // 衝突音再生
-            PlayerCollisionSound();
-            // デリゲートでシーンをリザルトに変更
-            StartCoroutine(ChangeResultScene(CollisionDeathWaitTImer));
+            playerSound.PlyCollisionSound();
+            // リザルトに変更
+            StartCoroutine(sceneController.ChangeResultScene(CollisionDeathWaitTImer));
 
             // 死亡フラグを立てる
             deathFlg = true;
@@ -113,9 +95,9 @@ public class PlayerManager : MonoBehaviour
         if(nowAlive == Status.PlayerAlive.FallDeath && !deathFlg)
         {
             // 落下サウンド再生
-            PlayerFallSound();
-            // デリゲートでシーンをリザルトに変更
-            StartCoroutine(ChangeResultScene(FallDeathWaitTime));
+            playerSound.PlyFallSound();
+            // シーンをリザルトに変更
+            StartCoroutine(sceneController.ChangeResultScene(FallDeathWaitTime));
 
             // 死亡フラグを立てる
             deathFlg = true;
@@ -140,7 +122,7 @@ public class PlayerManager : MonoBehaviour
     public void GoalReport()
     {
         // デリゲートでリザルトシーンへの切り替え
-        StartCoroutine(ChangeResultScene(GoalWaitTimer));
+        StartCoroutine(sceneController.ChangeResultScene(GoalWaitTimer));
         // アニメーショントリガーを切り替える
         playerAnimation.ChangeTrigger_Goal();
         // ゴール音再生命令
