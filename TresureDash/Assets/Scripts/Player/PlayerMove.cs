@@ -27,7 +27,7 @@ public class PlayerMove : MonoBehaviour
     // 移動スピードの定数
     const float WalkSpeed     = 0.01f; // 歩き
     const float RunSpeed      = 0.3f;  // 走り
-    const float SideMoveSpeed = 0.08f; // 横移動
+    const float SideMoveSpeed = 0.05f; // 横移動
 
     void Update()
     {
