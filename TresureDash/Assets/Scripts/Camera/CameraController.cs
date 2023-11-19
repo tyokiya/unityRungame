@@ -18,7 +18,7 @@ public class CameraController : MonoBehaviour
 
     const float TurnAngleSpeed  = 9.0f; // カメラの振り向き速度定数
     const float AngularVelocity = 0.6f; // カメラの回転時の移動速度定数
-    const float PlayerDirection = 5.0f; // プレイヤーとカメラの距離定数
+    const float PlayerDirection = 6.0f; // プレイヤーとカメラの距離定数
     const int   MaxTurnCnt      = 10;   // 振り向きの最大回数の定数
     const float RunCameraFOV    = 75;   // 走り中のカメラ画角
     const float UpFOV           = 0.2f; // 1フレ当たりの画角増加量
