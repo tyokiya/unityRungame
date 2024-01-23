@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 /// <summary>
 /// リザルトシーンのスコアUIのコントローラークラス
@@ -7,9 +8,9 @@ using UnityEngine.UI;
 public class ResultUIController : MonoBehaviour
 {
     // インスペクターから設定
-    [SerializeField] Text itemScoreText;    // アイテムスコアを入れるテキストオブジェクト
-    [SerializeField] Text runScoreText;     // スコアを入れるテキストオブジェクト
-    [SerializeField] Text tortalScoreText; // トータルスコアを入れるテキストオブジェクト
+    [SerializeField] TextMeshProUGUI itemScoreText;    // アイテムスコアを入れるテキストオブジェクト
+    [SerializeField] TextMeshProUGUI runScoreText;     // スコアを入れるテキストオブジェクト
+    [SerializeField] TextMeshProUGUI tortalScoreText; // トータルスコアを入れるテキストオブジェクト
 
     GameObject score_object; // 生成されたスコアオブジェクトを保持する
 
